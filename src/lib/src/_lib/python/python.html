@@ -1,0 +1,3090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Python</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../_resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../_resources/css/icomoon.css">
+    <link rel="stylesheet" href="../../_resources/css/styles.css">
+    <script src="../../_resources/js/jquery.min.js"></script>
+    <script src="../../_resources/js/popper.min.js"></script>
+    <script src="../../_resources/js/bootstrap.min.js"></script>
+</head>
+<body>
+<header>
+    <button onclick="openNav()"><span class="icons icon-menu"></span> Menu</button>
+</header>
+<aside>
+    <div class="side_nav" id="side_nav">
+        <div class="side_nav-icons">
+            <a href="../index.html"><span class="icon-home"></span></a>
+            <button><span class="icon-adjust"></span></button>
+            <button id="close_btn" onclick="closeNav()"><span class="icon-close"></span></button>
+        </div>
+        <div class="side_nav-links">
+            <a href="#introduction" class="side_nav_section_heading">Introduction</a>
+            <div class="nav_section">
+                <button class="btn side_nav_main_topics" data-toggle="collapse" data-target="#nav_0_day">Roadmap</button>
+                <div id="nav_0_day" class="collapse">
+                    <ul>
+                        <li><a href="#make_it_stick">Make it stick</a></li>
+                        <li><a href="#make_it_collaborative">Collaborate</a></li>
+                        <li><a href="#make_sth">Make Something</a></li>
+                        <li><a href="#learn">Learn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+<main>
+    <section id="introduction">
+        <h1 class="_main_topic">Python</h1>
+        <h1 class="_heading1">Introduction</h1>
+        <p>Learning the Python Programming Language</p>
+    </section>
+
+    <section class="content_wrapper_section" id="roadmap">
+        <h1 class="_main_topic">Roadmap</h1>
+        <div class="container" id="roadmap_">
+            <h2 class="_heading2">Python Roadmap</h2>
+            <ol>
+                <li>Vagrant</li>
+                <li>Shell, navigation</li>
+                <li>Vi (or emacs)</li>
+                <li>Git</li>
+                <li>Professional Technologies</li>
+            </ol>
+        </div>
+        <div class="container content_wrapper" id="vagrant">
+            <h1 class="_heading1">Vagrant & Virtual Machines</h1>
+            <div class="container" id="vagrant_concepts">
+                <h2 class="_heading2">concepts</h2>
+                <ul>
+                    <li>Source code management</li>
+                    <li>Git and Github</li>
+                    <li>The framework</li>
+                    <li>using vagrant on you local machine</li>
+                    <li>approaching a project</li>
+                </ul>
+                <div class="container" id="source_code_management">
+                    <h3 class="_heading3">Source Code Management</h3>
+                    <p>allows a developer to organize code iterations chronologically, and version it for an
+                        application.</p>
+                    <p>most powerful features of source code management systems are in how they allow teams of very
+                        diverse sizes to work together on the same application simultaneously.</p>
+                    <p>some common terms include:</p>
+                    <ul class="list-group">
+                        <li>repository - a project will be called a repository, it's representing the index / the
+                            filesystem root of your project.
+                        </li>
+                        <li>branches of the codebase, that will iterate on separately to other developers. For example a
+                            branch can be used for a feature or a bug fix.
+                        </li>
+                        <li>Once a branch is ready for it (it’s been tested, peer-reviewed, etc.), it can be merged back
+                            to the main branch. The main branch may be called differently: in Git it’s called master ,
+                            in SVN it’s called trunk.
+                        </li>
+                        <li>While coding on their branch, developers are meant to work in small, atomic iterations,
+                            called commits. All commits have a commit message describing in one sentence what’s in
+                            there.
+                        </li>
+                        <li>All commits together are called the history , and it’s a big deal to write meaningful
+                            commits and commit messages in order to keep the project’s history clean at a glance, to
+                            understand what has been going on and who did what.
+                        </li>
+                        <li>Some people might be modifying the same pieces on the codebase on different branches, and
+                            this could create conflicts when one merges those branches together. Some of those conflicts
+                            can obviously only be fixed by a human, and each system has a different way to manage merge
+                            conflicts.
+                        </li>
+                    </ul>
+                </div>
+                <div class="container" id="git_and_github">
+                    <h3 class="_heading3">Git and Github</h3>
+                    <p>Git doesn't copy-paste the whole codebase when branching and tagging, but stores each commit as a
+                        code iteration, in an organized structure that resembles a tree. This allows it to have a much
+                        smarter merging algorithm, and it almost never bothers you with conflicts, except for those that
+                        really need a human decision. As a result, the cost of branching/merging is very low, and people
+                        typically branch/merge a lot, therefore one should never directly work on the “master” branch,
+                        if they’re not the only developer on the project. Also: unlike its predecessors, Git allows to
+                        work and commit without needing to talk with a server, which allows to work on planes, for
+                        instance; and it also can work as a decentralized (peer-to-peer) system, although it’s very
+                        rarely done that way.</p>
+                    <p>A particularity about Git, is that it’s designed to be usable without a central repository (you
+                        can pull code from your friend’s computer, and push you work back there, for instance), but not
+                        many people use it that way. There is usually a central Git server that the whole team pushes
+                        code to and pulls code from; however, that explains why it is often referred as a
+                        “decentralized” system.</p>
+                    <p>So that you can work without a server, the commit operation is local, no one other than your
+                        computer knows you committed something. You can make several commits however you want, but when
+                        you want the server to know about it, you must push them there.</p>
+                    <p>You want to be pulling from the repository often if other people may be working on the same
+                        branch as you, because each pull performs a merge operation between the code you didn't have,
+                        and the code you recently committed locally. Therefore, in order to let you push , Git will
+                        sometimes demand that you pull first, so that the merge can be done on your computer, and you
+                        take care of potential conflicts.</p>
+                    <p>Sometimes, you may have modified 3 files, but there are only two that you wish to include in the
+                        commit you’re about the make. Therefore, Git has a notion of “ index”, in which you add your
+                        modified files so that they’re included in the next commit you register.</p>
+                    <p>How to configure the remote servers your local repository is talking to? They’re called remotes ,
+                        and you can configure however many you need. The main one is typically named origin (that’s the
+                        name that is setup by default when you clone a project from a remote location in the first
+                        place). You can also configure however many branches you need, and name them as you please, and
+                        the default one is usually called master.</p>
+
+                    <p>Git Commands:</p>
+                    <p>$ git clone url_of_your_remote_repository # Clone a repository from a remote repository
+                        $ git add file1 file2 # will add those two files to the index if they were modified
+                        $ git commit -m "Meaningful commit message" # will commit those two files (locally)
+                        $ git add . # will add all of the modified files to the index at once
+                        $ git commit -m "Other meaningful commit message" # will commit all of those files together
+                        $ git push origin master # send all commit to the remote server</p>
+                    <p>on a branch:</p>
+                    <p>$ git branch my_feature # Creating the branch
+                        $ git checkout my_feature # Changing the codebase so that we're on that branch now
+                        $ git checkout -b my_feature # This does the two previous operations in one ;)
+                        $ git add file1 file2
+                        $ git commit -m "Meaningful commit message" # We didn't just commit this on the master branch
+                        like last time, but on the my_feature one
+                        $ git add .
+                        $ git commit -m "Other meaningful commit message"
+                        $ git push origin my_feature # Notice: we're not pushing master anymore, you just create a new
+                        remote branch</p>
+                    <p>Next time you want to work on that branch, you should probably do this first:</p>
+                    <p>$ git checkout my_feature # Just making sure you're currently on the right branch!
+                        $ git pull origin my_feature # Pulling what your coworkers have done so far. </p>
+                    <p>And when you’re done with the whole feature and want to merge it to master:</p>
+                    <p>$ git checkout master
+                        $ git merge my_feature </p>
+                    <p>Git provides many more abilities, such as rewriting pieces of the history of the project if you
+                        feel the commits were not meaningful enough, displaying the history in visually meaningful ways,
+                        …</p>
+                    <p>For instance, you should run this right now, and see how a complex history can be viewed really
+                        nicely:</p>
+                    <p>$ git clone [https://github.com/loverajoel/jstips.git](https://github.com/loverajoel/jstips.git)
+                        # You will need a GitHub account for this to work
+                        $ cd jstips # changing your directory into the one you just downloaded
+                        $ git log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an
+                        %cr)%Creset' --abbrev-commit --date=relative </p>
+
+                    <h4 class="_heading4">Difference between Git and Github</h4>
+                    <p>Git is a source code management tool, that comes with a command-line tool for its users. Github
+                        is one of many services that provide at the same time:</p>
+                    <ul>
+                        <li>a Git repository server to push your code to</li>
+                        <li>a web UI to that view your repositories, with their files and commits</li>
+                        <li>a number of extra features (managing your team and accesses, …) Two GitHub features you have
+                            to get familiarized with are:
+                        </li>
+                        <li>Forks : you can fork any repository on GitHub, and it will duplicate the repository’s
+                            codebase into repository that you own. For instance, if you fork twbs/bootstrap, and your
+                            GitHub username is “my_username”, then it will create the my_username/bootstrap repository,
+                            and it will remember where it was forked from. Usually, you aren’t allowed to push on other
+                            people’s repositories, so that will give you a repository that you can push to, since you
+                            own it.
+                        </li>
+                        <li>Pull requests: once you’ve pushed your code to your repository (or sometimes to a branch of
+                            the main repository, if you’re allowed), then you can create a pull request towards the main
+                            repository’s master branch. Somebody in charge of the main repository will review your pull
+                            request (potentially asking you to change a couple of things), and merge it if it’s suitable
+                            to be in the main product.
+                        </li>
+                    </ul>
+                    <p>Check out: <a href="https://codewords.recurse.com/issues/two/git-from-the-inside-out">Git inside
+                        out.</a></p>
+                </div>
+                <div class="container" id="the_framework">
+                    <h3 class="_heading3">The Framework</h3>
+                    <ol>
+                        <li>Read</li>
+                        <p>Read everything pertinent to the question / project at hand.(man pages, documentation, books
+                            and articles).</p>
+                        <li>Think</li>
+                        <p>Pause, take a breath and think of the solution.</p>
+                        <p>understand all required concepts and algorithms before proceeding to solve the tasks.</p>
+                        <p>Once you've found your algorithm or solution - and only then - start to code.</p>
+                        <p class="note">Don't write any piece of code before you have the solution. Coding should only
+                            be translating you solution to computer code.</p>
+                        <p>To think of your solution, try to break things down; a big problem is easier to solve when
+                            you break it into smaller, easier problems.</p>
+                        <p>Example:</p>
+                        <p>First, rephrase the problem. “What am I trying to accomplish here?”</p>
+                        <p>Then, go through different examples: “if I understand correctly, then with this
+                            input/context/parameters I should output/print/return/draw/… this”… “What could be the edge
+                            cases I have to think about to make sure my function/program will always work correctly and
+                            never crash?”</p>
+                        <p>Next, focus on the basic/regular use cases. “What should my algorithm be?”</p>
+                        <p>When you found it, try to “run” it through different examples on a whiteboard or pen/paper
+                            and see if the input/output match your expectations.</p>
+                        <p>Finally, once you get that, try to see what changes you have to make to take care of all
+                            possible edge cases.</p>
+                        <p class="note">Sometimes, you will be able to “guess” solutions or complete tasks without
+                            totally understanding all the concepts, especially if a task is very small. Do NOT do this,
+                            because if you do not develop your critical thinking skills with smaller learning
+                            opportunities you will not have the ability to solve harder questions. You need to start
+                            thinking like an engineer, and this is how to begin.</p>
+                        <p>Use a whiteboard or pen/paper until you are 100% sure your code will work; this maintains
+                            focus, and keeps your mind active.</p>
+                        <li>Think more + Whiteboard</li>
+                        <p>Write or draw out your problem on a whiteboard or paper. It’s easier to visualize your
+                            problem when it isn’t pure code.</p>
+                        <p>Can’t find the solution? Patiently think more, it’s out there. Also, ensure you read the
+                            resources thoroughly.</p>
+                        <li>Ask why ?</li>
+                        <p>Whether or not your code runs when you input it, make sure you know why it doesn't (or does)
+                            work without looking at the error message.</p>
+                        <p>Also, if someone comes to you with this question and you don’t have the answer, stop
+                            everything and work on answering this question right away.</p>
+                        <p class="note">This is your future, so ensure you have a strong foundation of
+                            understanding.</p>
+                        <li>Read the error messages</li>
+                        <p>Still can’t understand why it doesn't work? Most of the time, the answer is in the error
+                            message.</p>
+                        <li>Google</li>
+                        <p>A lot of the content on the Internet is wrong or incomplete. Always make sure what you are
+                            reading does make sense and is correct by challenging and testing every assumption.</p>
+                        <p>You should only google something specific. This step is NOT about looking at how to do the
+                            project. It should only help answer a specific question or understand a concept.</p>
+                        <p>You are NOT allowed to look at the solution / other people’s code. Even for “analysis”.
+                            Looking at other people’s code / a solution is considered cheating.</p>
+                        <p>NEVER copy and paste something from the Internet. You need to understand everything before
+                            you implement something you read. Typing yourself - instead of cp/paste - ensures that you
+                            better understand and not miss any details.</p>
+                        <li>Ask a peer</li>
+                        <p>It is part of your job to ask for help. You are expected to do so, just like you will be
+                            expected to do so when you will have a job.</p>
+                        <p>if asked for help:</p>
+                        <ul>
+                            <li>Respect every question; there is nothing more demotivating than having someone laughing
+                                at your question or being asked “what? you still don’t know that?”
+                            </li>
+                            <li>Do NOT touch others’ computers / keyboards. Explain, and let the person who asked for
+                                help type and correct their bugs/code.
+                            </li>
+                            <li>Do NOT give the final answer. You are here to guide, help them find the solution by
+                                themselves.
+                            </li>
+                            <li>Sometimes, you won’t be able to help, but you are still responsible to find someone who
+                                can. Stay with the person until it’s resolved. Bonus is that you will also learn how to
+                                solve the problem!
+                            </li>
+                        </ul>
+                    </ol>
+                    <p class="note">Getting a high score is less important than understanding and being able to explain
+                        things.your goal is not to become great students. Your goal is to become great software
+                        engineers, because no one wants to hire students.</p>
+
+                </div>
+                <div class="container" id="approaching_a_project">
+                    <h3 class="_heading3">Approaching a project</h3>
+                    <p>It can be difficult to know how to approach a project. You’ve read resources and tried some
+                        examples, and now it’s time to apply what you know. Where do you start?</p>
+                    <ol>
+                        <li>Read the task or challenge.</li>
+                        <li>Rephrase it in your own words.</li>
+                        <li>Verify expected behavior by getting example inputs and outputs.</li>
+                        <li>Whiteboard your solution with words.</li>
+                        <li>Walk through your solution with an example as if you were a machine. Do only what is written
+                            down. Correct your solution if needed.
+                        </li>
+                        <li>Whiteboard your solution with pseudocode.</li>
+                        <li>Walk through your solution with an example as if you were a machine. Do only what is written
+                            down. Correct your solution if needed.
+                        </li>
+                        <li>Whiteboard your solution with code.</li>
+                        <li>Walk through your solution with an example as if you were a machine. Do only what is written
+                            down. Correct your solution if needed.
+                        </li>
+                        <li>Write your code on your computer. [Note: This is this first time you are using your
+                            computer! Only when you know exactly what to code.]
+                        </li>
+                        <li>Test your code on your computer.</li>
+                        <li>Debug if necessary.</li>
+                        <li>Be sure to break your task or project into smaller and smaller pieces, until you are
+                            comfortable solving each piece with the above steps.
+                        </li>
+                    </ol>
+                </div>
+                <div class="container" id="vm_and_vagrant">
+                    <h3 class="_heading3">VM and Vagrant</h3>
+                    <p>we use vagrant because at the end of the day you can end up having completely different behaviors
+                        or even have something not work because of software conflicts.</p>
+                    <p>Virtual machines - are Virtual “Computers” that will emulate everything from the CPU to the RAM
+                        and Disk and provide the functionality of a physical computer.</p>
+                    <p>The two types of VMs include:</p>
+                    <ol>
+                        <li>System Virtual Machine - (a.k.a full virtualization) provides a substitute for a real
+                            machine. They provide functionality needed to execute entire operating systems. A hypervisor
+                            uses native execution to share and manage hardware, allowing for multiple environments which
+                            are isolated from one another, yet exist on the same physical machine.
+                        </li>
+                        <li>Process Virtual Machine - are designed to execute computer programs in a
+                            platform-independent environment.
+                        </li>
+                    </ol>
+                    <p>Virtual Machines in the context of development are a means to isolate and maintain a stable
+                        environment that will basically run the same way on any host (any computer). </p>
+                    <p>Using virtual environments prevents developers from saying “I don’t understand, it works on my
+                        machine …”.</p>
+                </div>
+                <div class="container" id="tools">
+                    <h3 class="_heading3">Tools</h3>
+                    <p>VirtualBox is a Virtual Machine provider. The virtual machines themselves will be spawned using
+                        VirtualBox.</p>
+                    <p>Vagrant is a tool that sits on top of a VM provider.</p>
+                    <p>Both vagrant and Virtual Box enable one to use a virtual environment (virtualization) and also
+                        allow you to manage and ship isolated development environments.</p>
+                </div>
+                <div class="container" id="zero_day">
+                    <h3 class="_heading3">Zero Day</h3>
+                    <p>A zero-day (also known as 0-day) is a computer-software vulnerability either unknown to those who
+                        should be interested in its mitigation (including the vendor of the target software) or known
+                        and a patch has not been developed.</p>
+                    <p>Until the vulnerability is mitigated, hackers can exploit it to adversely affect programs, data,
+                        additional computers or a network. An exploit directed at a zero-day is called a zero-day
+                        exploit, or zero-day attack.</p>
+                    <p>The term "zero-day" originally referred to the number of days since a new piece of software was
+                        released to the public, so "zero-day software" was obtained by hacking into a developer's
+                        computer before release.</p>
+                    <p>Eventually the term was applied to the vulnerabilities that allowed this hacking, and to the
+                        number of days that the vendor has had to fix them. Once the vendor learns of the vulnerability,
+                        they will usually create patches or advise workarounds to mitigate it.</p>
+                    <p>The more recently that the vendor has become aware of the vulnerability, the more likely it is
+                        that no fix or mitigation has been developed. Once a fix is developed, the chance of the exploit
+                        succeeding decreases as more users apply the fix over time.</p>
+                </div>
+            </div>
+            <div class="container" id="vagrant_objectives">
+                <h2 class="_heading2">objectives</h2>
+                <ul>
+                    <li>what is a zero-day</li>
+                    <li>what is a virtual machine</li>
+                    <li>who wrote vagrant</li>
+                    <li>what is ubuntu</li>
+                    <li>what does ubuntu mean</li>
+                    <li>how to use VMs with vagrant</li>
+                    <li>what does the command uname do</li>
+                    <li>what is source code management</li>
+                    <li>what is Git</li>
+                    <li>what is Github</li>
+                    <li>what is the difference between Git and Github</li>
+                    <li>how to create a repository</li>
+                    <li>what is a README</li>
+                    <li>how to commit</li>
+                    <li>how to write helpful commit messages</li>
+                    <li>how to push code</li>
+                </ul>
+            </div>
+            <div class="container" id="vagrant_quiz">
+                <h2 class="_heading2">Quiz</h2>
+                <ol>
+                    <li>What is a virtual machine ? (an emulation of a computer system)</li>
+                    <li>Ubuntu is a ________ distribution ? (linux)</li>
+                    <li>What is the difference between Git and Github ? (Git is a version control tool; Github is an
+                        online service built around the Git tool)
+                    </li>
+                    <li>Which of the following is a helpful commit message ? ("fix incorrect parsing of user input")
+                        (other options: fix code, can someone review this commit?)
+                    </li>
+                    <li>You wrote your first script but it does not execute properly. In order to solve the problem,
+                        what's the first thing to do ? (read the documentation)
+                    </li>
+                </ol>
+            </div>
+            <div class="container" id="vagrant_tasks">
+                <h2 class="_heading2">Tasks</h2>
+                <ol>
+                    <li>do this</li>
+                </ol>
+            </div>
+        </div>
+        <div class="container content_wrapper" id="shell_navigation">
+            <h1 class="_heading1">Shell, Navigation</h1>
+            <p>For the linux command line, read (The Linux Command Line by William E. Shotts <a
+                    href="https://sourceforge.net/projects/linuxcommand/files/TLCL/19.01/TLCL-19.01.pdf/download">Download</a>)
+            </p>
+            <div class="container" id="shell_navigation_concepts">
+                <h2 class="_heading2">Concepts</h2>
+                <ul>
+                    <li>Linux navigation</li>
+                    <li>Linux - looking around</li>
+                    <li>Linux - manipulating files</li>
+                </ul>
+                <div class="container" id="linux_navigation">
+                    <h3 class="_heading3">Linux Navigation</h3>
+                </div>
+            </div>
+            <div class="container" id="shell_navigation_objectives">
+                <h2 class="_heading2">Objectives</h2>
+                <ul>
+                    <li>How to navigate in an Unix system</li>
+                    <li>How to list files and directories</li>
+                    <li>How to display the content of a file</li>
+                    <li>How to create a file or directory</li>
+                    <li>How to remove a file or directory</li>
+                    <li>How to move or copy a file or directory</li>
+                </ul>
+            </div>
+            <div class="container" id="shell_navigation_quiz">
+                <h2 class="_heading2">Quiz</h2>
+                <ol>
+                    <li>command used to display the current path of your working directory ? (pwd)</li>
+                    <li>command to use to list all files of your current directory ? (ls)</li>
+                    <li>command to change directory ? (cd)</li>
+                    <li>command to display the content of a file ? (less)</li>
+                    <li>command to create an empty file ? (touch)</li>
+                    <li>command to copy a file (or directory if additional argument) ? (cp)</li>
+                    <li>command to rename or move a file (or directory) ? (mv)</li>
+                    <li>command to delete a file (or directory if additional argument) ? (rm)</li>
+                    <li>command to create a directory ? (mkdir)</li>
+                    <li>command to delete a directory ? (rmdir)</li>
+                </ol>
+            </div>
+            <div class="container" id="shell_navigation_tasks">
+                <h2 class="_heading2">Tasks</h2>
+            </div>
+        </div>
+        <div class="container content_wrapper" id="emacs">
+            <h1 class="_heading1">Emacs</h1>
+            <div class="container" id="emacs_concepts">
+                <h2 class="_heading2">Concepts</h2>
+                <div class="container" id="emacs_introduction">
+                    <h3 class="_heading3">Introduction</h3>
+                    <p>Emacs is a text editor</p>
+                    <p>Other options include: Vi</p>
+                    <p>Check out: <a href="https://www.gnu.org/software/emacs/tour/">A guided tour on Emacs</a></p>
+                </div>
+            </div>
+            <div class="container" id="emacs_objectives">
+                <h2 class="_heading2">Objectives</h2>
+                <ul>
+                    <li>What is Emacs</li>
+                    <li>Who is Richard Stallman</li>
+                    <li>How to open and save files</li>
+                    <li>What is a buffer and how to switch from one to another</li>
+                    <li>How to use the mark and the point to set the region</li>
+                    <li>How to search forward and backward</li>
+                    <li>How to invoke commands by name</li>
+                    <li>How to undo</li>
+                    <li>How to cancel half-entered commands</li>
+                    <li>How to quit Emacs</li>
+                </ul>
+            </div>
+            <div class="container" id="emacs_quiz">
+                <h2 class="_heading2">Quiz</h2>
+                <ol>
+                    <li>In Emacs' documentation, what does c in a shortcut command stand for ? (Ctrl)</li>
+                    <li>In Emacs' documentation, what does M in a shortcut command stand for ? (Alt)</li>
+                    <li>In Emacs, a buffer is an object that a file's text is held in ? (True)</li>
+                    <li>You can only have one buffer open in Emacs at a time (false)</li>
+                </ol>
+            </div>
+            <div class="container" id="emacs_tasks">
+                <h2 class="_heading2">Tasks</h2>
+            </div>
+        </div>
+        <div class="container content_wrapper" id="vi">
+            <h1 class="_heading1">Vi</h1>
+        </div>
+        <div class="container content_wrapper" id="git_github">
+            <h1 class="_heading1">Git and Github</h1>
+            <div class="container" id="git_github_concepts">
+                <h2 class="_heading2">Concepts</h2>
+            </div>
+            <div class="container" id="git_github_objectives">
+                <h2 class="_heading2">Objectives</h2>
+                <ul>
+                    <li>What is source code management</li>
+                    <li>What is Git</li>
+                    <li>What is Github</li>
+                    <li>What is the difference between Git and Github</li>
+                    <li>How to create a repository</li>
+                    <li>What is a README (<a
+                            href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/about-readmes">Learn
+                        more</a>)
+                    </li>
+                    <li>How to write good READMEs</li>
+                    <li>How to commit</li>
+                    <li>How to write helpful commit messages</li>
+                    <li>How to push code</li>
+                    <li>How to pull updates (<a
+                            href="https://codeinthehole.com/tips/pull-requests-and-other-good-practices-for-teams-using-github/">Learn
+                        more</a>)
+                    </li>
+                    <li>How to create a branch</li>
+                    <li>How to merge branches</li>
+                    <li>How to work as collaborators on a project</li>
+                    <li>Which files should and which files should not appear in your repo</li>
+                    <li>What is git branching (<a href="https://learngitbranching.js.org/">Learn more</a>)</li>
+                    <li>How to create a branch</li>
+                    <li>How to navigate to a certain branch</li>
+                </ul>
+            </div>
+            <div class="container" id="git_github_quiz">
+                <h2 class="_heading2">Quiz</h2>
+                <ol>
+                    <li>Which command is use to add a single file only (file_name is 0-test) ? (git add 0-test)</li>
+                    <li>What command can you use to see what changes have been staged, which haven't and which files are
+                        not being tracked by git ? (git status)
+                    </li>
+                </ol>
+            </div>
+            <div class="container" id="git_github_tasks">
+                <h2 class="_heading2">Tasks</h2>
+            </div>
+        </div>
+        <div class="container content_wrapper" id="professional_technologies">
+            <h1 class="_heading1">Professional Technologies</h1>
+            <div class="container" id="profession_technologies_concepts">
+                <h2 class="_heading2">Concepts</h2>
+                <ul>
+                    <li>Slack (<a href="https://alx-intranet.hbtn.io/concepts/221">Learn more</a>)</li>
+                    <li>Chrome</li>
+                </ul>
+            </div>
+            <div class="container" id="profession_technologies_objectives">
+                <h2 class="_heading2">Objectives</h2>
+            </div>
+            <div class="container" id="profession_technologies_quiz">
+                <h2 class="_heading2">Quiz</h2>
+                <ol>
+                    <li>When asking questions on slack, you should always use @here ? (False)</li>
+                    <li>In slack @channel should never be used ? (True)</li>
+                    <li>When answering someone's question in slack, i should use a _______ to answer them ? (thread)
+                    </li>
+                    <li>Which slack should you use to ask a question about a project ? (local cohort channel)</li>
+                    <li>You should check your email at least every ________ (day)</li>
+                    <li>You have a virtual meeting and your environment is a bit messy. What should you do ? (Quickly
+                        clean up before your meeting, User a holberton virtual background during the meeting)
+                    </li>
+                    <li>You get and email and an invitation to a mandatory meeting with a staff member. What should you
+                        do ? (RSVP affirmatively or contact the staff member to reschedule the meeting)
+                    </li>
+                    <li>Google chrome is the only browser that allows access to ALX' Intranet ? (False)</li>
+                    <li>You open and close the same resource multiple times which completing various projects. What
+                        should you do to streamline you workflow ? (Bookmark the resource that you constantly used)
+                    </li>
+                </ol>
+            </div>
+            <div class="container" id="profession_technologies_tasks">
+                <h2 class="_heading2">Tasks</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="content_wrapper_section" id="system_engineering_and_devops">
+        <h1 class="_heading1">System Engineering & Devops</h1>
+        <div class="container" id="system_engineering_and_devops_overview">
+            <h2 class="_heading2">Topics Overview</h2>
+            <ol>
+                <li>Shell, basics</li>
+                <li>Shell, permissions</li>
+                <li>Shell, init files, variables and expansions</li>
+                <li>Shell, I/O redirections and filters</li>
+            </ol>
+        </div>
+        <div class="container content_wrapper" id="shell_basics">
+            <h1 class="_heading1">Shell, basics</h1>
+            <div class="container" id="shell_basics_concepts">
+                <h2 class="_heading2">Concepts</h2>
+                <ul>
+                    <li>What is "the shell"?</li>
+                    <li>Navigation</li>
+                    <li>Looking around</li>
+                    <li>A guided tour</li>
+                    <li>manipulating files</li>
+                    <li>working with commands</li>
+                    <li>reading man pages</li>
+                    <li>keyboard shortcuts for bash</li>
+                    <li>LTS</li>
+                    <li>Shebang</li>
+                </ul>
+                <div class="container" id="what_is_the_shell">
+                    <h3 class="_heading3">What is the shell</h3>
+                    <p>the shell is a program that takes commands from the keyboard and gives them to the operating
+                        system to perform.</p>
+                    <p>in old days, it was the only user interface on Unix systems such as Linux.</p>
+                    <p>Nowadays we have GUIs and CLIs such as the shell.</p>
+                    <p>on most linux systems, a program called bash (Bourne Again Shell) - an enhanced version of the
+                        original Unix shell program, sh, written by Steve Bourne - acts as the shell program.</p>
+
+                    <h4 class="_heading4">What is a terminal?</h4>
+                    <p>it's a program called a terminal emulator.</p>
+                    <p>it's a program that opens a window (which has shell prompts - contain username and name of the
+                        machine followed by a dollar sign) and lets you interact with the shell.</p>
+                    <p>it simply gives us access to a shell session.</p>
+                    <p>examples of terminal emulators on linux:</p>
+                    <ul>
+                        <li>Gnome-terminal</li>
+                        <li>konsole</li>
+                        <li>xterm</li>
+                        <li>rxvt</li>
+                        <li>kvt</li>
+                        <li>nxterm</li>
+                        <li>eterm</li>
+                    </ul>
+                    <p class="notes">if the last character of your shell prompt is # rather than $, you're operating as
+                        the superuser. This means you have admin privileges. This can be dangerous, since you are able
+                        to delete or overwrite any file on the system. Unless you absolutely need admin privileges,
+                        don't operate as the superuser.</p>
+                </div>
+                <div class="container" id="navigation">
+                    <h3 class="_heading3">Navigation</h3>
+                    <p>This will focus on three commands: pwd, cd and ls</p>
+
+                    <h4 class="_heading4">File system organization</h4>
+                    <p>Like Windows, the files on a Linux system are arranged in what is called a hierarchical directory
+                        structure. </p>
+                    <p>This means that they are organized in a tree-like pattern of directories (called folders in other
+                        systems), which may contain files and subdirectories. </p>
+                    <p>The first directory in the file system is called the root directory. The root directory contains
+                        files and subdirectories, which contain more files and subdirectories and so on and so on.</p>
+                    <p>One important difference between Windows and Unix-like operating systems such as Linux is that
+                        Linux does not employ the concept of drive letters.</p>
+                    <p>While Windows drive letters split the file system into a series of different trees (one for each
+                        device), Linux always has a single tree.</p>
+                    <p>Different storage devices may be different branches of the tree, but there is always just a
+                        single tree.</p>
+
+                    <h4 class="_heading4">pwd</h4>
+                    <p>Since the command line interface cannot provide graphic pictures of the file system structure, we
+                        must have a different way of representing it. To do this, think of the file system tree as a
+                        maze, and that we are standing in it. At any given moment, we are located in a single directory.
+                        Inside that directory, we can see its files and the pathway to its parent directory and the
+                        pathways to the subdirectories of the directory in which we are standing.</p>
+                    <p>The directory we are standing in is called the working directory. To see the name of the working
+                        directory, we use the pwd command.</p>
+                    <div class="container linux_command">
+                        <p>pwd</p>
+                    </div>
+
+                    <h4 class="_heading4">ls</h4>
+                    <p>When we first log on to our Linux system, the working directory is set to our home directory.
+                        This is where we put our files. On most systems, the home directory will be called
+                        /home/user_name, but it can be anything according to the whims of the system administrator.</p>
+                    <p>To list the files in the working directory, we use the ls command.</p>
+                    <div class="container linux_command">
+                        <p>ls</p>
+                    </div>
+                    <p>Ways we can use ls:</p>
+                    <ul>
+                        <li>ls : list the files in the working dir</li>
+                        <li>ls /dir_path : list files in the dir specified</li>
+                        <li>ls -l : list files in the working dir in long format</li>
+                        <li>ls -l /dir_path : list files in the dir_path in long format</li>
+                        <li>ls -la .. : list all files (even one with names beginning with a period character, which are
+                            normally hidden) in the parent of the working dir in long format.
+                        </li>
+                    </ul>
+
+                    <h4 class="_heading4">cd</h4>
+                    <p>To change the working directory (where we are standing in the maze) we use the cd command. To do
+                        this, we type cd followed by the pathname of the desired working directory. </p>
+                    <p>A pathname is the route we take along the branches of the tree to get to the directory we want.
+                        Pathnames can be specified two different ways; absolute pathnames or relative pathnames.</p>
+                    <h5 class="_heading5">absolute pathname</h5>
+                    <p>An absolute pathname begins with the root directory and follows the tree branch by branch until
+                        the path to the desired directory or file is completed. For example, there is a directory on
+                        your system in which most programs are installed. The pathname of the directory is /usr/bin.
+                        This means from the root directory (represented by the leading slash in the pathname) there is a
+                        directory called "usr" which contains a directory called "bin".</p>
+                    <p>example</p>
+                    <div class="container linux_command">
+                        <p>cd /usr/bin</p>
+                    </div>
+                    <h5 class="_heading5">relative pathname</h5>
+                    <p>starts from the working directory. To do this, it uses a couple of special notations to represent
+                        relative positions in the file system tree. These special notations are "." (dot) and ".." (dot
+                        dot).</p>
+                    <p>The "." notation refers to the working directory itself and the ".." notation refers to the
+                        working directory's parent directory.</p>
+
+                    <p class="notes">If we type cd followed by nothing, cd will change the working directory to our home
+                        directory.</p>
+                    <p class="notes">A related shortcut is to type cd ~user_name. In this case, cd will change the
+                        working directory to the home directory of the specified user.</p>
+                    <p class="notes">Typing cd - changes the working directory to the previous one.</p>
+
+                    <h4 class="_heading4">Facts about file names</h4>
+                    <ol>
+                        <li>File names that begin with a period character are hidden. This only means that ls will not
+                            list them unless we say ls -a. When your account was created, several hidden files were
+                            placed in your home directory to configure things for your account. Later on we will take a
+                            closer look at some of these files to see how you can customize our environment. In
+                            addition, some applications will place their configuration and settings files in your home
+                            directory as hidden files.
+                        </li>
+                        <li>File names in Linux, like Unix, are case sensitive. The file names "File1" and "file1" refer
+                            to different files.
+                        </li>
+                        <li>Linux has no concept of a "file extension" like Windows systems. You may name files any way
+                            you like. However, while Linux itself does not care about file extensions, many application
+                            programs do.
+                        </li>
+                        <li>Though Linux supports long file names which may contain embedded spaces and punctuation
+                            characters, limit the punctuation characters to period, dash, and underscore. Most
+                            importantly, do not embed spaces in file names. If you want to represent spaces between
+                            words in a file name, use underscore characters. You will thank yourself later.
+                        </li>
+                    </ol>
+                </div>
+                <div class="container" id="looking_around">
+                    <h3 class="_heading3">Looking around</h3>
+                    <p>Most commands operate like this:</p>
+                    <p>command -options arguments</p>
+                    <p>where command is the name of the command, -options is one or more adjustments to the command's
+                        behavior, and arguments is one or more "things" upon which the command operates.</p>
+
+                    <h4 class="_heading4">Closer look at the long format</h4>
+                    <p>If we use the -l option with ls, you will get a file listing that contains a wealth of
+                        information about the files being listed.</p>
+                    <p>example:</p>
+                    <div class="container linux_command">
+                        <p>drwxrr-xr-x 6 me me 1024 Oct 9 2019 web_page</p>
+                    </div>
+                    <ul>
+                        <li>web_page - file name (name of the file of dir)</li>
+                        <li>Oct 9 2019 - modification time (last time the file was modified. If the last modification
+                            occurred more than six months in the past, the date and year are displayed. Otherwise, the
+                            time of day is shown.)
+                        </li>
+                        <li>1024 - size in bytes (size of the file in bytes)</li>
+                        <li>me - group (The name of the group that has file permissions in addition to the file's
+                            owner.)
+                        </li>
+                        <li>6 me - owner (The name of the user who owns the file.)</li>
+                        <li>drwxr-xr-x - file permissions (A representation of the file's access permissions. The first
+                            character is the type of file. A "-" indicates a regular (ordinary) file. A "d" indicates a
+                            directory. The second set of three characters represent the read, write, and execution
+                            rights of the file's owner. The next three represent the rights of the file's group, and the
+                            final three represent the rights granted to everybody else.)
+                        </li>
+                    </ul>
+
+                    <h4 class="_heading4">less</h4>
+                    <p>less is a program that lets us view text files. This is very handy since many of the files used
+                        to control and configure Linux are human readable.</p>
+                    <p>What is "text"?</p>
+                    <p>There are many ways to represent information on a computer. All methods involve defining a
+                        relationship between the information and some numbers that will be used to represent it.
+                        Computers, after all, only understand numbers and all data is converted to numeric
+                        representation.</p>
+                    <p>Some of these representation systems are very complex (such as compressed multimedia files),
+                        while others are rather simple. One of the earliest and simplest is called ASCII text. ASCII
+                        (pronounced "As-Key") is short for American Standard Code for Information Interchange. This is a
+                        simple encoding scheme that was first used on Teletype machines to map keyboard characters to
+                        numbers.</p>
+                    <p>Text is a simple one-to-one mapping of characters to numbers. It is very compact. Fifty
+                        characters of text translates to fifty bytes of data. Throughout a Linux system, many files are
+                        stored in text format and there are many Linux tools that work with text files. Even Windows
+                        systems recognize the importance of this format. The well-known NOTEPAD.EXE program is an editor
+                        for plain ASCII text files.</p>
+                    <h5 class="_heading5">invoking less command</h5>
+                    <p>type:</p>
+                    <div class="container linux_command">
+                        <p>less text_file</p>
+                    </div>
+                    <h5 class="_heading5">Controlling less</h5>
+                    <p>Once started, less will display the text file one page at a time.</p>
+                    <p>We can use the Page Up and Page Down keys to move through the text file. To exit less, we type
+                        "q". Here are some commands that less will accept:</p>
+                    <ul>
+                        <li>Page up or b - scroll back one page</li>
+                        <li>page down or space - scroll forward one page</li>
+                        <li>G - go to the end of the text file</li>
+                        <li>1G - go to beginning of the text file</li>
+                        <li>/characters - search forward in the text file for an occurrence of the specified
+                            characters
+                        </li>
+                        <li>n - repeat the previous search</li>
+                        <li>h - display a complete list less commands and options</li>
+                        <li>q - quit</li>
+                    </ul>
+
+                    <h4 class="_heading4">File types</h4>
+                    <p>As we wander around our Linux system, it is helpful to determine what kind of data a file
+                        contains before we try to view it.</p>
+                    <p>This is where the file command comes in. file will examine a file and tell us what kind of file
+                        it is.</p>
+                    <p>The file command:</p>
+                    <div class="container linux_command">
+                        <p>file name_of_file</p>
+                    </div>
+                    <p>The file program can recognize most types of files, such as:</p>
+                    <ul>
+                        <li>ASCII text - name says it all (viewable as text? yes)</li>
+                        <li>Bourne-Again shell script text - A bash script (viewable as text? yes)</li>
+                        <li>ELF 64-bit LSB executable - An executable binary program ((viewable as text? no))</li>
+                        <li>ELF 64-bit LSB shared object - A shared library (viewable as text? no)</li>
+                        <li>GNU tar archive - A tape archive file. A common way of storing groups of files. (viewable as
+                            text? no, use tar tvf to view listing)
+                        </li>
+                        <li>gzip compressed data - An archive compressed with gzip (viewable as text? no)</li>
+                        <li>HTML document text - A web page (viewable as text? yes)</li>
+                        <li>JPEG image data - A compressed JPEG image (viewable as text? no)</li>
+                        <li>PostScript document text - A PostScript file. (viewable as text? yes)</li>
+                        <li>Zip archive data - An archive compressed with zip. (viewable as text? yes)</li>
+                    </ul>
+                    <p class="notes">While it may seem that most files cannot be viewed as text, a surprising number can
+                        be. This is especially true of the important configuration files. During our adventure we will
+                        see that many features of the operating system are controlled by text configuration files and
+                        shell scripts. In Linux, there are no secrets!</p>
+                </div>
+                <div class="container" id="a_guided_tour">
+                    <h3 class="_heading3">A guided tour</h3>
+                    <p>for each dir listed:</p>
+                    <ul>
+                        <li>cd into each dir</li>
+                        <li>use ls to list contents of the dir</li>
+                        <li>if interesting file, use file command to determine it's contents</li>
+                        <li>for text files, use less to view them</li>
+                    </ul>
+                    <p>List of Dirs in Linux</p>
+                    <ol>
+                        <li>/ :The root directory where the file system begins. The root directory will probably contain
+                            only subdirectories.
+                        </li>
+                        <li>/boot :This is where the Linux kernel and boot loader files are kept. The kernel is a file
+                            called vmlinuz.
+                        </li>
+                        <li>/etc :The /etc directory contains the configuration files for the system. All of the files
+                            in /etc should be text files. Some points of interest are:
+                            /etc/passwd
+                            The passwd file contains the essential information for each user. This is where user
+                            accounts are defined.
+                            /etc/fstab
+                            The fstab file contains a table of devices that get mounted when the system boots. This file
+                            defines the system's disk drives.
+                            /etc/hosts
+                            This file lists the network host names and IP addresses that are intrinsically known to the
+                            system.
+                            /etc/init.d
+                            This directory contains the scripts that start various system services at boot time.
+                        </li>
+                        <li>/bin, /usr/bin :These two directories contain most of the programs for the system. The /bin
+                            directory has the essential programs that the system requires to operate, while /usr/bin
+                            contains applications for the system's users.
+                        </li>
+                        <li>/sbin, /usr/sbin :The sbin directories contain programs for system administration, mostly
+                            for use by the superuser.
+                        </li>
+                        <li>/usr :The /usr directory contains a variety of things that support user applications. Some
+                            highlights:
+                            /usr/share/X11
+                            Support files for the X Window system
+                            /usr/share/dict
+                            Dictionaries for the spelling checker. Yes, Linux comes with a spelling checker. See look
+                            and aspell.
+                            /usr/share/doc
+                            Various documentation files in a variety of formats.
+                            /usr/share/man
+                            The man pages are kept here.
+                        </li>
+                        <li>/usr/local :/usr/local and its subdirectories are used for the installation of software and
+                            other files for use on the local machine. What this really means is that software that is
+                            not part of the official distribution (which usually goes in /usr/bin) goes here.
+
+                            When you find interesting programs to install on your system, they should be installed in
+                            one of the /usr/local directories. Most often, the directory of choice is /usr/local/bin.
+                        </li>
+                        <li>/var The /var directory contains files that change as the system is running. This includes:
+                            /var/log
+                            Directory that contains log files. These are updated as the system runs. It's a good idea to
+                            view the files in this directory from time to time, to monitor the health of your system.
+                            /var/spool
+                            This directory is used to hold files that are queued for some process, such as mail messages
+                            and print jobs. When a user's mail first arrives on the local system (assuming it has local
+                            mail, a rare occurrence on modern machines that are not mail servers), the messages are
+                            first stored in /var/spool/mail
+                        </li>
+                        <li>/lib :The shared libraries (similar to DLLs in that other operating system) are kept here.
+                        </li>
+                        <li>/home :/home is where users keep their personal work. In general, this is the only place
+                            users are allowed to write files. This keeps things nice and clean :-)
+                        </li>
+                        <li>/root :This is the superuser's home directory.</li>
+                        <li>/tmp :/tmp is a directory in which programs can write their temporary files.</li>
+                        <li>/dev :The /dev directory is a special directory, since it does not really contain files in
+                            the usual sense. Rather, it contains devices that are available to the system. In Linux
+                            (like Unix), devices are treated like files. You can read and write devices as though they
+                            were files. For example /dev/fd0 is the first floppy disk drive, /dev/sda is the first hard
+                            drive. All the devices that the kernel understands are represented here.
+                        </li>
+                        <li>/proc :The /proc directory is also special. This directory does not contain files. In fact,
+                            this directory does not really exist at all. It is entirely virtual. The /proc directory
+                            contains little peep holes into the kernel itself. There are a group of numbered entries in
+                            this directory that correspond to all the processes running on the system. In addition,
+                            there are a number of named entries that permit access to the current configuration of the
+                            system. Many of these entries can be viewed. Try viewing /proc/cpuinfo. This entry will tell
+                            you what the kernel thinks of the system's CPU.
+                        </li>
+                        <li>/media :Finally, we come to /media, a normal directory which is used in a special way. The
+                            /media directory is used for mount points. As we learned in the second lesson, the different
+                            physical storage devices (like hard disk drives) are attached to the file system tree in
+                            various places. This process of attaching a device to the tree is called mounting. For a
+                            device to be available, it must first be mounted.
+
+                            When your system boots, it reads a list of mounting instructions in the /etc/fstab file,
+                            which describes which device is mounted at which mount point in the directory tree. This
+                            takes care of the hard drives, but we may also have devices that are considered temporary,
+                            such as optical disks and USB storage devices. Since these are removable, they do not stay
+                            mounted all the time. The /media directory is used by the automatic device mounting
+                            mechanisms found in modern desktop oriented Linux distributions. To see what devices and
+                            mount points are used, type mount.
+                        </li>
+                    </ol>
+
+                    <h4 class="_heading4">Weird kind of file</h4>
+                    <p>During your tour, you probably noticed a strange kind of directory entry, particularly in the
+                        /lib directory. When listed with ls -l, you might have seen something like this:</p>
+                    <div class="container linux_command">
+                        <p>lrwxrwxrwx 25 Jul 3 16:42 System.map -> /boot/System.map-4.0.36-3</p>
+                    </div>
+                    <p>Notice the files, System.map, module-info and vmlinuz. See the strange notation after the file
+                        names?</p>
+                    <p>Files such as this are called symbolic links. Symbolic links are a special type of file that
+                        points to another file. With symbolic links, it is possible for a single file to have multiple
+                        names. Here's how it works: Whenever the system is given a file name that is a symbolic link, it
+                        transparently maps it to the file it is pointing to.</p>
+                    <p>Just what is this good for? This is a very handy feature. Let's consider the directory listing
+                        above (which is the /boot directory of an old system). This system has had multiple versions of
+                        the Linux kernel installed. We can see this from the files vmlinuz-4.0.36-0.7 and
+                        vmlinuz-4.0.36-3. These file names suggest that both version 4.0.36-0.7 and 4.0.36-3 are
+                        installed. Because the file names contain the version it is easy to see the differences in the
+                        directory listing. However, this would be confusing to programs that rely on a fixed name for
+                        the kernel file. These programs might expect the kernel to simply be called "vmlinuz". Here is
+                        where the beauty of the symbolic link comes in. By creating a symbolic link called vmlinuz that
+                        points to vmlinuz-4.0.36-3, we have solved the problem.</p>
+                    <p class="notes">To create symbolic links, we use the ln command.</p>
+                </div>
+                <div class="container" id="manipulating_files">
+                    <h3 class="_heading3">Manipulating files</h3>
+                    <p>Commands looked at are:</p>
+                    <ul>
+                        <li>cp - copy files and dirs</li>
+                        <li>mv - move or rename files and directories</li>
+                        <li>rm - remove files and directories</li>
+                        <li>mkdir - create directories</li>
+                    </ul>
+                    <p>Now, to be frank, some of the tasks performed by these commands are more easily done with a
+                        graphical file manager. With a file manager, you can drag and drop a file from one directory to
+                        another, cut and paste files, delete files, etc. So why use these old command line programs?</p>
+                    <p>The answer is power and flexibility. While it is easy to perform simple file manipulations with a
+                        graphical file manager, complicated tasks can be easier with the command line programs. For
+                        example, how would you copy all the HTML files from one directory to another, but only copy
+                        files that did not exist in the destination directory or were newer than the versions in the
+                        destination directory? Pretty hard with with a file manager. Pretty easy with the command
+                        line:</p>
+                    <div class="container linux_command">
+                        <p>cp -u *.html destination</p>
+                    </div>
+
+                    <h4 class="_heading4">Wildcards</h4>
+                    <p>shell feature that makes these commands so powerful. Since the shell uses filenames so much, it
+                        provides special characters to help you rapidly specify groups of filenames. These special
+                        characters are called wildcards. Wildcards allow you to select filenames based on patterns of
+                        characters.</p>
+                    <ul>
+                        <li>* matches any characters</li>
+                        <li>? matches any single character</li>
+                        <li>[character] Matches any character that is a member of the set characters. The set of
+                            characters may also be expressed as a POSIX character class
+                        </li>
+                        <ul>
+                            <li>[:alnum:] Alphanumeric characters</li>
+                            <li>[:alpha:] Alphabetic characters</li>
+                            <li>[:digit:] Numerals</li>
+                            <li>[:upper:] Uppercase alphabetic characters</li>
+                            <li>[:lower:] Lowercase alphabetic characters</li>
+                        </ul>
+                        <li>[!characters] Matches any character that is not a member of the set characters</li>
+                    </ul>
+                    <a href="http://linuxcommand.org/lc3_lts0050.php">Read more</a>
+                </div>
+                <div class="container" id="working_with_commands">
+                    <h3 class="_heading3">Working with commands</h3>
+                    <p>Commands looked at:</p>
+                    <ul>
+                        <li>type -display info about command type</li>
+                        <li>which - locate a command</li>
+                        <li>help - display reference page for shell builtin</li>
+                        <li>man - display an on-line command reference</li>
+                    </ul>
+
+                    <h4 class="_heading4">What are commands?</h4>
+                    <p>commands can be one of 4 different kinds:</p>
+                    <ol>
+                        <li>An executable program like all those files we saw in /usr/bin. Within this category,
+                            programs can be compiled binaries such as programs written in C and C++, or programs written
+                            in scripting languages such as the shell, Perl, Python, Ruby, etc.
+                        </li>
+                        <li>A command built into the shell itself. bash provides a number of commands internally called
+                            shell builtins. The cd command, for example, is a shell builtin.
+                        </li>
+                        <li>A shell function. These are miniature shell scripts incorporated into the environment. We
+                            will cover configuring the environment and writing shell functions in later lessons, but for
+                            now, just be aware that they exist.
+                        </li>
+                        <li>An alias. Commands that we can define ourselves, built from other commands. This will be
+                            covered in a later lesson.
+                        </li>
+                    </ol>
+
+                    <h4 class="_heading4">README and Other documentation files</h4>
+                    <p>Many software packages installed on your system have documentation files residing in the
+                        /usr/share/doc directory. Most of these are stored in plain text format and can be viewed with
+                        less. Some of the files are in HTML format and can be viewed with a web browser. We may
+                        encounter some files ending with a “.gz” extension. This indicates that they have been
+                        compressed with the gzip compression program. The gzip package includes a special version of
+                        less called zless that will display the contents of gzip-compressed text files.</p>
+                    <a href="http://linuxcommand.org/lc3_lts0060.php">Read more on working with commands</a>
+                </div>
+                <div class="container" id="reading_man_pages">
+                    <h3 class="_heading3">Reading man pages</h3>
+                    <a href="http://linuxcommand.org/lc3_man_pages/man1.html">Read more about man pages</a>
+                </div>
+                <div class="container" id="keyboard_shortcuts_for_bash">
+                    <h3 class="_heading3">Keyboard shortcuts for Bash</h3>
+                    <a href="https://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/">Read
+                        more about keyboard shortcuts for Bash</a>
+                </div>
+                <div class="container" id="shebang">
+                    <h3 class="_heading3">Shebang</h3>
+                    <p>In computing, a shebang is the character sequence consisting of the characters number sign and
+                        exclamation mark (#!) at the beginning of a script.</p>
+                    <p>It is also called sha-bang (supposed to be misheard or confused by the author in his relatively
+                        recent book, post 2010), hashbang, pound-bang, or hash-pling.</p>
+                    <p>When a text file with a shebang is used as if it is an executable in a Unix-like operating
+                        system, the program loader mechanism parses the rest of the file's initial line as an
+                        interpreter directive. The loader executes the specified interpreter program, passing to it as
+                        an argument the path that was initially used when attempting to run the script, so that the
+                        program may use the file as input data.[8] For example, if a script is named with the path
+                        path/to/script, and it starts with the following line, #!/bin/sh, then the program loader is
+                        instructed to run the program /bin/sh, passing path/to/script as the first argument. In Linux,
+                        this behavior is the result of both kernel and user-space code.</p>
+                    <p>The shebang line is usually ignored by the interpreter, because the "#" character is a comment
+                        marker in many scripting languages; some language interpreters that do not use the hash mark to
+                        begin comments still may ignore the shebang line in recognition of its purpose.</p>
+
+                    <h4 class="_heading4">Shebang lines</h4>
+                    <ul>
+                        <li>#!/bin/sh – Execute the file using the Bourne shell, or a compatible shell, assumed to be in
+                            the /bin directory
+                        </li>
+                        <li>#!/bin/bash – Execute the file using the Bash shell</li>
+                        <li>#!/usr/bin/pwsh – Execute the file using PowerShell</li>
+                        <li>#!/usr/bin/env python3 – Execute with a Python interpreter, using the env program search
+                            path to find it
+                        </li>
+                        <li>#!/bin/false – Do nothing, but return a non-zero exit status, indicating failure. Used to
+                            prevent stand-alone execution of a script file intended for execution in a specific context,
+                            such as by the . command from sh/bash, source from csh/tcsh, or as a .profile, .cshrc, or
+                            .login file.
+                        </li>
+                    </ul>
+                </div>
+                <div class="container" id="more_tips">
+                    <h3 class="_heading3">More tips</h3>
+                    <p>if you cat the file, the next prompt will be appended to the final "line" if it does not end with
+                        a newline</p>
+                    <p>It's not about adding an extra newline at the end of a file, it's about not removing the newline
+                        that should be there.</p>
+                    <p>text file under unix, consists of a series of lines, each of which end with \n. A file that is
+                        not empty and does not end with a newline is therefore not a text file.</p>
+                    <p>Utilities that are supposed to operate on text files may not cope well with files that don't end
+                        with a newline; historical Unix utilities might ignore the text after the last newline</p>
+                    <p>With GNU diff, if one of the files being compared ends with a newline but not the other, it is
+                        careful to note that fact. So diff uses this special text \ No newline at end of file to
+                        differentiate a file that didn't end in a newline from a file that did.</p>
+                </div>
+            </div>
+            <div class="container" id="shell_basics_objectives">
+                <h2 class="_heading2">Objectives</h2>
+                <p>Explain to anyone</p>
+                <p>General</p>
+                <ul>
+                    <li>What does RTFM mean?</li>
+                    <li>What is a shebang</li>
+                </ul>
+                <p>What is the shell</p>
+                <ul>
+                    <li>what is the shell</li>
+                    <li>what is the difference between a terminal and a shell</li>
+                    <li>what is the shell prompt</li>
+                    <li>How to use the history(the basics)</li>
+                </ul>
+                <p>Navigation</p>
+                <ul>
+                    <li>what does commands or built-ins cd, pwd, ls do</li>
+                    <li>How to navigate the filesystem</li>
+                    <li>what are the . and .. directories</li>
+                    <li>what is the working directory, how to print it and how to change it</li>
+                    <li>what is the root directory</li>
+                    <li>what is the home directory and how to go there</li>
+                    <li>what is the difference between the root directory and the home directory of the user root</li>
+                    <li>what are the characteristics of hidden files and how to list them</li>
+                    <li>what does the command cd - do</li>
+                </ul>
+                <p>Looking around</p>
+                <ul>
+                    <li>what do the commands ls, less, file do</li>
+                    <li>How do you use options and arguments with commands</li>
+                    <li>understand the ls long format and how to display it</li>
+                    <li>what does the ln command do</li>
+                    <li>what do you find in the most common / important directories</li>
+                    <li>what is a symbolic link</li>
+                    <li>what is a hard link</li>
+                    <li>what is the difference between a hard link and a symbolic link</li>
+                </ul>
+                <p>Manipulating files</p>
+                <ul>
+                    <li>what do commands cp, mv, rm, mkdir do</li>
+                    <li>what are wildcards and how do they work</li>
+                    <li>how to use wildcards</li>
+                </ul>
+                <p>Working with commands</p>
+                <ul>
+                    <li>what do type, which, help, man commands do</li>
+                    <li>what are the different kinds of commands</li>
+                    <li>what is an alias</li>
+                    <li>when do you use the command help instead of man</li>
+                </ul>
+                <p>Reading man pages</p>
+                <ul>
+                    <li>How to read a man page</li>
+                    <li>what are man page sections</li>
+                    <li>what are the section number for user commands, system calls and library functions</li>
+                </ul>
+                <p>Keyboard shortcuts for Bash</p>
+                <ul>
+                    <li>common shortcuts for bash</li>
+                </ul>
+                <p>LTS</p>
+                <ul>
+                    <li>what does LTS means? (long Term support)</li>
+                </ul>
+                <p>More Tips</p>
+                <ul>
+                    <li>Why end files with a new line?</li>
+                    <li>How to make file executable?</li>
+                </ul>
+            </div>
+            <div class="container" id="shell_basics_quiz">
+                <h2 class="_heading2">Quiz</h2>
+                <ol>
+                    <li>What command would you use to list files in linux? (ls)</li>
+                    <li>What does LTS stand for? (Long Term Support)</li>
+                    <li>How do you change a directory in Linux? (cd)</li>
+                    <li>What does RTFM stand for? (Read The F** Manual)</li>
+                </ol>
+            </div>
+            <div class="container" id="shell_basics_tasks">
+                <h2 class="_heading2">Tasks</h2>
+            </div>
+        </div>
+        <div class="container content_wrapper" id="shell_permissions">
+            <h1 class="_heading1">Shell, Permissions</h1>
+            <div class="container_shell_permissions_concepts">
+                <h2 class="_heading2">Concepts</h2>
+                <ul>
+                    <li>permissions</li>
+                </ul>
+                <p>man or help</p>
+                <ul>
+                    <li>chmod</li>
+                    <li>sudo</li>
+                    <li>su</li>
+                    <li>chown</li>
+                    <li>chrgrp</li>
+                    <li>id</li>
+                    <li>groups (id -nG)</li>
+                    <li>whoami</li>
+                    <li>adduser</li>
+                    <li>useradd</li>
+                    <li>addgroup</li>
+                </ul>
+                <div class="container" id="permissions">
+                    <h3 class="_heading3">Permissions</h3>
+                    <p>The Unix-like operating systems, such as Linux differ from other computing systems in that they
+                        are not only multitasking but also multi-user.</p>
+                    <p>It means that more than one user can be operating the computer at the same time. While a desktop
+                        or laptop computer only has one keyboard and monitor, it can still be used by more than one
+                        user. For example, if the computer is attached to a network, or the Internet, remote users can
+                        log in via ssh (secure shell) and operate the computer. In fact, remote users can execute
+                        graphical applications and have the output displayed on a remote computer. The X Window system
+                        supports this.</p>
+                    <p>The multi-user capability of Unix-like systems is a feature that is deeply ingrained into the
+                        design of the operating system. If we remember the environment in which Unix was created, this
+                        makes perfect sense. Years ago before computers were "personal," they were large, expensive, and
+                        centralized. A typical university computer system consisted of a large mainframe computer
+                        located in some building on campus and terminals were located throughout the campus, each
+                        connected to the large central computer. The computer would support many users at the same
+                        time.</p>
+                    <p>In order to make this practical, a method had to be devised to protect the users from each other.
+                        After all, we wouldn't want the actions of one user to crash the computer, nor would we allow
+                        one user to interfere with the files belonging to another user.</p>
+                    <p>command covered are:</p>
+                    <ul>
+                        <li>chmod - modify file access rights</li>
+                        <li>su - temporarily become the superuser</li>
+                        <li>sudo - temporarily become the superuser</li>
+                        <li>chown - change file ownership</li>
+                        <li>chrgrp - change file's group ownership</li>
+                    </ul>
+
+                    <h4 class="_heading4">File permissions</h4>
+                    <p>On a Linux system, each file and directory is assigned access rights for the owner of the file,
+                        the members of a group of related users, and everybody else.</p>
+                    <p>Rights can be assigned to read a file, to write a file, and to execute a file (i.e., run the file
+                        as a program).</p>
+                    <p>when we use ls command we can view file permissions which can be intepreted as:</p>
+                    <ul>
+                        <li>- :file type (- indicate a regular file, d indicates a directory)</li>
+                        <li>rwx - first three represent Read, Write and Execute permissions for the file owner.</li>
+                        <li>rwx - second three represent represent Read, Write and Execute permissions for the group
+                            owner of the file
+                        </li>
+                        <li>rwx - last three represent represent Read, Write and Execute permissions for all other
+                            users
+                        </li>
+                    </ul>
+
+                    <h4 class="_heading4">chmod</h4>
+                    <p>the command is used to change permissions of a file or dir.</p>
+                    <p>There are two ways to specify the permissions.</p>
+
+                    <h5 class="_heading5">using Octal notation to specify file permissions</h5>
+                    <p>it's easy to think of permission settings as a series of bits (that's how the computer thinks
+                        about them)</p>
+                    <ul>
+                        <li>rwx rwx rwx = 111 111 111</li>
+                        <li>rw- rw- rw- = 110 110 110</li>
+                        <li>rwx --- --- = 111 000 000</li>
+                    </ul>
+                    <p>therefore</p>
+                    <ul>
+                        <li>rwx = 111 in binary = 7</li>
+                        <li>rw- = 110 in binary = 6</li>
+                        <li>r-x = 101 in binary = 5</li>
+                        <li>r-- = 100 in binary = 4</li>
+                    </ul>
+                    <p>if we represent each of the three sets of permissions (owner, group, others) as a single digit,
+                        we have a convenient way of expressing the possible permissions settings.</p>
+                    <p>example, to set permissions to read and write for the owner, but private for other:</p>
+                    <div class="container linux_command">
+                        <p>chmod 600 file_name</p>
+                    </div>
+                    <p>list of common settings. Those beginning with 7 are used with programs (since they enable
+                        execution).</p>
+                    <ol>
+                        <li>777 (rwxrwxrwx) - now restrictions on permissions. Anybody my do anything. Generally not a
+                            desirable setting.
+                        </li>
+                        <li>775 (rwxr-xr-x) - owner may read, write and execute, all others may read and execute the
+                            file. common for programs used by all users
+                        </li>
+                        <li>700 (rwx------) - owner may read, write and execute, nobody else has any rights. useful for
+                            programs only the owner may use and must be kept private from others
+                        </li>
+                        <li>666 (rw-rw-rw-) - all users may read and write the file</li>
+                        <li>644 (rw-r--r--) - owner may read and write a file, while all others may only read the file.
+                            common setting for data files that everybody may read, but only the owner may change.
+                        </li>
+                        <li>600 (rw-------) - owner may read and write a file, all others have no rights. common setting
+                            for data files that the owner want to keep private.
+                        </li>
+                    </ol>
+
+                    <h4 class="_heading4">Directory permissions</h4>
+                    <p>chmod command can also be used to control access permissions for dirs.</p>
+                    <p>octal notation can be used but the meaning of r, w, x attributes is different:</p>
+                    <ul>
+                        <li>r - allows contents of the dir to be listed if the x attribute is also set</li>
+                        <li>w - allows files within the dir to be created, deleted or renamed if the x attribute is also
+                            set.
+                        </li>
+                        <li>x - allows a directory to be entered.(ie. cd dir)</li>
+                    </ul>
+                    <p>some useful settings for dirs:</p>
+                    <ol>
+                        <li>777 (rwxrwxrwx) - no restrictions on permissions. anybody may list files, create new files
+                            in the dir and delete files in the dir. Generally not a good setting.
+                        </li>
+                        <li>755 (rwxr-xr-x) - directory owner has full access. others may list the dir, but cannot
+                            create files nor delete them. common for dirs that you wish to share with other users.
+                        </li>
+                        <li>700 (rwx------) - directory owner has full access. other have no rights. useful for dirs
+                            only the owner may use and must be kept private from others.
+                        </li>
+                    </ol>
+
+                    <h4 class="_heading4">Becoming a superuser for a short while</h4>
+                    <p>It is often necessary to become the superuser to perform important system administration tasks,
+                        but as we know, we should not stay logged in as the superuser.</p>
+                    <p>In most distributions, there is a program that can give you temporary access to the superuser's
+                        privileges. This program is called su (short for substitute user) and can be used in those cases
+                        when you need to be the superuser for a small number of tasks.</p>
+                    <p>se cases when you need to be the superuser for a small number of tasks. To become the superuser,
+                        simply type the su command. You will be prompted for the superuser's password:</p>
+                    <div class="container linux_command">
+                        <p>su</p>
+                    </div>
+                    <p>After executing the su command, we have a new shell session as the superuser. To exit the
+                        superuser session, type exit and we will return to your previous session.</p>
+
+                    <p>In most modern distributions, an alternate method is used. Rather than using su, these systems
+                        employ the sudo command instead. With sudo, one or more users are granted superuser privileges
+                        on an as needed basis.</p>
+                    <p>To execute a command as the superuser, the desired command is simply preceded with the sudo
+                        command. After the command is entered, the user is prompted for the their own password rather
+                        than the superuser's:</p>
+                    <p>example</p>
+                    <div class="container linux_command">
+                        <p>sudo some_command</p>
+                    </div>
+                    <p>modern distributions don't even set the root account password thus making it impossible to log in
+                        as the root user. A root shell is still possible with sudo by using the "-i" option:</p>
+                    <div class="container linux_command">
+                        <p>sudo -i</p>
+                    </div>
+
+                    <h4 class="_heading4">Changing File Ownership</h4>
+                    <p>We can change the owner of a file by using the chown command.</p>
+                    <p>Here's an example: Suppose we wanted to change the owner of some_file from "me" to "you". We
+                        could:</p>
+                    <div class="container linux_command">
+                        <p>sudo chown you some_file</p>
+                    </div>
+                    <p>in order to change the owner of a file, we must have superuser privileges. To do this, our
+                        example employed the sudo command to execute chown.</p>
+                    <p>chown works the same way on directories as it does on files.</p>
+
+                    <h4 class="_heading4">Changing Group Ownership</h4>
+                    <p>The group ownership of a file or directory may be changed with chgrp.</p>
+                    <p>example:</p>
+                    <div class="container linux_command">
+                        <p>chgrp new_group some_file</p>
+                    </div>
+                    <p>changes the group ownership of some_file from its previous group to "new_group".</p>
+                    <p>We must be the owner of the file or directory to perform a chgrp.</p>
+                </div>
+            </div>
+            <div class="container_shell_permissions_objectives">
+                <h2 class="_heading2">Objectives</h2>
+                <p>Explain to anyone</p>
+                <p>permissions</p>
+                <ul>
+                    <li>what do these commands do: chmod, sudo, su, chown, chrgrp</li>
+                    <li>linux file permissions</li>
+                    <li>how to represent each of the three sets of permissions (owner, group and other) as a single
+                        digit
+                    </li>
+                    <li>how to change permissions, owner and group of a file</li>
+                    <li>why can't a normal user chown a file</li>
+                    <li>how to run a command without root privileges</li>
+                    <li>how to change user ID or become superuser</li>
+                </ul>
+                <p>other man pages</p>
+                <ul>
+                    <li>how to create a user</li>
+                    <li>how to create a group</li>
+                    <li>how to print real and effective user and group IDs</li>
+                    <li>how to print the groups a user is in</li>
+                    <li>how to print the effective userid</li>
+                </ul>
+            </div>
+            <div class="container_shell_permissions_quiz">
+                <h2 class="_heading2">Quiz</h2>
+                <ol>
+                    <li>which command should i use to change a file permission? (chmod)</li>
+                    <li>which command should i use for changing a file owner? (chown)</li>
+                    <li>what is the permission value of a file without any restriction? (777)</li>
+                    <li>what is the permission value for a file read only for the group owner? (040)</li>
+                    <li>what is the numerical value for the rwx------ permission? (700)</li>
+                    <li>what is the numerical value for the r-xr--r-- permission? (544)</li>
+                    <li>what is the numerical value for the ----w---x permission? (021)</li>
+                </ol>
+            </div>
+            <div class="container_shell_permissions_tasks">
+                <h2 class="_heading2">Tasks</h2>
+            </div>
+        </div>
+        <div class="container content_wrapper" id="shell_init_files_variables_and_expansions">
+            <h1 class="_heading1">Shell, init files, variables and expansions</h1>
+            <div class="container" id="shell_init_files_variables_and_expansions_concepts">
+                <h2 class="_heading2">Concepts</h2>
+            </div>
+            <div class="container" id="shell_init_files_variables_and_expansions_objectives">
+                <h2 class="_heading2">Objectives</h2>
+            </div>
+            <div class="container" id="shell_init_files_variables_and_expansions_quiz">
+                <h2 class="_heading2">Quiz</h2>
+            </div>
+            <div class="container" id="shell_init_files_variables_and_expansions_tasks">
+                <h2 class="_heading2">Tasks</h2>
+            </div>
+        </div>
+        <div class="container content_wrapper" id="shell_IO_redirections_and_filters">
+            <h1 class="_heading1">Shell, I/O redirections and filters</h1>
+            <div class="container" id="shell_IO_redirections_and_filters_concepts">
+                <h2 class="_heading2">Concepts</h2>
+            </div>
+            <div class="container" id="shell_IO_redirections_and_filters_objectives">
+                <h2 class="_heading2">Objectives</h2>
+            </div>
+            <div class="container" id="shell_IO_redirections_and_filters_quiz">
+                <h2 class="_heading2">Quiz</h2>
+            </div>
+            <div class="container" id="shell_IO_redirections_and_filters_tasks">
+                <h2 class="_heading2">Tasks</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="content_wrapper_section" id="low_level_programming_and_algorithm">
+        <h1 class="_main_topic">Low level programming and Algorithm</h1>
+        <div class="container" id="low_level_programming_and_algorithm_topics_overview">
+            <h2 class="_heading2">Topics Overview</h2>
+            <p>C:</p>
+            <ul>
+                <li>Hello, world</li>
+                <li>Variables, if, else, while</li>
+                <li>Functions, nested loops</li>
+                <li>Debugging</li>
+                <li>More functions, more nested loops</li>
+                <li>Pointers, arrays and strings</li>
+                <li>More pointers, arrays and strings</li>
+                <li>Even more pointers, arrays and strings</li>
+                <li>Recursion</li>
+                <li>Argc, Argv</li>
+                <li>Static Libraries</li>
+                <li>Malloc, free</li>
+                <li>Preprocessor</li>
+                <li>Structures, typedef</li>
+                <li>Function pointers</li>
+                <li>Variadic functions</li>
+                <li>printf</li>
+            </ul>
+        </div>
+        <div class="container content_wrapper" id="c-hello_world">
+            <h1 class="_heading1">C-Hello, world</h1>
+            <div class="container" id="c_hello_world_concepts">
+                <h2 class="_heading2">Concepts</h2>
+                <ul>
+                    <li>everything you need to know to start with C</li>
+                    <li>Dennis Ritchie</li>
+                    <li>C programming language: Brian Kernighan (<a href="https://www.youtube.com/watch?v=de2Hsvxaf8M">Watch</a>)
+                    </li>
+                    <li>Why C programming is Awesome</li>
+                    <li>understanding C program compilation process</li>
+                    <li>Setting up Code Editors</li>
+                    <li>Hash-bang under the hood (<a
+                            href="https://twitter.com/unix_byte/status/1024147947393495040?s=21">Learn more</a>)
+                    </li>
+                    <li>Linus Torvalds on C vs C++ (<a href="http://harmful.cat-v.org/software/c++/linus">Learn more</a>)
+                    </li>
+                    <li>introduction to C programming</li>
+                </ul>
+                <p>man or help:</p>
+                <ul>
+                    <li>gcc</li>
+                    <li>printf (3)</li>
+                    <li>puts</li>
+                    <li>putchar</li>
+                </ul>
+                <div class="container" id="everything_you_need_to_know_to_start_with_c">
+                    <h3 class="_heading3">everything you need to know to start with C</h3>
+                    <h4 class="_heading4">What is C?</h4>
+                    <p>C is an imperative (procedural) language</p>
+                    <p>All the code has to be inside a function</p>
+                    <p>C files are source code of your program</p>
+                    <p>You have to compile C files with a compiler (for instance gcc) to create an executable file.</p>
+                    <p>At the coarsest level, an obvious feature is the multi-file structure of a program.</p>
+                    <p>the language permits separate compilation, where parts of a complete program can be kept in one
+                        or more source files and compiled independently of each other.</p>
+                    <p>the idea is that compilation process will produce files which can then be linked together using
+                        whatever link editor or loader.</p>
+                    <p>white spaces in c can occur practically anywhere in a program except in the middle of
+                        identifiers, strings or character constants.</p>
+
+
+                    <h4 class="_heading4">Comments</h4>
+                    <p>Begins with /* and ends with */</p>
+                    <p>comments are introduced to a c program by the /* characters, from then on, everything found up to
+                        and including the pair of characters */ is gobbled up and the whole lot is replaced by a single
+                        space.</p>
+                    <p>unlike old versions, a comment is now treated a single space.</p>
+                    <p>can be inserted anywhere and a white-space character is allowed</p>
+                    <p>comments don't nest (/* does not /* work */ */</p>
+                    <p>Use comments to document your code</p>
+                    <div class="container c_program">
+                        <pre>
+                            /* single line comment */
+
+                            /*
+                            multi
+                            line
+                            comment
+                            */
+
+                            /*
+                            * best way
+                            * to write
+                            * a multi-line comment
+                            */
+                        </pre>
+                    </div>
+
+                    <h4 class="_heading4">Variables</h4>
+                    <p>Variable types on most 64-bit computers</p>
+                    <p>The following is the type - storage size - value range:</p>
+                    <ul>
+                        <li>Char : 1 byte : (-128 to 127)</li>
+                        <li>unsigned char : 1 byte : (0 to 255)</li>
+                        <li>short : 2 bytes : (-32, 768 to 32, 767)</li>
+                        <li>unsigned short : 2 bytes : (0 to 65, 535)</li>
+                        <li>int : 4 bytes : (-2, 147, 648 to 2, 147, 483, 647)</li>
+                        <li>unsigned int : 4 bytes : (0 to 4, 292, 967, 295)</li>
+                        <li>long : 8 bytes : (-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807)</li>
+                        <li>unsigned long : 8 bytes : (0 to 18,446,744,073,709,551,615)</li>
+                    </ul>
+                    <h5 class="_heading5">Declaration</h5>
+                    <p>variables always have a type</p>
+                    <div class="container c_program">
+                        <pre>
+                            /*syntax*/
+                            type var_name;
+
+                            /*examples of variables*/
+                            int x;
+                            char c;
+                        </pre>
+                    </div>
+                    <p>names of variables: [a-z A-Z _ 0-9]</p>
+
+                    <h4 class="_heading4">Arrays</h4>
+                    <p>A succession of items of the same type in memory.</p>
+                    <h5 class="_heading5">Declaration</h5>
+                    <div class="container c_program">
+                        <pre>
+                            type var_name[number_of_items];
+                        </pre>
+                    </div>
+                    <p>where number_of_items is a constant number (not a variable)</p>
+                    <p>Example:</p>
+                    <div class="container c_program">
+                        <pre>
+                            /*array of 32 contiguous int */
+                            int my_array[32];
+                            /*array of 8 arrays of 16 chars */
+                            char my_array_of_arrays[8][16];
+                        </pre>
+                    </div>
+
+                    <h4 class="_heading4">Structures</h4>
+                    <p>A complex data type declaration that defines a physically grouped list of variables to be placed
+                        under one name in a block of memory.</p>
+                    <p>Creation and declaration</p>
+                    <div class="container c_program">
+                        <pre>
+                            struc structure_name {
+                                type name;
+                                [...]
+                            }
+
+                            struct structure_name var_name;
+                        </pre>
+                    </div>
+                    <p>Example:</p>
+                    <p>Creation of new type called new_struct</p>
+                    <div class="container c_program">
+                        <pre>
+                            struct new_struct {
+                                int a;
+                                char b[32];
+                            }
+                            /*declaring a variable of type new_struct*/
+                            struct new_struct s;
+                        </pre>
+                    </div>
+
+                    <h4 class="_heading4">Arrays and Structures</h4>
+                    <p>Arrays of structures</p>
+                    <div class="container c_program">
+                        <pre>
+                            struct new_struct var_array[32];
+
+                            /*structures with structures elements*/
+                            struct student {
+                                char first_name[32];
+                                char last_name[32];
+                                struct address addr;
+                            }
+                        </pre>
+                    </div>
+
+                    <h4 class="_heading4">Functions, Programs</h4>
+                    <p>A program is a collection of functions</p>
+                    <p>functions:</p>
+                    <ul>
+                        <li>Sequence of a program instructions that perform a specific task, packaged as a unit.</li>
+                        <li>May take arguments as input information</li>
+                        <li>compute something</li>
+                        <li>may return a result</li>
+                        <li>functions can call functions</li>
+                    </ul>
+                    <p>parameters and return values must have a type</p>
+                    <p>Syntax</p>
+                    <div class="container c_program">
+                        <pre>
+                            return_type function_name(type param, type2 param2 [...])
+                            [block]
+                        </pre>
+                    </div>
+                    <p>Example:</p>
+                    <div class="container c_program">
+                        <pre>
+                            int func(int a, char b)
+                            [block]
+                        </pre>
+                    </div>
+
+                    <h4 class="_heading4">The entry point | main</h4>
+                    <p>programs start with the entry point. In C it's the main function</p>
+                    <p>from the main function, you can call other functions</p>
+                    <p>when main returns, the program stops</p>
+                    <div class="container c_program">
+                        <pre>
+                            int main(void)
+                            int main(int ac, char **av)
+                            int main(int ac, char **av, char **env)
+                        </pre>
+                    </div>
+
+                    <h4 class="_heading4">Blocks</h4>
+                    <p>blocks or code blocks are sections of code which are grouped together.</p>
+                    <p>blocks consist of one or more declarations and statements.</p>
+                    <p>blocks are delimited by curly braces { }</p>
+                    <h1>Slide 16</h1>
+                </div>
+                <div class="container" id="dennis_ritchie">
+                    <h3 class="_heading3">Dennis Ritchie</h3>
+                    <p>Dennis MacAlistair Ritchie was an American computer scientist.</p>
+                    <p>He is best known as the creator of the C programming language and with long-time colleague Ken
+                        Thompson, a key developer of the Unix operating system and B programming language.</p>
+                    <p>Ritchie and Thompson used C to write UNIX.</p>
+                    <p>graduated from Harvard University with degrees in physics and applied mathematics.</p>
+                    <p>Thompson found an old PDP-7 machine and developed his own application programs and operating
+                        system from scratch aided by Ritchie and others.</p>
+                    <p>In 1970, Brian Kernighan suggested the name "Unix", a pun on the name "Multics".</p>
+                    <p>Nowadays, C is widely used in application, operating system and embedded system development, and
+                        its influence is seen in most modern programming languages.</p>
+                    <p>The Fedora 16 Linux distribution, released about a month after he died, was dedicated to this
+                        memory.</p>
+                </div>
+                <div class="container" id="why_C_programming_is_awesome">
+                    <h3 class="_heading3">Why C programming is Awesome</h3>
+                    <ul>
+                        <li>Almost all popular languages are built on top of the C language (python, ruby, java,
+                            javascript) - code you find in python is the same code you'll find in c if you break it down
+                            well enough.
+                        </li>
+                        <li>500, 000 lines of c code powered the mars curiosity rover - c is the great choice for
+                            embedded systems mostly found on the rover.
+                        </li>
+                        <li>It's the coding language of choice for kernel development - a kernel is the central part of
+                            an OS. It manages the tasks of the computer and the hardware - most importantly memory and
+                            CPU time.
+                        </li>
+                        <li>It's been around for more than 30 years.</li>
+                        <li>writing code in c will ultimately tell you how a computer really works. Makes you appreciate
+                            higher level languages like python.
+                        </li>
+                        <li>It's in high demand for jobs.</li>
+                        <li>It's portable and efficient.</li>
+                    </ul>
+                </div>
+                <div class="container" id="understanding_c_program_compilation_process">
+                    <h3 class="_heading3">understanding C program compilation process</h3>
+                    <p>Check out: <a href="https://www.youtube.com/watch?v=VDslRumKvRA">Understanding C program
+                        compilation process</a></p>
+                    <p>let's start with components of a compiler:</p>
+                    <ul>
+                        <li>Preprocessor</li>
+                        <li>Compiler</li>
+                        <li>Assembler</li>
+                        <li>Linker</li>
+                    </ul>
+                    <p>when c code is run it's passed to the preprocessor that generates an intermediate file given to
+                        the compiler to convert the file into assembly code that the comp can understand.</p>
+                    <p>Assembler converts assembly code into binary (or object) code.</p>
+                    <p>Linker links the object code with libraries used, then write everything in a single file that it
+                        executable - like the exe file.(Two types of linking: static and dynamic linking)</p>
+                </div>
+                <div class="container" id="setting_up_code_editors">
+                    <h3 class="_heading3">Setting up Emacs</h3>
+                    <p>Emacs by default used spaces instead of tabs to indent. To change this, in the .emacs file in
+                        your home dir, type:</p>
+                    <div class="container emacs_code">
+                        <pre>
+                            (setq c-default-style "bsd"
+                                c-basic-offset 8
+                                tab-width 8
+                                indent-tabs-mode t)
+                        </pre>
+                    </div>
+                    <p>to highlight lines exceeding 80 characters and trailing whitespace, you can add this to your
+                        ~/.emacs</p>
+                    <div class="container emacs_code">
+                        <pre>
+                            (require 'whitespace)
+                            (setq whitespace-style '(face empty lines-tail trailing))
+                            (global-whitespace-mode t)
+                        </pre>
+                    </div>
+                    <p>if you want the current column along with the line in Emacs:</p>
+                    <div class="container emacs_code">
+                        <pre>
+                            (setq column-number-mode -t)
+                        </pre>
+                    </div>
+
+                    <h3 class="_heading3">Setting up Vim</h3>
+                    <h4 class="_heading4">Tabs</h4>
+                    <p>To customize tabs length, add to the ~/.vimrc</p>
+                    <div class="container vimrc_code">
+                        <p>set tabstop=8 shiftwidth=8</p>
+                    </div>
+                    <p>size of a tab character in vim is set to 8 so vim displays 8 spaces on the screen to represent a
+                        single tab.</p>
+                    <h4 class="_heading4">Indentation</h4>
+                    <p>To indent automatically a line depending on the previous one when you hit enter,</p>
+                    <div class="container vimrc_code">
+                        <p>set autoindent</p>
+                    </div>
+                    <p>to use intelligent indentation for C code with vim</p>
+                    <div class="container vimrc_code">
+                        <p>set smartindent</p>
+                        <p>set cindent</p>
+                    </div>
+                    <h4 class="_heading4">Extras</h4>
+                    <p>enable syntax highlighting in vim:</p>
+                    <div class="container vimrc_code">
+                        <p>syntax enable</p>
+                    </div>
+                    <p>display current line and column:</p>
+                    <div class="container vimrc_code">
+                        <p>set number</p>
+                    </div>
+                </div>
+                <div class="container" id="hash-bang_under_the_hood">
+                    <h3 class="_heading3">Hash-bang under the hood</h3>
+                    <p>The hash-bang directive #! is actually processed by the kernel:</p>
+                    <p>when a file starts with 0x23, 0x21 (which is #!) the kernel will interpret what follows as the
+                        path to executable and attempt to run.</p>
+                    <p>From Dennis Ritchie introduced in '#!' in research Unix, Jan 1980.</p>
+                    <p>from dmr Thur Jan 10 04:25:49 1980 remote from research</p>
+                    <p>The system has been changed so that if a file being executed begins with the magic character #!,
+                        the rest of the line is understood to be the name of an interpreter for the executed file.</p>
+                    <p>Previously (and in fact still) the shell did much of this job; it automatically executed itself
+                        on a text file with executable mode when the text file's name was typed as a command.</p>
+                    <p>Putting the facility into the system gives the following benefits.</p>
+                    <ul>
+                        <li>It makes shell scripts more like real executable files, because they can be the subject of
+                            'exec.'
+                        </li>
+                        <li>If you do a 'ps' while such a command is running, its real name appears instead of
+                            'sh'.Likewise, accounting is done on the basis of the real name.
+                        </li>
+                        <li>Shell scripts can be set-user-ID.</li>
+                        <li>It is simpler to have alternate shells available; e.g. if you like the Berkeley csh there is
+                            no question about which shell is to interpret a file.
+                        </li>
+                    </ul>
+                    <p>To take advantage of this wonderful opportunity, put</p>
+                    <p>#! /bin/sh</p>
+                    <p>at the left margin of the first line of your shell scripts.</p>
+                    <p>Blanks after ! are OK, use a complete pathname (no search is done).</p>
+                    <p>At the moment the whole line is restricted to 16 characters but this limit will be raised.</p>
+                </div>
+                <div class="container" id="introduction_to_c_programming">
+                    <h3 class="_heading3">Introduction to C programming</h3>
+                    <p>Topics</p>
+                    <ul>
+                        <li>Introduction
+                            <ul>
+                                <li>why study C?</li>
+                                <li>where did it come from</li>
+                            </ul>
+                        </li>
+                        <li>C standardization</li>
+                        <li>The basics:
+                            <ul>
+                                <li>hello world</li>
+                                <li>identifiers, and intrinsic types</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="_heading3">Why learn C?</h3>
+                    <ul>
+                        <li>C is a widely used portable high level programming language.</li>
+                        <li>high level, but also let's you program closer to the metal - so we have more control over
+                            the underlying hardware.
+                        </li>
+                        <li>increasingly important for embedded programming.</li>
+                        <li>many languages have a C pedigree.</li>
+                        <li>C will play a role in some computer science courses.</li>
+                    </ul>
+                    <h3 class="_heading3">Origin of C</h3>
+                    <p>originally developed in 1972 by Dennis Ritchie at Bell labs.</p>
+                    <p>the original "K&R" C book was the informal language spec (co-authored with B. Kernighan)</p>
+                    <p>has had enormous influence on other modern programming languages.</p>
+                    <h3 class="_heading3">C standardization</h3>
+                    <p>First there was K&R C - compiler inspired by first publication or description of C language</p>
+                    <p>later standardized to ANSI C - (aka C89 or C90) - this is the most portable version of C. Most
+                        compilers let you turn on ANSI C mode by using -ansi or -std=c89.</p>
+                    <p>C99 - most recent version of C language that extends C89/C90 with new data types, variable length
+                        arrays.</p>
+                    <p>by default gcc used ANSI C version.</p>
+                    <p>use -pedantic for warning messages when you compile</p>
+                    <p>-std=c99 - to get some C99 features.</p>
+                    <h3 class="_heading3">C Basics: Variable names</h3>
+                    <p>rules to follow:</p>
+                    <ul>
+                        <li>must begin with a letter or an underscore(_)</li>
+                        <li>can be followed by any combo of letters, digits or underscore.</li>
+                        <li>cannot be a reserved word</li>
+                    </ul>
+                    <p>examples of valid and invalid variable names</p>
+                    <div class="row">
+                        <div class="col">
+                            <p>valid variable names</p>
+                            <ul>
+                                <li>cnt</li>
+                                <li>_myPtr</li>
+                                <li>go4it</li>
+                                <li>testCase</li>
+                                <li>_very_nice</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <p>invalid variable names</p>
+                            <ul>
+                                <li>won@last</li>
+                                <li>3_times</li>
+                                <li>char</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 class="_heading3">C: intrinsic(builtin) data types</h3>
+                    <ul>
+                        <li>Char (character) - 1 byte (examples: 'a', 'b', 'c', '2')</li>
+                        <li>int (integer) - 4 bytes (examples: 16-decimal, 020-octal, 0x10-hex)</li>
+                        <li>float (floating point) - 4 bytes (examples: 0.000225, 2.25e-3)</li>
+                        <li>double (extended precision float) - 8 bytes (unless told otherwise (e.g. 3.14f) floating
+                            point literals are assumed to be double.)
+                        </li>
+                    </ul>
+                    <h4 class="_heading4">C: modifiers</h4>
+                    <p>help specify how much space we want the variable to occupy in memory.</p>
+                    <ul>
+                        <li>long, long long, shor, unsigned and signed
+                            <ul>
+                                <li>long, long long - extended on some systems</li>
+                                <li>can be used with int, double</li>
+                            </ul>
+                        </li>
+                        <li>short - takes half space on some systems</li>
+                        <li>signed / unsigned (int or char)</li>
+                    </ul>
+                    <p>sizes of integers and floating point numbers vary by compiler.</p>
+                    <p>ANSI C defines the following rules:</p>
+                    <ul>
+                        <li>short int <= int <= long int</li>
+                        <li>float <= double <= long double</li>
+                    </ul>
+
+                    <h3 class="_heading3">Type casting</h3>
+                    <p>when we specifically tell c to handle a particular variable as a particular type.</p>
+                    <p>example: declaring a floating point f and int i;</p>
+                    <p class="c_code">float f;</p>
+                    <p class="c_code">int i = 10;</p>
+                    <p>we can promote i to a float by putting float before i</p>
+                    <p class="c_code">f = (float) i; //assign 10.0 to f</p>
+                    <p>another example:</p>
+                    <p class="c_code">f = 3.14;</p>
+                    <p class="c_code">i = (int) f; //assign 3 to i</p>
+
+                    <h3 class="_heading3">Input/Output</h3>
+                    <p>Topics:</p>
+                    <ul>
+                        <li>standard Input/Output</li>
+                        <li>getchar() and putchar() functions</li>
+                        <li>formatted input / output using printf() and scanf().</li>
+                    </ul>
+
+                    <h3 class="_heading3">Standard I/O</h3>
+                    <p>input/output stream construct that command line programs can read and write from</p>
+                    <p>common in all Unix and Unix-like-systems</p>
+                    <p>C has no special syntax for input/output so it defines a library of functions that support
+                        integration with standard input/output with regard to files.</p>
+
+                    <h4 class="_heading4">getchar() - reading input</h4>
+                    <p>used to read input from the standard input.</p>
+                    <p>reads the next character from standard input (if available).</p>
+                    <p>returns EOF (defined in stdlib) when end of file or error conditions are encountered.</p>
+                    <p>synopsis:</p>
+                    <p class="c_code">int getchar(void);</p>
+
+                    <h4 class="_heading4">putchar() - writing output</h4>
+                    <p>used to write to standard output.</p>
+                    <p>takes an int or char and writes it to standard output</p>
+                    <p>int or char is converted to an unsigned char</p>
+                    <p>returns the character that was written.</p>
+                    <p>synopsis:</p>
+                    <p class="c_code">int putchar(int c);</p>
+
+                    <h3 class="_heading3">Formatted Output</h3>
+                    <p>printf() displays formatted output to stdout</p>
+                    <p>Syntax:</p>
+                    <p class="c_code">printf(format_str, arg1, arg2, ..);</p>
+                    <p>arguments are the variables to be printed</p>
+                    <p>format string tells printf() how to display these arguments</p>
+                    <p>Example:</p>
+                    <p class="c_code">printf("who: %s size: %d cost: %5.2f", "you", 12, 1.2);</p>
+                    <p>Output produced would be:</p>
+                    <p>who: you size: 12 cost: 12.0</p>
+                    <h4 class="_heading4">printf special characters</h4>
+                    <ul>
+                        <li>%d - print as decimal integers</li>
+                        <li>%3d - print as decimal integer, at least 3 characters wide (prints a number three digits
+                            wide then right justifies the number)
+                        </li>
+                        <li>%f - print as floating point</li>
+                        <li>%6f - print as floating point, at least 6 characters wide</li>
+                        <li>%.2f - print as floating point, 2 characters after decimal point</li>
+                        <li>%6.2f - print as floating point, at least 6 wide and 2 after decimal point</li>
+                        <li>%s - print as character string</li>
+                        <li>%o - print as octal</li>
+                        <li>%x - print as hexadecimal</li>
+                        <li>%% - for % itself</li>
+                        <li>%c - print as character</li>
+                        <li>\n - newline</li>
+                        <li>\t - tab</li>
+                    </ul>
+
+                    <h3 class="_heading3">Formatted Input</h3>
+                    <p>scanf() reads formatted input from standard input</p>
+                    <p>syntax:</p>
+                    <p class="c_code">scanf(format_str, &arg1, &arg2, ...);</p>
+                    <p>arguments are the address of variables that will store the read values.</p>
+                    <p>format string tells scanf() how the input is formatted.</p>
+
+                    <p>Example of a program using formatted input and output</p>
+                    <div class="container c_code">
+                        <pre>
+                            #include &lt;stdio.h&gt;
+                            int main(void)
+                            {
+                                char first_initial, middle_initial, last_initial;
+                                int age;
+                                printf("Enter initials followed by age: ");
+                                scanf("%c %c %c %d", &first_initial, &middle_initial, &last_initial, &age);
+                                printf("my initials are: %c%c%c and my age is %d.\n", first_initial, middle_initial, last_initial, age);
+                                return 0;
+                            }
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="container" id="c_hello_world_objectives">
+                <h2 class="_heading2">Objectives</h2>
+                <p>Explain to anyone</p>
+                <ul>
+                    <li>Why C programming is awesome</li>
+                    <li>Who invented C</li>
+                    <li>Who are Dennis Ritchie, Brian Kernighan and Linus Torvalds</li>
+                    <li>What happens when you type gcc main.c</li>
+                    <li>What is an entry point</li>
+                    <li>What is main</li>
+                    <li>How to print text using printf, puts and putchar</li>
+                    <li>How to get size of a specific type using the unary operator sizeof</li>
+                    <li>How to compile using gcc</li>
+                    <li>What is the default program name when compiling with gcc</li>
+                    <li>What is the official C coding style and how to check your code with betty-style</li>
+                    <li>How to find the right header to include in your source code when using a standard library
+                        function
+                    </li>
+                    <li>How does the main function influence the return value of the program</li>
+                </ul>
+            </div>
+            <div class="container" id="c_hello_world_quiz">
+                <h2 class="_heading2">Quiz</h2>
+                <ol>
+                    <li>In what category does C programming language belong to ? (compiled language)</li>
+                    <li>What is the common extension for a C source file ? (.c)</li>
+                    <li>What is the common extension for a C header file ? (.h)</li>
+                    <li>What command can be used to compile a C source file ? (gcc)</li>
+                    <li>What are some valid C comments ? (/* comment */ and /* *comment */)</li>
+                    <li>What are the different steps to form an executable file from C source code ? (preprocessing,
+                        compilation, assembly and linking)
+                    </li>
+                </ol>
+            </div>
+            <div class="container" id="c_hello_world_tasks">
+                <h2 class="_heading2">Tasks</h2>
+                <div class="card task" id="c_hello_world_task_0">
+                    <h4 class="card-header">Task0</h4>
+                    <div class="card-body">
+                        <p>Write a script that runs a C file through the preprocessor and save the result intro another
+                            file</p>
+                        <ul>
+                            <li>The C file name will be saved in the variable $CFILE</li>
+                            <li>output should be saved in the file c</li>
+                        </ul>
+                        <p>Dir: 0x00-hello_word, file_name: 0-preprocessor</p>
+                        <div class="solution">
+                            <p>Solution</p>
+                            <pre>
+                                #!/bin/bash
+                                gcc -E $CFILE -o c
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="card task" id="c_hello_world_task_1">
+                    <h4 class="card-header">Task1</h4>
+                    <div class="card-body">
+                        <p>Write a script that compiles a C file but does not link.</p>
+                        <ul>
+                            <li>The C file name will be saved in the variable $CFILE</li>
+                            <li>The output file should be named the same as the C file, but with the extension .o
+                                instead of .c
+                            </li>
+                        </ul>
+                        <p>file_name: 1-compiler</p>
+                        <div class="solution">
+                            <pre>
+                                #!/bin/bash
+                                gcc -c $CFILE
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="card task" id="c_hello_world_task_2">
+                    <h4 class="card-header">Task2</h4>
+                    <div class="card-body">
+                        <p>Write a script that generates the assembly code of a C code and save it in an output
+                            file.</p>
+                        <ul>
+                            <li>The C file name will be saved in the variable $CFILE</li>
+                            <li>The output file should be named the same as the C file, but with the extension .s
+                                instead of .c
+                            </li>
+                        </ul>
+                        <p>File_name: 2-assembler</p>
+                        <div class="solution">
+                            <pre>
+                                #!/bin/bash
+                                gcc -S $CFILE
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="card task" id="c_hello_world_task3">
+                    <h4 class="card-header">Task3</h4>
+                    <div class="card-body">
+                        <p>Write a script that compiles a C file and creates an executable named cisfun</p>
+                        <ul>
+                            <li>The C file name will be saved in the variable $CFILE</li>
+                        </ul>
+                        <p>File name: 3-name</p>
+                        <div class="solution">
+                            <pre>
+                                #!/bin/bash
+                                gcc $CFILE -o cisfun
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="card task" id="c_hello_world_task4">
+                    <h4 class="card-header">Task4</h4>
+                    <div class="card-body">
+                        <p>Write a C program that prints exactly "Programming is like building a multilingual puzzle,
+                            followed by a new line.</p>
+                        <ul>
+                            <li>Use the function puts instead of printf</li>
+                            <li>Your program should end with the value 0</li>
+                        </ul>
+                        <p>File name: 4-puts.c</p>
+                        <div class="solution">
+                            <pre>
+                                #include &lt;stdio.h&gt;
+                                int main(void)
+                                {
+                                    puts("\"Programming is like building a multilingual puzzle\n");
+                                    return 0;
+                                }
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="card task" id="c_hello_world_task5">
+                    <div class="row card-header">
+                        <div class="col">
+                            <h4>Task5</h4>
+                        </div>
+                        <div class="col text-right">
+                            <p class="card-header-pills">#advanced</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>Write a script that generates the assembly code (Intel syntax) of a C code and save it in an
+                            output file.</p>
+                        <ul>
+                            <li>The C file name will be saved in the variable $CFILE</li>
+                            <li>The output file should be named the same as the C file, but with the extension .s
+                                instead of .c
+                            </li>
+                        </ul>
+                        <p>File name: 100-intel</p>
+                        <div class="solution">
+                            <pre>
+                                #!/bin/bash
+                                gcc -S -masm=intel $CFILE
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="card task" id="c_hello_world_task6">
+                    <div class="row card-header">
+                        <div class="col">
+                            <h4>Task6</h4>
+                        </div>
+                        <div class="col text-right">
+                            <p>#advanced</p>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <p>Write a C program that prints exactly and that piece of art is useful" - Dora Korpar,
+                            2015-10-19, followed by a new line, to the standard error.</p>
+                        <ul>
+                            <li>You are not allowed to use any functions listed in the NAME section of the man (3)
+                                printf or man (3) puts
+                            </li>
+                            <li>Your program should return 1</li>
+                            <li>Your program should compile without any warnings when using the -Wall gcc option</li>
+                        </ul>
+                        <div class="solution">
+                            <pre>
+                                #include &lt;stdio.h&gt;
+                                #include &lt;unistd.h&gt;
+                                int main(void)
+                                {
+                                    write(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 59);
+                                    return (1);
+                                }
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container content_wrapper" id="c-variables_if_else_while">
+            <h1 class="_heading1">C-Variables, if, else, while</h1>
+            <div class="container" id="c-variables_if_else_while_concepts">
+                <h2 class="_heading2">Concepts</h2>
+                <ul>
+                    <li>Everything you need to know to start with c.pdf (understand: comments, data types | integers
+                        types, declaration, chacters, arithmetic operators, variable assignments, comparisons, logical
+                        operators, if, if_else, while loops)
+                    </li>
+                    <li>Keywords and identifiers</li>
+                    <li>integers</li>
+                    <li>operators in C</li>
+                    <li>If statements</li>
+                    <li>If...else statement</li>
+                    <li>while loop</li>
+                </ul>
+                <div class="container" id="keywords_and_identifiers">
+                    <h3 class="_heading3">Keywords and identifiers</h3>
+                    <h4 class="_heading4">Keywords</h4>
+                    <p>C keeps a small set of keywords for its own use.</p>
+                    <p>these keywords cannot be used as identifiers in the program.</p>
+                    <p>list of keywords used in standard C:</p>
+                    <div class="container row">
+                        <div class="col">
+                            <ul>
+                                <li>auto</li>
+                                <li>break</li>
+                                <li>case</li>
+                                <li>char</li>
+                                <li>const</li>
+                                <li>continue</li>
+                                <li>default</li>
+                                <li>do</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul>
+                                <li>double</li>
+                                <li>else</li>
+                                <li>enum</li>
+                                <li>extern</li>
+                                <li>float</li>
+                                <li>for</li>
+                                <li>goto</li>
+                                <li>if</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul>
+                                <li>int</li>
+                                <li>long</li>
+                                <li>register</li>
+                                <li>return</li>
+                                <li>short</li>
+                                <li>signed</li>
+                                <li>sizeof</li>
+                                <li>static</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul>
+                                <li>struct</li>
+                                <li>switch</li>
+                                <li>typedef</li>
+                                <li>union</li>
+                                <li>unsigned</li>
+                                <li>void</li>
+                                <li>volatile</li>
+                                <li>while</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h4 class="_heading4">Identifiers</h4>
+                    <p>an identifier is simply the name of a function or some other object.</p>
+                    <p>identifier is a fancy term used to mean 'name'.</p>
+                    <p>in C, identifiers are used to refer to a number of things; to name variables, functions, labels,
+                        tags of structures, unions and enums.</p>
+                    <p>rules for construction of identifiers are simple: you may use the 52 upper and lowercase
+                        alphabetic characters, the 10 digits and finally the underscore _ which is considered to be an
+                        alphabetic character for this purpose.</p>
+                    <p>only restriction is the usual one; identifiers must start with an alphabetic character.</p>
+                    <p>the length limit of identifiers is 31 characters so if you use longer names, make sure you don't
+                        rely on the checking stopping at 31.</p>
+                    <p>External identifiers are those that have to be visible outside the current source code file.</p>
+                    <p>typical examples of these would be library routines or functions which have to be called from
+                        several different source files.</p>
+                </div>
+                <div class="container" id="integers">
+                    <h3 class="_heading3">Integers</h3>
+                    <p>there's two type (often called 'flavours') of integer variables.</p>
+                    <p>other types can be built from these, but the plain undecorated ints are the base.</p>
+                    <p>most obvious pair is the 'signed' int, less obvious is it's close relative the unsigned int.</p>
+                    <p>int is the natural choice for undemanding requirements when you just need a simple integral
+                        variable, say as a counter in a short loop.</p>
+                    <p>there isn't any guarantee about the number of bits that an int can hold, except it will always be
+                        16 or more.</p>
+                    <p>standard header file &lt;limits.h&gt; details the actual number of bits available in a given
+                        implementation.</p>
+                    <p>&lt;limits.h&gt; file doesn't quite specify a number of bits, but gives maximum and minimum
+                        values for an int instead.</p>
+                    <p>the values it gives are 32767 and -32767 which implies 16 bits or more, whether ones or twos
+                        complement arithmetic is used.</p>
+                    <p>the range specified in the standard for an unsigned int is 0 to at least 65535, meaning that it
+                        cannot be negative.</p>
+                    <p>the bitwise operators encourage you to think about the number of bits in a variable too, because
+                        they give direct access to the bits, which you manipulate one by one or in groups.</p>
+                    <p>almost paradoxically, the overall result is that C programmers have an healthy awareness of
+                        portability issues which leads to more portable programs.</p>
+                </div>
+                <div class="container" id="operators_in_c">
+                    <h3 class="_heading3">Operators in C</h3>
+                    <p>types of operators in c include:</p>
+                    <ul>
+                        <li>arithmetic operators - These are used to perform mathematical calculations like addition,
+                            subtraction, multiplication, division and modulus
+                        </li>
+                        <li>relational operators - These operators are used to compare the value of two variables.</li>
+                        <li>logical operators - These operators are used to perform logical operations on the given two
+                            variables.
+                        </li>
+                        <li>assignment operators - These are used to assign the values for the variables in C
+                            programs.
+                        </li>
+                        <li>bit wise operators - These operators are used to perform bit operations on given two
+                            variables.
+                        </li>
+                        <li>conditional (ternary) operators - Conditional operators return one value if condition is
+                            true and returns another value is condition is false.
+                        </li>
+                        <li>increment / decrement operators - These operators are used to either increase or decrease
+                            the value of the variable by one.
+                        </li>
+                        <li>special operators - &, *, sizeof( ) and ternary operators.</li>
+                    </ul>
+                    <h4 class="_heading4">arithmetic operators</h4>
+                    <p>arithmetic operators supported by C include:</p>
+                    <ul>
+                        <li>+ : adds two operands</li>
+                        <li>- : subtracts second operand from the first</li>
+                        <li>* : multiplies both operands</li>
+                        <li>/ : divides numerator by de-numerator</li>
+                        <li>% : modulus operator and remainder of after an integer division</li>
+                        <li>++ : increment operator increases the integer value by one</li>
+                        <li>-- : decrement operator decreases the integer value by one</li>
+                    </ul>
+
+                    <h4 class="_heading4">Relational operators</h4>
+                    <p>most common relational operators are:</p>
+                    <ul>
+                        <li>== : equal to (checks if values of two operands are equal or not. if yes, condition becomes
+                            true.)
+                        </li>
+                        <li>!= : not equal to (checks if values of two operands are equal or not. if values are not
+                            equal, condition becomes true.)
+                        </li>
+                        <li>> : greater than (checks if value of left operand is greater than value of right operand. if
+                            yes, condition becomes true.)
+                        </li>
+                        <li>< : less than (checks if value of left operand is less than value of the right operand. if
+                            yes, condition becomes true.)
+                        </li>
+                        <li>>= : greater than or equal (Checks if the value of left operand is greater than or equal to
+                            the value of right operand. If yes, condition becomes true.)
+                        </li>
+                        <li><= : less than or equal (Checks if the value of left operand is less than or equal to the
+                            value of right operand. If yes, condition becomes true.)
+                        </li>
+                    </ul>
+
+                    <h4 class="_heading4">logical / boolean operators</h4>
+                    <p>logical operators are used to perform logical operations on the given expressions.</p>
+                    <p>boolean operators allow you to create more complex conditional statements.</p>
+                    <p>they function in a similar way to comparison operators.</p>
+                    <p>each returns 0 if it evaluates to FALSE or 1 if it evaluates to TRUE.</p>
+                    <p>it is possible to combine several boolean operators in a single statement mostly when creating
+                        complex expressions for if statements.</p>
+                    <p>three major types of logical / boolean operators are:</p>
+                    <ul>
+                        <li>! (logical NOT) - (reverses state of operand. if true, makes it false)</li>
+                        <li>&& (logical AND) - (returns true when both conditions are true)</li>
+                        <li>|| (logical OR) - (returns true when at least one of the conditions is true)</li>
+                    </ul>
+                    <h5 class="_heading5">NOT</h5>
+                    <p>accepts one input.</p>
+                    <p>if the input is TRUE, it returns FALSE.</p>
+                    <p>if the input if FALSE, it returns TRUE.</p>
+                    <p>for example: NOT(1) evaluates to 0, NOT (0) evaluates to 1.</p>
+                    <p>NOT (any number but zero) evaluates to 0.</p>
+                    <p>it's evaluated prior to both AND and OR.</p>
+
+                    <h5 class="_heading5">AND</h5>
+                    <p>returns TRUE if both inputs are TRUE (if 'this' and 'that' are true).</p>
+                    <p>(1) AND (0) will evaluate to 0 because one is false(both must be true of it to evaluate to
+                        TRUE).</p>
+                    <p>(1) AND (1) will evaluate to 1.</p>
+                    <p>(any number but 0) AND (0) evaluates to 0.</p>
+                    <p>don't be confused by thinking it checks for equality between numbers; it does not.</p>
+                    <p>it's evaluated before the OR operator.</p>
+
+                    <h5 class="_heading5">OR</h5>
+                    <p>if either (or both) of the two values it checks are TRUE, then it returns TRUE.</p>
+                    <p>for example: (1) OR (0) evaluates to 1. (0) OR (0) evaluates to 0.</p>
+                    <p>OR will be evaluated after AND.</p>
+                </div>
+                <div class="container" id="if_statements">
+                    <h3 class="_heading3">If Statements</h3>
+                    <p>control statements enable programmers to control the flow of a program, letting it make decisions
+                        on what to code to execute.</p>
+                    <p>if statement allows you to control if a program enters a section of code or not based on whether
+                        a given condition is true or false.</p>
+                    <p>one of the important functions of the if statement is that it allows the program to select an
+                        action based upon the user's input.</p>
+
+                    <h5 class="_heading5">True and False</h5>
+                    <p>c assumes any non-zero and non-null values as true.</p>
+                    <p>c assumes either zero or null values as a false.</p>
+                    <p>when you perform comparison with the relational operators, the operator will return 1 if the
+                        comparison is true, or 0 if the comparison is false.</p>
+                    <p>for example: 0 == 2 evaluates to 0 while 2 == 2 evaluates to 1.</p>
+
+                    <h5 class="_heading5">Basic if syntax</h5>
+                    <p>structure of an if statement:</p>
+                    <div class="container c_code">
+                        <pre>
+                            if (boolean_expression_is_TRUE)
+                            {
+                                /*body of the if statement*/
+                                Execute this line of code
+                            }
+                        </pre>
+                    </div>
+                    <p>when using if statements, the code that depends on the if statement is called the 'body' of the
+                        if statement.</p>
+
+                    <h4 class="_heading4">Else</h4>
+                    <p>sometimes when the condition in an if statement evaluates to false, it would be nice to execute
+                        some code instead of the code executed when the statement evaluates to true.</p>
+                    <p>the 'else' statement effectively says that whatever code after it (whether a single line or code
+                        between brackets) is executed if the if statement is FALSE.</p>
+                    <p>it can look like this:</p>
+                    <div class="container c_code">
+                        <pre>
+                            if (boolean_expression_is_TRUE)
+                            {
+                                /*execute these statements if true*/
+                            }
+                            else
+                            {
+                                /*execute these statements if false*/
+                            }
+                        </pre>
+                    </div>
+
+                    <h4 class="_heading4">Else if</h4>
+                    <p>another use of else is when there are multiple conditional statements that may all evaluate to
+                        true, yet you want only one if statement's body to execute.</p>
+                    <p>you can use 'else if' statement following an if statement and its body; that way, if the first
+                        statement is true, the 'else if' will be ignored, but if the if statement is false, it will then
+                        check the condition for the else if statement.</p>
+                    <p>if the if statement was true, the else statement will not be checked.</p>
+                    <p>it is possible to use numerous else if statements to ensure that only one block of code is
+                        executed.</p>
+                    <p>when using if...else if...else statements, keep in mind:</p>
+                    <ul>
+                        <li>an if can have zero or one else's and it must come after any else if's.</li>
+                        <li>an if can have zero to many else if's and they must come before the else.</li>
+                        <li>once an else if succeeds, none of the remaining else if's or else's will be tested.</li>
+                    </ul>
+                    <p>syntax:</p>
+                    <div class="container c_code">
+                        <pre>
+                            if(boolean_expression_is_TRUE)
+                            {
+                                /*execute these statements if expression 1 is true*/
+                            }
+                            else if
+                            {
+                                /*execute these statements if expression 2 is true*/
+                            }
+                            else if
+                            {
+                                /*execute these statements if expression 3 is true*/
+                            }
+                            else
+                            {
+                                /*execute these statements if none of the above conditions is true*/
+                            }
+                        </pre>
+                    </div>
+                    <p>example:</p>
+                    <div class="container c_code">
+                        <pre>
+                            #include &lt;stdio.h&gt;
+                            int main()
+                            {
+                                int age;
+
+                                printf("please enter your age: ");
+                                scanf("%d", &age);
+
+                                if (age < 100)
+                                {
+                                    printf("you're pretty young!\n");
+                                }
+                                else if (age == 100)
+                                {
+                                    printf("you're old\n");
+                                }
+                                else if (age == 1000)
+                                {
+                                    printf("are you immortal?\n");
+                                }
+                                else
+                                {
+                                    printf("is that really your age?\n");
+                                }
+                                return 0;
+                            }
+                        </pre>
+                    </div>
+                </div>
+                <div class="container" id="while_loop">
+                    <h3 class="_heading3">While loop</h3>
+                    <p>a while loop repeatedly executes a target statement as long as a given condition is true.</p>
+                    <p>The while loop operates as follows: The condition in parentheses is tested. If it is true, the
+                        body of the loop is executed. Then the condition is re-tested, and if true, the body is executed
+                        again. When the test becomes false the loop ends, and execution continues at the statement that
+                        follows the loop.</p>
+                    <p>syntax:</p>
+                    <div class="container c_code">
+                        <pre>
+                            while(condition)
+                            {
+                                statement(s);
+                            }
+                        </pre>
+                    </div>
+                    <p>the condition may be any expression and true is any nonzero value.</p>
+                    <p>the loop iterates while the condition is true.</p>
+                    <p>when the condition becomes false, the program control passes to the line immediately following
+                        the loop.</p>
+                    <p>example:</p>
+                    <div class="container c_code">
+                        <pre>
+                            #include &lt;stdio.h&gt;
+                            int main()
+                            {
+                                /*local variable definition*/
+                                int a = 10;
+
+                                /*while loop execution*/
+                                while (a < 20)
+                                {
+                                    printf("value of a: %d\n", a);
+                                    a++;
+                                }
+                                return 0;
+                            }
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="container" id="c-variables_if_else_while_objectives">
+                <h2 class="_heading2">Objectives</h2>
+                <p>Explain to anyone:</p>
+                <ul>
+                    <li>What are the arithmetic operators and how to use them</li>
+                    <li>What are the logical operators (sometimes called boolean operators) and how to use them</li>
+                    <li>What the the relational operators and how to use them</li>
+                    <li>What values are considered TRUE and FALSE in C</li>
+                    <li>What are the boolean operators and how to use them</li>
+                    <li>How to use the if, if ... else statements</li>
+                    <li>How to use comments</li>
+                    <li>How to declare variables of types char, int, unsigned int</li>
+                    <li>How to assign values to variables</li>
+                    <li>How to print the values of variables of type char, int, unsigned int with printf</li>
+                    <li>How to use the while loop</li>
+                    <li>How to use variables with the while loop</li>
+                    <li>How to print variables using printf</li>
+                    <li>What is the ASCII character set</li>
+                    <li>What are the purpose of the gcc flags -m32 and -m64</li>
+                </ul>
+            </div>
+            <div class="container" id="c-variables_if_else_while_quiz">
+                <h2 class="_heading2">Quiz</h2>
+                <ol>
+                    <li>what is the size of the unsigned int data type? (4 bytes)</li>
+                    <li>what is the size of the char data type? (1 byte)</li>
+                    <li>what is the size of float data type? (4 bytes)</li>
+                </ol>
+            </div>
+            <div class="container" id="c-variables_if_else_while_tasks">
+                <h2 class="_heading2">Tasks</h2>
+            </div>
+        </div>
+        <div class="container content_wrapper" id="c-functions_nested_loops">
+            <h1 class="_heading1">C-Functions, nested loops</h1>
+            <div class="container" id="c-functions_nested_loops_concepts">
+                <h2 class="_heading2">Concepts</h2>
+                <ul>
+                    <li>Nested while loops</li>
+                    <li>C - Functions</li>
+                    <li>what is the purpose of a function prototype?</li>
+                    <li>C - Header files</li>
+                </ul>
+                <div class="container nested_while_loops">
+                    <h3 class="_heading3">Nested While Loops</h3>
+                    <p>A nested while is a while loop that contains another while loop inside it.</p>
+                    <p>The program first runs the first iteration of the outer loop then completes the whole inner loop
+                        before resuming to its iterations of the outer loop.</p>
+                    <p>when the outer loop begins another iteration, the inner loop is encountered and run again then
+                        the outer loop resumes it's iteration.</p>
+                </div>
+                <div class="container" id="c_functions">
+                    <h3 class="_heading3">C functions</h3>
+                    <p>a c program is built up from a collection of items such as functions and what we could loosely
+                        call global variables.</p>
+                    <p>all these things are given names at the point where they are defined in the program the way the
+                        name are used to access those items from a given place in the program is governed by rules</p>
+                    <p>the rules are described in the standard using the term linkage</p>
+                    <p>items with external linkage are those accessible throughout the program (library functions are a
+                        good example)</p>
+                    <p>items with no linkage are also widely used but their accessibility is much more restricted.</p>
+                    <p>variables used inside functions usually 'local' to the function; they have no linkage.</p>
+                    <p>the idea of a function is to allow you to encapsulate one idea or operation, give it a name, then
+                        call that operation from various parts of the rest of your program simply by using the name.</p>
+                    <p>the detail of what's going on is not immediately visible at the point of use, nor should it
+                        be.</p>
+                    <p>in well designed properly structured programs, it should be possible to change the way that a
+                        function does it's job(as long the job itself does not change) with no effect on the rest of the
+                        program.</p>
+                    <p>in a hosted environment, there's a function whose name is special; main.</p>
+                    <p>this function is the first one entered when your program starts running.</p>
+
+                    <h4 class="_heading4">Function Declaration</h4>
+                    <p>a function declaration tells the compiler which arguments and return values the function has.</p>
+                    <p>declaration describes three important things about a function:</p>
+                    <ul>
+                        <li>function name</li>
+                        <li>function return type</li>
+                        <li>type of arguments(if any)</li>
+                    </ul>
+                    <p>in C, it's recommended to declare functions in advance so the compiler is able to check that it
+                        is used correctly.</p>
+                    <p>distinction between declaration and definition is that declaration simply describes the type of
+                        the function and any arguments that it might take, definition is where the body of a function is
+                        provided.</p>
+
+                    <h4 class="_heading4">Function Definition</h4>
+                    <p>a function definition is a declaration with the body of the function given too.</p>
+                    <p>in C, functions perform the tasks that some other languages split into two parts.</p>
+                    <p>most languages use a function to return a value of some sort, typical examples include
+                        trigonometric functions like sin, cos or maybe a square root function; c is the same in this
+                        respect.</p>
+                    <p>other similar jobs are done by what look very much like functions but which don't return a
+                        value.</p>
+                    <p>the parenthesis that follow the function name are needed to let the compiler know that at this
+                        point we are talking about a function and not something else.</p>
+                    <p>the body of a function is a compound statement, which is a sequence of other statements
+                        surrounded by curly brackets {}.</p>
+                    <p>the job of the brackets is to turn several statements in a row into what is effectively a single
+                        statement.</p>
+                </div>
+            </div>
+            <div class="container" id="c-functions_nested_loops_Objectives">
+                <h2 class="_heading2">Objectives</h2>
+                <ul>
+                    <li>What are nested loops and how to use them</li>
+                    <li>What is a function and how do you use functions</li>
+                    <li>What is the difference between a declaration and a definition of a function</li>
+                    <li>What is a prototype</li>
+                    <li>Scope of variables</li>
+                    <li>What are the gcc flags -Wall -Werror -pedantic -Wextra -std=gnu89</li>
+                    <li>What are header files and how to to use them with #include</li>
+                </ul>
+            </div>
+            <div class="container" id="c-functions_nested_loops_quiz">
+                <h2 class="_heading2">Quiz</h2>
+            </div>
+            <div class="container" id="c-functions_nested_loops_tasks">
+                <h2 class="_heading2">Tasks</h2>
+            </div>
+        </div>
+        <div class="container content_wrapper" id="debugging"></div>
+        <div class="container content_wrapper" id="more_functions_more_nested_loops"></div>
+        <div class="container content_wrapper" id="pointers_arrays_and_strings"></div>
+        <div class="container content_wrapper" id="more_pointers_arrays_and_strings"></div>
+        <div class="container content_wrapper" id="even_more_pointers_arrays_and_strings"></div>
+        <div class="container content_wrapper" id="recursion"></div>
+        <div class="container content_wrapper" id="argc_argv"></div>
+        <div class="container content_wrapper" id="static_libraries"></div>
+        <div class="container content_wrapper" id="malloc_free">
+            <h1 class="_heading1">Malloc, free</h1>
+            <div class="container" id="malloc_free_concepts">
+                <h2 class="_heading2">Concepts</h2>
+                <ul>
+                    <li>Automatic and dynamic allocation, malloc and free</li>
+                    <li>Dynamic memory allocation in C - malloc calloc realloc free</li>
+                </ul>
+                <div class="container" id="automatic_and_dynamic_allocation_malloc_and_free">
+                    <h3 class="_heading3">Automatic and dynamic allocation, malloc and free</h3>
+                    <p>The malloc function is used to allocate a certain amount of memory during the execution of a
+                        program.</p>
+                    <p>It will request a block of memory from the heap.</p>
+                    <p>If the request is granted, the operating system will reserve the requested amount of memory and
+                        malloc will return a pointer to the reserved space.</p>
+                    <p>when the amount of memory is not needed anymore, you must return it to the operating system by
+                        calling the function free.</p>
+
+                    <h4 class="_heading4">Automatic allocation</h4>
+                    <p>When you declare variables or when you use strings within double quotes, the program is taking
+                        care of all the memory allocation. You don't have to think about it.</p>
+                </div>
+            </div>
+            <div class="container" id="malloc_free_objectives">
+                <h2 class="_heading2">Objectives</h2>
+                <p>Explain to anyone:</p>
+                <ul>
+                    <li>What is the difference between automatic and dynamic allocation</li>
+                    <li>what is malloc and free and how to use them</li>
+                    <li>why and when to use malloc</li>
+                    <li>how to use valgrind to check for memory leak</li>
+                </ul>
+            </div>
+            <div class="container" id="malloc_free_quiz">
+                <h2 class="_heading2">Quiz</h2>
+            </div>
+            <div class="container" id="malloc_free_tasks">
+                <h2 class="_heading2">Tasks</h2>
+            </div>
+        </div>
+        <div class="container content_wrapper" id="preprocessor">
+            <h1 class="_heading1">Preprocessor</h1>
+            <div class="container" id="preprocessor_concepts">
+                <h2 class="_heading2">concepts</h2>
+                <div class="container" id="preprocessor_statements">
+                    <h3 class="_heading3">Preprocessor statements</h3>
+                    <p>preprocessor statements work on a line-by-line basis, the rest of C does not.</p>
+                    <p>#include statements are used to read the contents of a specified file, typically to facilitate
+                        the use of library functions.</p>
+                    <p>the first statement in most c programs #include &lt;stdio.h&gt; is a preprocessor directive.</p>
+                    <p>the preprocessor directive #include causes the line containing it to be replaced completely by
+                        the contents of another file.</p>
+                    <p>the filename found between &lt; and &gt; brackets is a widely used technique to incorporate the
+                        text of standard header files without having to go through the effort typing it all
+                        yourself.</p>
+                    <p>the preprocessor only knows about lines of text; unlike the rest of the language is sensitive to
+                        the end of a line and though it is possible to write multi-line preprocessor directives, they
+                        are uncommon and a source of some wonder when they are found.</p>
+                    <p>any line whose first visible character is a # is a preprocessor directive.</p>
+                </div>
+                <div class="container" id="define_statements">
+                    <h3 class="_heading3">Define Statements</h3>
+                    <p>another of the preprocessor's talents which is widely exploited is the #define statement.</p>
+                    <p>#define statements are typically used to give names for constants. By convention, the names are
+                        in upper case.</p>
+                    <p>syntax:</p>
+                    <p class="single_line_code">#define IDENTIFIER replacement</p>
+                    <p>the statement says that the name represented by IDENTIFIER will be replaced by the text of
+                        replacement whenever IDENTIFIER occurs in the program text.</p>
+                    <p>invariably, the identifier is a name in upper-case; this is a stylistic convention that helps the
+                        reader understand what's goin on.</p>
+                    <p>the replacement part can be any text at all- remember the preprocessor doesn't know C, it just
+                        works on text.</p>
+                    <p>the most common use of the statement is to declare names for constant numbers:</p>
+                    <p>examples:</p>
+                    <p class="single_line_code">#define PI 3.141592</p>
+                    <p class="single_line_code">#define SECS_PER_MIN 60</p>
+                    <p class="single_line_code">#define HOURS_PER_DAY 24</p>
+                </div>
+            </div>
+            <div class="container" id="preprocessor_objectives">
+                <h2 class="_heading2">Objectives</h2>
+            </div>
+            <div class="container" id="preprocessor_quiz">
+                <h2 class="_heading2">Quiz</h2>
+            </div>
+            <div class="container" id="preprocessor_tasks">
+                <h2 class="_heading2">Tasks</h2>
+            </div>
+        </div>
+        <div class="container content_wrapper" id="structures_typedef"></div>
+        <div class="container content_wrapper" id="function_pointers"></div>
+        <div class="container content_wrapper" id="variadic_functions"></div>
+        <div class="container content_wrapper" id="printf">
+            <h1 class="_heading1">Printf</h1>
+            <div class="container" id="concepts">
+                <div class="container" id="printf_overview">
+                    <h3 class="_heading3">Printf overview</h3>
+                    <p>printf is a general-purpose output formatting function.</p>
+                    <p>Its first argument is a string of characters to be printed, with each %indicating where one of
+                        the other (second, third) arguments is to be substituted and in what form it is to be
+                        printed.</p>
+                    <p>Each % construction in the first argument of printf is paired with the corresponding second
+                        argument, third argument, etc; they must match up properly by number and type.</p>
+                    <p>printf is not part of the C language; there is no input or output defined in C itself.</p>
+                    <p>printf is just a useful function from the standard library of functions that are normally
+                        accessible to C programs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content_wrapper_section" id="higher_level_programming">
+        <h1 class="_main_topic">Higher Level Programming</h1>
+        <div class="container" id="section_2_topics_overview">
+            <h2 class="_heading2">Topics Overview</h2>
+            <ul>
+                <li>Python hello world</li>
+                <li>Python If / else, loops, functions</li>
+                <li>Python Import & modules</li>
+                <li>Python Data Structures, lists, tuples</li>
+                <li>Python More data structures: set, dictionary</li>
+                <li>C - Doubly linked lists</li>
+                <li>RSA Factoring Challenge (14 - day project until 12th December 2021 - Sun</li>
+                <li>C - Dynamic Libraries</li>
+                <li>C - Stacks, Queues - LIFO, FIFO (3 - day project until 2nd December 2021 - Thur)</li>
+                <li>Python - Exceptions</li>
+                <li>Python - Classes and Objects</li>
+                <li>Evaluation Quiz: 8th December 2021</li>
+                <li>Python - Test-driven development (6 - day project until 14th Dec 2021 - Tue)</li>
+            </ul>
+        </div>
+        <div class="container content_wrapper" id="python-hello_world">
+            <h1 class="_heading1">Python-Hello, world</h1>
+            <div class="container" id="python-hello_world_objectives">
+                <h2 class="_heading2">Objectives</h2>
+                <ul>
+                    <li>why python programming is awesome</li>
+                    <li>who created python</li>
+                    <li>who is Guido Van Rossum</li>
+                    <li>where does the name 'Python' come from</li>
+                    <li>what is Zen of Python</li>
+                    <li>How to use Python interpreter</li>
+                    <li>How to use strings</li>
+                    <li>What are indexing and slicing in Python</li>
+                    <li>What is the official Python coding style and how to check your code with pycodestyle</li>
+                </ul>
+            </div>
+            <div class="container" id="python-hello_world_concepts">
+                <h2 class="_heading2">Concepts</h2>
+                <ul>
+                    <li>python official documentation. (<a href="https://docs.python.org/3.4/tutorial/index.html">Python
+                        Documentation</a>)
+                    </li>
+                    <li>Derek Bana's Learn to Program. (<a
+                            href="https://www.youtube.com/playlist?list=PLGLfVvz_LVvTn3cK5e6LjhgGiSeVlIRwt">YouTube
+                        Tut</a>)
+                    </li>
+                    <li>The python Guru. (<a href="https://thepythonguru.com/">The python guru</a>)</li>
+                    <li>New string formatting</li>
+                    <li>Garbage collector</li>
+                    <li>Python interpreter</li>
+                    <li>Python bytecode</li>
+                </ul>
+                <div class="container python_getting_started">
+                    <h3 class="_heading3">Getting Started with Python</h3>
+                    <p>python is a general-purpose programming language created by Guido Van Rossum.</p>
+                    <p>python is an easy to learn, powerful programming language.</p>
+                    <p>Python is an interpreted language. </p>
+                    <p>it has efficient high-level data structures and a simple but effective approach to
+                        object-oriented programming.</p>
+                    <p>Python's elegant syntax and dynamic typing, together with its interpreted nature, make it an
+                        ideal language for scripting and rapid application development in many areas on most
+                        platforms.</p>
+                    <p>with python you can do:</p>
+                    <ul>
+                        <li>GUI development</li>
+                        <li>Web application</li>
+                        <li>scrape data from websites</li>
+                        <li>System administration tasks</li>
+                        <li>Financial Calculation</li>
+                        <li>Data Analysis</li>
+                        <li>Data Science</li>
+                        <li>Game Development</li>
+                        <li>Visualization</li>
+                    </ul>
+                    <h4 class="_heading4">Origin of the name Python</h4>
+                    <p>the language is named after the BBC show "Monty Python's Flying Circus" and has nothing to do
+                        with reptiles.</p>
+
+                    <h5 class="_heading5">Python is an interpreted language</h5>
+                    <p>when you run python program, an interpreter will parse python program line by line basis, as
+                        compared to compiled languages like C or C++, where the compiler first compiles the program and
+                        then start running.</p>
+                    <p>So what's the difference?</p>
+                    <p>The difference is that interpreted languages are a little bit slow as compared to compiled
+                        languages.</p>
+                    <p>writing codes in compiled languages is a daunting task for a beginner.</p>
+                    <p>Also in such languages, you need to write even most basic functions like calculate the length of
+                        the array, split the string etc.</p>
+                    <p>For more advanced tasks sometimes you need to create your own data structures to encapsulate data
+                        in the program. So in C/C++ before you actually start solving your business problem you need to
+                        take care of all minor details. This is where Python comes. In Python, you don't need to define
+                        any data structure, no need to define small utility functions because Python has everything to
+                        get you started.</p>
+
+                    <h5 class="_heading5">Python is dynamically typed</h5>
+                    <p>python doesn't require you to define variable data types ahead of time.</p>
+                    <p>python automatically infers the data type of the variable based on the type of value it
+                        contains.</p>
+
+                    <h5 class="_heading5">Python is strongly typed</h5>
+                    <p>PHP or Javascript, convert data of one type to another automatically.</p>
+                    <p>For example: In JS, 1 + "2" - converts 1 to a string and concatenates to "2", which results to
+                        '12' which is a string.</p>
+                    <p>However, in python, such automatic conversions are not allowed.</p>
+                    <p>so 1 + "2" would produce an error.</p>
+
+                    <h4 class="_heading4">Types of Python</h4>
+                    <p>The official version of python is called Python or CPython. <a href="https://www.python.org/">Download
+                        official python</a></p>
+                    <p>Another popular distribution of python is Anaconda. It's mainly focused on data science. <a
+                            href="https://www.anaconda.com/">Download Anaconda Python</a></p>
+
+                    <h4 class="_heading4">Running Python Programs</h4>
+                    <p>Python uses a command-line tool called pip.</p>
+                    <p>to run a program stored in a file:</p>
+                    <ol>
+                        <li>Open the terminal and change current working dir to dir where the file is stored</li>
+                        <li>to run the program, type the command:
+                            <mark>python3 hello.py</mark>
+                        </li>
+                    </ol>
+                    <p>alternatively you can make python programs runnable scripts by using these line at the beginning
+                        of python scripts, then making the scripts executable using
+                        <mark>chmod u+x file_name</mark>
+                    </p>
+                    <p class="single_line_py">#!/usr/bin/python3</p>
+
+                    <h5 class="_heading5">Getting Help</h5>
+                    <p>when you come across a situation when you want to know more about some method or functions,
+                        Python has help() function.</p>
+                    <p>Syntax:</p>
+                    <p>to find information about a class: help(class_name)</p>
+                    <p>to find more about method belong to class: help(class_name.method_name)</p>
+                    <p>example1: to find more about the int class:</p>
+                    <p>on the python shell, type:</p>
+                    <p class="py_shell_command">help(int)</p>
+                    <p>example2: to find more about arguments required for index() method of str class, type:</p>
+                    <p class="py_shell_command">help(str.index)</p>
+
+                    <h3 class="_heading3">Comments</h3>
+                    <p>Comments are notes which describe the purpose of the program or how the program works.</p>
+                    <p>Comments are not programming statements that Python interpreter executes while running the
+                        program.</p>
+                    <p>Comments can also be used to write program documentation.</p>
+                    <p>In python, any line that begins with a pound sign (#) is considered a comment.</p>
+                    <p>Comments at the end of a statement are called end-line comments. (e.g. print("hello, world")
+                        #displays hello, world on the console.</p>
+
+                    <h3 class="_heading3">Variables & Data Types</h3>
+                    <p>Variables are named locations used to store references to the object stored in memory.</p>
+                    <p>names we choose for variables and functions are commonly known as identifiers.</p>
+                    <p>in python, rules for identifiers are:</p>
+                    <ol>
+                        <li>All identifiers must start with a letter or underscore (_), you can't use digits.</li>
+                        <li>Identifiers can contain letter, digits and underscores(_). $, # are not allowed.</li>
+                        <li>Identifiers can be of any length.</li>
+                        <li>Identifiers can't be a keyword. Keywords are reserved words that python uses for special
+                            purposes. Keywords in pythons include:(false, none, true, and, as, pass, break, class,
+                            continue, def, del, elif, else, except, finally, for, from, global, if, import, in, is,
+                            lambda, nonlocal, not, or, assert, raise, return, try, while, with, yield)
+                        </li>
+                    </ol>
+                    <h5>Assigning Values to Variables</h5>
+                    <p>To assign a value to a variable, equal sign (also known as the assignment operator (=)) is
+                        used.</p>
+                    <p>Values are basic things that programs work with.</p>
+                    <p>in programming, they are also known as literals.</p>
+                    <p>literals can be of different types: int (1, 11), float (3.14), string ("hello").</p>
+                    <p>in python, everything is object even basic data types like int, float, string.</p>
+                    <p>For example:</p>
+                    <p class="single_line_py">a = b = c = 100 # this assigns 100 to c, b and a.</p>
+                    <div class="container note_better">
+                        <p>When a value is assigned to a variable, the variable doesn't store the value itself. Instead,
+                            the variable only stores a reference (address) of the object where it is stored in the
+                            memory.</p>
+                        <p>Therefore, x = 100, stores a reference (or address) to the 100 (an int object).</p>
+                        <p>The variable x doesn't store the object 100 itself.</p>
+                    </div>
+                </div>
+                <div class="container" id="new_string_formatting">
+                    <h3 class="_heading3">New String Formatting</h3>
+                    <h4 class="_heading4">Basic Formatting</h4>
+                    <p>simple positional formatting is the most common use-case and should be used if the order of
+                        arguments is not likely to change and only have very few elements to concatenate.</p>
+                    <p>since elements are represented by something as descriptive as a name, this simple style should
+                        only be used to format a relatively small number of elements.</p>
+                    <p>Example1:</p>
+                    <p class="single_line_py">'{} {}'.format('one', 'two')</p>
+                    <p>Example2:</p>
+                    <p class="single_line_py">'{} {}'.format(1, 2)</p>
+
+                    <h4 class="_heading4">Value Conversion</h4>
+                    <p>the new-style formatter calls by default the _format_() method of an object for its
+                        representation.</p>
+                    <p>if to render the output of str(...) or repr(...), use !s or !r conversion flags.</p>
+                    <p>in %-style you usually use %s for the string representation but there is %r for a repr(...)
+                        conversion.</p>
+                    <p>Setup</p>
+                    <div class="container py">
+                        <pre>
+                            class Data(object):
+                                def __str__(self):
+                                    return 'str'
+
+                                def __repr__(self):
+                                    return 'repr'
+                        </pre>
+                    </div>
+                    <p class="single_line_py">'{0!s} {0!r}'.format(Data())</p>
+
+                    <h4 class="_heading4">Padding and aligning strings</h4>
+                    <p>by default values are formatted to take up only as much characters as needed to represent the
+                        content. It is however also possible to define that a value should be padded to a specific
+                        length.</p>
+                    <p>to align right:</p>
+                    <p class="single_line_py">'{:>10}'.format('test')</p>
+                    <p>to align left:</p>
+                    <p class="single_line_py">'{:10}'.format('test')</p>
+                    <p>using a padding character:</p>
+                    <p class="single_line_py">'{:_<10}'.format('test')</p>
+                    <p>center align values:</p>
+                    <p class="single_line_py">'{:^10}'.format('test')</p>
+                    <p>When using center alignment where the length of the string leads to an uneven split of the
+                        padding characters, the extra character will be placed on the right side:</p>
+                    <p class="single_line_py">'{:^6}'.format('zip')</p>
+
+                    <h4 class="_heading4">Truncating long strings</h4>
+                    <p>Inverse to padding it is also possible to truncate overly long values to a specific number of
+                        characters.</p>
+                    <p>The number after a (.) in the format specifies the precision of the output. For strings that
+                        means that the output is truncated to the specified length. In our example this would be 5
+                        characters.</p>
+                    <p class="single_line_py">'{:.5}'.format('xylophone')</p>
+
+                    <h4 class="_heading4">Combining truncating and padding</h4>
+                    <p class="single_line_py">'{:10.5}'.format('xylophone')</p>
+                </div>
+            </div>
+            <div class="container" id="python-hello_world_quiz">
+                <h2 class="_heading2">Quiz</h2>
+            </div>
+            <div class="container" id="python-hello_world_tasks">
+                <h2 class="_heading2">Tasks</h2>
+            </div>
+        </div>
+        <div class="container content_wrapper" id="python-if_else_loops_functions">
+            <h1 class="_heading1">Python If / else, loops, functions</h1>
+            <div class="container" id="python-if_else_loops_functions_objectives">
+                <h2 class="_heading2">Objectives</h2>
+                <ul>
+                    <li>Why indentation is important in Python</li>
+                    <li>How to use if, if ... else statements</li>
+                    <li>How to use comments</li>
+                    <li>How to affect values to variables</li>
+                    <li>How to use while and for loops</li>
+                    <li>How is Python's for different from C's?</li>
+                    <li>How to use break and continue statements</li>
+                    <li>How to use else clauses on loops</li>
+                    <li>What does the pass statement do, and when to use it</li>
+                    <li>How to use range</li>
+                    <li>What is a function and how do you use functions</li>
+                    <li>What does return a function that does not use any return statement</li>
+                    <li>Scope of variables</li>
+                    <li>What's a tracebook</li>
+                    <li>What is the arithmetic operators and how to use them</li>
+                </ul>
+            </div>
+            <div class="container" id="python-if_else_loops_functions_concepts">
+                <h2 class="_heading2">Concepts</h2>
+                <h3 class="_heading3">Conditional Statements</h3>
+                <p>Code has to make decisions like:</p>
+                <ul>
+                    <li>Are you authorized to do that?</li>
+                    <li>Is that a valid email address?</li>
+                    <li>Is that value valid in that field?</li>
+                </ul>
+                <p></p>
+            </div>
+            <div class="container" id="python-if_else_loops_functions_quiz">
+                <h2 class="_heading2">Quiz</h2>
+            </div>
+            <div class="container" id="python-if_else_loops_functions_tasks">
+                <h2 class="_heading2">Tasks</h2>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="../../_resources/js/side_nav.js"></script>
+</body>
+</html>

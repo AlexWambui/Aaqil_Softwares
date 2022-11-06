@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../_resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../_resources/css/icomoon.css">
+    <link rel="stylesheet" href="../../_resources/css/se_aaqil.css">
+    <script src="../../_resources/js/jquery.min.js"></script>
+    <script src="../../_resources/js/popper.min.js"></script>
+    <script src="../../_resources/js/bootstrap.min.js"></script>
+    <title>System Eng. and Devops</title>
+</head>
+<body>
+<section>
+    <aside>
+        <div class="nav_icons">
+            <a href="index.html"><span class="icon-home"></span></a>
+            <span class="icon-close"></span>
+        </div>
+        <div class="nav_heading">
+            <h1>Sys Eng & Devops</h1>
+        </div>
+        <div class="nav_body">
+            <ul>
+                <li><a href="#shell_basics">Shell basics</a></li>
+                <li><a href="#shell_permissions">shell permissions</a></li>
+                <li><a href="#shell_init_files_and_variables">Shell init files, variables</a></li>
+            </ul>
+        </div>
+    </aside>
+    <main>
+        <section class="container" id="shell_basics">
+            <h1 class="_heading1">Shell Basics</h1>
+            <div class="container" id="shell_basics_objectives">
+                <h2 class="_heading2">Objectives</h2>
+                <ul>
+                    <li>what is the shell</li>
+                    <li>What is a shebang</li>
+                    <li>What does RTFM mean?</li>
+                    <li>what is the difference between a terminal and a shell</li>
+                    <li>what is the shell prompt</li>
+                    <li>How to use the history(the basics)</li>
+                    <li>what does commands or built-ins cd, pwd, ls do</li>
+                    <li>How to navigate the filesystem</li>
+                    <li>what are the . and .. directories</li>
+                    <li>what is the working directory, how to print it and how to change it</li>
+                    <li>what is the root directory</li>
+                    <li>what is the home directory and how to go there</li>
+                    <li>what is the difference between the root directory and the home directory of the user root</li>
+                    <li>what are the characteristics of hidden files and how to list them</li>
+                    <li>what does the command cd - do</li>
+                    <li>what do the commands ls, less, file do</li>
+                    <li>How do you use options and arguments with commands</li>
+                    <li>understand the ls long format and how to display it</li>
+                    <li>what does the ln command do</li>
+                    <li>what do you find in the most common / important directories</li>
+                    <li>what is a symbolic link</li>
+                    <li>what is a hard link</li>
+                    <li>what is the difference between a hard link and a symbolic link</li>
+                    <li>what do commands cp, mv, rm, mkdir do</li>
+                    <li>what are wildcards and how do they work</li>
+                    <li>how to use wildcards</li>
+                    <li>what do type, which, help, man commands do</li>
+                    <li>what are the different kinds of commands</li>
+                    <li>what is an alias</li>
+                    <li>when do you use the command help instead of man</li>
+                    <li>How to read a man page</li>
+                    <li>what are man page sections</li>
+                    <li>what are the section number for user commands, system calls and library functions</li>
+                    <li>common shortcuts for bash</li>
+                    <li>what does LTS means? (long Term support)</li>
+                </ul>
+                <p>More Tips</p>
+                <ul>
+                    <li>Why end files with a new line?</li>
+                    <li>How to make file executable?</li>
+                </ul>
+            </div>
+            <div class="container" id="shell_basics_concepts">
+                <h2 class="_heading2">Concepts</h2>
+                <div class="concept_explanation" id="the_shell">
+                    <h3 class="_heading3">The shell</h3>
+                    <p>the shell is a program that takes commands from the keyboard and gives them to the operating
+                        system to perform.</p>
+                    <p>in old days, it was the only user interface on Unix systems such as Linux.</p>
+                    <p>Nowadays we have GUIs and CLIs such as the shell.</p>
+                    <p>on most linux systems, a program called bash (Bourne Again Shell) - an enhanced version of the
+                        original Unix shell program, sh, written by Steve Bourne - acts as the shell program.</p>
+                </div>
+                <div class="concept_explanation" id="shell_commands">
+                    <h3 class="_heading3">Shell Commands</h3>
+                    <h4 class="_heading4">Navigation</h4>
+                    <p class="title">pwd</p>
+                    <p>Since the command line interface cannot provide graphic pictures of the file system structure, we
+                        must have a different way of representing it. To do this, think of the file system tree as a
+                        maze, and that we are standing in it. At any given moment, we are located in a single directory.
+                        Inside that directory, we can see its files and the pathway to its parent directory and the
+                        pathways to the subdirectories of the directory in which we are standing.</p>
+                    <p>The directory we are standing in is called the working directory.</p>
+                    <p>To see the name of the working directory, we use the pwd command.</p>
+                    <p class="command">pwd</p>
+
+                    <p class="title">ls</p>
+                    <p>When we first log on to our Linux system, the working directory is set to our home directory.
+                        This is where we put our files. On most systems, the home directory will be called
+                        /home/user_name, but it can be anything according to the whims of the system administrator.</p>
+                    <p>To list the files in the working directory, we use the ls command.</p>
+                    <p class="command">ls</p>
+                    <p class="command">ls</p>
+                    <p>ls can be used with different options:</p>
+                    <p>list file in a specified directory</p>
+                    <p class="command">ls /dir_part</p>
+                    <p>list files in the working directory in long format</p>
+                    <p class="command">ls -l</p>
+                    <p>list all files (including hidden files) in the parent of the working directory in long format</p>
+                    <p class="command">ls -la</p>
+
+                    <p class="title">cd</p>
+                    <p>To change the working directory (where we are standing in the maze) we use the cd command. To do
+                        this, we type cd followed by the pathname of the desired working directory. </p>
+                    <p>A pathname is the route we take along the branches of the tree to get to the directory we want.
+                        Pathnames can be specified two different ways; absolute pathnames or relative pathnames.</p>
+                    <p class="title">absolute pathname</p>
+                    <p>An absolute pathname begins with the root directory and follows the tree branch by branch until
+                        the path to the desired directory or file is completed. For example, there is a directory on
+                        your system in which most programs are installed. The pathname of the directory is /usr/bin.
+                        This means from the root directory (represented by the leading slash in the pathname) there is a
+                        directory called "usr" which contains a directory called "bin".</p>
+                    <p>example</p>
+                    <p class="command">cd /usr/bin</p>
+                    <p class="title">relative pathname</p>
+                    <p>starts from the working directory. To do this, it uses a couple of special notations to represent
+                        relative positions in the file system tree. These special notations are "." (dot) and ".." (dot
+                        dot).</p>
+                    <p>The "." notation refers to the working directory itself and the ".." notation refers to the
+                        working directory's parent directory.</p>
+                    <p class="note_better">If we type cd followed by nothing, cd will change the working directory to our home
+                        directory.</p>
+                    <p class="note_better">A related shortcut is to type cd ~user_name. In this case, cd will change the
+                        working directory to the home directory of the specified user.</p>
+                    <p class="note_better">Typing cd - changes the working directory to the previous one.</p>
+                </div>
+                <div class="concept_explanation" id="shebang">
+                    <h3 class="_heading3">Shebang</h3>
+                    <p>In computing, a shebang is the character sequence consisting of the characters number sign and
+                        exclamation mark (#!) at the beginning of a script.</p>
+                    <p>It is also called sha-bang (supposed to be misheard or confused by the author in his relatively
+                        recent book, post 2010), hashbang, pound-bang, or hash-pling.</p>
+                    <p>When a text file with a shebang is used as if it is an executable in a Unix-like operating
+                        system, the program loader mechanism parses the rest of the file's initial line as an
+                        interpreter directive. The loader executes the specified interpreter program, passing to it as
+                        an argument the path that was initially used when attempting to run the script, so that the
+                        program may use the file as input data.[8] For example, if a script is named with the path
+                        path/to/script, and it starts with the following line, #!/bin/sh, then the program loader is
+                        instructed to run the program /bin/sh, passing path/to/script as the first argument. In Linux,
+                        this behavior is the result of both kernel and user-space code.</p>
+                    <p>The shebang line is usually ignored by the interpreter, because the "#" character is a comment
+                        marker in many scripting languages; some language interpreters that do not use the hash mark to
+                        begin comments still may ignore the shebang line in recognition of its purpose.</p>
+
+                    <h4 class="_heading4">Shebang lines</h4>
+                    <p>Execute the file using the Bourne shell, or a compatible shell, assumed to be in
+                        the /bin directory</p>
+                    <p class="command">#!/bin/sh</p>
+                    <p>Execute the file using the Bash shell</p>
+                    <p class="command">#!/bin/bash</p>
+                    <p>Execute the file using PowerShell</p>
+                    <p class="command">#!/usr/bin/pwsh</p>
+                    <p>Execute with a Python interpreter, using the env program search
+                        path to find it</p>
+                    <p class="command">#!/usr/bin/env python3</p>
+                    <p>Do nothing, but return a non-zero exit status, indicating failure. Used to
+                        prevent stand-alone execution of a script file intended for execution in a specific context,
+                        such as by the . command from sh/bash, source from csh/tcsh, or as a .profile, .cshrc, or
+                        .login file.</p>
+                    <p class="command">#!/bin/false</p>
+                </div>
+            </div>
+        </section>
+        <section class="container" id="shell_permissions"></section>
+        <section class="container" id="shell_init_files_and_variables"></section>
+        <section class="container" id="process_and_signals"></section>
+        <section class="container" id="loops_conditions_and_parsing"></section>
+        <section class="container" id="regular_expressions"></section>
+    </main>
+</section>
+</body>
+</html>

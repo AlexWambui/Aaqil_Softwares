@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PHPMySQL</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../_resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../_resources/css/icomoon.css">
+    <link rel="stylesheet" href="../../_resources/css/prism.css">
+    <link rel="stylesheet" href="../../_resources/css/_styles.css">
+</head>
+<body>
+    <div class="content-container php_mysqli_page">
+        <header>
+            <button onclick="openNav()"><span class="icons icon-menu"></span> Menu</button>
+        </header>
+        <aside>
+            <div class="side_nav" id="side_nav">
+                <div class="side_nav-icons">
+                    <a href="../index.html"><span class="icon-home"></span></a>
+                    <button><span class="icon-adjust"></span></button>
+                    <button id="close_btn" onclick="closeNav()"><span class="icon-close"></span></button>
+                </div>
+                <div class="side_nav-links">
+                    <ul>
+                        <li><a href="#dbconnection">Connection</a></li>
+                        <li><a href="#link">title</a></li>
+                        <li><a href="#link">title</a></li>
+                        <li><a href="#link">title</a></li>
+                        <li><a href="#link">title</a></li>
+                        <li><a href="#link">title</a></li>
+                        <li><a href="#link">title</a></li>
+                        <li><a href="#link">title</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            <div class="main_content" id="main_content">
+                <div class="content-heading">
+                    <h1>PHPMySQL</h1>
+                </div>
+                <section class="container" id="dbconnection">
+                    <div class="contaner section-heading">
+                        <h1>DB Connection</h1>
+                    </div>
+                    <div class="container section-content">
+                        <p>PDO (PHP Data Objects) is a code library for accessing databases.</p>
+                        <p>PDO will work on 12 different database systems, whereas MySQLi will only work with MySQL databases.</p>
+                        <p>So, if you have to switch your project to use another database, PDO makes the process easy. You only have to change the connection string and a few queries. With MySQLi, you will need to rewrite the entire code - queries included.</p>
+                        <p>Both support Prepared Statements. Prepared Statements protect from SQL injection, and are very important for web application security.</p>
+                        <h1>using mysqli</h1>
+                        <p>The code for connecting to a database using mysqli is:</p>
+
+                        <div class="container php_code_container">
+                            <div class="php_code_description">
+                                <h1>using mysqli</h1>
+                            </div>
+                            <div class="php_code">
+<pre>
+&lt;?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "enter_dbname";
+
+    // Create connection
+    $dbconn = mysqli_connect($servername, $username, $password, $dbname);
+
+    // Check connection
+    if (!$dbconn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    echo "Connected successfully";
+    mysqli_close($dbconn);
+?&gt;
+</pre>                                
+                            </div>
+                        </div>
+
+                        <h1>using PDO</h1>
+                        <div class="container php_code_container">
+                            <div class="php_code_description">
+                                <h1>using PDO</h1>
+                            </div>
+                            <div class="php_code">
+<pre>
+&lt;?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+
+    try {
+        $dbconn = new PDO("mysql:host=$servername;dbname=enter_dbname, $username, $password);
+        // set the PDO error mode to exception
+        $dbconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        echo "Connected successfully";
+    }
+    catch(PDOException $e){
+        echo "Connection failed: " . $e->getMessage();
+    }
+    $dbconn = null;
+?&gt;
+</pre>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+                <hr/>
+
+                <section class="container" id="php_functions">
+                    <h2 class="_heading2">PHP Functions</h2>
+                    <p>login function</p>
+                    <figure>
+                        <pre class="line-numbers">
+                            <code class="language-php">
+                                function login()
+                                {
+                                    global $db_connection;
+
+                                    $email = $_REQUEST["email_address"];
+                                    $password = $_REQUEST["password"];
+
+                                    $sql = mysqli_prepare($db_connection, "SELECT * FROM users WHERE email_address = ?");
+                                    mysqli_stmt_bind_param($sql, "s", $email);
+                                    mysqli_stmt_execute($sql) or die (mysqli_stmt_error($sql));
+                                    $fetched_user = mysqli_stmt_get_result($sql);
+
+                                    if (mysqli_num_rows($fetched_user) == 1) {
+                                        $user = mysqli_fetch_assoc($fetched_user);
+                                        $db_password = $user['password'];
+                                        if ($db_password == $password) {
+                                            session_start();
+                                            $_SESSION["user_id"] = $user["id"];
+                                            $_SESSION["user_first_name"] = $user["first_name"];
+                                            $_SESSION["user_last_name"] = $user["last_name"];
+                                            $_SESSION["user_type"] = $user['user_type'];
+                                            $_SESSION["user_login_status"] = true;
+                                            header('location: welcome_page.php');
+                                        } else {
+                                            setcookie('error', "Oops! Wrong username or Password", time() + 3);
+                                            header('location: ./_login.php');
+                                        }
+                                    } else {
+                                        setcookie('error', "Oops! Wrong username or Password", time() + 3);
+                                        header('location: ./_login.php');
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </figure>
+
+                    <p>image upload</p>
+                    <figure>
+                        <pre class="line-numbers">
+                            <code class="language-php">
+                                function image_upload()
+                                {
+                                    $target_dir = "uploads/";
+                                    $target_file = $target_dir .rand(1000000,10000000). basename($_FILES["photo"]["name"]);
+                                    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+                                    $allowed_types = ["png", "jpeg", "jpg", "gif", "pdf", "doc", "docx"];
+                                    $allowed = in_array($imageFileType, $allowed_types);
+                                    //accept="image/*"
+                                    //accept="audio/*"a
+                                    //accept="video/*"
+                                    //accept="image/*,audio/*,video/*"
+                                    if ($allowed and move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file)) {
+                                        // echo "Uploaded";
+                                        $status = 1;
+                                    } else {
+                                        //echo "Failed";
+                                        $status = 2;
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </figure>
+                </section>
+
+            </div>
+        </main>
+    </div>
+    <script src="../../_resources/js/side_nav.js"></script>
+    <script src="../../_resources/js/prism.js"></script>
+</body>
+</html>

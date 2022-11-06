@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../_resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../_resources/css/icomoon.css">
+    <link rel="stylesheet" href="../../_resources/css/_styles.css">
+</head>
+<body>
+    <div class="content-container css_page">
+        <header>
+            <button onclick="openNav()"><span class="icons icon-menu"></span> Menu</button>
+        </header>
+        <aside>
+            <div class="side_nav" id="side_nav">
+                <div class="side_nav-icons">
+                    <a href="../index.html"><span class="icon-home"></span></a>
+                    <button><span class="icon-adjust"></span></button>
+                    <button id="close_btn" onclick="closeNav()"><span class="icon-close"></span></button>
+                </div>
+                <div class="side_nav-links">
+                    <ul>
+                        <li><a href="#introduction">Introduction</a></li>
+                        <li><a href="#fonts">Fonts</a></li>
+                        <li><a href="#colors">Colors</a></li>
+                        <li><a href="#borders">Borders</a></li>
+                        <li><a href="#margins">Margins</a></li>
+                        <li><a href="#padding">Padding</a></li>
+                        <li><a href="#grid">Grid</a></li>
+                        <li><a href="#media_queries">Media Queries</a></li>
+                        <li><a href="#hide_number_arrows">No. Arrow</a></li>
+                        <li><a href="#tips">Tips</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            <div class="main_content" id="main_content">                        
+                <section class="container" id="fonts">
+                    <div class="container section-heading">
+                        <h1>Font Family</h1>
+                    </div>
+                    <div class="container section-content">
+                        <p>some common fonts include:</p>
+                        <ul>
+                            <li>Helvetica : <span class="font_helvetica">this font family is called helvetica</span></li>
+                            <li>Source Sans Pro : <span class="font_source_sans_">this font is called source sans pro</span></li>
+                            <li>'open sans' : <span class="font_open_sans">this font family is called open sans</span></li>
+                            <li>Titillium Web : <span class="font_titillium">this font is called titillium web</span></li>
+                            <li>Raleway : <span class="font_raleway">this font is called raleway</span></li>
+                            <li>Bebas Neue : <span class="font_bebas_neue">this font is called bebas neue</span></li>
+                            <li>Roboto : <span class="font_roboto">this font family is called roboto</span></li>
+                            <li>proxima nova : <span class="font_proxima_nova">this font family is called proxima nova</span></li>
+                            <li>avenir next : <span class="font_avenir_next">this font family is called avenir next</span></li>
+                            <li>Simplifica : <span class="font_simplifica">this font is called simplifica</span></li>
+                            <li>monospace</li>
+                            <li>montserat</li>
+                        </ul>       
+                        <p>when importing fonts, they can fail to be available so we have to show how the fonts will degrade.</p>                     
+                        <p>degrading is done by listing fonts, so the browser can go through the list for alternative if one font isn't avalilable.</p>
+                        <p>In the example below, if font lobster is not found, monospace will be used by the browser.</p>
+                        <div class="code container">
+                            <h1 class="code_description">font degrading</h1>
+                            <div class="css_code">
+<pre>
+p{
+    font-family: lobster, monospace, helvetica, monospace;
+}
+</pre>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+                <hr/>
+
+                <section class="container" id="colors">
+                    <div class="container section-heading">
+                        <h1>Colors</h1>
+                    </div>
+                    <div class="container section-content">
+                        <h2>Hex codes</h2>
+                        <p>are 6 hexadecimal digits that represent colors.</p>
+                        <p>digits represet red, green, blue.</p>
+                        <p>with hexcodes we can have over 16 million colors.</p>
+                         <div class="code container">
+                             <h1 class="code_description">hex codes</h1>
+                             <div class="css_code">
+<pre>
+.red-hex-code{
+    color: #FF0000;
+}   
+.green-hex-code{
+    color: #00FF00;
+} 
+</pre>                                 
+                             </div>
+                         </div>
+                         <p>to use shortend hex code, we can use 3 digits to rep the six. e.g. #F00, or #F0F</p>
+
+                         <h2>RGB values</h2>
+                         <p>each number in the rgb value is usually between 0 and 255.</p>
+                         <div class="code container">
+                             <h1 class="code_description">RGB values</h1>
+                             <div class="css_code">
+<pre>
+body{
+    background-color: rgb(255, 255, 0);
+}    
+</pre>                                 
+                             </div>
+                         </div>
+
+                        <h2>Facts about colors</h2>
+                        <p>A survey found that 58% of adults have experienced eye strain from working on computers.</p>
+                        <p>Pure black text on white backgrounds can cause eye strain when users read the text over an extended period.</p>
+                        <p>White has 100% color brightness and black has 0% such a disparity creates intense levels that overstimulate the eyes.</p>
+                        <p>use these:</p>
+                        <div class="container css_images">
+                            <img src="../../_resources/images/css/images/colors-UI-design.JPG" alt="UI colors for design">
+                        </div>
+                        <h2>colors for finance app</h2>
+                        <div class="container css_images">
+                            <img src="../../_resources/images//css/images/finance-app.JPG" alt="finance app colors">
+                        </div>
+                        <ul>
+                            <li>Purple
+                                <p>a little purple tint gives the feeling of something IT-oriented</p>
+                                <p><b>Emotions and feelings</b></p>
+                                <p>modern, stability, calm, trust</p>
+                            </li>
+                            <li>Light blue
+                                <p>one of the most-liked colors across the entire world</p>
+                                <p><b>Emotions and feelings</b></p>
+                                <p>destress, dependability, calm, trust, responsibility</p>
+                            </li>
+                            <li>Dark Blue
+                                <p>most important for finance app is trust and stability</p>
+                                <p><b>Emotions and feelings</b></p>
+                                <p>stability, harmony, peace, calm and trust</p>
+                            </li>
+                        </ul>                            
+                    </div>
+                </section>
+                <hr/>
+
+                <section class="container" id="borders">
+                    <div class="container section-heading">
+                        <h1>Border Properties</h1>
+                    </div>
+                    <div class="container section-content">
+                        <p>allow you specify the style , width and colors of an element's border.</p>
+
+                        <h2>Accent borders</h2>
+                        <p>adding a simple accent color border to your design can help take it from boring to colorful. Accents are a great way to guide the eye.</p>
+                        <div class="container row">
+                            <div class="col">
+                                <div class="css_images">
+                                    <img src="../../_resources/images/css/images/accent-borders_no.JPG" width=250 alt="accent-borders">
+                                </div>           
+                            </div>
+                            <div class="col">
+                                <div class="css_images">
+                                    <img src="../../_resources/images/css/images/accent-borders_yes.JPG" width=250 alt="accent-borders">
+                                </div>           
+                            </div>
+                        </div>
+                        <div class="code container">
+                            <h1 class="code_description">accent borders</h1>
+                            <div class="row">
+                                <div class="col-sm-12 | col-md-12 | col-lg-6">
+                                    <h1 class="code_title">Code:</h1>
+                                    <div class="css_code">
+<pre>
+&lt;!--CSS code--&gt;
+&lt;style&gt;
+.css_example .accent_border{
+	background:white;
+	border-left:4px solid green;
+	border-radius:2px;
+	padding:1%;
+}       
+&lt;/style&gt;
+
+&lt;!--html code--&gt;    
+&lt;div class="css_example accent_border"&gt;
+    &lt;p&gt;accent border&lt;/p&gt;
+    &lt;p&gt;Accents are a great way to guide the eye.&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 | col-md-12 | col-lg-6">
+                                    <h1 class="code_explanation_or_output">Output:</h1>
+                                    <div class="explanation_output">
+                                        <div class="css_example_accent_borders">
+                                            <p>accent border</p>
+                                            <p>Accents are a great way to guide the eye.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>Border Style</h2>
+                        <p>specifies what kind of border to display.</p>
+                        <p>can have from one to four values (top, right, bottom and left)</p>
+                        <p>values allowed include:</p>
+                        <ul>
+                            <li>dotted : dotted border</li>
+                            <li>dashed : dashed border</li>
+                            <li>solid : solid border</li>
+                            <li>double : double border</li>
+                            <li>groove : 3D grooved border. The efffect depends on the border-color value</li>
+                            <li>ridge : 3D ridged border. The efffect depends on the border-color value</li>
+                            <li>inset : 3D inset border. The efffect depends on the border-color value</li>
+                            <li>outset : 3D outset border. The efffect depends on the border-color value</li>
+                            <li>none : no border</li>
+                            <li>hidden : hidden border</li>
+                        </ul>
+                        <div class="code container">
+                            <h1 class="code_description">border-style</h1>
+                            <div class="row">
+                                <div class="col-sm-12 | col-md-12 | col-lg-6">
+                                    <h1 class="code_title">Code:</h1>
+                                    <div class="css_code">
+<pre>
+&lt;!--CSS code--&gt;
+&lt;style&gt;
+p.demo{
+    margin-bottom:1%;
+    padding:1%;
+}
+p.dotted{
+    border-style: dotted ;
+}
+p.solid{
+    border-style:solid;
+}
+p.dashed{
+    border-style:dashed;
+}
+p.double{
+    border-style:double;
+}
+p.groove{
+    border-style:groove;
+}
+p.ridge{
+    border-style:ridge;
+}
+p.inset{
+    border-style:inset;
+}
+p.outset{
+    border-style:outset;
+}
+p.none{
+    border-style:none;
+}
+p.hidden{
+    border-style:hidden;
+}
+p.mix{
+    border-style: dotted dashed solid double;
+}
+&lt;/style&gt;
+
+&lt;!--html code--&gt;    
+&lt;p class="demo dotted"&gt;dotted&lt;/p&gt;
+&lt;p class="demo solid"&gt;solid&lt;/p&gt;
+&lt;p class="demo dashed"&gt;dashed&lt;/p&gt;
+&lt;p class="demo double"&gt;double&lt;/p&gt;
+&lt;p class="demo groove"&gt;groove&lt;/p&gt;
+&lt;p class="demo ridge"&gt;ridge&lt;/p&gt;
+&lt;p class="demo inset"&gt;inset&lt;/p&gt;
+&lt;p class="demo outset"&gt;outset&lt;/p&gt;
+&lt;p class="demo none"&gt;none&lt;/p&gt;
+&lt;p class="demo hidden"&gt;hidden&lt;/p&gt;
+&lt;p class="demo mix"&gt;mix&lt;/p&gt;
+</pre>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 | col-md-12 | col-lg-6">
+                                    <h1 class="code_explanation_or_output">Output:</h1>
+                                    <div class="explanation_output">
+                                        <p class="demo dotted">dotted</p>
+                                        <p class="demo solid">solid</p>
+                                        <p class="demo dashed">dashed</p>
+                                        <p class="demo double">double</p>
+                                        <p class="demo groove">groove</p>
+                                        <p class="demo ridge">ridge</p>
+                                        <p class="demo inset">inset</p>
+                                        <p class="demo outset">outset</p>
+                                        <p class="demo none">none</p>
+                                        <p class="demo hidden">hidden</p>
+                                        <p class="demo mix">mix</p>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>Individual sides</h2>
+                        <p>to set border-style(required), border-width, border-color for individual side, the order is usually:</p>
+                        <p>with four values</p>
+                        <ul>
+                            <p>border-style: dotted solid double dashed;</p>
+                            <li>top : dotted</li>
+                            <li>right : solid</li>
+                            <li>bottom : double</li>
+                            <li>left :dashed</li>
+                        </ul>
+                        <p>with three values</p>
+                        <ul>
+                            <p>border-style:dotted solid double;</p>
+                            <li>top : dotted</li>
+                            <li>right and left : solid</li>
+                            <li>bottom : double</li>
+                        </ul>
+                        <p>with two values</p>
+                        <ul>
+                            <p>border-style: dotted solid;</p>
+                            <li>top and bottom : dotted</li>
+                            <li>right and left : solid</li>
+                        </ul>
+                        <p>with one value</p>
+                        <ul>
+                            <p>border-style:dotted solid;</p>
+                            <li>all four borders : dotted</li>
+                        </ul>
+
+                        <div class="code container">
+                            <h1 class="code_description">individual sides</h1>
+                            <div class="css_code">
+<pre>
+p.one{
+    border-top-style:dotted;
+    border-right-style:solid;
+    border-bottom-style:dotted;
+    border-left-style:solid;
+}
+</pre>                                
+                            </div>
+                        </div>
+
+                        <h2>Border Width</h2>   
+                        <p>specifies the width of the four borders</p>
+                        <p>can be set as a specific size (in px, pt, cm, em etc) or by using one of the three pre-defined values: thin, medium or thick.</p>
+
+                        <div class="code container">
+                            <h1 class="code_description">border-width</h1>
+                            <div class="row">
+                                <div class="col-sm-12 | col-md-12 | col-lg-6">
+                                    <h1 class="code_title">Code:</h1>
+                                    <div class="css_code">
+<pre>
+&lt;!--CSS code--&gt;
+&lt;style&gt;
+p.demo{
+    margin-bottom:1%;
+    padding:1%;
+}    
+p.one, 
+p.two,
+p.three{
+    border-style:solid;
+}
+p.one{
+    border-width:5px;
+}
+p.two{
+    border-width:medium;
+}
+p.three{
+    border-width:2px 10px 4px 20px;
+}
+&lt;!--html code--&gt;    
+&lt;p class="demo one"&gt;width: 5px&lt;/p&gt;
+&lt;p class="demo two"&gt;width: medium&lt;/p&gt;
+&lt;p class="demo three"&gt;using 4 sides&lt;/p&gt;
+</pre>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 | col-md-12 | col-lg-6">
+                                    <h1 class="code_explanation_or_output">Output:</h1>
+                                    <div class="explanation_output">
+                                        <p class="demo one">width: 5px</p>
+                                        <p class="demo two">width: medium</p>
+                                        <p class="demo three">using 4 sides</p>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>border-color</h2>
+                        <p>sets the color of the four borders</p>
+                        <p>can have from one to four values (for the top, right, bottom, left)</p>
+                        <p>if not set, border-color inherits the color of the element</p>
+                        <p>can be set by:</p>
+                        <ul>
+                            <li>name : specify color name, like "red"</li>
+                            <li>hex : specify hex value, like "#ff0000"</li>
+                            <li>rgb : specify rgb value, like "rgb(255,0,0)"</li>
+                            <li>transparent</li>
+                        </ul>
+
+                        <div class="code container">
+                            <h1 class="code_description">border-color</h1>
+                            <div class="css_code">
+<pre>
+p.one{
+    border-style:solid;
+    border-color:green;
+}
+</pre>                                
+                            </div>
+                        </div>
+
+                        <h2>Shorthand Property</h2>
+                        <p>To shorten the code, it is also possible to specify all the individual border properties in one property.</p>
+                        <p>The border property is a shorthand property for the following individual border properties:</p>
+                        <ul>
+                            <li>border-width</li>
+                            <li>border-style</li>
+                            <li>border-color</li>
+                        </ul>
+
+                        <div class="code container">
+                            <h1 class="code_description">shorthand border property</h1>
+                            <div class="row">
+                                <div class="col-sm-12 | col-md-12 | col-lg-6">
+                                    <h1 class="code_title">Code:</h1>
+                                    <div class="css_code">
+<pre>
+p.one_shorthand{
+    border-left: 6px solid blue;
+    background:pink;
+}
+
+&lt;!-- HTML --&gt;
+&lt;p class="demo one_shorthand"&gt;border-left: 5px solid red&lt;/p&gt;
+</pre>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 | col-md-12 | col-lg-6">
+                                    <h1 class="code_explanation_or_output">Output:</h1>
+                                    <div class="explanation_output">
+                                        <p class="demo one_shorthand">border-left: 5px solid red</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>Rounded borders</h2>
+                        <p>adds rounded borders to an element</p>
+
+                        <div class="code container">
+                            <h1 class="code_description">rounded borders</h1>
+                            <div class="row">
+                                <div class="col-sm-12 | col-md-12 | col-lg-6">
+                                    <h1 class="code_title">Code:</h1>
+                                    <div class="css_code">
+<pre>
+&lt;!-- CSS --&gt;    
+p.one_rounded_borders, 
+p.two_rounded_borders,
+p.three_rounded_borders,
+p.four_rounded_borders{
+    border: 2px solid black;
+}
+p.two_rounded_borders{
+    border-radius: 4px;
+}
+p.three_rounded_borders{
+    border-radius:8px;
+}
+p.four_rounded_borders{
+    border-radius:12px;
+}
+
+&lt;!-- HTML --&gt;
+&lt;p class="demo one_rounded_borders"&gt;without border-radius&lt;/p&gt;
+&lt;p class="demo two_rounded_borders"&gt;radius 4px;&lt;/p&gt;
+&lt;p class="demo two_rounded_borders"&gt;radius 8px;&lt;/p&gt;
+&lt;p class="demo four_rounded_borders"&gt;radius 12px;&lt;/p&gt;
+</pre>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 | col-md-12 | col-lg-6">
+                                    <h1 class="code_explanation_or_output">Output:</h1>
+                                    <div class="explanation_output">
+                                        <p class="demo one_rounded_borders">without border-radius</p>
+                                        <p class="demo two_rounded_borders">radius 4px;</p>
+                                        <p class="demo two_rounded_borders">radius 8px;</p>
+                                        <p class="demo four_rounded_borders">radius 12px;</p>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr/>
+
+                <section class="container" id="margins">
+                    <div class="container section-heading">
+                        <h1>Margins</h1>
+                    </div>
+                    <div class="container section-content">
+                        <p>used to create space around elements, outside of any defined borders.</p>
+                        <p>There are properties for setting the margin for each side of an element (top, right, bottom, and left).</p>
+                        <p>All the margin properties can have the following values: (Negative values are allowed.)</p>
+                        <ul>
+                            <li>auto : the browser calculates the margin</li>
+                            <li>lenght : specifies a margin in px, pt, cm etc.</li>
+                            <li>% : specifies margin in % of the width of the containing element</li>
+                            <li>inherit : specifies the margin should be inherited from the parent element</li>
+                        </ul>
+
+                        <div class="code container">
+                            <h1 class="code_description">margins</h1>
+                            <div class="row">
+                                <div class="col-sm-12 | col-md-12 | col-lg-6">
+                                    <h1 class="code_title">Code:</h1>
+                                    <div class="css_code">
+<pre>
+&lt;!-- CSS --&gt;    
+p.one_margins, 
+p.two_margins,
+p.three_margins,
+p.four_margins{
+    border: 2px solid black;
+}
+p.one_margins{
+    margin: 25px;
+}
+p.two_margins{
+    margin:5%;
+}
+p.three_margins{
+    margin:25px auto 4px;
+}
+p.four_margins{
+    margin-left:5%;
+}
+
+&lt;!-- HTML --&gt;
+&lt;p class="demo one_margins"&gt;margin: 25px;&lt;/p&gt;
+&lt;p class="demo two_margins"&gt;margin: 5%;&lt;/p&gt;
+&lt;p class="demo three_margins"&gt;margin: 25px auto 4px;&lt;/p&gt;
+&lt;p class="demo four_margins"&gt;margin-left: 5%;&lt;/p&gt;
+</pre>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 | col-md-12 | col-lg-6">
+                                    <h1 class="code_explanation_or_output">Output:</h1>
+                                    <div class="explanation_output">
+                                        <p class="demo one_margins">margin: 25px;</p>
+                                        <p class="demo two_margins">margin: 5%;</p>
+                                        <p class="demo three_margins">margin: 25px auto 4px;</p>
+                                        <p class="demo four_margins">margin-left: 5%;</p>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>auto value</h2>
+                        <p>You can set the margin property to auto to horizontally center the element within its container.</p>
+                        <p>The element will then take up the specified width, and the remaining space will be split equally between the left and right margins.</p>
+
+                        <div class="code container">
+                            <h1 class="code_description">auto value</h1>
+                            <div class="row">
+                                <div class="col-sm-12 | col-md-12 | col-lg-6">
+                                    <h1 class="code_title">Code:</h1>
+                                    <div class="css_code">
+<pre>
+&lt;!-- CSS --&gt;   
+.auto_value{
+    width: 300px;
+    margin:auto;
+    border: 1px solid blue;
+}
+.auto_value p{
+    text-align:center;
+}
+
+&lt;!-- HTML --&gt;
+&lt;div class="auto_value"&gt;
+    &lt;p&gt;margin: auto;&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 | col-md-12 | col-lg-6">
+                                    <h1 class="code_explanation_or_output">Output:</h1>
+                                    <div class="explanation_output">
+                                        <div class="auto_value">
+                                            <p>margin: auto;</p>
+                                        </div>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>margin collapse:</h2>
+                        <p>Top and bottom margins of elements are sometimes collapsed into a single margin that is equal to the largest of the two margins.</p>
+                        <p>This does not happen on left and right margins! Only top and bottom margins!</p>
+                        
+                        <div class="code container">
+                            <h1 class="code_description">margin collapse</h1>
+                            <div class="row">
+                                <div class="col-sm-12 | col-md-12 | col-lg-6">
+                                    <h1 class="code_title">Code:</h1>
+                                    <div class="css_code">
+<pre>
+&lt;!-- CSS --&gt;   
+p.one_margin_collapse,
+p.two_margin_collapse{
+    border: 1px solid blue;
+}
+p.one_margin_collapse{
+    margin: 0 0 20px 0;
+}
+p.two_margin_collapse{
+    margin: 20px 0 0 0;
+}
+
+&lt;!-- HTML --&gt;
+&lt;p class="one_margin_collapse"&gt;margin: 0 0 20px 0;&lt;/p&gt;
+&lt;p class="two_margin_collapse"&gt;margin: 20px 0 0 0;&lt;/p&gt;
+</pre>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 | col-md-12 | col-lg-6">
+                                    <h1 class="code_explanation_or_output">Output:</h1>
+                                    <div class="explanation_output">
+                                        <p class="one_margin_collapse">margin: 0 0 20px 0;</p>
+                                        <p class="two_margin_collapse">margin: 20px 0 0 0;</p>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>In the example above, the &lt;p&gt; element has a bottom margin of 20px and the second &lt;p&gt; element has a top margin set to 20px.</p>
+                        <p>Common sense would seem to suggest that the vertical margin between the &lt;p&gt; and the second &lt;h2&gt; would be a total of 40px (20px + 20px). But due to margin collapse, the actual margin ends up being 20px.</p>
+                    </div>
+                </section>
+                <hr/>
+
+                <section class="container" id="padding">
+                    <div class="container section-heading">
+                        <h1>Padding</h1>
+                    </div>
+                    <div class="container section-content">
+                        <p>used to generate space around an element's content, inside of any defined borders.</p>
+                        <p>There are properties for setting the padding for each side of an element (top, right, bottom, and left). </p>
+                    </div>
+                </section>
+                <hr/>
+
+                <section class="container" id="grid">
+                    <div class="container section-heading">
+                        <h1>Grid</h1>
+                    </div>
+                    <div class="container section-content">
+                        <p>to use grid we first set the display property to grid to enable us access all other properties of the grid.</p>
+                        <div class="code container">
+                            <h1 class="code_description">grid</h1>
+                            <div class="css_code">
+<pre>
+.container{
+    display:grid;
+    /*add columns: 3 columns*/
+    grid-template-columns: 100px 100px 100px;
+    /*add rows: how the tall the rows will be*/
+    grid-template-rows: 50px 50px;
+}    
+</pre>                                
+                            </div>
+                        </div>     
+                        <p>instead of using pixels in settting the width of the columns, fr ( which rep the fraction of the available space).</p>                   
+                        <p>we can also use auto to set the size of the column to the available space</p>
+                        <div class="code container">
+                            <h1 class="code_description">grid using fr</h1>
+                            <div class="css_code">
+<pre>
+.container{
+    display:grid;
+    /*1st takes the available space, 2nd takes 50px, 3rd takes 10 percent of the container, 4th and 5th take the fraction of the 3 sections - 4th takes 2 / 3 and 5th takes 1 / 3 of the fraction*/
+    grid-template-column: auto 50px 10% 2fr 1fr;
+    grid-template-rows:50px 50px;
+}    
+</pre>                                
+                            </div>
+                        </div>
+                        <p>to create a column gap use: grid-column-gap:2px;</p>
+                        <p>to create a row gap use: grid-row-gap: 4px;</p>
+                        <div class="code container">
+                            <h1 class="code_description">grid column / row gap</h1>
+                            <div class="css_code">
+<pre>
+.container{
+    display:grid;
+    /*1st takes the available space, 2nd takes 50px, 3rd takes 10 percent of the container, 4th and 5th take the fraction of the 3 sections - 4th takes 2 / 3 and 5th takes 1 / 3 of the fraction*/
+    grid-template-column: auto 50px 10% 2fr 1fr;
+    grid-template-rows:50px 50px;
+    grid-column-gap:5px;
+    grid-row-gap:4px;
+}    
+</pre>                                
+                            </div>
+                        </div>
+                        <p>the short hand for grid gap is grid-gap:4px; for both column gap and row gap.</p>
+                        <p>when we use two values; grid-gap: 4px 2px; the first value becomes the row gap and the second the column gap.</p>
+                        <div class="code container">
+                            <h1 class="code_description">grid column / row gap shorthand</h1>
+                            <div class="css_code">
+<pre>
+.container{
+    display:grid;
+    /*1st takes the available space, 2nd takes 50px, 3rd takes 10 percent of the container, 4th and 5th take the fraction of the 3 sections - 4th takes 2 / 3 and 5th takes 1 / 3 of the fraction*/
+    grid-template-column: auto 50px 10% 2fr 1fr;
+    grid-template-rows:50px 50px;
+    grid-gap:5px 10px;
+ }    
+</pre>                                
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+                <hr/>
+
+                <section class="container" id="media_queries">
+                    <div class="container section-heading">
+                        <h1>Media Queries and Responsive Web Design</h1>
+                    </div>
+                    <div class="container section-content">
+                        <p>Media queries allow to express that certain CSS rules should only be executed when certain conditions are in place (such as based on the screen’s resolution, or the number of colors a graphics card can handle).</p>
+                        <p>But the one condition that started to get very used, is the one allowing to only execute some CSS depending on the browser’s width. As you may have understood, this allows a single CSS codebase for a website regardless of the size of the browser, enabling and disabling some CSS rules when it passes certain width thresholds.</p>
+                        <p>Do you remember Jeffrey Zeldman? (He’s the guy who founded A List Apart, the Web Standards Project, and wrote Designing with Web Standards) He’s part of the people who actually came up with the notion of Responsive Web Design, the idea to use media queries to make a single website adapt depending on the browser’s width.</p>
+                        <p>for CSS, instead of media queries looking for a type of device, they look at the capability of the device.</p>
+                        <p>media queries check:</p>
+                        <ul>
+                            <li>Width and height of the viewport</li>
+                            <li>Width and height of the device</li>
+                            <li>Orientation (the tablet / phone in landscape or portrait mode?)</li>
+                            <li>resolution</li>
+                        </ul>
+            
+                        <h2>Media Query Syntax</h2>
+                        <p>A media query consists of a media type and can contain one or more expressions, which resolve to either true or false.</p>
+                        <div class="code container">
+                            <h1 class="code_description">media query syntax</h1>
+                            <div class="css_code">
+<pre>
+@media not|only mediatype and (expressions) {
+  CSS-Code;
+}
+</pre>                                
+                            </div>
+                        </div>
+                        <p>The result of the query is true if the specified media type matches the type of device the document is being displayed on and all expressions in the media query are true.</p>        
+                        <p>When a media query is true, the corresponding style sheet or style rules are applied, following the normal cascading rules.</p>
+                        <p>Unless you use the not or only operators, the media type is optional and the all type will be implied.</p>
+                        <p>You can also have different stylesheets for different media:</p>
+                        <div class="code container">
+                            <h1 class="code_description">linking different style sheets</h1>
+                            <div class="css_code">
+<pre>
+ &lt;link rel="stylesheet" media="mediatype and|not|only (expressions)" href="print.css"&gt;
+</pre>                                
+                            </div>
+                        </div>
+
+                        <h2>Media types</h2>
+                        <div class="container">
+                            <table class="table table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <td>Value</td>
+                                        <td>Description</td>
+                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                            <td>all</td>
+                                            <td>used for all media type devices</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Print</td>
+                                            <td>used for printers</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Screen</td>
+                                            <td>Used for computer screens, tablets, smart-phones etc.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>speech</td>
+                                            <td>used for screenreaders that "reads" the page out loud</td>
+                                        </tr>
+                                    </tbody>
+                                </thead>
+                            </table>
+                        </div>
+                        
+                        <h2>Simple Examples</h2>
+                        <p>One way to use media queries is to have an alternate CSS section right inside your style sheet.</p>
+                        <p>The following example changes the background-color to lightgreen if the viewport is 480 pixels wide or wider (if the viewport is less than 480 pixels, the background-color will be pink):</p>
+                        
+                        <div class="code container">
+                            <h1 class="code_description">media queries example</h1>
+                            <div class="css_code">
+<pre>
+body {
+  background-color: pink;
+}    
+
+@media screen and (min-width: 480px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+</pre>                                
+                            </div>
+                        </div>
+
+                        <p>The following example shows a menu that will float to the left of the page if the viewport is 480 pixels wide or wider (if the viewport is less than 480 pixels, the menu will be on top of the content):</p>
+                        <div class="code container">
+                            <h1 class="code_description">viewport = 480px</h1>
+                            <div class="css_code">
+<pre>
+@media screen and (min-width: 480px) {
+  #leftsidebar {width: 200px; float: left;}
+  #main {margin-left: 216px;}
+}
+</pre>                                
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr/>
+
+                <section class="container" id="hide_number_arrows">
+                    <div class="container section-heading">
+                        <h1>Number Arrows</h1>
+                    </div>
+                    <div class="container section-content">
+                        <h1>Number Arrows</h1>
+                        <p>to hide the number arrows usually in firefox's &lt;input type="number"&gt;, use: </p>
+                        <div class="code container">
+                            <h1 class="code_description">number arrows</h1>
+                            <div class="css_code">
+<pre>
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance:textfield;
+}
+</pre>                                
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr/>
+
+                <section class="container" id="tips">
+                    <div class="container section-heading">
+                        <h1>Tips</h1>
+                    </div>
+                    <div class="container section-content">
+                        <div class='note_better'>
+                            <ul>
+                                 <li>In CSS everything is a box
+                                     <p>Anatomy of the box</p>
+                                     <p>everything is ordered in the form of :</p>
+                                     <ul>
+                                         <li>content</li>
+                                         <li>padding</li>
+                                         <li>border</li>
+                                         <li>margin</li>
+                                     </ul>
+                                     <div class='css_images'>
+                                         <img src='../../_resources/images/css/images/anatomy-of-the-box.JPG' alt='anatomy of the box' width=250>
+                                     </div>
+                                     <p>there's usually border-box(more useful) and content-box(default). So it's good practice to always use box-sizing: border-box; to avoid box-sizing:content-box; which is usually the default</p>
+                                 </li>
+                                 <li>VW : means viewport width and VH : means viewport height.
+                                     Vmin : (recommended) takes the smaller of the two and is more responsive than VW e.g. font-size:25vmin;
+                                 </li>
+                            </ul>
+
+                            <h2>Overwriting styles</h2>
+                            <p>one way of overwriting styles is ensuring the most important styles are on the bottom.</p>
+                            <p>the other way is using <mark>!important</mark> which means it's the most important style</p>
+                            <div class="code container">
+                                <h1 class="code_description">code_description</h1>
+                                <div class="css_code">
+<pre>
+.pink-text{
+    color:pink !important;
+}    
+</pre>                                    
+                                </div>
+                            </div>
+                            
+                    </div>
+                </section>
+                <hr/>
+
+                <section id="links">
+                    <h1 class="_heading1">Important links</h1>
+                    <ul>
+                        <li><a href="https://learn.shayhowe.com/html-css/writing-your-best-code/">Learn HTML & CSS</a></li>
+                        <li><a href="http://vanseodesign.com/web-design/semantic-html/">Semantic HTML</a></li>
+                        <li><a href="http://book.mixu.net/css/">CSS Layout</a></li>
+                        <li><a href="https://css-tricks.com/specifics-on-css-specificity/">CSS specificity</a></li>
+                        <li><a href="https://developer.mozilla.org/en-US/">Resources for web dev including hosting</a></li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="../../_resources/js/side_nav.js"></script>
+</body>
+</html>

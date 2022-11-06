@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../_resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../_resources/css/icomoon.css">
+    <link rel="stylesheet" href="../../_resources/css/prism.css">
+    <link rel="stylesheet" href="../../_resources/css/se_aaqil.css">
+    <script src="../../_resources/js/jquery.min.js"></script>
+    <script src="../../_resources/js/popper.min.js"></script>
+    <script src="../../_resources/js/bootstrap.min.js"></script>
+    <title>JavaScript</title>
+</head>
+<body>
+<section>
+    <aside>
+        <div class="nav_icons">
+            <a href="index.html"><span class="icon-home"></span></a>
+            <span class="icon-close"></span>
+        </div>
+        <div class="nav_heading">
+            <h1>JavaScript</h1>
+        </div>
+        <div class="nav_body">
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#comments">Comments</a></li>
+                <li><a href="#variables">Variables</a></li>
+                <li><a href="#data_types">Data Types</a></li>
+                <li><a href="#operators">Operators</a></li>
+                <li><a href="#conditionals">Conditionals</a></li>
+                <li><a href="#functions">Functions</a></li>
+                <li><a href="#loops">Loops</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </div>
+    </aside>
+    <main class="main_content">
+        <section class="container" id="introduction">
+            <h1 class="_heading1">Introduction</h1>
+            <div class="container">
+                <h2 class="_heading2">What is JavaScript?</h2>
+                <p>JavaScript is a programming language that adds interactivity to your website by giving it a dynamic touch instead of just being static.</p>
+                <p>This happens in games, in the behavior of responses when buttons are pressed or with data entry or form validation; with dynamic styling; with animations to create interactive content. etc.</p>
+                <p>It was invented by Brendan Eich (co-founder of the Mozilla project, the Mozilla Foundation and the Mozilla Corporation) in 1995.</p>
+                <p>With more experience you can: create games, animated 2D and 3D graphics, comprehensive database-driven apps etc.</p>
+                <p>Without any frameworks, plain JavaScript is called vanilla JavaScript.</p>        
+                <p>A lot of tools have been written on the core JavaScript language, unlocking a vast amount of functionality with minimum effort including:</p>
+                <ul>
+                    <li>Browser Application Programming Interfaces (APIs) built into web browsers, providing functionality such as dynamically creating HTML and setting CSS styles; collecting and manipulating a video stream from a user's webcam, or generating 3D graphics and audio samples.</li>
+                    <li>Third-party APIs that allow developers to incorporate functionality in sites from other content providers such as Twitter or Facebook.</li>
+                    <li>Third-party frameworks and libraries that you can apply to HTML to accelerate the work of building sites and applications.</li>
+                </ul>
+                <p>As your JS skills grow, your website will enter a new dimension of power and creativity.</p>
+                <p>Getting comfortable JS can be challenging so you have to start small and progress gradually.</p>
+                <p>JavaScript is a case sensitive language.</p>
+                <p>JavaScript is a scripting language for HTML and this enables us to reduce the load on the server as we can perform actions on the clinet machine (browser) without having to load the server with some operations. Take an example of adding two numbers, you can just do it on the client machine using JavaScript instead of having to load this numbers from the servers then performing the calculation.</p>
+
+                <h2 class="_heading2">Uses of JavaScript</h2>
+                <ul>
+                    <li>Gaming</li>
+                    <li>Mobile applications</li>
+                    <li>Server-side scripting</li>
+                    <li>Client-side scripting</li>
+                </ul>
+
+                <h3 class="_heading3">A hello, world! example</h3>
+                <p>Example of JS Code in the HTML Code:</p>
+                <p>JavaScript code must be inserted between the &lt;script&gt; tag when used in HTML files.</p>
+                <p>JavaScript code can be placed in both the head (external embedding) and body (internal embedding) elements.</p>
+                <div class="container JS_code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            &lt;!DOCTYPE html&gt;
+                                &lt;head&gt;
+                                    &lt;title&gt;JavaScript&lt;/title&gt;
+                                &lt;/head&gt;
+                                &lt;body&gt;
+                                    &lt;script&gt;
+                                        document.write("Hello, World!");
+                                    &lt;/script&gt;
+                                &lt;/body&gt;
+                            &lt;/html&gt;
+                        </code>
+                    </pre>
+                </div>
+                <p>For the html page, add this code just before the &lt;/body&gt; tag. This alerts the browser to start interpreting all the text between these tags as a script.</p>
+                <p>this does the same job as the &lt;link&gt; element for CSS. It applies the JS to the page, so it can have an effect on the HTML (along with the CSS, and anything else on the page).</p>
+                <div class="container JS_code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            &lt;script src="scripts/main.js"&gt;&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+                <p>Create a separate JS file called main.js and add this code:</p>
+                <div class="container JS_code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            const myHeading = document.querySelector('h1');
+                            myHeading.textContent = 'Hello, World!';
+                        </code>
+                    </pre>
+                </div>        
+
+                <h2 class="_heading2">View JS Console on Chrome</h2>
+                <p>To view the JS console on Chrome, use F12.</p>
+
+                <h2 class="_heading2">Language basics</h2>
+                <p>The core features like variables, comments, operators, control statements, functions are common to all programming languages so mastering these fundamentals gives you a head start on coding in other languages too!</p>
+            </div>
+        </section>
+
+        <section class="container" id="comments">
+            <h1 class="_heading1">Comments</h1>
+            <div class="container">
+                <p>comments are snippets of text can be added along with code but this text is usually ignored.</p>
+
+                <h3 class="_heading3">single line comments</h3>
+                <p>if the comment contains no line breaks, you can put it behind two slashes.</p>
+                <div class="container JS_code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            //This is a comment
+                        </code>
+                    </pre>
+                </div>
+
+                <h3 class="_heading3">Multi line comments</h3>
+                <p>these can be written just like in CSS.</p>
+                <div class="container JS_code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            /*
+                            Comments can be
+                            written here
+                            like this.
+                            */
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="variables">
+            <h1 class="_heading1">Variables</h1>
+            <div class="container">
+                <p>Variable is an item of data that has a name and a value.</p>
+                <p>variables are containers that store values. Like a number we might use in a sum, or a string that we might use as part of a sentence.</p>
+                <p>Variables are necessary to do anything interesting in programming.</p>
+                <p>If values couldn't change, then you couldn't do anything dynamic, like personalizing greeting message or changing an image in an image gallery.</p>
+                <p>Variables may hold values that have different data types.</p>
+
+                <h3 class="_heading3">Variable declaration</h3>
+                <p>You can declare a variable in two ways:</p>
+                <p>One is with the keyword var. This syntax can be use to declare both local and global variables, depending on the execution context.</p>
+                <div class="container JS_code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            var my_variable = 'Boo';
+                        </code>
+                    </pre>
+                </div>
+                <p>Second is with the keyword const or let. This syntax can be use to declare a block-scope local variable.</p>
+                <div class="container JS_Code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            // to declare a variable:
+                            let myVariable;
+
+                            // to declare a constant
+                            const CONSTANTNAME = constant_value;
+                        </code>
+                    </pre>
+                </div>
+                <p>Example of a variables and constants:</p>
+                <div class="container JS_Code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            // to declare a variable:
+                            let Age = 25;
+
+                            //we can also specity multiple variables with the let keyword.
+                            let firstname, lastname = "David Malan";    
+
+                            //we can still declare multile variables plus some other variable such as:
+                            let firstname, lastname = "David Malan", Age = 25;
+
+                            //to declare a constant
+                            const PIE = 3.14, APPNAME = "Slack";
+                            console.log(firstname);
+                            console.log(lastname);
+                            console.log(Age);
+                            console.log(PIE);
+                            console.log(APPNAME);
+                        </code>
+                    </pre>
+                </div>
+
+                <h2 class="_heading2">Literals</h2>
+                <p>a literal is the value given to the identifier and the identifier is the name given to the variable.</p>
+                <p>So a literal can be a number, float, string or even the name of another variable.</p>
+                <p>In the examples above, 3.14 is the literal for PIE.</p>
+
+                <h3 class="_heading3">Variable Scope</h3>
+                <p>When you declare a variable outside of any function, it called a global variable, because it is available to any other code in the current document.</p>
+                <p>When you declare a variable within a function, it is called a local variable, because it is available only withing that function.</p>
+
+                <h2 class="_heading2">Identifiers</h2>
+                <p>Names of variables and constants are called identifiers.</p>
+
+                <h3 class="_heading3">Naming rules of identifiers</h3>
+                <p>You can name your variable anything but there's some restrictions.</p>
+                <ul>
+                    <li>An identifier must start with a letter, underscore (_) or a dollar sign ($). Subsequent characters can also be digits (0 - 9).</li>
+                    <li>Unicode characters are allowed.</li>
+                    <li>An identifier cannot be a reserved word.</li>
+                </ul>
+                <p></p>
+                <p>some examples of legal names include: Number_hits, temp99, $credit and _name.</p>
+
+                
+                
+            </div>
+        </section>
+
+        <section class="container" id="data_types">
+            <h1 class="_heading1">Data Types</h1>
+            <div class="container">
+                <p>There's two data types in JS:</p>
+                <ul>
+                    <li>Primitive types - are immutable meaning you can't change the value of the variable after you initialize it.</li>
+                    <li>Object types - there's five types of object types: array, date, regular expression, map and weakmap, set and weakset.</li>
+                </ul>
+                <p>String - This is a sequence of text known as a string.</p>
+                <p>To signify that the value is a string, enclose it in single or double quote marks.</p>
+                <div class="container JS_code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            let my_variable = 'Bob';
+                        </code>
+                    </pre>
+                </div>
+                <p>Number - This is a number. Numbers don't have quotes around them.</p>
+                <div class="container JS_code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            let my_variable = 10;
+                        </code>
+                    </pre>
+                </div>
+                <p>Boolean - This is a True / False value.</p>
+                <p>The words true and false are special keywords that don't need quote marks.</p>
+                <div class="container JS_code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            let my_variable = true;
+                        </code>
+                    </pre>
+                </div>
+                <p>Array</p>
+                <p>An array holds many values in a single variable.</p>
+                <p>This is a structure that allows you to store multiple values in a single reference.</p>
+                <p>It's mostly used when you want to loop through a list of items and want to do the same thing to each one of them.</p>
+                <div class="container JS_code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            // shortest way to create an array:
+                            let my_variable = [1, 'Bob', 'Steve', 10];
+                            // refer to each member of the array like this:
+                            my_variable[0];
+                            my_variable[1];
+
+                            // another way to create an arary:
+                            let my_variable = new Array(1, 'Bob', 'Steve', 10);
+                        </code>
+                    </pre>
+                </div>
+                <p>Object - This can be anything. Everything in JS is an object and can be stored in a variable.</p>
+                <div class="container JS_code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            let my_variable = document.querySelector('h1');
+                        </code>
+                    </pre>
+                </div>
+                <p>Symbols - in ecmascript 6, there's a new type called symbol.</p>
+                <p>Symbols represents tokens.</p>
+                <p>Once you create a symbol, it is unique and it will not match any other symbols.</p>
+                <p>Symbols are created using the constructor function.</p>
+                <div class="container JS_Code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            const blue= Symbol();
+                            const white = Symbol("Color white");
+
+                            // to check that the two are not equal, the following should return false.
+                            console.log(blue === white)
+                        </code>
+                    </pre>
+                </div>
+                <p>Null and Undefined - JS has two special types null and undefined.</p>
+                <p>Null has only one possible value which is Null and undefined has only one possible value undefined.</p>
+                <p>Both Null and Undefined represent something that does not exist. It means you haven't specified and value to the identifier.</p>
+                <p>Null is mostly used to check if a value exists or not. You can also use undefined but it mostly causes errors.</p>
+                <div class="contaner JS_Code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            let Myvalue; 
+
+                            Myvalue = null;
+
+                            Myvalue = 19.4;
+
+                            Myvalue = undefined;
+
+                            console.log(Myvalue);
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="operators">
+            <h1 class="_heading1">Operators</h1>
+            <div class="container">
+                <p>An operator is a mathematical symbol that produces a result based on two values (or variables).</p>
+                <p>Addition (+) - Add two numbers together or combine (concatenate) two strings.</p>
+                <div class="container JS_code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            // to add two numbers:
+                            6 + 9;
+
+                            // to concatenate two strings:
+                            var words = "This is";
+                            var morewords = " a sentence";
+                            var sentence = words + morewords;
+                            document.write(sentence);
+                        </code>
+                    </pre>
+                </div>
+                <p>Subtraction (-)</p>
+                <div class="container JS_code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            9 - 6;
+                        </code>
+                    </pre>
+                </div>
+                <p>Multiplication (*)</p>
+                <div class="container JS_code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            9 * 6;
+                        </code>
+                    </pre>
+                </div>
+                <p>Division (/)</p>
+                <div class="container JS_code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            9 / 6;
+                        </code>
+                    </pre>
+                </div>
+                <p>Assignment (=) - Assigns a value to a variable.</p>
+                <div class="container JS_code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            9 - 6;
+                        </code>
+                    </pre>
+                </div>
+                <p>Equality (===) - Performs a test to see if two values are equal. It returns a true / false (Boolean) result.</p>
+                <div class="container JS_code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            let my_variable = 3;
+                            my_variable === 4;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="conditionals">
+            <h1 class="_heading1">Conditionals</h1>
+            <p>These are code structures used to test if an expression returns true or not.</p>
+
+            <h3 class="_heading3">if ... else</h3>
+            <div class="container JS_code">
+                <pre class="line-numbers">
+                    <code class="language-JS">
+                        let ice_cream = 'chocolate';
+                        if(ice_cream === 'chocolate') {
+                            alert('Yay, I love chocolate ice cream');
+                        } else {
+                            alert('Awww, but chocolate is my favorite');
+                        }
+                    </code>
+                </pre>
+            </div>
+            <p>The expression inside the if(...) is the test. If this comparison returns true, the first block of code runs. If the comparison is not true, the second block of code after the else statement runs instead.</p>
+        </section>
+
+        <section class="container" id="functions">
+            <h1 class="_heading1">Functions</h1>
+            <div class="container">
+                <p>Functions are useful when you have code you want to re-use.</p>
+                <p>Functions are a way of packaging functionality that you wish to reuse.</p>
+                <p>It's possible to define a body of code as a function that executes when you call the function name in your code.</p>
+                <p>This is a good alternative to repeatedly writing the same code.</p>
+                <p>Some examples of functions built into the browser include:</p>
+                <div class="container JS_code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            let my_variable = document.querySelector('h1');
+                            alert('hello!');
+                        </code>
+                    </pre>
+                </div>
+
+                <h3 class="_heading3">Arguments</h3>
+                <p>Functions often take arguments (bits of data needed to do the job).</p>
+                <p>Arguments go inside the parentheses, separated by commas if there is more than one argument.</p>
+
+                <h3 class="_heading3">Creating a function</h3>
+                <p>You can define your own functions.</p>
+                <p>There's three different ways to define a function.</p>
+                <p>using the keyword function.</p>
+                <div class="container JS_code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            // function that takes two arguments and multiplies them.
+                            function multiply(num1, num2){
+                                let result = num1 * num2;
+                                return result;
+                            }
+                        </code>
+                    </pre>
+                </div>
+                <p>creating a function as a variable</p>
+                <div class="container JS_code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            const multipy = function multiply(num1, num2) {
+                                let result = num1 * num2;
+                                return result;
+                            }
+                        </code>
+                    </pre>
+                </div>
+
+                <h3 class="_heading3">The return statement</h3>
+                <p>The return statement tells the browser to return the result variable out of the function so it is available to use.</p>
+                <p>This is necessary because variables defined inside functions are only available inside those functions. This is called variable scoping.</p>
+            </div>
+        </section>
+
+        <section class="container" id="loops">
+            <h1 class="_heading1">Loops</h1>
+            <h3 class="_heading3">For loop</h3>
+            <div class="container">
+                <p>The most used loop in JS is the for loop.</p>
+                <p>For loop executes a block of code multiple times.</p>
+                <p>Creating a for loop:</p>
+                <div class="container JS_code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            for(i = 0; i < 5; i++){
+                                document.write("This is iteration " + i + "&lt;br&gt;");
+                            }
+                        </code>
+                    </pre>
+                </div>
+                <p>The i = 0 statement is a counter variable.</p>
+                <p>The i < 5 is the condition.</p>
+                <p>The i++ is the action taken after each iteration and is executed last after each iteration happens.</p>
+            </div>
+        </section>
+
+        <section class="container" id="events">
+            <h1 class="_heading1">Events</h1>
+            <div class="container">
+                <p>Real interactivity on a website requires event handlers.</p>
+                <p>Event handlers are code structures that listen for activity in the browser, and run coe in response.</p>
+                <p>The most obvious example is handling the click event, which is fired by the browser when you click on something with your mouse.</p>
+                <p>Example:</p>
+                <div class="container JS_code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            let my_html = document.querySelector('html');
+                            my_html.addEventListener('click', function() {
+                                alert('Ouch! Stop poking me!')
+                            });
+                        </code>
+                    </pre>
+                </div>
+                <p>Here, we select the &lt;html&gt; element. We then call its addEventListener() function, passing in the name of the event to listen to ('click') and a function to run when the event happens.</p>
+                <p>Functions passed to addEventListener() are called anonymous functions, because they don't have a name.</p>
+                <p>An alternative way of writing anonymous functions, is by calling an arrow function.</p>
+                <p>An arrow function uses () => instead of function ():</p>
+                <div class="container JS_code">
+                    <pre class="line-numbers">
+                        <code class="language-JS">
+                            let my_html = document.querySelector('html');
+                            my_html.addEventListener('click', () => {
+                                alert('Ouch! Stop poking me!')
+                            });
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="projects">
+            <h1 class="_heading1">Projects</h1>
+            <div class="container">
+                <ol>
+                    <li></li>
+                </ol>
+            </div>
+        </section>
+    </main>
+</section>
+<script src="../../_resources/js/prism.js"></script>
+</body>
+</html>

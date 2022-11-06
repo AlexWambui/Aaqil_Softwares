@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PHP</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../_resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../_resources/css/icomoon.css">
+    <link rel="stylesheet" href="../../_resources/css/_styles.css">
+</head>
+<body>
+<div class="content-container coding_tips_page">
+<header>
+        <button onclick="openNav()"><span class="icons icon-menu"></span> Menu</button>
+    </header>
+<aside>
+        <div class="side_nav" id="side_nav">
+            <div class="side_nav-icons">
+                <a href="../index.html"><span class="icon-home"></span></a>
+                <button><span class="icon-adjust"></span></button>
+                <button id="close_btn" onclick="closeNav()"><span class="icon-close"></span></button>
+            </div>
+            <div class="side_nav-links">
+                <ul>
+                    <li><a href="#introduction" class="text-light bg-dark">Introduction</a></li>
+                    <li><a href="#getting_started">Getting Started</a></li>
+                    <li><a href="#basics" class="text-light bg-dark">Basics</a></li>
+                    <li><a href="#introducing_php">Introduction</a></li>
+                    <li><a href="#syntax">Syntax</a></li>
+                    <li><a href="#variable_logical_and_comparison_operators">Variables & Operators</a></li>
+                    <li><a href="#control_statement">Statements</a></li>
+                    <li><a href="#arrays">Arrays</a></li>
+                    <li><a href="#basics_exercise">Exercise</a></li>
+                    <li><a href="#php_advanced" class="text-light bg-dark">Advanced</a></li>
+                    <li><a href="#loops_foreach">Loops</a></li>
+                    <li><a href="#functions_and_arguments">Functions</a></li>
+                    <li><a href="#include_and_super_global">Include</a></li>
+                    <li><a href="#filters_and_sanitization">Filters</a></li>
+                    <li><a href="#concatenation">Concatenation</a></li>
+                    <li><a href="#php_advanced_exercise">Exercise</a></li>
+                    <li><a href="link">title</a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+<main class="main_content">
+    <div class="content-heading">
+        <h1>PHP</h1>
+    </div>
+    <hr>
+    <section id="introduction">
+        <div class="container section-heading">
+            <h1>Introduction</h1>
+        </div>
+        <hr>
+        <div class="container" id="getting_started">
+            <h2 class="small_title">Concepts</h2>
+            <ul>
+                <li>Downloading and installing a local server</li>
+                <li>Downloading and Installing a code editor & plugins</li>
+                <li>Setting up and Testing the Environment</li>
+            </ul>
+            <h2 class="small_title">Getting Started</h2>
+            <h3>Environment</h3>
+            <p>When getting started we usually prepare our coding environment which includes</p>
+            <ul>
+                <li>A server (Apache)</li>
+                <li>A server scripting language (PHP)</li>
+                <li>A database (MySQL)</li>
+            </ul>
+            <h3>Servers (localhosts)</h3>
+            <p>software that provide a server and a database locally include:</p>
+            <ul>
+                <li>WAMP </li>
+                <li>MAMP</li>
+                <li>LAMP</li>
+                <li>XAMPP</li>
+            </ul>
+            <p>After installing xampp you can open the xampp folder in the c drive for Windows and go to xampp_control.exe so you can create a shortcut for the xampp dashboard.</p>
+            <h3>Configuring Apache</h3>
+            <p>this avoids conflicting with other applications</p>
+            <ul>
+                <li>open the dashboard</li>
+                <li>click on config button for Apache</li>
+                <li>click on Apache (httpd.config) option</li>
+                <li>find listen in the file opened</li>
+                <li>change #listen 12.34.56.78:80 to something like #listen 12.34.56.78:9090</li>
+                <li>change the listen below to 9090 (same as the listen above)</li>
+                <li>find servername localhost</li>
+                <li>use the same port number as that for listen</li>
+                <li>stop apache then start it again on the dashboard</li>
+                <li>on the browser, go to the phpmyadmin page and ensure the new port is what is shown on the address bar.</li>
+            </ul>
+            <p>after setting up the listen port for apache, open the config for xampp</p>
+            <ul>
+                <li>click on service and port settings</li>
+                <li>for apache, set the port number to the one you set in the httpd.config file for apache.</li>
+                <li>click on save</li>
+                <li>click on admin for apache to ensure the xampp admin page shows up without errors.</li>
+            </ul>
+            <p>All projects are usually saved in the htdocs folder</p>
+            <h3>Editors</h3>
+            <p>Code editors that you can use are many. To mention a few:</p>
+            <ul>
+                <li>Notepad++ (free)</li>
+                <li>Brackets (free)</li>
+                <li>Visual Studio Code (free)</li>
+                <li>PHP Storm (Not free)</li>
+                <li>Sublime text (Not free)</li>
+            </ul>
+            <h3>Extensions | plugins</h3>
+            <ul>
+                <li>Emmet</li>
+                <li>W3C validation</li>
+            </ul>
+        </div>
+    </section>
+    <hr>
+
+    <section id="basics">
+        <div class="container section-heading">
+            <h1>Basics</h1>
+        </div>
+        <hr>
+        <div class="container" id="concepts">
+            <ul>
+                <li>Introducing PHP</li>
+                <li>Syntax - open, comments, echo</li>
+                <li>PHP logical & comparison operators</li>
+                <li>Statements - if, else, elseif</li>
+                <li>Arrays - indexed, associative</li>
+                <li>Exercise</li>
+            </ul>
+        </div>
+        <div class="container" id="introducing_php">
+            <h2 class="small_title">Introducing PHP</h2>
+            <p>PHP is an acronym for "PHP: Hypertext Preprocessor"</p>
+            <p>PHP files have extension ".php"</p>
+            <p>PHP scripts are executed on the server.</p>
+            <p>A PHP file can contain text, HTML, CSS, JavaScript and PHP code.</p>
+            <p>PHP runs on various platforms:</p>
+            <ul>
+                <li>Windows</li>
+                <li>Linux</li>
+                <li>Mac OS x</li>
+            </ul>
+            <p>Servers compatible with PHP are:</p>
+            <ul>
+                <li>Apache</li>
+                <li>IIS</li>
+            </ul>
+        </div>
+        <div class="container" id="syntax">
+            <h2 class="small_title">Syntax</h2>
+            <p>PHP code has to be placed between two tags: <?php ?></p>
+            <p>&lt;?php - is the opening tag</p>
+            <p>?&gt; - is the closing tag</p>
+
+            <h2 class="small_title">Comments</h2>
+            <p>Single line comments use: //single line comment</p>
+            <p>multiple line comments use: /*multi line comments */</p>
+
+            <h2 class="small_title">echo</h2>
+            <p>is used to display:</p>
+            <ul>
+                <li>text</li>
+                <li>numbers</li>
+                <li>HTML</li>
+                <li>Data from Database</li>
+                <li>Data from forms</li>
+            </ul>
+            <p>example:</p>
+            <div class="container php_code">
+                <div class="row php_code_container">
+                    <div class="col code">
+                        <pre>
+                            echo "This is a php text";
+                            echo 45;
+                            echo "&lt;p&gt;This is a html paragraph&lt;/p&gt;";
+                        </pre>
+                    </div>
+                    <div class="col output">
+                        <pre>
+                            This is a php text
+                            45
+                            This is a html paragraph
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="variable_logical_and_comparison_operators">
+            <h2 class="small_title">Variables</h2>
+            <p>A variable is a word you choose that will store values(text-string or number-integer) in it.</p>
+            <h3>Declaration & initialization</h3>
+            <p>to declare we use $ before the variable name.(e.g)$name</p>
+            <p>to initialize we use the assignment operator.(e.g)$name = "Chris Aaqil"; or $age = 45;</p>
+            <p>Strings are placed inside " " or ' '. This mean "25" would be interpreted as a string instead of an integer.</p>
+            <p>Integers don't have any " " or ' '. Otherwise they would be strings.</p>
+
+            <h2 class="small_title">Logical Operators</h2>
+            <p>these include: && And, || Or, ! Not. (e.g)is $x and $y true?</p>
+            <p>are used to evaluate two statements.</p>
+            <p>Example: is password and username entered into a form same as password and username stored in the database?</p>
+
+            <h2 class="small_title">Comparison Operators</h2>
+            <p>these include: == Equal, != Not equal, > greater than, >= greater than or equal to, < less than, <= less than or equal to.</p>
+            <p>are used to check for equality, greater or less than.</p>
+            <p>Example</p>
+            <div class="container php_code">
+                <div class="row php_code_container">
+                    <div class="col-6 code">
+                        <pre>
+                            $name = "Chris Aaqil"
+                            $password = "Ami787sk98sk443w";
+                            $minpassword = 8;
+
+                            if (strlen($password) < $minpassword){
+                                echo "password is less than minimum requirement";
+                            }
+                            else{
+                                echo "name is ".$name." and password is ".$password." ";
+                            }
+                        </pre>
+                    </div>
+                    <div class="col-6 output">
+                        <pre>
+                            name is Chris Aaqil and password is Ami787sk98sk443w
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="control_statement">
+            <h2 class="small_title">Control Statements</h2>
+            <p>are used when we want to execute code based on a given condition.</p>
+            <p>to do this we use if, if...else..., if...else if...else</p>
+        </div>
+        <div class="container" id="arrays">
+            <h2 class="small_title">Arrays</h2>
+            <p>are used to assign multiple values (both integers and strings) to a single variable</p>
+            <p>Example:</p>
+            <p>$users = array("Paul", "United States", 21, "Dubai");</p>
+            <p>we use keys (index value of an element in an array) to access elements in the array.</p>
+            <p>To access "Paul" we would use:</p>
+            <p>$users[0];</p>
+            <h3>Types of arrays:</h3>
+            <p>Two types of arrays in php are:</p>
+            <ul>
+                <li>indexed arrays - </li>
+                <li>associative arrays - when you want to assign the keys with your value / key. so you don't want php to used indexed keys / values to reference your values.</li>
+                <li>multidimensional</li>
+            </ul>
+            <h4>associative arrays</h4>
+            <p>example of an associative array</p>
+            <p>$users = array("fullname" => "Paul", "nationality"=>"Cuban", "age"=>21);</p>
+            <p>in this example, "fullname" becomes the key for "Paul".</p>
+            <p>to print the fullname we would use:</p>
+            <p>echo $users['fullname'];</p>
+        </div>
+        <div class="container" id="basics_exercise">
+            <h2 class="small_title">Exercise</h2>
+            <ol>
+                <li>create a php file called exerciseone in your working dir</li>
+                <li>Read the sentence and create about 6 variables (3 strings / 3 int values); A user named Kelvin Hart came to Dubai to perform on 4th April 2016. He is like 5 inches tall and I guess he is 30 years old. His show was restricted. users between 18 - 49 only could attend. users below 17 were told to wait outside. users above 50 were asked to wait in the car.</li>
+                <li>create an associative arrays or three values for the sentence in question 2 and echo the results.</li>
+                <li>create one statement for the sentence in question 2 using your variables in question 2, your statement should include the following, if, else and else if</li>
+                <li>echo out the second value in your associative array form question 3.</li>
+            </ol>
+        </div>
+    </section>
+    <hr>
+
+    <section id="php_advanced">
+        <div class="container section-heading">
+            <h1>PHP advanced</h1>
+        </div>
+        <hr>
+
+        <div class="container" id="php_advanced_concepts">
+            <h2 class="small_title">Concepts</h2>
+            <ul>
+                <li>Loops - foreach</li>
+                <li>functions and arguments</li>
+                <li>include & super global</li>
+                <li>filters - validate and sanitize</li>
+                <li>concatenation</li>
+                <li>Exercise</li>
+            </ul>
+        </div>
+        <div class="container" id="loops_foreach">
+            <h2 class="small_title">Loops - foreach</h2>
+            <p>in verb form, a loop is something that circles.</p>
+            <p>loops are mostly used to display data say from databases as it enables looping through all records.</p>
+        </div>
+        <div class="container" id="functions_and_arguments">
+            <h2 class="small_title">Functions</h2>
+            <p>used to hold a block of statement we want to use repeatedly instead of having to repeat the same code over and over again.</p>
+            <p>functions by default don't execute automatically so we have to call them.</p>
+            <h4>naming a function</h4>
+            <p>to name functions we either use lowercase to separate words, or use camel case.</p>
+            <p>Example:</p>
+            <p>function authenticate_user() or function authenticateUser()</p>
+            <h4>calling a function</h4>
+            <p>assuming we have a function such as:</p>
+            <div class="container php_code">
+                <div class="row php_code_container">
+                    <div class="col">
+                        <pre>
+                            function authenticate_user($password, $formpassword){
+                                if ($password == $formpassword){
+                                    header('location: myaccount.php");
+                                }
+                            }
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <p>we would call the function using:</p>
+            <p>authenticate_user();</p>
+            <p>Examples of PHP inbuilt functions:</p>
+            <ul>
+                <li>foreach()</li>
+                <li>mysqli_fetch_assoc()</li>
+                <li>mysqli_num_rows()</li>
+            </ul>
+
+            <h2 class="small_title">Arguments</h2>
+            <p>if the function uses variables, we have to pass the variables into the function as arguments.</p>
+            <p>when calling a function with arguments, we have to pass the arguments to the function otherwise we would have errors.</p>
+        </div>
+        <div class="container" id="include_and_super_global">
+            <h2 class="small_title">Include</h2>
+            <p>include is a functions that enables you to include other scripts into the current page.</p>
+            <p>it parameter is the path of the file to include.</p>
+            <p>example:</p>
+            <p>include ("functions.php");</p>
+
+            <h2 class="small_title">Require</h2>
+            <p>works the same as include but the difference is if require is used then the program crashes if the file required is not found.</p>
+
+            <h2>Super Globals</h2>
+            <p>they include:</p>
+            <ul>
+                <li>$GLOBAL - makes a declared variable accessible to all your php files. Globals are usually arrays. (e.g)$GLOBAL['user'] = "Paul Ambrose"</li>
+                <li>$_SESSION - keeps all variables throughout the duration of your application until destroyed. $_SESSION variables are usually arrays.</li>
+                <li>$_POST - used to collect data from forms</li>
+                <li>$_GET - used to collect data from forms through the url</li>
+                <li>$_FILES - used to collect files from forms</li>
+                <li>$_SERVER - keeps paths and headers</li>
+            </ul>
+            <h4>using $_SESSION super global</h4>
+            <p>since $_SESSION is an array, we can declare it as:</p>
+            <div class="container php_code">
+                <div class="row php_code_container">
+                    <div class="col">
+                        <pre>
+                            $_SESSION['user_info'] = array(
+                                "full_name" => "Paul Ambrose",
+                                "email" => "paul@gmail.com"
+                            );
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <p>to echo or use the session super global we would use:</p>
+            <p>$_SESSION['user_info']['full_name'];</p>
+        </div>
+        <div class="container" id="filters_and_sanitization">
+            <h2 class="small_title">Filters & Sanitization</h2>
+            <p>validation is when we check if proper data is entered</p>
+            <p>sanitization is when we remove illegal characters</p>
+            <p>inbuilt validation functions:</p>
+            <ul>
+                <li>htmlspecialchars();</li>
+                <li>stripslashes();</li>
+                <li>trim();</li>
+                <li>filter_var(variable, filtername, option); - does both validation and sanitization.</li>
+            </ul>
+            <h4>sanitization</h4>
+            <p>using filter_var(variable, filtername, option);</p>
+            <p>example:</p>
+            <div class="container php_code">
+                <div class="row php_code_container">
+                    <div class="col">
+                        <pre>
+                            $raw_email = trim($_GET['email']);
+                            $clean_email = filter_var($raw_email, FILTER_VALIDATE_EMAIL);
+                            /*so in the code we should now use $clean email*/
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="concatenation">
+            <h2 class="small_title">Concatenation</h2>
+            <p>means adding (or joining) strings together.</p>
+            <p>in php we use a period(.) to concatenate when we want to include our variables in a string.</p>
+            <p>example:</p>
+            <p>echo "Your email is ".$clean_email</p>
+            <p>to put the email in the same string:</p>
+            <p>echo "Your email is ".$clean_email." you can now login";</p>
+        </div>
+        <div class="container" id="php_advanced_exercise">
+            <h2 class="small_title">Exercise</h2>
+            <ol>
+                <li>Create a file called exercise_two in your working dir</li>
+                <li>Read the following carefully: Your got a contracted by a senior manager from virtual lines.com and he want the following to be set up for his company's online backend management system: He wants to process the following data which comes in via a form on the customer_queries.php (same page as the form): username, secret_word, email, age, full_name, address, customer_complaint.
+                    <ul>
+                        <li>He wants the data securely collected and wants to know which super global variables you will use?</li>
+                        <li>He wants all the data to be validated and sanitized before they are passed to the process_customer_query() for processing?</li>
+                        <li>He want to keep the customer username and email throughout the duration of the application until they sign out to avoid creating more functions that will fetch for the username and email all the time?</li>
+                        <li>He wants you to create a function that will verify the minimum secret_word length (8) before it's passed to a function for processing.</li>
+                        <li>He wants you to keep all the data coming in from the form in a variable and write a function that will display all the data to the support team on request.</li>
+                    </ul>
+                </li>
+            </ol>
+            <p>Note: he wants all the functions to display errors and success messages containing the values from the form within their respective statement when possible and for now, he want you to assume or use static values.</p>
+
+            <h2 class="small_title">Solution</h2>
+            <div class="container php_code">
+                <div class="row php_code_container">
+                    <div class="col">
+                        <pre>
+                            &lt;?php
+                            session_start();
+                            $raw_username = "Kobby";
+                            $raw_secret_word = "nba";
+                            $raw_email = "kb_nba@gmail.com";
+                            $raw_age = 40;
+                            $raw_full_name = "Kobby Bryant";
+                            $raw_address = "New York";
+                            $raw_customer_complaint = "my credit expired without warning";
+
+                            //solution for Question i:
+                            $_SERVER[PHP_SELF];
+                            $_SERVER[REQUEST_METHOD] "POST";
+                            $_POST;
+
+                            //solution for Question ii;
+                            $clean_username = filter_var($raw_username, FILTER_SANITIZE_STRING);
+                            $clean_secret_word = filter_var($raw_secret_word, FILTER_SANITIZE_STRING);
+                            $clean_email = filter_var($raw_email, FILTER_VALIDATE_EMAIL);
+                            $clean_age = filter_var($raw_age, FILTER_VALIDATE_INT);
+                            $clean_fullname = filter_var($raw_fullname, FILTER_VALIDATE_STRING);
+                            $clean_address = filter_var($raw_address, FILTER_VALIDATE_STRING);
+                            $clean_customer_complaint = filter_var($raw_customer_complaint, FILTER_VALIDATE_STRING);
+
+                            //solution for Question iii.
+                            $_SESSION['customer_info'] = array(
+                                'username' => $c_username,
+                                'email' => $c_email
+                            );
+                            echo "Session username is: ".$_SESSION['customer_info']['username']."&lt;br&gt; Email is: ".$_SESSION['user_info']['email'];
+
+                            //solution for Question iv.
+                            function min_secret_word($c_secret_word){
+                                if($counted_secret_word >= 0){
+                                    echo "your secret word is: '".$c_secret_word."' and it's correct";
+                                }else{
+                                    echo "Your secret word is: ".$c_secret_word." cannot be less that 8";
+                                }
+                            }
+
+                            //calling the function
+                            min_secret_word($c_secret_wod);
+
+                            //solution for Question v.
+                            $all_customers_data = array(
+                                'username' => $c_username,
+                                'secret_word' => $c_secret_word,
+                                'user_email' => $c_user_email,
+                                'username' => $c_username,
+                                'user_full_name' => $c_full_name
+                            );
+
+                            function display_all_customers($all_customers_data){
+                                echo "hi support team, this query just came in:";
+                                foreach($all_customers_data as $customer_data){
+                                    echo $customer_data."&lt;br&gt;";
+                                }
+                            }
+                            //calling the function
+                            display_all_customers($all_customers_data);
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <hr>
+</main>
+</div>
+<script src="../../_resources/js/side_nav.js"></script>
+</body>
+</html>

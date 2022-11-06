@@ -1,0 +1,86 @@
+                <div class="linux_command_wrapper">
+                    <div class="command_name">
+                        <p>file</p>
+                    </div>
+                    <p>used to find out what type of file we are working with eg. whether it's a pdf or jpg or png.</p>
+                    <div class="container linux_command">
+                        <p>file file_name</p>
+                    </div>
+                </div>
+                <hr/>
+
+                <div class="linux_command_wrapper">
+                    <div class="command_name">
+                        <p>type</p>
+                    </div>
+                    <p>used to find out what kind a command is. i.e. whether it's shell builtin, or hashed (/usr/bin/file) or /usr/bin/touch</p>
+                    <div class="container linux_command">
+                        <p>type touch</p>
+                    </div>
+                    <div class="container linux_command">
+                        <p>type cd</p>
+                    </div>
+                </div>
+
+                <div class="linux_command_wrapper">
+                    <div class="command_name">
+                        <p>find</p>
+                    </div>
+                    <p>used to search the system for a file or dir in the working dir or another dir if specified.</p>
+                    <p class="small_title">Search for a file in the working dir:</p>
+                    <div class="container linux_command">
+                        <p>find . -name a.txt</p>
+                    </div>
+                    <p class="small_title">Search for a file in the working dir using pattern matching:</p>
+                    <p>when using pattern matching, the condition must be enclosed in quotes.</p>
+                    <div class="container linux_command">
+                        <p>find . -name "*.txt"</p>
+                    </div>
+                    <p class="small_title">To not consider case (lower or uppercase):</p>
+                    <div class="container linux_command">
+                        <p>find . -iname A.txt</p>
+                    </div>
+                    <p class="small_title">Finding a dir:</p>
+                    <p>d in the command stands for type directory.</p>
+                    <div class="container linux_command">
+                        <p>find . -type d -name dir_name</p>
+                    </div>
+                </div>
+                <hr/>
+
+                <div class="linux_command_wrapper">
+                    <div class="command_line">
+                        <p>wc</p>
+                    </div>
+                    <p>is used to count the number of words</p>
+                    <p class="small_title">count number of lines in a file:</p>
+                    <div class="container linux_command">
+                        <p>wc -l file_name</p>
+                    </div>
+                </div>
+
+            </section>
+            
+            <section class="container" id="the_shell">
+                <div class="container section-heading">
+                    <h1>The Shell</h1>
+                </div>
+                <h2>What is the shell</h2>
+                <p>the shell is a program that takes commands from the keyboard and gives them to the operating system to perform.</p>
+                <p>On most Linux systems a program called bash (which stands for Bourne Again SHell, an enhanced version of the original Unix shell program, sh, written by Steve Bourne) acts as the shell program. Besides bash, there are other shell programs available for Linux systems. These include: ksh, tcsh and zsh.</p>
+
+                <h2>What is the Terminal</h2>
+                <p>the terminal is a program called a terminal emulator that opens a window and lets you interact with the shell.</p>
+                <p>terminal emulators we can use (Some Linux distributions install several) include:</p>
+                <ul>
+                    <li>gnome-terminal</li>
+                    <li>konsole</li>
+                    <li>xterm</li>
+                    <li>rxvt</li>
+                    <li>kvt</li>
+                    <li>nxterm</li>
+                    <li>eterm</li>
+                </ul>
+                <p>While there are a number of different terminal emulators, they all do the same thing. They give us access to a shell session.</p>
+                <p>on being launched, the first thing we should see is a shell prompt that contains: user name and the name of the machine followed by a dollar sign.</p>
+            </section>
