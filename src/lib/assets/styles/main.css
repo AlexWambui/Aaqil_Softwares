@@ -4,14 +4,13 @@
   box-sizing: border-box;
 }
 
-a {
-  color: lightblue;
-  text-decoration: underline;
+html {
+  scroll-behavior: smooth;
 }
-a:hover {
-  text-decoration: none;
+
+body {
+  background: #111827;
   color: #fafafa;
-  background: lightblue;
 }
 
 ul ol {
@@ -22,24 +21,40 @@ p {
   margin: unset;
 }
 
-body {
-  background: #111827;
-  color: #fafafa;
+.whole_page_navbar h1 {
+  font-size: 1.4em;
+  color: #ffc107;
+  text-transform: uppercase;
+  font-weight: bold;
 }
-
 .whole_page_navbar ul {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 4px;
 }
-.whole_page_navbar ul ul li {
+.whole_page_navbar ul li {
   background: #1a415a;
   padding: 10px;
 }
-.whole_page_navbar ul ul li a {
+.whole_page_navbar ul li a {
   display: block;
+  color: #fafafa;
+  font-weight: bold;
+}
+.whole_page_navbar ul li a:hover {
+  text-decoration: none;
 }
 
+@media screen and (min-width: 480px) {
+  .whole_page_navbar ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 720px) {
+  .whole_page_navbar ul {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
 header .page_title {
   color: #ffc107;
   font-size: 1.5em;
@@ -61,6 +76,13 @@ header .page_title {
   margin: 4px auto;
   padding: 4px;
   width: 80%;
+}
+@media screen and (min-width: 726px) {
+  .roadmap_container .roadmap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1px;
+  }
 }
 
 .home_page_heading {
@@ -241,36 +263,7 @@ span.note {
   background: #fafafa;
 }
 
-@media screen and (min-width: 480px) {
-  .whole_page_navbar ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 4px;
-  }
-  .se_topics .row .col {
-    margin: 6px;
-  }
-  .se_topics .row .col .container {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .se_topics .row .col .container a {
-    font-weight: 500;
-  }
-}
-@media screen and (min-width: 720px) {
-  .whole_page_navbar ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 4px;
-  }
-  .roadmap {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 1px;
-  }
+@media screen and (min-width: 726px) {
   .code_container {
     border: 1px solid white;
     width: 100%;

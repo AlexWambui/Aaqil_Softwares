@@ -1,7 +1,7 @@
 $body_font_color: #fafafa;
 $unclicked_link: lightblue;
 $body_background_color: #111827;
-$main_heading_color: #ffc107;
+$golden_color: #ffc107;
 $container_border: 1px solid #fafafa;
 
 * {
@@ -9,15 +9,15 @@ $container_border: 1px solid #fafafa;
 	border: 0;
 	box-sizing: border-box;
 }
-a {
-	color: $unclicked_link;
-	text-decoration: underline;
-	&:hover {
-		text-decoration: none;
-		color: $body_font_color;
-		background: $unclicked_link;
-	}
+html{
+	scroll-behavior: smooth;
 }
+body {
+	background: $body_background_color;
+	color: $body_font_color;
+}
+
+
 ul {
 	ol {
 		list-style-position: inside;
@@ -27,20 +27,46 @@ p {
 	margin: unset;
 }
 
-body {
-	background: $body_background_color;
-	color: $body_font_color;
-}
-.whole_page_navbar ul {
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-gap: 4px;
-	ul li {
-		background: #1a415a;
-		padding: 10px;
+
+
+.whole_page_navbar {
+	h1{
+		font-size: 1.4em;
+		color: $golden_color;
+		text-transform: uppercase;
+		font-weight: bold;
 	}
-	ul li a {
-		display: block;
+	ul{
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 4px;
+		li{
+			background: #1a415a;
+			padding: 10px;
+			a{
+				display: block;
+				color: $body_font_color;
+				font-weight: bold;
+			}
+			a:hover{
+				text-decoration: none;
+			}
+		}
+	}	
+}
+@media screen and (min-width: 480px) {
+	.whole_page_navbar {
+		ul{
+			grid-template-columns: 1fr 1fr;
+		}			
+	}
+}
+
+@media screen and (min-width: 720px) {
+	.whole_page_navbar {
+		ul{
+			grid-template-columns: 1fr 1fr 1fr;
+		}			
 	}
 }
 
@@ -56,7 +82,7 @@ header .page_title {
 	text-align: center;
 	h1 {
 		margin: 1% 0 0;
-		color: $main_heading_color;
+		color: $golden_color;
 		font-size: 1.5em;
 	}
 	ul li {
@@ -65,6 +91,13 @@ header .page_title {
 		padding: 4px;
 		width: 80%;
 	}
+	@media screen and (min-width: 726px){
+		.roadmap {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-gap: 1px;
+		}
+	}	
 }
 
 .home_page_heading {
@@ -200,13 +233,13 @@ p.note_better {
 	margin: 4px auto;
 }
 span.note{
-	color: $main_heading_color;
+	color: $golden_color;
 	font-style: italic;
 	font-weight: 500;
 }
 .alx_journal{
 	section.container{
-		border-bottom: 1px solid $main_heading_color;
+		border-bottom: 1px solid $golden_color;
 	}
 }
 
@@ -232,37 +265,7 @@ span.note{
 	background: #fafafa;
 }
 
-@media screen and (min-width: 480px) {
-	.whole_page_navbar ul {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-gap: 4px;
-	}
-	.se_topics .row .col {
-		margin: 6px;
-	}
-	.se_topics .row .col .container {
-		height: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-                a{
-                        font-weight: 500;
-                }
-	}
-}
-
-@media screen and (min-width: 720px) {
-	.whole_page_navbar ul {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-gap: 4px;
-	}
-	.roadmap {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-gap: 1px;
-	}
+@media screen and (min-width: 726px){
 	.code_container{
 		border: 1px solid white;
 		width: 100%;
