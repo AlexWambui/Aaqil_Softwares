@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+		/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="../../_resources/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../../_resources/css/icomoon.css" />
+		<link rel="stylesheet" href="../../_resources/css/prism.css" />
+		<link rel="stylesheet" href="../../_resources/css/se_aaqil.css" />
+		<script src="../../_resources/js/jquery.min.js"></script>
+		<script src="../../_resources/js/popper.min.js"></script>
+		<script src="../../_resources/js/bootstrap.min.js"></script>
+		<title>Batch Scripts</title>
+	</head>
+	<body>
+		<section>
+			<aside>
+				<div class="nav_icons">
+					<a href="index.html"><span class="icon-home"></span></a>
+					<span class="icon-close"></span>
+				</div>
+				<div class="nav_heading">
+					<h1>Batch Scripts</h1>
+				</div>
+				<div class="nav_body">
+					<ul>
+						<li><a href="#multiple_programs">Multiple Programs</a></li>
+					</ul>
+				</div>
+			</aside>
+			<main class="main_content">
+				<section class="container" id="multiple_programs">
+					<h1 class="_heading1">Start Multiple Programs</h1>
+					<div class="container">
+						<p>to start multiple programs using their path</p>
+						<ul>
+							<li>start menu</li>
+							<li>program to open with the batch file then right click</li>
+							<li>file location</li>
+							<li>
+								properties then target and copy the target (which is the path
+								for the app)
+							</li>
+						</ul>
+						<div class="container code">
+							<pre class="line-numbers">
+                                                                <code class="language-html">
+                                                                        @echo off
+                                                                        start "" "C:\Program Files\Mozilla Firefox\firefox.exe"
+                                                                        start "" "C:\Program Files\Git\git-cmd.exe" --cd-to-home
+                                                                </code>
+                                                        </pre>
+						</div>
+						<p>
+							script to start both chrome and firefox and the specified websites
+							are then opened
+						</p>
+						<div class="container code">
+							<pre class="line-numbers">
+                                                                <code class="language-html">
+                                                                        @echo off
+                                                                        start chrome.exe file:///e:/__lib/index.html localhost/_libms/index.php
+                                                                        start firefox.exe file:///e:/__lib/index.html
+                                                                </code>
+                                                        </pre>
+						</div>
+					</div>
+				</section>
+			</main>
+		</section>
+		<script src="../../_resources/js/prism.js"></script>
+	</body>
+</html>

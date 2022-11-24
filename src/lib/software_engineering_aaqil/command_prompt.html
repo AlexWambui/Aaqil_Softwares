@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+		/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="../../_resources/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../../_resources/css/icomoon.css" />
+		<link rel="stylesheet" href="../../_resources/css/prism.css" />
+		<link rel="stylesheet" href="../../_resources/css/se_aaqil.css" />
+		<script src="../../_resources/js/jquery.min.js"></script>
+		<script src="../../_resources/js/popper.min.js"></script>
+		<script src="../../_resources/js/bootstrap.min.js"></script>
+		<title>Command Prompt</title>
+	</head>
+	<body>
+		<section>
+			<aside>
+				<div class="nav_icons">
+					<a href="index.html"><span class="icon-home"></span></a>
+					<span class="icon-close"></span>
+				</div>
+				<div class="nav_heading">
+					<h1>Command Prompt</h1>
+				</div>
+				<div class="nav_body">
+					<ul>
+						<li><a href="#general_commands">General</a></li>
+						<li><a href="#networking_commands">Networking</a></li>
+						<li><a href="#hotspot">Hotspot</a></li>
+						<li><a href="#starting_websites">Websites</a></li>
+						<li><a href="#processes">Processes</a></li>
+						<li><a href="#list_dirs">List Dirs</a></li>
+						<li><a href="#secured_dir">Secured Dir</a></li>
+						<li><a href="#hide_dir">Hide Dir</a></li>
+						<li><a href="#list_programs">List Programs</a></li>
+						<li><a href="#output_to_clipboard">Clipboard</a></li>
+                                                <li><a href="#W7_usb">W7 USB</a></li>
+						<li><a href="#cmd_tips">Tips</a></li>
+					</ul>
+				</div>
+			</aside>
+			<main class="main_content">
+				<section class="container" id="general_commands">
+					<h1 class="_heading1">General Commands</h1>
+					<div class="container">
+						<p>cls / clear - used to clear the screen</p>
+						<p class="command">clear</p>
+
+						<p>Color - to change the console color e.g. to color light green</p>
+						<p class="command">color a</p>
+
+						<p>
+							title - set title for console e.g. to set the title to
+							$amphetamane
+						</p>
+						<p class="command">title $amphetamane</p>
+
+						<p>ver - used to display the O.S version</p>
+						<p class="command">ver</p>
+
+						<p>tree - displays folder structure graphically</p>
+						<p class="command">tree</p>
+
+						<p>Shutdown - to shutdown:</p>
+						<p class="command">shutdown -s</p>
+
+						<p>Restart - to restart:</p>
+						<p class="command">shutdown -r</p>
+
+						<p>Logout - to logout:</p>
+						<p class="command">shutdown -l</p>
+
+						<p>Set Shutdown Timer - to set a timer after 50 seconds</p>
+						<p class="command">shutdown /s /t 50</p>
+
+						<p>
+							Display Shutdown Message - to display a message before shutdown:
+						</p>
+						<p class="command">shutdown /s /t 50 "Enter your message here"</p>
+					</div>
+				</section>
+
+				<section class="container" id="networking_commands">
+					<h1 class="_heading1">Networking Commands</h1>
+					<div class="container">
+						<p>
+							ipconfig - to view TCP / IP configuration in WINDOWS like the ip
+							address:
+						</p>
+						<p class="command">ipconfig /all</p>
+
+						<p>
+							ifconfig - to view TCP / IP configuration in UNIX, Linux and Mac
+							like the ip address:
+						</p>
+						<p class="command">ifconfig /all</p>
+
+						<p>ping - used to check connectivity between networking devices</p>
+						<p class="command">ping 192.168.0.1</p>
+						<p>to run a continued ping without stopping</p>
+						<p class="command">ping 192.168.0.1 -t</p>
+						<p>to get the ip address of a website say google.com</p>
+						<p class="command">ping www.google.com</p>
+
+						<p>arp - used to view and manage the arp cache (arp utility)</p>
+						<p>arp is both a utility and also a protocol</p>
+						<p class="command">arp -a</p>
+
+						<p>
+							tracert / traceroute - tracert : used in WINDOWS to view the
+							entire path a packet takes to get from one device to another e.g.
+							from a computer to a server
+						</p>
+						<p>
+							this can be very important when you ping and fail to get a reply
+							so you can trace where the problem is
+						</p>
+						<p class="command">tracert www.google.com</p>
+						<p>tracroute : used by Unix, Linux and Mac</p>
+
+						<p>
+							nslook - used by WINDOWS to troubleshoot DNS name resolution
+							issues
+						</p>
+						<p>has both interactive and non-interactive modes</p>
+						<p>
+							this means you can type nslookup and be taken to a different cmd
+							prompt to work with nslookup separately or use nslookup together
+							with some switches at the same time
+						</p>
+						<p>to use interactive mode</p>
+						<p class="command">nslookup</p>
+						<p>to use non-interactive mode</p>
+						<p class="command">nslookup google.com</p>
+
+						<p>
+							dig - used by Unix, Linux and Mac for the same purpose as nslookup
+						</p>
+						<p>
+							nslookup can also be used in this OSs but dig is considered to be
+							more powerful
+						</p>
+						<p>it does not have an interactive mode</p>
+
+						<p>route - used to manage and display the routing table</p>
+
+						<p>netstat - displays TCP / IP statistics and connections</p>
+						<p>to list all ports (listening and established)</p>
+						<p class="command">netstat -a</p>
+						<p>
+							to list active connections e.g. when connected to the internet
+						</p>
+						<p class="command">netstat -o</p>
+
+						<p>
+							nbtstat - displays NetBIOS statistics to assist in troubleshooting
+							name resolution issues
+						</p>
+						<p>not used these days</p>
+					</div>
+				</section>
+
+				<section class="container" id="hotspot">
+					<h1 class="_heading1">Hotspot</h1>
+					<div class="container">
+						<p>to create the hotspot</p>
+						<p class="command">
+							netsh wlan set hostednetwork mode=allow ssid=hotspotname
+							key=password1234567
+						</p>
+						<p>to start the hostpot</p>
+						<p class="command">netsh wlan start hostednetwork</p>
+						<p>to stop the hotspot</p>
+						<p class="command">netsh wlan stop hostednetwork</p>
+					</div>
+				</section>
+
+				<section class="container" id="starting_websites">
+					<h1 class="_heading1">Websites</h1>
+					<div class="container">
+						<p>start / open a website</p>
+						<p>to open a website say, www.google.com</p>
+						<p class="command">start www.google.com</p>
+					</div>
+				</section>
+
+				<section class="container" id="processes">
+					<h1 class="_heading1">Processes</h1>
+					<div class="container">
+						<p>running processes</p>
+						<p class="command">tasklist</p>
+						<p>to get a detailed list</p>
+						<p class="command">tasklist /v</p>
+					</div>
+				</section>
+
+				<section class="container" id="list_dirs">
+					<h1 class="_heading1">Directories</h1>
+					<div class="container">
+						<p>List all directories</p>
+						<p>
+							to get a list of all dirs navigate to the folder first then open
+							cmd and:
+						</p>
+						<p class="command">dir</p>
+
+						<p>to sort the directory list</p>
+						<p class="command">dir /b /s | sort</p>
+					</div>
+				</section>
+
+				<section class="container" id="secured_dir">
+					<h1 class="_heading1">Secured Folder</h1>
+					<div class="container">
+						<p>
+							this folder cannot be deleted or moved not unless you delete using
+							rm command
+						</p>
+						<p>open cmd in the folder you want to create the secured folder</p>
+						<p class="command">cd desktop</p>
+						<p>create the secured folder</p>
+						<p class="command">md aux\</p>
+						<p>to remove the directory</p>
+						<p class="command">rd aux\</p>
+					</div>
+				</section>
+
+				<section class="container" id="hide_dir">
+					<h1 class="_heading1">Hide Dir</h1>
+					<div class="container">
+						<p>to hide a dir even when hidden items is enabled use:</p>
+						<p class="command">attrib *h *s *r dirname</p>
+						<p>to reveal / unhide the dir:</p>
+						<p class="command">attrib -h -s -r dirname</p>
+					</div>
+				</section>
+
+				<section class="container" id="list_programs">
+					<h1 class="_heading1">List Installed Programs</h1>
+					<div class="container">
+						<p>
+							to get a list of all the programs you have installed (might take
+							some time):
+						</p>
+						<p class="command">wmic product get name</p>
+					</div>
+				</section>
+
+				<section class="container" id="output_to_clipboard">
+					<h1 class="_heading1">Ouput to Clipboard</h1>
+					<div class="container">
+						<p>
+							to copy the output of a command to the clip board then paste in
+							another program say Notepad:
+						</p>
+						<p class="command">dir | clip</p>
+					</div>
+				</section>
+
+				<section class="container" id="w7_usb">
+					<h1 class="_heading1">W7 Bootable USB</h1>
+					<div class="container section-content">
+						<ol>
+							<li>Open cmd as admin</li>
+							<li>to configure disk partition properties</li>
+							<p class="command">diskpart</p>
+							<li>to det the usb drive number or drive letter</li>
+							<p class="command">list disk</p>
+							<li>to select disk with USB drive e.g. select disk 1</li>
+							<p class="command">select disk 1</p>
+							<li>to delete all data from the USB</li>
+							<p class="command">clean</p>
+							<li>to create new primary partition on the USB</li>
+							<p class="command">create partition primary</p>
+							<li>to select the created partition</li>
+							<p class="command">select partition 1</p>
+							<li>to set it as active</li>
+							<p class="command">active</p>
+							<li>
+								to format file system as New Technology File System
+								<p>
+									if server platform supports Unified Extensible Firmware
+									Interface (UEFI), format the USB drive as FAT32 rather than
+									NTFS.
+								</p>
+								<p>
+									to format as FAT32, use <i><b>fs = fat32 quick</b></i>
+								</p>
+							</li>
+							<p class="command">format fs = ntfs quick</p>
+							<li>to exit</li>
+							<p class="command">exit</p>
+							<li>copy the boot folder to the USB</li>
+						</ol>
+					</div>
+				</section>
+
+				<section class="container" id="cmd_tips">
+					<h1 class="_heading1">Tips</h1>
+					<div class="container">
+						<h2 class="_heading2">Shortcuts</h2>
+						<p>TAB : to autocomplete or see the dirs in the current folder</p>
+						<p>F7 : to view history of currently used commands</p>
+						<p>WIN + X : to run cmd as admin</p>
+
+						<h2 class="_heading2">Check if running as admin:</h2>
+						<p>to check if you are running cmd as an admin:</p>
+						<p class="command">net session</p>
+						<p>
+							if the result is access denied then it means you're not running
+							cmd as an admin
+						</p>
+					</div>
+				</section>
+			</main>
+		</section>
+		<script src="../../_resources/js/prism.js"></script>
+	</body>
+</html>

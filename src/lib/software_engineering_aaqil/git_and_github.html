@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../_resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../_resources/css/icomoon.css">
+    <link rel="stylesheet" href="../../_resources/css/prism.css">
+    <link rel="stylesheet" href="../../_resources/css/se_aaqil.css">
+    <script src="../../_resources/js/jquery.min.js"></script>
+    <script src="../../_resources/js/popper.min.js"></script>
+    <script src="../../_resources/js/bootstrap.min.js"></script>
+    <title>Git & Github</title>
+</head>
+<body>
+<section>
+    <aside>
+        <div class="nav_icons">
+            <a href="index.html"><span class="icon-home"></span></a>
+            <span class="icon-close"></span>
+        </div>
+        <div class="nav_heading">
+            <h1>Git & Github</h1>
+        </div>
+        <div class="nav_body">
+            <ul>
+                <li><a href="#introduction">introduction</a></li>
+                <li><a href="#git_commands">Git Commands</a></li>
+                <li><a href="#git_repository">Git repository</a></li>
+                <li><a href="#branching">Branching</a></li>
+                <li><a href="#merging">Merging</a></li>
+                <li><a href="#readme">REAME</a></li>
+            </ul>
+        </div>
+    </aside>
+    <main class="main_content">
+        <section class="container" id="introduction">
+            <h1 class="_heading1">Introduction</h1>
+            <div class="container">
+                <p>Version Control System - is a software tool that helps record the changes made to the files by keeping track of changes made to the code so a specific version may be called later if needed.</p>
+                <p>This ensure that all team members are working on the latest version of the file.</p>
+                <p>Version control is the management of changes to documents, computer programs, large web sites and other collections of information.</p>
+                <p>Git is a free and open source verson control system.</p>
+                <p>Git is the tool that enables you pull or push data to the central server.</p>
+                <p>Github is a git repository (server) hosting service.</p>
+                <p>It's a company that allows you host a cross platform repository in a remote server.</p>
+                <p>Github provides:</p>
+                <ul>
+                    <li>a web-based graphical interface.</li>
+                    <li>easy management of code.</li>
+                    <li>open source software for version control</li>
+                    <li>effective collaboration</li>
+                    <li>bug tracker - called issues (great way to keep track of tasks, enhancements and bugs for your project).</li>
+                </ul>
+                <p>A repository is a project or the folder used to organise one single project. It can contain: folders, files, images, videos, spreadsheets.</p>
+                <p>it is a great open source community which is cloud based tool so the code becomes more visible and anybody can contribute to it now.</p>
+                <p>So git is the tool that tracks the changes in your code over time while github is a website where you host all your git repositories.</p>
+            </div>
+        </section>
+
+        <section class="container" id="git_commands">
+            <h1 class="_heading1">Git commands</h1>
+            <div class="container">
+                <p>Some git commands include:</p>
+                <p class="title">1. Clone</p>
+                <p>used to bring a repository that is hosted somewhere like github into a folder on your local machine.</p>
+                <p class="title">2. add</p>
+                <p>used to track your files and changes in Git.</p>
+                <p>to track a specific file, we would use</p>
+                <p class="command">git add file_name</p>
+                <p>to track all the files, those created, modified or deleted, we would use a period (.)</p>
+                <p class="command">git add .</p>
+                <p class="title">3. Commit</p>
+                <p>saves your files in Git.</p>
+                <p>to commit, we use</p>
+                <p class="command">git commit -m "commit message"</p>
+                <p><code>-m</code> represents the message that should have something to do with a what and why you're making that commit.</p>
+                <p>you can use more that one <code>-m</code> where the first one will represent the title of the commit and the latter the description of that commit.</p>
+                <p class="command">git commit -m "title of commit" -m "description of the commit."</p>
+                <p class="title">4. push</p>
+                <p>uploads git commits to a remote repository like github.</p>
+                <p>to push, we use</p>
+                <p class="command">git push origin master</p>
+                <p>to get avoid having to use origin master each time we want to push, we can set where we want to push by default and this is called an upstream.</p>
+                <p class="command">git push -u origin master</p>
+                <p><code>-u</code> stands for upstream and is the same as using <code>--set-upstream</code></p>
+                <p class="title">5. pull</p>
+                <p>downloads changes from a remote repository to your local machine, the opposite of push.</p>
+                <p class="title">6. status</p>
+                <p>shows all the files that have been added, updated or deleted but haven't been saved in a commit yet.</p>
+                <p class="command">git status</p>
+                <p class="title">7. remote</p>
+                <p>to show which remote repository is connected to your local repo, use</p>
+                <p class="command">git remote -v</p>
+                <p>to add a remote origin (origin is the short name for the url).</p>
+                <p>Whenever you use the name origin, it means you're referring to the particular github url like an alias name.</p>
+                <p>The name of the remote url can also be changed from origin to any other name. Eg. <code>git remote add my_project &lt;origin_url&gt;</code></p>
+                <p>command to add a remote origin:</p>
+                <p class="command">git remote add origin &lt;origin_url&gt;</p> 
+                <p>To rename the remote url, we can use the command:</p>
+                <p class="command">git remote rename &lt;old-name&gt; &lt;new-name&gt;</p>
+                <p>To remove the remote, we can use the command:</p>               
+                <p class="command">git remote remove &lt;name&gt;</p>
+                <p class="title">8. diff</p>
+                <p>shows the changes made after comparing two versions of code.</p>
+                <p class="command">git diff branch_name</p>
+                <p class="title">9. config</p>
+                <p>To configure you username and user email for git:</p>
+                <p>user email</p>
+                <p class="command">git config --global user.email "email_address"</p>
+                <p>user name</p>
+                <p class="command">git config --global user.name "user_name"</p>
+                <p class="title">10. Verification</p>
+                <p>To avoid having to fill in the username and password each time, generate a Personal Access Token then use thhe command: (although this is considered to be unsafe)</p>
+                <p class="command">git config --global credential.helper store</p>
+            </div>
+        </section>
+
+        <section class="container" id="git_repository">
+            <h1 class="_heading1">Git repository</h1>
+            <div class="container">
+                <p class="title">Creating a new repo</p>
+                <p>Initialize local directory as a git repo</p>
+                <p class="command">git init</p>
+                <p>add files in your local repo to stage them for commit</p>
+                <p class="command">git add README.md</p>
+                <p>commit the file to be tracked for changes and prepare the file to be pushed to a remote repo.</p>
+                <p class="command">git commit -m "first commit"</p>
+                <p class="command">git branch -M main</p>
+                <p>add the url for the remote repo where local repo will be pushed</p>
+                <p class="command">git remote add origin https://github.com/username/repo_name.git</p>
+                <p>verify the new remote url</p>
+                <p class="command">git remote -v</p>
+                <p>push changes in your local repo up to the remote repo</p>
+                <p class="command">git push -u origin main</p>
+                <p class="title">to push an existing repo from the command line</p>
+                <p class="command">git remote add origin https://github.com/username/repo_name.git</p>
+                <p class="command">git branch -M main</p>
+                <p class="command">git push -u origin main</p>
+    
+                <p class="title">shortcut to add, commit and push</p>
+                <p class="command">git add . && git commit -m "commit_message" && git push</p>
+    
+                <p class="title">to unstage a file</p>
+                <p class="command">git reset HEAD your_file</p>
+    
+                <p class="title">in case of rejection</p>
+                <p class="command">git push origin main --force</p>
+    
+                <p class="title">uninitialize a git repo</p>
+                <p class="command">rm -rf .git</p>
+            </div>
+        </section>
+
+        <section class="container" id="branching">
+            <h1 class="_heading1">Branching</h1>
+            <div class="container">
+                <p>By default, a git repo has one default branch which can be called master or main though this is just a naming convention.</p>
+                <p>So branching comes in when we want to add another repo, say for some new feature that we will later merge with the default branch (master or main).</p>
+                <p>Each branch in this case will have no idea what commits we have made in any other branch. Each branch keeps track of changes in it.</p>
+                <p>This is useful when we are making changes that might break our code if they are not complete especially when working with many developers. So we can work on the changes in a different branch to ensure the code in the default branch does not break.</p>
+                <p>To view all your branches, use</p>
+                <p class="command">git branch</p>
+                <p>the branch preceded with an asterisk (*) is the one you're currently in.</p>
+                <p>To switch between branches, use</p>
+                <p class="command">git checkout branch_name</p>
+                <p>To create a new branch, add the flag <code>-b</code></p>
+                <p class="command">git checkout -b branch_name</p>
+                <p>after creating the new branch, git automatically switches to the new branch.</p>
+                <p>To delete a branch locally, use</p>
+                <p class="command">git branch -D branch_name</p>
+            </div>
+        </section>
+
+        <section class="container" id="merging">
+            <h1 class="_heading1">Merging</h1>
+            <div class="container">
+                <p>once we have completed the changes we were making on our branch, we can now merge our branch to the default branch using merge.</p>
+                <p>before merging we might want to see the code we are merging just to double check. We use</p>
+                <p class="command">git diff branch_name</p>
+                <p>then to merge</p>
+                <p class="command">git merge branch_name</p>
+            </div>
+        </section>
+
+        <section class="container" id="readme">
+            <h1 class="_heading1">README</h1>
+            <div class="container">
+                <p>You can add a README file to a repository to communicate important information about your project.</p>
+                <p>A README, along with a repository license, citation file, contribution guidelines, and a code of conduct, communicates expectations for your project and helps you manage contributions.</p>
+                <p>A README is often the first item a visitor will see when visiting your repository.</p>
+                <p>README files typically include information on:</p>
+                <ul>
+                    <li>What the project does</li>
+                    <li>Why the project is useful</li>
+                    <li>How users can get started with the project</li>
+                    <li>Where users can get help with your project</li>
+                    <li>Who maintains and contributes to the project</li>
+                </ul>
+                <p>If a repository contains more than one README file, then the file shown is chosen from locations in the following order: the .github directory, then the repository's root directory, and finally the docs directory.</p>
+                <p>If you add a README file to the root of a public repository with the same name as your username, that README will automatically appear on your profile page. You can edit your profile README with GitHub Flavored Markdown to create a personalized section on your profile. For more information, see <a href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme">"Managing your profile README."</a></p>
+                <p>A readme file usually has the file extension .md which stands for markdown.</p>
+                <p>Markdown is simply a way to format your text in files like the readme file.</p>
+                <p>It has some shortcuts like one # which represent a heading.</p>
+            </div>
+        </section>
+        
+        <section class="container" id="tips">
+            <h1 class="_heading1">Tips</h1>
+            <div class="container">
+                <div class="tip">
+                    <p>to update a recently pushed commit message, use</p>
+                    <p class="command">git commit --amend</p>
+                </div>
+                <div class="tip">
+                    <p>A simpler way to add, commit and push is to concatenate the commands using &&. ie.</p>
+                    <p class="command">git add file_name && git commit -m "commit message" && git push</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</section>
+<script src="../../_resources/js/prism.js"></script>
+</body>
+</html>
+
+#TODO - look at how to connect to github using ssh keys.
