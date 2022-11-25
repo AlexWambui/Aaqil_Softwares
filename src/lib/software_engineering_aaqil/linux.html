@@ -513,6 +513,47 @@
 						<p>The syntax is: <code>mkdir -p [directories]</code></p>
 						<p>For example: To create a directory called first then another directory inside it called second then another inside second called third.</p>
 						<p class="command">mkdir -p first/second/third</p>
+
+						<h2 class="_h2">Tar a dir</h2>
+						<p>Tape Archive or tar is a file format for creating files and directories into an archive while preserving filesystem information such as permissions.</p>
+						<p>tar command can be used to create tar archives, extract the archives, view files and directories stored in the archives and append files to an existing archive.</p>
+						<h3 class="_h3">Tar File Formats</h3>
+						<p>Common extensions of tar archives include:</p>
+						<ul>
+							<li>.tar - a raw tar file.</li>
+							<li>.tar.gz, .tgz, .tar.gzip - Gzip tar archive.</li>
+							<li>.tar.bz2, .tbz, .tbz2, .tar.bzip2 - Bzipped tar archive.</li>
+							<li>.tar.Z, .Z, .taz - Compress tar archive.</li>
+						</ul>
+						<p>tar operations include:</p>
+						<ul>
+							<li>-c - create an archive.</li>
+							<li>-x - extract archive.</li>
+							<li>-t - show files and directories in the archive.</li>
+							<li>-v - verbose.</li>
+							<li>-f - for archive name.</li>
+							<li>-z - to filter the archive via gzip.</li>
+						</ul>
+						<h3 class="_h3">Creating a simple Archive</h3>
+						<p>To create an archive with files: file1, file2, file2</p>
+						<p class="command">sudo tar -c -f myarchive.tar file1, file2, file3</p>
+						<p>The -c tells tar to create a new archive.</p>
+						<p>The -f flag specifies the file name.</p>
+						<h3 class="_h3">To show contents of an archive</h3>
+						<p>we use the -t option:</p>
+						<p class="command">tar -t -f gzipped.tar.gz</p>
+						<h3 class="_h3">To extract a tar rchive</h3>
+						<p>To extract a tar archive, use the -x operation flag for extraction. You can pass any tar compression format such as gzip, lzma, bz2, and more.</p>
+						<p>To extract a simple tar archive to the current directory:</p>
+						<p>To extract a specific file:</p>
+						<p class="command">tar -xvf sample.wma info.txt backup.log</p>
+						<p class="command">tar -xvf myarchive.tar</p>
+						<h3 class="_h3">To append files to an archive</h3>
+						<p>To add files to an existing archive, we use the -r fo append followed by the name of the archive and the files to add.</p>
+						<p class="command">tar -rvf myarchive file1 file2 file3</p>
+						<h3 class="_h3">To remove files from an archive</h3>
+						<p>using the -delete option, we can remove specific files from an archive as:</p>
+						<p class="command">tar -xvf --delete myarchive.tar file1 file2 file3</p>
 					</div>
 				</section>
 
