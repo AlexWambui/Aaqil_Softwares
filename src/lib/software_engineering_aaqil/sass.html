@@ -39,10 +39,10 @@
 				</div>
 			</aside>
 			<main class="main_content">
-				<section class="container" id="introduction">
-					<h1 class="_heading1">Introduction</h1>
-					<div class="container">
-						<h2 class="_heading2">What is Sass</h2>
+				<section className="container" id="introduction">
+					<h1 className="_h1">Introduction</h1>
+					<div className="container">
+						<h2 className="_h2">What is Sass</h2>
 						<p>
 							Official website for sass is
 							<a href="https://sass-lang.com/install">sass-lang.com/install</a>
@@ -67,7 +67,7 @@
 							Weizenbaum in 2006.
 						</p>
 
-						<h2 class="_heading2">How does Sass work</h2>
+						<h2 className="_h2">How does Sass work</h2>
 						<p>
 							A browser does not understand Sass code thus you need a Sass
 							pre-processor to convert Sass code into standard CSS. This process
@@ -83,17 +83,17 @@
 					</div>
 				</section>
 
-				<section class="contaner" id="comments">
-					<h1 class="_heading1">Comments</h1>
-					<div class="container">
-						<h2 class="_heading2">How to write a comment</h2>
+				<section className="contaner" id="comments">
+					<h1 className="_h1">Comments</h1>
+					<div className="container">
+						<h2 className="_h2">How to write a comment</h2>
 						<p>
 							Sass supports standard CSS comments /* comment */ and also
 							supports inline comments // comment.
 						</p>
-						<div class="container code">
-							<pre class="line-numbers">
-                                                                <code class="language-css">
+						<div className="container code">
+							<pre className="line-numbers">
+                                                                <code className="language-css">
                                                                         /* this is a comment */
                                                                         $text_color: black;
                                                                         $background: lightblue; //this is an inline comment
@@ -103,10 +103,10 @@
 					</div>
 				</section>
 
-				<section class="container" id="variables">
-					<h1 class="_heading1">Variables</h1>
-					<div class="container">
-						<h2 class="_heading2">Creating variables</h2>
+				<section className="container" id="variables">
+					<h1 className="_h1">Variables</h1>
+					<div className="container">
+						<h2 className="_h2">Creating variables</h2>
 						<p>
 							With Sass, you can store information in variables like: strings,
 							numbers, colors, booleans, lists, nulls.
@@ -115,18 +115,18 @@
 							to create variables, the syntax is $ followed by a name to decalre
 							the variable then the value: $variable_name: css_value;
 						</p>
-						<div class="container code">
-							<pre class="line-numbers">
-                                                                <code class="language-css">
+						<div className="container code">
+							<pre className="line-numbers">
+                                                                <code className="language-css">
                                                                 /* defining the varialbes */
                                                                 $text_color: black;
                                                                 $background: lightblue;
 
                                                                 /* using the variables */
-                                                                body {
+                                                                body &#123;
                                                                         background-color: $background;
                                                                         color: $text_color;
-                                                                }
+                                                                &#125l
                                                                 </code>
                                                         </pre>
 						</div>
@@ -136,65 +136,65 @@
 							the variable values placed in the CSS.
 						</p>
 
-						<h2 class="_heading2">Sass Variable Scope</h2>
+						<h2 className="_h2">Sass Variable Scope</h2>
 						<p>
 							Sass variables are only available at the level of nesting where
 							they are defined.
 						</p>
 
-						<h2 class="_heading2">Sass !global</h2>
+						<h2 className="_h2">Sass !global</h2>
 						<p>
 							Default behavior of variable scope can be overridden by using the
 							!global switch.
 						</p>
-						<div class="container code">
-							<pre class="line-numbers">
-                                                                <code class="language-css">
+						<div className="container code">
+							<pre className="line-numbers">
+                                                                <code className="language-css">
                                                                         $myColor: red;
 
-                                                                        h1 {
+                                                                        h1 &#123;
                                                                                 $myColor: green !global;
                                                                                 color: $myColor;
-                                                                        }
+                                                                        &#125;
 
-                                                                        p {
+                                                                        p &#123;
                                                                                 color: $myColor;
-                                                                        }
+                                                                        &#125;
                                                                 </code>
                                                         </pre>
 						</div>
 						<p>The color of the &lt;p&gt; tag will be green instead of red.</p>
-						<p class="note_better">
+						<p className="note_better">
 							Tip: It wise to define all global variables in it own file named
 							"_globals.scss" and include the file with the @include keyword.
 						</p>
 					</div>
 				</section>
 
-				<section class="container" id="nesting">
-					<h1 class="_heading1">Nested Rules and Properties</h1>
-					<div class="container">
-						<h2 class="_heading2">Nested Rules</h2>
+				<section className="container" id="nesting">
+					<h1 className="_h1">Nested Rules and Properties</h1>
+					<div className="container">
+						<h2 className="_h2">Nested Rules</h2>
 						<p>Sass lets you nest CSS selectors in the same way as HTML.</p>
 						<p>Example:</p>
-						<div class="container code">
-							<pre class="line-numbers">
-                                                                <code class="language-css">
-                                                                        nav {
-                                                                                ul {
+						<div className="container code">
+							<pre className="line-numbers">
+                                                                <code className="language-css">
+                                                                        nav &#123;
+                                                                                ul &#123;
                                                                                   margin: 0;
                                                                                   padding: 0;
                                                                                   list-style: none;
-                                                                                }
-                                                                                li {
+                                                                                &#125;
+                                                                                li &#123;
                                                                                   display: inline-block;
-                                                                                }
-                                                                                a {
+                                                                                &#125;
+                                                                                a &#123;
                                                                                   display: block;
                                                                                   padding: 6px 12px;
                                                                                   text-decoration: none;
-                                                                                }
-                                                                        }                                                                
+                                                                                &#125;
+                                                                        &#125;                                                                
                                                                 </code>
                                                         </pre>
 						</div>
@@ -203,34 +203,34 @@
 							standard CSS.
 						</p>
 
-						<h2 class="_heading2">Nested Properties</h2>
+						<h2 className="_h2">Nested Properties</h2>
 						<p>
 							Many CSS properties have the same prefix, like font-family,
 							font-size and font-weight or text-align, text-transform and
 							text-overflow.
 						</p>
 						<p>With Sass you can write them as nested properties.</p>
-						<div class="container code">
-							<pre class="line-numbers">
-                                                                <code class="language-css">
-                                                                        font: {
+						<div className="container code">
+							<pre className="line-numbers">
+                                                                <code className="language-css">
+                                                                        font: &#123;
                                                                                 family: Helvetica, sans-serif;
                                                                                 size: 18px;
                                                                                 weight: bold;
-                                                                        }
+                                                                        &#125;
                                                                               
-                                                                        text: {
+                                                                        text: &#123;
                                                                                 align: center;
                                                                                 transform: lowercase;
                                                                                 overflow: hidden;
-                                                                        }                                                                
+                                                                        &#125;                                                                
                                                                 </code>
                                                         </pre>
 						</div>
                                                 <p>The Sass transpiler will convert the above to normal CSS:</p>
-                                                <div class="container code">
-							<pre class="line-numbers">
-                                                                <code class="language-css">
+                                                <div className="container code">
+							<pre className="line-numbers">
+                                                                <code className="language-css">
                                                                         font-family: Helvetica, sans-serif;
                                                                         font-size: 18px;
                                                                         font-weight: bold;
@@ -244,21 +244,21 @@
 					</div>
 				</section>
 
-				<section class="container" id="imports">
-					<h1 class="_heading1">Imports and Partials</h1>
-					<div class="container">
+				<section className="container" id="imports">
+					<h1 className="_h1">Imports and Partials</h1>
+					<div className="container">
 						<p>Sass keeps the CSS code DRY (Don't Repeat Yourself). One way to write DRY code is to keep related code in separate files.</p>
 						<p>You can create small files with CSS snippets to include in other Sass files. Examples of such files can be: reset file, variables, colors, fonts, font-sizes, etc. </p>
 
-						<h2 class="_heading2">Importing Files</h2>
+						<h2 className="_h2">Importing Files</h2>
 						<p>Just like CSS, Sass also supports the @import directive that allows you include the content of one file in another.</p>
 						<p>The CSS @import directive has a major drawback due to performance issues; it creates an extra HTTP request each time you call it. However, the Sass @import directive includes the file in the CSS; so no extra HTTP call is required at runtime!</p>
 						<p>The sysntax for importing a file in Sass is: @import filename;</p>
-						<p class="note_better">You do not need to specify a file extension, Sass automatically assumes that you mean a .sass or .scss file.</p>
+						<p className="note_better">You do not need to specify a file extension, Sass automatically assumes that you mean a .sass or .scss file.</p>
 						<p>Example:</p>
-						<div class="container code">
-							<pre class="line-numbers">
-                                                                <code class="language-css">
+						<div className="container code">
+							<pre className="line-numbers">
+                                                                <code className="language-css">
                                                                         @import "variables";
 									@import "colors";
 									@import "reset";
@@ -266,7 +266,7 @@
                                                         </pre>
 						</div>
 
-						<h2 class="_heading2">Sass Partials</h2>
+						<h2 className="_h2">Sass Partials</h2>
 						<p>By default, Sass transpiles all the .scss files directly. However, when you want to import a file, you do not need the file to be transpiled directly.</p>
 						<p>Sass has a mechanism for this: If you start the filename with an underscore, Sass will not transpile it.</p>
 						<p>Files named this way are called partials in Sass.</p>
@@ -275,7 +275,17 @@
 						<p>If we import this partial file, and omit the underscore and file extension, Sass understands it should import the file "_color.scss" when we use the code: @import "colors";</p>
 					</div>
 				</section>
-				<p>Started learning in May, 2022</p>
+
+				<section className="container" id="tips">
+				  <h1 className="_h1">Tips</h1>
+				  <div className="container">
+				    <p>To install node-sass globally:</p>
+				    <p className="command">npm install node-sass -g</p>
+				    <p>To watch Sass files using the command line, navigate to the directory containing the .scss file then:</p>
+				    <p className="command">node-sass --watch styles.scss styles.css</p>
+				  </div>
+				</section>
+				<!-- <p>Started learning in May, 2022</p> -->
 			</main>
 		</section>
 		<script src="../../_resources/js/prism.js"></script>

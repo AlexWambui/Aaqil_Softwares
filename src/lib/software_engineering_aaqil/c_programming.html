@@ -27,27 +27,36 @@
         <div class="nav_body">
             <ul>
                 <li><a href="#introduction">Introduction</a></li>
-                <li><a href="#c_program_cycle">C Program Cycle</a></li>
+                <li><a href="#compilation_process">Compilation Process</a></li>
+                <li><a href="#program_cycle">Program Cycle</a></li>
                 <li><a href="#comments">Comments</a></li>
                 <li><a href="#variables">Variables</a></li>
                 <li><a href="#data_types">Data Types</a></li>
                 <li><a href="#constants">Constants</a></li>
                 <li><a href="#operators">Operators</a></li>
                 <li><a href="#conditionals">Conditionals</a></li>
-                <li><a href="#loops">Loops</a></li>
+                <li><a href="#loops">Loops</a></li>    
+                <li><a href="#functions">Functions</a></li>  
+                <li><a href="#header_files">Header Files</a></li>                         
                 <li><a href="#arrays">Arrays</a></li>
                 <li><a href="#strings">Strings</a></li>
                 <li><a href="#pointers">Pointers</a></li>
-                <li><a href="#functions">Functions</a></li>                
                 <li><a href="#input_output">Input / Output</a></li>
-                <li><a href="#structures">Stuctures</a></li>     
-                <li><a href="#header_files">Header Files</a></li>           
-            </ul>
+                <li><a href="#recursion">Recursion</a></li>
+                <li><a href="#argc_argv">Argc, Argv</a></li>
+                <li><a href="#malloc">Malloc</a></li>
+                <li><a href="#preprocessor">Preprocessor</a></li>
+                <li><a href="#structures">Stuctures</a></li>  
+                <li><a href="#typedef">Typedef</a></li>               
+                <li><a href="#linked_lists">Linked lists</a></li> 
+                <li><a href="#bit_manipulation">Bit Manipulation</a></li>   
+                <li><a href="#file_I_O">File I/O</a></li>                             
+             </ul>
         </div>
     </aside>
     <main class="main_content">
         <section class="container" id="introduction">
-            <h1 class="_heading1">Introduction</h1>
+            <h1 class="_h1">Introduction</h1>
             <div class="container">
                 <p>C was created by Dennis MacAlistair Richie, an American computer scientist. He created the language together with a collegue, Ken Thompson at the Bell Telephone Laboratories in 1972.</p>
                 <p>C was created for a specific purpose of designing the UNIX operating system (which is used on many computers).</p>
@@ -59,21 +68,7 @@
                 <p>It's mostly useful for creating compilers, interpreters, embedded systems, device drivers, micro processors, micro controllers and operating systems (Windows, Mac OS, Linux).</p>
                 <p>C is usually the best when it comes to speed or performance but not for prototyping (that is, for exploring small amounts of data, for developing an approach, and algorithms, for analyzing data and for generating graphics).</p>
 
-                <h2 class="_heading2">C Standardization</h2>
-                <p>These include:</p>
-                <ol>
-                    <li>K&R C</li>
-                    <li>ANSI C - (aka C89 or C90)
-                        <ul>
-                            <li>most portable</li>
-                            <li>to turn on the ANSCI C mode, use the command: <span class="command">-ansi, -std=c89</span></li>
-                        </ul>
-                    </li>
-                    <li>C99 - extends C89/C90, new data types, variable length arrays.</li>
-                </ol> 
-                <p>The ANSI C spec standard determines the minimum values of each type.</p>           
-    
-                <h2 class="_heading2">Features of C and Why C is awesome</h2>
+                <h2 class="_h2">Features of C and Why C is awesome</h2>
                 <ul>
                     <li>C is a powerful and flexible language. What you can accomplish with C is limited only by your imagination. The language itself places no constraints on you. C is used for projects as diverse as operating systems, word processors, graphics, spreadsheets and even compilers for other languages.</li>
                     <li>C is a popular language preferred by professional programmers. As a result, a wide variety of C compilers and helpful accessories are available.</li>
@@ -86,35 +81,60 @@
                     <li>It's been around for more than 30 years and isn't going anywhere.</li>
                     <li>Writing code in C will ultimately tell you how a computer really works. Understanding how a computer works, memory management and allocation along with the idea that you can further appreciate higher level languages like Python, JavaScript and C#.</li>
                 </ul>
-    
-                <h2 class="_heading2">C Compilation Process</h2>
-                <p>Components of the compiler include: Preprocessor (processes C code into intermediarry code given to the compiler), Compiler (generates assembly code), Assembler (converts assembly code into object code), Linker (links the object code with libraries used and generates machine code).</p>
+
+                <h2 class="_h2">C Standardization</h2>
+                <p>These include:</p>
+                <ol>
+                    <li>K&R C</li>
+                    <li>ANSI C - (aka C89 or C90)
+                        <ul>
+                            <li>most portable</li>
+                            <li>to turn on the ANSCI C mode, use the command: <span class="command">-ansi, -std=c89</span></li>
+                        </ul>
+                    </li>
+                    <li>C99 - extends C89/C90, new data types, variable length arrays.</li>
+                </ol> 
+                <p>The ANSI C spec standard determines the minimum values of each type.</p>                            
+            </div>
+        </section>
+
+        <section class="container" id="compilation_process">
+            <h1 class="_h1">Compilation Process</h1>
+            <div class="container">
+                <h2 class="_h2">C Compilation Process</h2>
+                <p>Components of the compiler include:</p>
+                <ul>
+                    <li>Preprocessor (processes C code into intermediarry code given to the compiler).</li>
+                    <li>Compiler (generates assembly code).</li>
+                    <li>Assembler (converts assembly code into object code).</li>
+                    <li>Linker (links the object code with libraries used and generates machine code).</li>
+                </ul>
                 <p>So the compilations process can be narrowed down into the process of:</p>
                 <ul>
                     <li>Preprocessing</li>
                     <li>Compiling</li>
                     <li>Assembling</li>
                     <li>Linking</li>
-                </ul>  
+                </ul> 
             </div>
         </section>
 
-        <section class="container" id="c_program_cycle">
-            <h1 class="_heading1">C Program Cycle</h1>
+        <section class="container" id="program_cycle">
+            <h1 class="_h1">Program Cycle</h1>
             <div class="container">
-                <h2 class="_heading2">Creating the source code</h2>
+                <h2 class="_h2">Creating the source code</h2>
                 <p>Source code - is a series of statements or commands that are used to instruct the computer to perform your desired tasks.</p>
                 <p>When you save a source file, you must give it a name.</p>
                 <p>The name should describe what the program does.</p>
                 <p>When you save a C program source file, give it a file .c extension.</p>
-                <h3 class="_heading3">Using an Editor</h3>
-                <p>Most compilers come with a built-in editor that can be used to enter source code; however, some don't.</p>
+                <h3 class="_h3">Using an Editor</h3>
+                <p>Most compilers come with a built-in editor that can be used to enter source code&#59; however, some don't.</p>
                 <p>Most computer systems include a program that can be used as an editor. UNIX system: ed, ex, edit, emacs or vi. Microsoft Windows: Notepad.</p>
                 <p>Most word processors use special codes to format their documents. These codes can't be read correctly by other programs.</p>
                 <p>The American Standard Code for Information Interchange (ASCII) has specified a standard text format that nearly any program, including C, can use.</p>
                 <p>Many Word processors, such as WordPerfect, AmiPro, Word, WordPad and WordStar, are capable of saving source files in ASCII form (as a text file rather than a document file).</p>
                 <p>When you want to save a word processor's file as an ASCII file, select the ASCII or text option when saving.</p>
-                <h2 class="_heading2">Compiling the Source Code</h2>
+                <h2 class="_h2">Compiling the Source Code</h2>
                 <p>Although you understand C source code, your computer can't. A computer requires digital, or binary, instructions in what is called machine language.</p>
                 <p>Before a C program can run on a computer, it must be translated from source code to machine language. This translation, second step in program development, is performed by a program called a compiler.</p>
                 <p>The compiler takes the source code file as input and produces a disk file containing the machine language instructions that correspond to your source code statements.</p>
@@ -125,7 +145,7 @@
                 <p>After compiling, you have an object file. There should now be a file that has the same name as your source file, but with an .obj rather than .c extension.</p>
                 <p>The .obj is recognized as an object file and is used by the linker.</p>
                 <p>In UNIX, the compiler created object files with an extension of .o instead of .obj.</p>
-                <h3 class="_heading3">Using gcc compiler.</h3>
+                <h3 class="_h3">Using gcc compiler.</h3>
                 <p>GCC is the acronym of the GNU compiler collection.</p>
                 <p>GCC supports C, C++, Java, Ada, Go etc.</p>
                 <p>By default, GCC uses the ANSI standardization of C (C89 + a number of C99 features).</p>
@@ -133,7 +153,7 @@
                 <p>To install GCC from repositories:</p>
                 <p class="command">sudo apt-get install gcc -y</p>
                 <p class="title">Compiling C source code with GCC</p>
-                <p>to compile a source code file names <code>main.c</code> using GCC:</p>
+                <p>to compile a source code file named <code>main.c</code> using GCC:</p>
                 <p class="command">gcc main.c</p>
                 <p>This created a binary named a.out which is the file we execute.</p>
                 <p class="title">Setting output file name</p>
@@ -141,8 +161,8 @@
                 <p>We can specify the executable file name after compilation as:</p>
                 <p class="command">gcc main.c -o file_name</p>
                 <p>to see warning messages when running a C program, use -pedantic. ie.</p>
-                <p class="command"></p>
-                <h2 class="_heading2">Linking to create an executable file</h2>                
+                <p class="command">gcc main.c -o file_name -pedantic</p>
+                <h2 class="_h2">Linking to create an executable file</h2>                
                 <p>Part of the C language is a function library that contains object code (code that has already been compiled) for predefined functions.</p>
                 <p>A predefined function contains C code that has already been written and is suppled in a ready-to-use form with your compiler package.</p>
                 <p>The printf() function is a library function.</p>
@@ -150,12 +170,12 @@
                 <p>If your program uses any of these functions, the object file produced when your source code was compiled must be combined with object code from the function library to create the final executable program.</p>
                 <p>Executable means the program can be run or executed, on your computer.</p>
                 <p>The process of converting object code into executable code is called linking and it performed by a linker.</p>
-                <h2 class="_heading2">Executing code</h2>
+                <h2 class="_h2">Executing code</h2>
                 <p>Once your program is compiled and linked to create an executable file, you can now run it.</p>
                 <p>When you make changes to the source code, you need to recompile and relink the program to get the updated executable file.</p>
                 <p>Many compilers, such as DOS compilers do compiling and linking as one step.</p>
 
-                <h2 class="_heading2">First Program</h2>
+                <h2 class="_h2">First Program</h2>
                 <p>C programs consist of functions and variables.</p>
                 <p>A function contains statements that specify the computing operations to be done and variables store values used during the computation.</p>
                 <p>"main" is special to C programs because C begins executing at the beginning of main so this means that every program must have a main somewhere.</p>
@@ -164,28 +184,28 @@
                     <pre class="line-numbers">
                         <code class="language-c">
                             /* include the "header" file that defines the input/output routines (such as printf()) used by the program */
-                            #include &lt;stdio.h&gt;
+                            #include &lt&#59;stdio.h&gt&#59;
                             /* "entry point" of the program */
                             int main()
-                            {
+                            &#123;
                                 /* print some characters out to "standard output" */
-                                printf("hello, world!\n");
+                                printf("hello, world!\n")&#59;
                                 /* return 0 to whomever called the program */
-                                return (0);
-                            }
+                                return (0)&#59;
+                            &#125;
                         </code>
                     </pre>
                 </div>
 
-                <h2 class="_heading2">Errors</h2>
+                <h2 class="_h2">Errors</h2>
                 <p>Errors are an unavoidable part of program development.</p>
-                <h3 class="_heading3">Compilation Errors</h3>
+                <h3 class="_h3">Compilation Errors</h3>
                 <p>A compilation error occurs when the compiler finds something in the source code that it can't compile.</p>
                 <p>A misspelling, typographical error, or any of a dozen other things can cause the compiler to choke.</p>
                 <p>Although the compiler is very clever about detecting and localizing errors, you must use your knowledge of the C language to interpret the compiler's messages and determine the actual location of any errors that are reported.</p>
                 <p>The errors reported might differ depending on the compiler. In most cases, the error message should give you an idea of what or where the problem is.</p>
                 <p>At times, a single error in a C program can sometimes cause multiple error messages. In such a case, find one error, fix it and recompile. You might find that your single correction is all that's needed, and the program will compile without errors.</p>
-                <h3 class="_heading3">Link Error Messages</h3>
+                <h3 class="_h3">Link Error Messages</h3>
                 <p>Linker errors are relatively rare and usually a result of misspelling the name of a C library function.</p>
                 <p>In this case, you get an error: undefined symbols, followed by the missplled name (preceded by an underscore).</p>
 
@@ -193,7 +213,7 @@
         </section>
 
         <section class="container" id="comments">
-            <h1 class="_heading1">Comments</h1>
+            <h1 class="_h1">Comments</h1>
             <div class="container">
                 <p>Comments are usually ignored by the compiler.</p>
                 <p>Comments in C begin with /* and end with */</p>
@@ -224,13 +244,13 @@
         </section>
     
         <section class="container" id="variables">
-            <h1 class="_heading1">Variables</h1>
+            <h1 class="_h1">Variables</h1>
             <div class="container">
                 <p>Variables in C are used to store values.</p>
                 <p>In C, all variables must be declared before they are used, usually at the beginning of the function before any executable statements.</p>
-                <p>A declaration announces the properties of variables. It constist of a type name and a list of variables. eg. <code>int upper, lower, step;</code></p>
+                <p>A declaration announces the properties of variables. It constist of a type name and a list of variables. eg. <code>int upper, lower, step&#59;</code></p>
 
-                <h2 class="_heading2">Naming variables</h2>
+                <h2 class="_h2">Naming variables</h2>
                 <p>Some rules to follow when naming variables include:</p>
                 <ul>
                     <li>Must begin with an uppercase or lowercase letter (A-Za-z) or an underscore (_). Cannot start with a digit.</li>
@@ -250,7 +270,7 @@
                     <li>1age</li>
                 </ol>
 
-                <h2 class="_heading2">Variable Types</h2>
+                <h2 class="_h2">Variable Types</h2>
                 <p>C uses variable types such as:</p>
                 <ul>
                     <li>int - integer.</li>
@@ -261,7 +281,7 @@
                     <li>double - double-precision floating point</li>
                 </ul>
 
-                <h2 class="_heading2">Type Casting</h2>
+                <h2 class="_h2">Type Casting</h2>
                 <p>in cases where we are getting user input, we might get int input then do a calculation with a double / float which then gives an int result.</p>
                 <p>This is called a logical error because, int * int = int but int * double = int.</p>
                 <p>to solve this we can use type casting which convert one data type to another data type.</p>
@@ -270,24 +290,24 @@
                     <pre class="line-numbers">
                         <code class="language-c">
                             /*this is wrong*/
-                            int eggs = 18;
-                            double dozen_eggs = eggs / 12;
+                            int eggs = 18&#59;
+                            double dozen_eggs = eggs / 12&#59;
 
                             /*correct program would be*/
-                            int eggs = 18;
-                            double dozen_eggs = (double) eggs / 12;
+                            int eggs = 18&#59;
+                            double dozen_eggs = (double) eggs / 12&#59;
                         </code>
                     </pre>
                 </div>
                 <p>The first program would return 1 instead of 1.5, but the second would return 1.5.</p>
                 <p>the (double) eggs is what is called type casting and casts the first value on the right so it's wrong to use (double) (eggs / 12) because it will cast the result of eggs / 12</p>
 
-                <h2 class="_heading2">Declaration</h2>
+                <h2 class="_h2">Declaration</h2>
             </div>
         </section>
 
         <section class="container" id="data_types">
-            <h1 class="_heading1">Data Types</h1>
+            <h1 class="_h1">Data Types</h1>
             <div class="container">
                 <p>Data types in C refer to an extensive system used for declaring variables or functions of different types.</p>
                 <p>The type of a variable determines how much space it occupies in storage and how the bit pattern stored is interpreted.</p>
@@ -299,7 +319,7 @@
                     <li>Derived types - they include: pointer types, array types, structure types, union types and function types.</li>
                 </ol>
 
-                <h2 class="_heading2">Integer types</h2>  
+                <h2 class="_h2">Integer types</h2>  
                 <p>C provides us the following types to define integer values: char, int, short, long.</p>      
                 <p>char type is commonly used to store letters of the ASCII chart, but it can be used to hold small integers from -128 to 127. It takes at least 1 byte.</p>
                 <div class="container">
@@ -370,7 +390,7 @@
                         </tbody>
                     </table>                    
                 </div>
-                <h2 class="_heading2">Floating-point types</h2>
+                <h2 class="_h2">Floating-point types</h2>
                     <div class="container">
                         <table class="table table-bordered text-white">
                             <thead>
@@ -408,178 +428,156 @@
                     <p>The expressions sizeof(type) yields the storage size of the object or type in bytes.</p>
                     <p>C does not protect you from going over the limits of a type. You need to take care of this yourself.</p>
 
-                    <h2 class="_heading2">The void type</h2>  
+                    <h2 class="_h2">The void type</h2>  
                     <p>The void type specifies that no value is available.</p>                  
                     <p>It's used in three kinds of situations:</p>
                     <ol>
-                        <li>Function returns as void - There are various functions in C which do not return any value or you can say they return void. A function with no return value has the return type as void. eg. void exit (int status);</li>
-                        <li>Function arguments as void - There are various functions in C which do not accept any parameter. A function with no parameter can accept a void. For example, int rand(void);</li>
-                        <li>Pointers to void - A pointer of type void * represents the address of an object, but not its type. For example, a memory allocation function void *malloc(size_t size); returns a pointer to void which can be casted to any data type.</li>
+                        <li>Function returns as void - There are various functions in C which do not return any value or you can say they return void. A function with no return value has the return type as void. eg. void exit (int status)&#59;</li>
+                        <li>Function arguments as void - There are various functions in C which do not accept any parameter. A function with no parameter can accept a void. For example, int rand(void)&#59;</li>
+                        <li>Pointers to void - A pointer of type void * represents the address of an object, but not its type. For example, a memory allocation function void *malloc(size_t size)&#59; returns a pointer to void which can be casted to any data type.</li>
                     </ol>
             </div>
         </section>
 
         <section class="container" id="conditionals">
-            <h1 class="_heading1">Conditionals</h1>
+            <h1 class="_h1">Conditionals</h1>
             <div class="container">
                 <p>At times we want to check data and make choices based on the state of that data.</p>
                 <p>C provides two ways of doing so: if...else statements and switch statement.</p>
-                <h2 class="_heading2">if</h2>
+                <h2 class="_h2">if...else if...else</h2>
                 <p>An if statement allows you to check for a condition to be true, and the execute the block provided in the curly brackets. Or execute a different block if the original condition turns out to be false.</p>
-                <p>Example:</p>
-                <div class="container C_code code">
-                    <pre class="line-numbers">
-                        <code class="language-c">
-                            #include <stdio.h>
-                            int main(void)
-                            {
-                                int number;
-
-                                number = printf("Enter a number: ");
-                                scanf("%i", &number);
-
-                                if (number < 2)
-                                {
-                                    printf("%i is less than 2\n", number);
-                                }
-                                else if (number > 2)
-                                {
-                                    printf("%i is greater than 2\n", number);
-                                }
-                                else
-                                {
-                                    printf("a is equal to 2\n");
-                                }
-
-                                return (0);
-                            }
-                        </code>
-                    </pre>
-                </div>
-
-                <h2 class="_heading2">Switch</h2>
-                <p>If you need to do too many if / else / if blocks to perform a check, perhaps because you need to check the exact value of a variable, then switch can be very useful.</p>
-                <p>You only need to provide a variable as a condition, and a series of case entry points for each value you expect.</p>
                 <p>Example:</p>
                 <div class="container C_code code">
                     <pre class="line-numbers">
                         <code class="language-c">
                             #include &lt;stdio.h&gt;
                             int main(void)
-                            {
-                                char operator;
-                                int answer;
-                                int x, y;
-                                operator = printf("Enter operator (- + / *): ");
-                                scanf("%c", &operator);
-                                x = printf("X: ");
-                                scanf("%i", &x);
-                                y = printf("Y: ");
-                                scanf("%i", &y);
+                            &#123;
+                                int number&#59;
+
+                                number = printf("Enter a number: ")&#59;
+                                scanf("%i", &number)&#59;
+
+                                if (number &lt; 2)
+                                &#123;
+                                    printf("%i is less than 2\n", number)&#59;
+                                &#125;
+                                else if (number &gt; 2)
+                                &#123;
+                                    printf("%i is greater than 2\n", number)&#59;
+                                &#125;
+                                else
+                                &#123;
+                                    printf("a is equal to 2\n")&#59;
+                                &#125;
+
+                                return (0)&#59;
+                            &#125;
+                        </code>
+                    </pre>
+                </div>
+
+                <h2 class="_h2">Switch</h2>
+                <p>If you need to do too many if / else / if blocks to perform a check, perhaps because you need to check the exact value of a variable, then switch can be very useful.</p>
+                <p>You only need to provide a variable as a condition, and a series of case entry points for each value you expect.</p>
+                <p>Example:</p>
+                <div class="container C_code code">
+                    <pre class="line-numbers">
+                        <code class="language-c">
+                            #include &lt&#59;stdio.h&gt&#59;
+                            int main(void)
+                            &#123;
+                                char operator&#59;
+                                int answer&#59;
+                                int x, y&#59;
+                                operator = printf("Enter operator (- + / *): ")&#59;
+                                scanf("%c", &operator)&#59;
+                                x = printf("X: ")&#59;
+                                scanf("%i", &x)&#59;
+                                y = printf("Y: ")&#59;
+                                scanf("%i", &y)&#59;
                                 switch (operator)
-                                {
+                                &#123;
                                     case '+':
-                                        answer = x + y;
-                                        printf("Sum = %i\n", answer);
-                                        break;
+                                        answer = x + y&#59;
+                                        printf("Sum = %i\n", answer)&#59;
+                                        break&#59;
 
                                     case '-':
-                                        answer = x - y;
-                                        printf("Difference = %i\n", answer);
-                                        break;
+                                        answer = x - y&#59;
+                                        printf("Difference = %i\n", answer)&#59;
+                                        break&#59;
 
                                     case '*':
-                                        answer = x * y;
-                                        printf("Product = %i\n", answer);
-                                        break;
+                                        answer = x * y&#59;
+                                        printf("Product = %i\n", answer)&#59;
+                                        break&#59;
 
                                     case '/':
-                                        answer = x / y;
-                                        printf("Multiple = %i\n", answer);
-                                        break;        
+                                        answer = x / y&#59;
+                                        printf("Multiple = %i\n", answer)&#59;
+                                        break&#59;        
 
                                     default:
-                                        printf("Ooops!!! Sorry. I'm not programmed to do that one.\n");
-                                        break;
-                                }  
+                                        printf("Ooops!!! Sorry. I'm not programmed to do that one.\n")&#59;
+                                        break&#59;
+                                &#125;  
                                 
-                                return (0);
-                            }
+                                return (0)&#59;
+                            &#125;
                         </code>
                     </pre>
                 </div>
             </div>
         </section>
 
-        <section class="container" id="arrays">
-            <h1 class="_heading1">Arrays</h1>
+        <section class="container" id="functions">
+            <h1 class="_h1">Functions</h1>
             <div class="container">
-                <p>Arrays are a type of data storage often used in C programs.</p>
-                <p>An array is a collection of data storage locations, each having the same data type and the same name.</p>
-                <p>Each storage location in an array is called an array element.</p>
-                <p>A good example of an array would be storing 12 elements as array elements instead of declaring 12 different variables for each element.</p>
+                <p>A function is a group of statements that together perform a task.</p>
+                <p>A function can also be referred as a method or a sub-routine or a procedure.</p>
+                <p>Every C program has at least one function, which is main(), and all the most vital programs can define additional functions.</p>
+                <p>You can divide up your code into separate functions.</p>
+                <p>A function declaration tells the compiler about a function's name, return type, and parameters.</p>
+                <p>A function definition provides the actual body of the function.</p>
+                <p>The C standard library provides numerous built-in functions that your program can call. For example:</p>
+                <ul>
+                    <li>strcat() - concatenate two strings.</li>
+                    <li>memcpy() - to copy one memory location to another location.</li>
+                </ul>
 
-                <h2 class="_heading2">Single-Dimensional Arrays.</h2>
-                <p>A single-dimensional array has only a single subscript.</p>
-                <p>A subscript is a number in brackets that follows on array's name. This number can identify the number of individual elements in the array.</p>
-                <p>Example of an array of type float:</p>
-                <p><code>float expenses[12];</code></p>
-                <p>The array is named expenses, and it contains 12 elements. Each of the 12 elements is the exact equivalent of a single float variable.</p>
-                <p>All of C's data types can be used for arrays.</p>
-                <p>Array elements are always numbered starting at 0, so the 12 elements of expenses are numbered 0 through 11.</p>
-                <p>When you declare an array, the compiler sets aside a block of memory large enough to hold the entire array.</p>
-                <p>Individual array elements are stored in sequential memory locations.</p>
-                <p>The location of array declarations in your source code is important. As with nonarray variables, the declaration's location affects how your program can use the array.</p>
-                <p>An array element can be used in your program anywhere a nonarray variable of the same type can be used.</p>
-                <p>Individual elements of the array are accessed by using the array name followed by the element subscript enclosed in square brackets.</p>
-                <p>For example, to store a value in the second array element, we would use:</p>
-                <p><code>expenses[1] = 89.95;</code></p>
-                <p>We can also assign a copy of the valuue that is stored in an array element. Like:</p>
-                <p><code>expenses[10] = expenses[11];</code></p>
-            </div>
-        </section>
-
-        <section class="container" id="input_output">
-            <h1 class="_heading1">Input / Output</h1>
-            <div class="container">
-                <h2 class="_heading2">Standard I/O</h2>
-                <p>This is an input/output stream construct for command line programs.</p>
-                <p>It's common in all Unix and Unix-like systems.</p>
-                <p>C has no special syntax for input/output. Instead, C defines a library of functions that support integration with standard input/output.</p>
-
-                <h2 class="_heading2">printf()</h2>
-                <p>displays formatted output to stdout.</p>
-                <p>The printf() function has no return value defined, and we pass a string, wrapped in double quotes.</p>
-                <p>Somewhere inside the stdio library, printf is defined as: int printf(const char *format, ...);</p>
-                <p>syntax is: printf(format_str, arg1, arg2, ...);</p>
-                <p>arguments are the variables to be printed.</p>
-                <p>format string tells printf() how to display these arguments.</p>
-
-                <h2 class="_heading2">scanf()</h2>
-                <p>reads formatted input from standard input.</p>
-                <p>syntax is: scanf(format_str, &arg1, &arg2, ...);</p>
-                <p>arguments are the address of variables that will store the read values.</p>
-                <p>format string tells scanf() how the input is formatted.</p>
-                
-                <h2 class="_heading2">getchar()</h2>
-                <p>used for reading input.</p>
-                <p>Reads the next character from standard input (if available).</p>
-                <p>The function returns EOF when end of file or error conditions are encountered.</p>
-
-                <h2 class="_heading2">putchar()</h2>
-                <p>Writes the character c (converted to an unsigned char) to standard output.</p>
-                <p>Returns the character that was written.</p>
+                <h2 class="_h2">Defining a function</h2>
+                <p>The general form of a function definition in C is:</p>
+                <div class="container code">
+                    <pre class="line-numbers">
+                        <code class="language-c">
+                            return_type function_name(parameter list)&#123;
+                                body of the function
+                            &#125;
+                        </code>
+                    </pre>
+                </div>
+                <p>A function definition in C consists of a function header and a function body.</p>
+                <ul>
+                    <li>Return type - function may return a value. This is the data type of the value the function returns. Some function perform the desired operations without returning a value. In this case, the return_type is the keyword void.</li>
+                    <li>Function Name - This is the actual name of the function. The function name and parameter list together constitute the function signature.</li>
+                    <li>Parameters - This is like a placeholder. When a function is invoked, you pass a value to the parameter. The vlaue is referred to as actual parameter or argument. The paremeter list refers to the type, order and number of the parameters of a function. Parameters are optional; that is, a function may contain no parameters.</li>
+                    <li>Function body - Contains a collection of statements that define what the function does.</li>
+                </ul>
             </div>
         </section>
 
         <section class="container" id="header_files">
-            <h1 class="_heading1">Header Files</h1>
+            <h1 class="_h1">Header Files</h1>
             <div class="container">
+                <p>A header file usually has the file extension <code>.h</code>.</p>
+                <p>Header files usually contain C function declarations and macro definitions to be shared between several source files.</p>
+                <p>There's two types of header files: those you write as a programmer and those that come with the compiler.</p>
                 <p>Simple programs can be put in a single file. But when a program grows larger, it's impossible to keep it all in just one file.</p>
-                <p>You can move parts of a program to a separate file, then create a header file.</p>
-                <p>A header file looks like a normal C file, except it ends with <code>.h</code> instead of <code>.c</code></p>
-                <p>Instead of implementations of your functions and other parts of a programs, it holds the declarations.</p>
-                <p>A good example of a header file is the: <code>#include &lt;stdio.h&gt;</code></p>
+                <p>You can move parts of a program to a separate file, then create a header file.</p>                
+                <p>Instead of implementations of your functions and other parts of a programs, it holds the declarations.</p>                
+                <p>It's good practice to keep all the constants, macros, system wide global variables and functions prototypes in the header files and include the header files wherever it is requred.</p>
+                <p>A good example of a header file is the: <code>#include &lt&#59;stdio.h&gt&#59;</code> that comes along with the compiler.</p>
                 <p>#include - is a preprocessor directive.</p>
                 <p>The preprocessor goes and looks up the <code>stdio.h</code> file in the standard library because you used brackets around it.</p>
                 <p>To include your own header files, use quotes:</p>
@@ -592,17 +590,17 @@
                 <div class="container C_code code">
                     <pre class="line-numbers">
                         <code class="language-c">
-                            #include &lt;stdio.h&gt;
+                            #include &lt&#59;stdio.h&gt&#59;
                             int calculateAge(int year)
-                            {
-                                const int CURRENT_YEAR = 2020;
-                                return CURRENT_YEAR - year;                                
-                            }
+                            &#123;
+                                const int CURRENT_YEAR = 2020&#59;
+                                return CURRENT_YEAR - year&#59;                                
+                            &#125;
 
                             int main(void)
-                            {
-                                printf("%u", calculateAge(1983));
-                            }
+                            &#123;
+                                printf("%u", calculateAge(1983))&#59;
+                            &#125;
                         </code>
                     </pre>
                 </div>
@@ -610,10 +608,10 @@
                 <div class="container C_code code">
                     <pre class="line-numbers">
                         <code class="language-c">
-                            int calculateAge(int year){
-                                const int CURRENT_YEAR = 2020;
-                                return CURRENT_YEAR - year;
-                            }
+                            int calculateAge(int year)&#123;
+                                const int CURRENT_YEAR = 2020&#59;
+                                return CURRENT_YEAR - year&#59;
+                            &#125;
                         </code>
                     </pre>
                 </div>
@@ -621,7 +619,7 @@
                 <div class="container C_code code">
                     <pre class="line-numbers">
                         <code class="language-c">
-                            int calculateAge(int year);
+                            int calculateAge(int year)&#59;
                         </code>
                     </pre>
                 </div>
@@ -629,13 +627,13 @@
                 <div class="container C_code code">
                     <pre class="line-numbers">
                         <code class="language-c">
-                            #include &lt;stdio.h&gt;
+                            #include &lt&#59;stdio.h&gt&#59;
                             #include "calculate_age.h"
 
                             int main(void)
-                            {
-                                printf("%u", calculateAge(1983));
-                            }
+                            &#123;
+                                printf("%u", calculateAge(1983))&#59;
+                            &#125;
                         </code>
                     </pre>
                 </div>
@@ -644,6 +642,67 @@
                 <p>With more complex setups, a Makefile is necessary to tell the compiler how to compile the program.</p>
             </div>
         </section>
+
+        <section class="container" id="arrays">
+            <h1 class="_h1">Arrays</h1>
+            <div class="container">
+                <p>Arrays are a type of data storage often used in C programs.</p>
+                <p>An array is a collection of data storage locations, each having the same data type and the same name.</p>
+                <p>Each storage location in an array is called an array element.</p>
+                <p>A good example of an array would be storing 12 elements as array elements instead of declaring 12 different variables for each element.</p>
+
+                <h2 class="_h2">Single-Dimensional Arrays.</h2>
+                <p>A single-dimensional array has only a single subscript.</p>
+                <p>A subscript is a number in brackets that follows on array's name. This number can identify the number of individual elements in the array.</p>
+                <p>Example of an array of type float:</p>
+                <p><code>float expenses[12]&#59;</code></p>
+                <p>The array is named expenses, and it contains 12 elements. Each of the 12 elements is the exact equivalent of a single float variable.</p>
+                <p>All of C's data types can be used for arrays.</p>
+                <p>Array elements are always numbered starting at 0, so the 12 elements of expenses are numbered 0 through 11.</p>
+                <p>When you declare an array, the compiler sets aside a block of memory large enough to hold the entire array.</p>
+                <p>Individual array elements are stored in sequential memory locations.</p>
+                <p>The location of array declarations in your source code is important. As with nonarray variables, the declaration's location affects how your program can use the array.</p>
+                <p>An array element can be used in your program anywhere a nonarray variable of the same type can be used.</p>
+                <p>Individual elements of the array are accessed by using the array name followed by the element subscript enclosed in square brackets.</p>
+                <p>For example, to store a value in the second array element, we would use:</p>
+                <p><code>expenses[1] = 89.95&#59;</code></p>
+                <p>We can also assign a copy of the valuue that is stored in an array element. Like:</p>
+                <p><code>expenses[10] = expenses[11]&#59;</code></p>
+            </div>
+        </section>
+
+        <section class="container" id="input_output">
+            <h1 class="_h1">Input / Output</h1>
+            <div class="container">
+                <h2 class="_h2">Standard I/O</h2>
+                <p>This is an input/output stream construct for command line programs.</p>
+                <p>It's common in all Unix and Unix-like systems.</p>
+                <p>C has no special syntax for input/output. Instead, C defines a library of functions that support integration with standard input/output.</p>
+
+                <h2 class="_h2">printf()</h2>
+                <p>displays formatted output to stdout.</p>
+                <p>The printf() function has no return value defined, and we pass a string, wrapped in double quotes.</p>
+                <p>Somewhere inside the stdio library, printf is defined as: int printf(const char *format, ...)&#59;</p>
+                <p>syntax is: printf(format_str, arg1, arg2, ...)&#59;</p>
+                <p>arguments are the variables to be printed.</p>
+                <p>format string tells printf() how to display these arguments.</p>
+
+                <h2 class="_h2">scanf()</h2>
+                <p>reads formatted input from standard input.</p>
+                <p>syntax is: scanf(format_str, &arg1, &arg2, ...)&#59;</p>
+                <p>arguments are the address of variables that will store the read values.</p>
+                <p>format string tells scanf() how the input is formatted.</p>
+                
+                <h2 class="_h2">getchar()</h2>
+                <p>used for reading input.</p>
+                <p>Reads the next character from standard input (if available).</p>
+                <p>The function returns EOF when end of file or error conditions are encountered.</p>
+
+                <h2 class="_h2">putchar()</h2>
+                <p>Writes the character c (converted to an unsigned char) to standard output.</p>
+                <p>Returns the character that was written.</p>
+            </div>
+        </section> 
         <!-- <p>Started: 13-09-2022</p> -->
     </main>
 </section>

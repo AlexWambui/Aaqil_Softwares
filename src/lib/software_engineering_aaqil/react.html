@@ -17,34 +17,10 @@
 		<title>React</title>
 	</head>
 	<body>
-		<section>
-			<aside>
-				<div class="nav_icons">
-					<a href="index.html"><span class="icon-home"></span></a>
-					<span class="icon-close"></span>
-				</div>
-				<div class="nav_heading">
-					<h1>React</h1>
-				</div>
-				<div class="nav_body">
-					<ul>
-						<li><a href="#introduction">Introduction</a></li>
-						<li><a href="#setup_and_installation">Setup & Installation</a></li>
-						<li><a href="#create_react_app">Creat react app</a></li>
-						<li><a href="#project_structure">Project Structure</a></li>
-						<li><a href="#components">Components</a></li>
-						<li><a href="#props">Props</a></li>
-						<li><a href="#routing">Routing</a></li>
-						<li><a href="#react_dev_tools">Dev Tools</a></li>
-						<li><a href="#tips">Tips</a></li>
-					</ul>
-				</div>
-			</aside>
-			<main class="main_content">
-				<section class="container" id="Introduction">
-					<h1 class="_heading1">Getting started</h1>
-					<div class="container">
-						<h2 class="_heading2">Prerequisites</h2>
+		<section class="container" id="Introduction">
+			<h1 class="_h1">Getting started</h1>
+				<div class="container">
+						<h2 class="_h2">Prerequisites</h2>
 						<p>
 							Some of the things you should know in advance before you start
 							React include:
@@ -63,7 +39,7 @@
 						<p>To check whether Node.js is installed, use the command:</p>
 						<p class="command">node -v</p>
 
-						<h2 class="_heading2">What is React?</h2>
+						<h2 class="_h2">What is React?</h2>
 						<p>
 							React, sometimes referred to as a frontend JavaScript framework,
 							is a JavaScript library created by Facebook as an open source
@@ -127,11 +103,11 @@
 							independently; This allows you to build complex UIs from simple
 							components.
 						</p>
-					</div>
-				</section>
+				</div>
+		</section>
 
 				<section class="container" id="setup_and_installation">
-					<h1 class="_heading1">Setup and Installation</h1>
+					<h1 class="_h1">Setup and Installation</h1>
 					<div class="container">
 						<p>There's a few ways to set up React.</p>
 						<ul>
@@ -150,7 +126,7 @@
 				</section>
 
 				<section class="container" id="create_react_app">
-					<h1 class="_heading1">Create React App</h1>
+					<h1 class="_h1">Create React App</h1>
 					<div class="container">
 						<p>
 							Create React App method of creating React apps creates a live
@@ -184,7 +160,7 @@
 						<div class="container React_code">
 							<pre class="line-numbers">
 								<code class="language-React">
-									import React, {Component} from 'react'
+									import React, &3123;Component&#125; from 'react'
 									import ReactDOM from 'react-dom'
 									import './styles/styles.css'
 								</code>
@@ -199,15 +175,15 @@
 						<div class="container JS_code">
 							<pre class="line-numbers">
 								<code class="language-JS">
-									class App extends Component {
-										render() {
+									class App extends Component &#123;
+										render() &#123;
 										  return (
-										    &lt;div className="App"&gt;
+										    &lt;div class="App"&gt;
 										      &lt;h1&gt;Hello, React!&lt;/h1&gt;
 										    &lt;/div&gt;
 										  )
-										}
-									} 
+										&#125;
+									&#125;
 								</code>
 							</pre>
 						</div>
@@ -223,19 +199,19 @@
 						<div class="container JS_code">
 							<pre class="line-numbers">
 								<code class="language-JS">
-									import React, {Component} from 'react'
+									import React, &#123;Component&#125; from 'react'
 									import ReactDOM from 'react-dom'
 									import './styles/styles.css'
 									
-									class App extends Component {
-										render() {
+									class App extends Component &#123;
+										render() &#123;
 										  return (
-										    &lt;div className="App"&gt;
+										    &lt;div class="App"&gt;
 										      &lt;h1&gt;Hello, React!&lt;/h1&gt;
 										    &lt;/div&gt;
 										  )
-										}
-									}
+										&#125;
+									&#125;
 									
 									ReactDOM.render(&lt;App /&gt;, document.getElementById('root')) 
 								</code>
@@ -245,7 +221,7 @@
 				</section>
 
 				<section class="container" id="project_structure">
-					<h1 class="_heading1">Project Structure</h1>
+					<h1 class="_h1">Project Structure</h1>
 					<div class="container">
 						<ul>
 							<li>
@@ -288,14 +264,14 @@
 				</section>
 
 				<section class="container" id="elements">
-					<h1 class="_heading1">Elements</h1>
+					<h1 class="_h1">Elements</h1>
 					<div class="container">
 						<p>We write React elements using a feature called jsx.</p>
 						<p>React elements are written just like regular HTML elements. You can write any valid HTML element in React.</p>
 						<p>However, because JSX is really just like JS functions (and not HTML), the syntax is a bit different.</p>
 						<p>Unlike HTML, single-tag elements (like img element), must be self-closing. ie. must end with a forward slash ( / ).</p>
 
-						<h2 class="_heading2">Fragments</h2>
+						<h2 class="_h2">Fragments</h2>
 						<p>React gives us an element called a fragment.</p>
 						<p>React requires all returned elements be returned within a single "parent" component.</p>
 						<p>For example, we can't return two sibling elements, like a h1 and a paragraph from a component.</p>
@@ -303,12 +279,12 @@
 							<pre class="line-numbers">
 								<code class="language-JS">
 									//this syntax is invalid
-									function MyComponent(){
+									function MyComponent()&#123;
 										return(
 											&lt;h1&gt;Header&lt;/h1&gt;
 											&lt;p&gt;Paragraph&lt;/p&gt;
 										);
-									}
+									&#125;
 								</code>
 							</pre>
 						</div>
@@ -317,7 +293,7 @@
 							<pre class="line-numbers">
 								<code class="language-JS">
 									//valid syntax
-									function MyComponent(){
+									function MyComponent()&#123;
 										return(
 											&lt;&gt;
 												&lt;h1&gt;Header&lt;/h1&gt;
@@ -330,25 +306,25 @@
 						</div>
 						<p>We can write fragments in a regular or shorthand syntax: &lt;React.Fragment&gt;&lt;/React.Fragment&gt; or &lt;&gt;&lt;/&gt;.</p>
 
-						<h2 class="_heading2">Element Attributes</h2>
+						<h2 class="_h2">Element Attributes</h2>
 						<p>JSX also requires a different syntax for its attributes.</p>
 						<p>Since JSX is really JS and JS uses a camelcase naming convention, attributes are written differently than in HTML.</p>
 						<p>The most common example is the class attribute, written as className.</p>
 						<div class="container code">
 							<pre class="line-numbers">
 								<code class="language-JS">
-									&lt;div className="container"&gt;&lt;/div&gt;
+									&lt;div class="container"&gt;&lt;/div&gt;
 								</code>
 							</pre>
 						</div>
 
-						<h2 class="_heading2">Element Styles</h2>
-						<p>To apply inline styles, instead of using double quotes(""), we use two sets of curly braces {{}}</p>
+						<h2 class="_h2">Element Styles</h2>
+						<p>To apply inline styles, instead of using double quotes(""), we use two sets of curly braces &#123;&#123;&#125;&#125;</p>
 						<p>Inline styles are not written as plain strings, but as properties on objects.</p>
 						<div class="container code">
 							<pre class="line-numbers">
 								<code class="language-JS">
-									&lt;h1 style={{fontSize: 24, margin: '0 auto', textAlign: 'center'}}&gt;Header&lt;/h1&gt;
+									&lt;h1 style=&#123;&#123;fontSize: 24, margin: '0 auto', textAlign: 'center'&#125;&#125;&gt;Header&lt;/h1&gt;
 								</code>
 							</pre>
 						</div>
@@ -356,7 +332,7 @@
 				</section>
 
 				<section class="container" id="components">
-					<h1 class="_heading1">Components</h1>
+					<h1 class="_h1">Components</h1>
 					<div class="container">
 						<p>React is all about components.</p>
 						<p>Components refer to small independent parts of your app pertaining to a specific functionality and UI [ not necessarily] that can be re-used throughout your app.</p>
@@ -376,9 +352,9 @@
 						<div class="container code">
 							<pre class="line-numbers">
                                                                 <code class="language-JS">
-                                                                        function App(){
+                                                                        function App()&#123;
 										return(
-											&lt;div className="App"&gt;
+											&lt;div class="App"&gt;
 												&lt;p&gt;Hello, React!&lt;/p&gt;
 											&lt;/div&gt;
 										);
@@ -390,7 +366,7 @@
 				</section>
 
 				<section class="container" id="props">
-					<h1 class="_heading1">Props</h1>
+					<h1 class="_h1">Props</h1>
 					<div class="container">
 						<p>React components can accept data passed to them called props.</p>
 						<p>
@@ -401,11 +377,11 @@
 						<div class="container code">
 							<pre class="line-numbers">
 								<code class="language-JS">
-									function App(){
+									function App()&#123;
 										return &lt;User name="John Doe" /&gt;
 									}
-									function User(props){
-										return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;; //Hello, John Doe!
+									function User(props)&#123;
+										return &lt;h1&gt;Hello, &#123;props.name&#125;&lt;/h1&gt;; //Hello, John Doe!
 									}
 								</code>
 							</pre>
@@ -414,15 +390,15 @@
 				</section>
 
 				<section class="container" id="routing">
-					<h1 class="_heading1">Routing</h1>
+					<h1 class="_h1">Routing</h1>
 					<div class="container">
 						<p>React-router-Dom helps us navigate to different components by changing the URL to Navigate Page in ReactJS.</p>
 
-						<h2 class="_heading2">Single page applications</h2>
+						<h2 class="_h2">Single page applications</h2>
 						<p>These applications can work in different ways. One is by downloading the entire site's contents all at once. This way, when navigating around on the site, everything is already available to the browser, and it doesn't need to refresh the page. Another way is by downloading everything that's needed to render the page the user requested. Then when the user navigates to a new page, asynchronous JS requests are made for just the content that was requested.</p>
 						<p>Another key factor in a good single-page app is that the URL control the page content. Single-page apps are highly interactive, and users want to be able to get back to a certain state using just the URL.</p>
 
-						<h2 class="_heading2">React Router</h2>
+						<h2 class="_h2">React Router</h2>
 						<p>turns react projects into single-page applications.</p>
 						<p>It does this by providing a number of specialized components that mange the creation of links, manage the app's URL, provides transitions when navigating between different URL locations and so much more.</p>
 						<p>It's an open source package available on the node package manage.</p>
@@ -440,7 +416,7 @@
 							<li>Route</li>
 						</ul>
 
-						<h3 class="_heading3">BrowserRouter</h3>
+						<h3 class="_h3">BrowserRouter</h3>
 						<p>Works on the change in the URL. As the URL changes it responds and renders the given instruction or pages. But for BrowserRouter to work we need to wrap the whole App component inside the Browser router this itself is done in two ways.</p>
 						<p>One is to wrap the app component inside the <code>index.js</code> in BrowserRouter like:</p>
 						<div class="container code">
@@ -456,12 +432,12 @@
 						<div class="container code">
 							<pre class="line-numbers">
 								<code class="language-JS">
-									function App(){
+									function App()&#123;
 										return(
 											&lt;Router&gt;
 												&lt;&gt;
 													&lt;Navbar /&gt;
-													&lt;Route exact path = "/" component = {landing} /&gt;
+													&lt;Route exact path = "/" component = &123;landing&#125; /&gt;
 												&lt;/&gt;
 											&lt;/Router&gt;
 										);
@@ -471,7 +447,7 @@
 								</code>
 							</pre>
 						</div>
-						<h3 class="_heading3">Link Component</h3>
+						<h3 class="_h3">Link Component</h3>
 						<p>In React, the anchor tag does not work to navigate to different pages of the web app. Hence we use the Link component from React Router Dom.</p>
 						<p>Link is a straightforward way to provide declrative, accessible navigation around your application.</p>
 						<p>By passing to Link's property to the Link component, you tell your app which path to route to.</p>
@@ -483,13 +459,13 @@
 								</code>
 							</pre>
 						</div>
-						<h3 class="_heading3">Route Component</h3>
+						<h3 class="_h3">Route Component</h3>
 						<p>Route is the main factor that recognizes the path and makes the routing possible. The route takes the path as attribute / property and loads the component that is passed in the component attribute.</p>
 						<p>Syntax:</p>
 						<div class="container code">
 							<pre class="line-numbers">
 								<code class="language-JS">
-									&lt;Route exact path = "/" component={Landing} /&gt;
+									&lt;Route exact path = "/" component=&123;Landing&#125; /&gt;
 								</code>
 							</pre>
 						</div>
@@ -498,7 +474,7 @@
 						<div class="container code">
 							<pre class="line-numbers">
 								<code class="language-JS">
-									&lt;Route exact path="/" render = { () => {
+									&lt;Route exact path="/" render = &#123; () => &#123;
 										&lt;Welcome name="Aaqil Softwares" /&gt;
 									}} /&gt;
 								</code>
@@ -508,7 +484,7 @@
 				</section>
 
 				<section class="container" id="react_dev_tools">
-					<h1 class="_heading1">React Developer Tools</h1>
+					<h1 class="_h1">React Developer Tools</h1>
 					<div class="container">
 						<p>There's an extension called React Developer Tools that will make life much easier when working with React.</p>
 						<p>Add the tools to Chrome Browser using <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi" title="Click to add the extension">React DevTools for Chrome</a></p>
@@ -519,15 +495,21 @@
 				</section>
 
 				<section class="container" id="tips">
-					<h1 class="_heading1">Tips</h1>
+					<h1 class="_h1">Tips</h1>
 					<div class="container">
-						<h2 class="_heading2">Using bootstrap</h2>
+						<h2 class="_h2">Using bootstrap</h2>
 						<p>First install bootstrap using the command</p>
 						<p class="command">npm install bootstrap</p>
 						<p>Then import bootstrap in the <code>index.js</code> file or <code>App.js</code> file using</p>
 						<p class="command">import “bootstrap/dist/css/bootstrap.min.css”;</p>
+
+						<h2 class="_h2">Using Sass</h2>
+						<p>To use Sass in React, first install node sass using the command:</p>
+						<p class="command">npm install node-sass</p>
+						<p>Once node-sass is installed, use .scss files instead of .css files in your imports. e.g import <code>'./App.scss'</code> instead of <code>'./App.css'</code></p>
 					</div>
 				</section>
+
 				<p>started learning in May, 2022</p>
 			</main>
 		</section>

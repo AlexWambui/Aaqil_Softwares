@@ -45,7 +45,7 @@
 			</aside>
 			<main class="main_content">
 				<section class="container" id="introduction">
-					<h1 class="_heading1">Introduction</h1>
+					<h1 class="_h1">Introduction</h1>
 					<div class="container">
 						<p>Linux is the best known and most used open-source operating system.</p>
 						<p>Linux is a multi-tasking and multi-user operating system.</p>
@@ -56,7 +56,7 @@
 				</section>
 
 				<section class="container" id="architecture">
-					<h1 class="_heading1">Architecture</h1>
+					<h1 class="_h1">Architecture</h1>
 					<div class="container">
 						<p>The architecture of linux can be divided into four levels of functionality:</p>
 						<ul>
@@ -66,7 +66,7 @@
 							<li>System Utitlites - built using system libraries and enable administrators to administer the sytem, manage processes, navigate on the file sytem, execute other applications, configure the network, etc.</li>
 						</ul>
 
-						<h2 class="_heading2">Components of Linux OS</h2>
+						<h2 class="_h2">Components of Linux OS</h2>
 						<p>Linux OS is a collection of a number of components:</p>
 						<ul>
 							<li>Boot loader - program that loads the Linux kernel into the computer's main memory, by being executed by the computer when it is turned on and after the firmware initialization is performed.</li>
@@ -81,7 +81,7 @@
 				</section>
 
 				<section class="container" id="features">
-					<h1 class="_heading1">Features of Linux</h1>
+					<h1 class="_h1">Features of Linux</h1>
 					<div class="container">
 						<p>Some features of Linux include:</p>
 						<ul>
@@ -98,15 +98,17 @@
 				</section>
 
 				<section class="container" id="shell">
-					<h1 class="_heading1">Shell</h1>
+					<h1 class="_h1">Shell</h1>
 					<div class="container">
 						<p>Most of Unix systems are managed by using Shell.</p>
+						<p>the shell is a program that takes commands from the keyboard and gives them to the operating system to perform.</p>
+						<p>On most Linux systems a program called bash (which stands for Bourne Again SHell, an enhanced version of the original Unix shell program, sh, written by Steve Bourne) acts as the shell program. Besides bash, there are other shell programs available for Linux systems. These include: ksh, tcsh and zsh.</p>
 						<p>Just as you need to know a minimum number of words to have a discussion in a language, you need to know a minimum number of commands to be able to easily interact with a system.</p>
 						<p>To learn or remind yourself about how to use a command, use <code>man command</code>.</p>
 						<p>You can also use whatis to find a short description of what the command does. eg. <code>whatis cal</code>.</p>
 						<p>You can find commands to use by giving the system a pointer of what command you want to use. For example <code>apropos time</code></p>
 
-						<h2 class="_heading2">shell interpretation</h2>
+						<h2 class="_h2">shell interpretation</h2>
 						<p>Take an example of a command such as ls, in the terminal this would appear as:</p>
 						<p class="command">root@hp:~$ ls</p>
 						<p>root - represents the name of the user. It tells you who you are.</p>
@@ -115,7 +117,7 @@
 						<p>$ - indicates you're logged in as a standard user meaning you have regular privilleges and can't run commands as an administrator so you'll need to use sudo to run any administrative commands.</p>
 						<p>ls - is the command being ran. ls stands for list storage and lists all files and folders in the current working directory.</p>
 
-						<h2 class="_heading2">Commands</h2>
+						<h2 class="_h2">Commands</h2>
 						<p>Most command operate like this:</p>
 						<p class="command">command -options arguments</p>
 						<div class="container linux_commands">
@@ -192,7 +194,7 @@
 							</pre>
 						</div>
 
-						<h2 class="_heading2">Shortcuts</h2>
+						<h2 class="_h2">Shortcuts</h2>
 						<div class="container linux_commands">
 							<pre class="line-numbers">
 								<code class="language-shell">
@@ -215,11 +217,28 @@
 								</code>
 							</pre>
 						</div>
+
+						<h2 class="_h2">Terminal</h2>
+						<div class="container Terminal">
+							<p>the terminal is a program called a terminal emulator that opens a window and lets you interact with the shell.</p>
+              <p>terminal emulators we can use (Some Linux distributions install several) include:</p>
+              <ul>
+                <li>gnome-terminal</li>
+                <li>konsole</li>
+                <li>xterm</li>
+                <li>rxvt</li>
+                <li>kvt</li>
+                <li>nxterm</li>
+                <li>eterm</li>
+              </ul>
+              <p>While there are a number of different terminal emulators, they all do the same thing. They give us access to a shell session.</p>
+              <p>on being launched, the first thing we should see is a shell prompt that contains: user name and the name of the machine followed by a dollar sign.</p>
+						</div>						
 					</div>
 				</section>
 
 				<section class="container" id="file_system_organization">
-					<h1 class="_heading1">File System Organization</h1>
+					<h1 class="_h1">File System Organization</h1>
 					<div class="container">
 						<p>Like Windows, files on a Linux system are arranged in a hierachical directory structure.</p>
 						<p>This means they are organized in a tree-like pattern of directories (called folders in other systems like windows), which may contain files and subdirectories.</p>
@@ -230,13 +249,13 @@
 						<p>Different storage devices may be different branches of the tree, but there is always a single tree.</p>
 						<p class="note_better">Many features of Linux are controlled by text configuration files and shell scripts.</p>
 
-						<h2 class="_heading2">Facts about file names</h2>
+						<h2 class="_h2">Facts about file names</h2>
 						<p>File names that begin with a period character are hidden. This only means that ls will not list them unless we say ls -a. When your account was created, several hidden files were placed in your home directory to configure things for your account. In addition, some applications will place their configuration and settings files in your home directory as hidden files.</p>
 						<p>File names in Linux, like Unix, are case sensitive. The file names "File1" and "file1" refer to different files.</p>
 						<p>Linux has no concept of a "file extension" like Windows systems. You may name files any way you like. However, while Linux itself does not care about file extensions, many application programs do.</p>
 						<p>Though Linux supports long file names which may contain embedded spaces and punctuation characters, limit the punctuation characters to period, dash, and underscore. Most importantly, do not embed spaces in file names. If you want to represent spaces between words in a file name, use underscore characters.</p>
 
-						<h2 class="_heading2">Long format for files</h2>
+						<h2 class="_h2">Long format for files</h2>
 						<p>when we use the command <code>ls -l</code>, it list files in long format.</p>
 						<p>The file listing contains a wealth of information about the files being listed.</p>
 						<p>Example:</p>
@@ -257,7 +276,7 @@
 						<p>using the bits</p>
 						<p class="command">chmod 700 file1</p>
 
-						<h2 class="_heading2">Text Files</h2>
+						<h2 class="_h2">Text Files</h2>
 						<p>There's many ways to represent information in a computer.</p>
 						<p>All methods involve defining a relationship between the information and some numbers that will be used to represent it. Computers after all only understand numbers and all data is converted to numeric representation.</p>
 						<p>Some of the representation systems are complex (such as compressed multimedia files), while others are rather simple.</p>
@@ -270,9 +289,9 @@
 				</section>
 
 				<section class="container" id="navigation">
-					<h1 class="_heading1">Navigation</h1>
+					<h1 class="_h1">Navigation</h1>
 					<div class="container">
-						<h2 class="_heading2">pwd</h2>
+						<h2 class="_h2">pwd</h2>
 						<p>stands for present working directory.</p>
 						<p>used to display the current path of your current working directory.</p>
 						<p>The working directory is the directory you're currently in.</p>
@@ -280,7 +299,7 @@
 						<p>On most systems, the home directory will be called /home/user_name, but it can be anything according to the whims of the system administrator.</p>
 						<p class="command">pwd</p>
 
-						<h2 class="_heading2">ls</h2>
+						<h2 class="_h2">ls</h2>
 						<p>Stands for list storage.</p>
 						<p>used to list the contents (files and directories) of the current working directory.</p>
 						<p class="command">ls</p>
@@ -294,7 +313,7 @@
 						<p>to list all file including hidden files using the long format:</p>
 						<p class="command">ls -la</p>
 
-						<h2 class="_heading2">cd</h2>
+						<h2 class="_h2">cd</h2>
 						<p>stands for change directory.</p>
 						<p>used to change the working directory.</p>
 						<p>used together with the pathname of the desired working directory.</p>
@@ -315,7 +334,7 @@
 						<p>to change the working directory to the previous one, use:</p>
 						<p class="command">cd -</p>
 
-						<h2 class="_heading2">pushd & popd</h2>
+						<h2 class="_h2">pushd & popd</h2>
 						<p>these commands are used to jump back and forth between two different directories.</p>
 						<p>For example, assume we are in the downloads directory but we want to jump into the etc directory for a minute then back into the downloads directory, for that we would pushd into the etc directory then popd right back into the downloads directory.</p>
 						<p>to temporarily go and work on the etc directory,</p>
@@ -323,7 +342,7 @@
 						<p>to go back to the previous directory (in our case the downloads directory)</p>
 						<p class="command">popd</p>
 
-						<h2 class="_heading2">less</h2>
+						<h2 class="_h2">less</h2>
 						<p>used to view text files.</p>
 						<p>This is very handy since many files used to control and configure linux are human readable.</p>
 						<p class="command">less text_file</p>
@@ -338,7 +357,7 @@
 						<p>h - display a complete list less commands and options.</p>
 						<p>q - to exit less.</p>
 
-						<h2 class="_heading2">file</h2>
+						<h2 class="_h2">file</h2>
 						<p>used to examine a file and tell us what kind of file it is.</p>
 						<p class="command">file file_name</p>
 						<p>file program recognizes file types such as:</p>
@@ -355,25 +374,38 @@
 							<li>Zip archive data - an archive compressed with zip.</li>
 						</ul>
 
-						<h2 class="_heading2">locate</h2>
+						<h2 class="_h2">locate</h2>
 						<p>used to locate a file by its file name.</p>
 						<p>The command uses a database to locate things so for it to be useful, you might want to start by updating that database. The linux system updates the database daily but you can issue the command to update the database yourself.</p>
 						<p>to update the database we would use the command</p>
 						<p class="command">updatedb</p>
 						<p>For example, to locate a file by the name fstab, we would use the command</p>
 						<p class="command">locate fstab</p>
+
+            <h2 class="_h2">find</h2>                    
+            <p>used to search the system for a file or dir in the working dir or another dir if specified.</p>
+            <p>To search for a file in the working dir:</p>
+            <p class="command">find . -name a.txt</p>                    
+            <p>Search for a file in the working dir using pattern matching:</p>
+           	<p>when using pattern matching, the condition must be enclosed in quotes.</p>
+            <p class="command">find . -name "*.txt"</p>                    
+            <p>To not consider case (lower or uppercase):</p>
+            <p class="command">find . -iname A.txt</p>                    
+            <p>Finding a dir:</p>
+            <p>d in the command stands for type directory.</p>
+            <p class="command">find . -type d -name dir_name</p>            
 					</div>
 				</section>
 
 				<section class="container" id="manipulating_files">
-					<h1 class="_heading1">Manipulating Files</h1>
+					<h1 class="_h1">Manipulating Files</h1>
 					<div class="container">
 						<p>Even with a graphical file manager, it's much better to use the command line program to manipulate files because of power and flexibility.</p>
 						<p>Complicated tasks can be easier with the command line programs unlike the graphical file manager.</p>
 						<p>For example: To copy all the HTML files from one directory to another, but only copy files that did not exist in the destination directory or were newer than the versions in the destination directory?</p>
 						<p class="command">cp -u *.html destination</p>
 
-						<h2 class="_heading2">Wildcards</h2>
+						<h2 class="_h2">Wildcards</h2>
 						<p>The shell feature that makes commands so powerful is special characters called wildcards.</p>
 						<p>Wildcards help to rapidly specify groups of filenames.</p>
 						<p>List of wildcards:</p>
@@ -402,14 +434,14 @@
 							<li>*[![:lower:]] - any filename that does not end with a lowercase letter.</li>
 						</ul>
 
-						<h2 class="_heading2">touch</h2>
+						<h2 class="_h2">touch</h2>
 						<p>creates a new file</p>
 						<p>To create one file,</p>
 						<p class="command">touch file_name</p>
 						<p>To create multiple files,</p>
 						<p class="command">touch file1 file2 file3 file4 file5 file...</p>
 
-						<h2 class="_heading2">cat</h2>
+						<h2 class="_h2">cat</h2>
 						<p>can be used to view the contents of a file.</p>
 						<p>To view the contents of a file named foo.txt, we would use</p>
 						<p class="command">cat foo.txt</p>
@@ -420,7 +452,7 @@
 						<p>to overwrite the contents of file1 we'd use</p>
 						<p class="command">cat > file1</p>
 
-						<h2 class="_heading2">echo</h2>
+						<h2 class="_h2">echo</h2>
 						<p>can be used to write text into a file.</p>
 						<p>when combined with > and >>, we can either overwrite or append text to a file.</p>
 						<p>to write text into a file named foo.txt, we would use</p>
@@ -428,7 +460,11 @@
 						<p>to append some text on a new line into the file named foo.txt, we would use</p>
 						<p class="command">echo 'this will be appended on a new line' >> foo.txt</p>
 
-						<h2 class="_heading2">cp</h2>
+						<h2 class="_h2">wc</h2>
+						<p>Used to count the number of lines in a file.</p>
+						<p class="command">wc -l file_name</p>
+
+						<h2 class="_h2">cp</h2>
 						<p>copies files and directories.</p>
 						<p>In its simplest form, it copies a single file.</p>
 						<p>to copy contents of file1 into file2. If file2 does not exist, it is created; otherwise silently overwritten with contents of file1.</p>
@@ -440,7 +476,7 @@
 						<p>Copy all files in the current working directory with names ending with the characters ".txt" to an existing directory named text_files.</p>
 						<p class="command">cp *.txt text_files</p>
 
-						<h2 class="_heading2">mv</h2>
+						<h2 class="_h2">mv</h2>
 						<p>moves or renames files and directories.</p>
 						<p>It will either move one or more files to a different directory, or it will rename a file or directory.</p>
 						<p>To rename a file:</p>
@@ -452,9 +488,9 @@
 						<p>If dir2 does not exist, then dir1 is renamed dir2. If dir2 exists, the directory dir1 is moved within directory dir2.</p>
 						<p class="command">mv dir1 dir2</p>
 						<p>Move the subdirectory dir1 and all the files ending in ".bak" in the current working directory's parent directory to an existing directory named dir2:</p>
-						<p class="command">mv dir1 ../*.bak dir2</p>
+						<p class="command">mv dir1 ..&#47;*.bak dir2</p>
 
-						<h2 class="_heading2">rm</h2>
+						<h2 class="_h2">rm</h2>
 						<p>removes (deletes) files and directories.</p>
 						<p>to remove a file</p>
 						<p class="command">rm file_name</p>
@@ -466,7 +502,7 @@
 						<p>Delete all files in the current working directory that end with the character "~". Some applications create backup files using this naming scheme. Using this command will clean them out of a directory.</p>
 						<p class="command">rm *~</p>
 
-						<h2 class="_heading2">mkdir</h2>
+						<h2 class="_h2">mkdir</h2>
 						<p>used to create directories.</p>
 						<p>to create a single directory</p>
 						<p class="command">mkdir directory_name</p>
@@ -481,7 +517,7 @@
 				</section>
 
 				<section class="container" id="permissions">
-					<h1 class="_heading1">Permissions</h1>
+					<h1 class="_h1">Permissions</h1>
 					<div class="container">
 						<p>Unix-like Operating Systems, such as LInux differ from other computing systems in that they are not only multitasking but also multi-user.</p>
 						<p>This means that more than one user can be operating the computer at the same time.</p>
@@ -500,7 +536,7 @@
 							<li><code>chgrp</code> - change a file's group ownership.</li>
 						</ul>
 
-						<h2 class="_heading2">File Permissions</h2>
+						<h2 class="_h2">File Permissions</h2>
 						<p>On a linux system, each file and directory is assigned access rights for the owner of the file, the members of a group of related users, and everybody else.</p>
 						<p>Rights can be assigned to read a file, to write a file, and to execute a file (i.e. run the files as a program).</p>
 						<p>To see the permission settings for a file, we can use the <code>ls -l</code> command.</p>
@@ -522,7 +558,7 @@
 							<li>r-x - Last set (r-x) represents permissions everybody else.</li>
 						</ul>
 
-						<h2 class="_heading2">chmod</h2>
+						<h2 class="_h2">chmod</h2>
 						<p>The comand is used to change the permissions of a file or directory.</p>
 						<p>To use it, we specify the desired permission settings and the file or files that we wish to modify.</p>
 						<p>There are two ways to specify the permissions.</p>
@@ -540,7 +576,7 @@
 						<p class="command">chmod 600 some_file</p>
 						<p>A better way to understand this is that read has 4 bits, write has 2 bits and execute has 1 bit. So the total should be 7 bits which makes up a byte.</p>
 
-						<h2 class="_heading2">Directory Permissions</h2>
+						<h2 class="_h2">Directory Permissions</h2>
 						<p>The chmod command can also be used to control the access permissions for directories.</p>
 						<p>Again, we can use the octal notaion to set permissions, but the meaning of the r, w and x attributes is different.</p>
 						<ul>
@@ -551,13 +587,13 @@
 				</section>
 
 				<section class="container" id="i_o_redirection">
-					<h1 class="_heading1">I/O Redirection</h1>
+					<h1 class="_h1">I/O Redirection</h1>
 					<div class="container">
 						<p>I/O stands for Input / Output.</p>
 						<p>Commands such as ls print their output on the display.</p>
 						<p>By using some special notations we can redirect the output of many commands to files, devices and even to the input of other commands.</p>
 
-						<h2 class="_heading2">Standard Output</h2>
+						<h2 class="_h2">Standard Output</h2>
 						<p>Most command line programs that display their results do so by sending their results to a facility called standard output.</p>
 						<p>By default, standard output directs its contents to the display.</p>
 						<p>To redirect standard output to a file, the ">" character is used like:</p>
@@ -570,18 +606,18 @@
 						<p class="command">ls >> file_list.txt</p>
 						<p>If the file does not exist when we attempt to append the redirected output, the file will be created.</p>
 
-						<h2 class="_heading">Standard Input</h2>
+						<h2 class="_h">Standard Input</h2>
 						<p>Many commands can accept input from a facility called standard input.</p>
 						<p>By default, standard input gets its contents from the keyboard, but like standard output, it can be redirected.</p>
-						<p>To redirect standard input from a file instead of the keyboard, the "<" character is used like this:</p>
-						<p class="command">sort < file_list.txt</p>
+						<p>To redirect standard input from a file instead of the keyboard, the "&lt;" character is used like this:</p>
+						<p class="command">sort &lt; file_list.txt</p>
 						<p>sort command has been used to process the contents of file_list.txt.</p>
 						<p>The results are output on the display since the standard output was not redirected.</p>
 						<p>We can redirect standard output to another file like this:</p>
-						<p class="command">sort < file_list.txt > sorted_file_list.txt</p>
+						<p class="command">sort &lt; file_list.txt > sorted_file_list.txt</p>
 						<p>A command can have both its input and output redirected.</p>
 
-						<h2 class="_heading2">Pipelines</h2>
+						<h2 class="_h2">Pipelines</h2>
 						<p>The most useful and poweful thing we can do with I/O redirection is to connect multiple commands together to form what are called pipelines.</p>
 						<p>With pipelines, the standard output of one command is fed into the standard input of another.</p>
 						<p>Example:</p>
@@ -595,7 +631,7 @@
 						<p class="command">find . -type f -print | wc -l</p>
 						<p>Displays the total number of files in the working directory and all its subdirectories.</p>
 
-						<h2 class="_heading2">Filters</h2>
+						<h2 class="_h2">Filters</h2>
 						<p>One kind of program frequently used in pipelines is called a filter.</p>
 						<p>Filters take standard input and perform an operation upon it and send the results to standard output.</p>
 						<p>In this way, they can be combined to process information in powerful ways.</p>
@@ -614,13 +650,13 @@
 				</section>
 
 				<section class="container" id="shell_scripting">
-					<h1 class="_heading1">Shell Scripting</h1>
+					<h1 class="_h1">Shell Scripting</h1>
 					<div class="container">
 						<p>Shell scripting is an important part of process automation in Linux. So scripting helps you write a sequence of commands in a file and then execute them.</p>
 						<p>This save you time because you don't have to write certain commands again and again. You can perform daily tasks efficiently and even schedule them for automatic execution.</p>
 						<p>You can also set certain scripts to execute on startup such as showing particular messages on lauching a new session or setting certain environment variables.</p>
 
-						<h2 class="_heading2">Introduction to Bash Shell</h2>
+						<h2 class="_h2">Introduction to Bash Shell</h2>
 						<p>The Linux command line is provided by a program called the shell.</p>
 						<p>Different users can be configured to use different shells. But most users prefer to stick with the current default shell.</p>
 						<p>The default shell for most Linux distros is the GNU Bourne-Again Shell (bash). Bash is succeeded by Bourne Shell (sh).</p>
@@ -629,12 +665,12 @@
 						<p>If shell is running as root, the prompt is changed to #.</p>
 						<p>Bash is very powerful as it can simplify certain operations that are hard to accomplish efficently with a GUI. Remeber, most servers do not have a GUI, and it is best to learn to use the powers of a Command Line Interface (CLI).</p>
 
-						<h2 class="_heading2">What is a bash script?</h2>
+						<h2 class="_h2">What is a bash script?</h2>
 						<p>A bash script is a series of commands written in a file. These are read and executed by the bash program. The program executes line by line.</p>
 						<p>For example: you can navigate to a certain path, create a folder and spawn a process inside it using the command line.</p>
 						<p>You can do the same sequence of steps by saving the commands in a bash script and runnning it. You can run the script any number of times.</p>
 
-						<h2 class="_heading2">Identifying a bash script</h2>
+						<h2 class="_h2">Identifying a bash script</h2>
 						<p class="title">bash scripts have a file extension of <code>sh</code>.</p>
 						<p>Bash scripts however can run perfectly fine without the sh extension.</p>
 						<p class="title">Scripts that start with a bash bang.</p>
@@ -645,20 +681,20 @@
 						<p class="command">#! /bin/bash</p>
 						<p>The path of the bash program can vary.</p>
 
-						<h3 class="_heading3">Shebang</h3>
+						<h3 class="_h3">Shebang</h3>
 						<div class="container text-center">
-							<img src="assets/images/Hashbang_explained.jpg" alt="Hashbang explained" width="95%" height="100%">
+							<img src={ hashbang_explained } alt="Hashbang explained" width="50%" height="100%" />
 						</div>
 
-						<h2 class="_heading2">Execution rights</h2>
+						<h2 class="_h2">Execution rights</h2>
 						<p>Scripts have execution rights for the user executing them.</p>
 						<p>An execution right is represented by x in rwx(read, write, execute).</p>
 
-						<h2 class="_heading2">File color</h2>
+						<h2 class="_h2">File color</h2>
 						<p>Executable scripts appear in a different color from rest of the files and folders.</p>
 						<p>Mostly, scripts with execution rights appear green.</p>
 
-						<h2 class="_heading2">Creating a bash script</h2>
+						<h2 class="_h2">Creating a bash script</h2>
 						<p>To create a simple bash script that outputs Hello, World!</p>
 						<p class="command">touch hello_world.sh</p>
 						<p class="title">To find the path to your bash shell.</p>
@@ -683,9 +719,9 @@
 							<li><span class="command">bash hello_world.sh</span></li>
 						</ol>
 
-						<h2 class="_heading2">Basic syntax of shell scripting</h2>
+						<h2 class="_h2">Basic syntax of shell scripting</h2>
 						<p>Like other programming languages, bash scripting follows a set of rules to create programs understandable by the computer.</p>
-						<h3 class="_heading3">Defining variables</h3>
+						<h3 class="_h3">Defining variables</h3>
 						<p>define variables by using the syntax, variable_name = value.</p>
 						<p>To get the value of the variable, add $ before the variable.</p>
 						<div class="container code">
@@ -701,7 +737,7 @@
 						</div>
 						<p>Tux is also the name of the Linux mascot, the penguin.</p>
 
-						<h3 class="_heading3">Arithmetic Expressions</h3>
+						<h3 class="_h3">Arithmetic Expressions</h3>
 						<p>operations supported by bash for mathematical calculations include:</p>
 						<ul>
 							<li>+ addition</li>
@@ -737,7 +773,7 @@
 						<p class="command">echo "scale=2;22/7" | bc</p>
 						<p>Where scale defines the number of decimal places required in the output.</p>
 
-						<h2 class="_heading2">Reading user input</h2>
+						<h2 class="_h2">Reading user input</h2>
 						<p>Sometimes you'll need to gather some input and perform relevant operations.</p>
 						<p>In bash, we take user input using the <code>read</code> command.</p>
 						<p class="command">read variable_name</p>
@@ -761,7 +797,7 @@
 							</pre>
 						</div>
 
-						<h2 class="_heading2">Numeric comparison logical operators</h2>
+						<h2 class="_h2">Numeric comparison logical operators</h2>
 						<p>Comparison is used to check if statements evaluate to true or false.</p>
 						<p>Operators we can use include:</p>
 						<div class="container">
@@ -837,7 +873,7 @@
 							</pre>
 						</div>
 
-						<h2 class="_heading2">Conditional Statements (Decision Making)</h2>
+						<h2 class="_h2">Conditional Statements (Decision Making)</h2>
 						<p>Conditions are expressions that evaluate to a boolean expression (true or false). To check conditions, we can use if, if-else, if-elif-else and nested conditionals.</p>
 						<p>The structure of conditional statements is:</p>
 						<div class="container code">
@@ -891,8 +927,8 @@
 							</pre>
 						</div>
 
-						<h2 class="_heading2">Looping and Skipping</h2>
-						<h3 class="_heading3">For loop</h3>
+						<h2 class="_h2">Looping and Skipping</h2>
+						<h3 class="_h3">For loop</h3>
 						<p>For loops allow you to execute statements a specific number of times.</p>
 						<p class="title">Looping with numbers</p>
 						<p>To iterate 5 times:</p>
@@ -901,7 +937,7 @@
 								<code class="language-C">
 									#!/bin/bash
 
-									for i in {1..5}
+									for i in &#123;1..5&#125;
 									do 
 										echo $i
 									done
@@ -922,7 +958,7 @@
 							</pre>
 						</div>
 
-						<h3 class="_heading3">While loop</h3>
+						<h3 class="_h3">While loop</h3>
 						<p>While loops check for a codition and loop until the condition remains true. We need to provide a counter statement that increments the counter to control loop execution.</p>
 						<p>in the example, (( i  += 1 )) is the counter statement that increments the value of i.</p>
 						<div class="container code">
@@ -937,14 +973,26 @@
 								</code>
 							</pre>
 						</div>
-					</div>
+
+						<h3 class="_h3">Creating a script to change dir</h3>
+						<p>To create a script that changes the working directory to another directory (say, the Documents directory):</p>
+						<div class="container code">
+							<pre class="line-numbers">
+								<code class="language-C">
+									#!/bin/bash
+									cd /home/Documents
+									$SHELL
+								</code>
+							</pre>
+						</div>
+					</div>					
 				</section>
 
 				<section class="container" id="command_line_editors">
-					<h1 class="_heading1">Command line editors</h1>
+					<h1 class="_h1">Command line editors</h1>
 					<div class="container">
 						<div class="container">
-							<h2 class="_heading2">Vi</h2>
+							<h2 class="_h2">Vi</h2>
 							<p>vi stands for visual editor.</p>
 							<p>vi is the default editor that comes with the UNIX OS.</p>
 							<p>both UNIX and vi are case-sensitive.</p>
@@ -956,7 +1004,7 @@
 							<p>In the command mode, every character typed is a command that does something to the text file being edited; a character typed in the command mode may even cause vi editor to enter the insert mode.</p>
 							<p>In the insert mode, every character typed is added to the text in the file; pressing the &lt;Esc&gt; (Escape) key turns off the insert mode.</p>
 
-							<h3 class="_heading3">Getting in and out of vi</h3>
+							<h3 class="_h3">Getting in and out of vi</h3>
 							<p class="title">To start vi</p>
 							<p>to edit or create a file using vi, use the command:</p>
 							<p class="command">vi file_name</p>
@@ -969,7 +1017,7 @@
 							<p>Note: The cursor moves to the bottom of the screen whenever a colon (:) is typed.</p>
 							<p>This type of command is completed by hitting the &lt;Return&gt; key.</p>
 
-							<h3 class="_heading3">Showing line numbers</h3>
+							<h3 class="_h3">Showing line numbers</h3>
 							<p>command for showing line numbers is:</p>
 							<p class="command">:set number</p>
 							<p>command for disabling line numbers is:</p>
@@ -978,7 +1026,7 @@
 							<p class="command">:set number</p>					
 						</div>
 						<div class="container">
-							<h2 class="_heading2">Emacs</h2>
+							<h2 class="_h2">Emacs</h2>
 							<p>The <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html">GNU Emacs Manual calls Emacs</a> the extensible, customizable, self-documenting real-time display editor.</p>
 							<p>There's a lot you can do with Emacs for example:</p>
 							<ul>
@@ -992,7 +1040,7 @@
 							<p>Some people consider Emacs to be not merely a text editor but almost a complete Operating System.</p>
 							<p>Some people find that they can do almost all of their work from within Emacs.</p>
 
-							<h3 class="_heading3">Why Emacs?</h3>
+							<h3 class="_h3">Why Emacs?</h3>
 							<p>Emacs helps you be productive by providing an integrated environment for many different kinds of tasks:</p>
 							<ul>
 								<li>All of the basic editing commands are available no matter what you're trying to do: write code, read a manual, use a shell, or compose an email.</li>
@@ -1007,7 +1055,7 @@
 				</section>
 
 				<section class="container" id="tips">
-					<h1 class="_heading1">Tips</h1>
+					<h1 class="_h1">Tips</h1>
 					<div class="container">
 						<ul>
 							<li>Learn redirection.</li>
@@ -1019,19 +1067,17 @@
 				</section>
 
 				<section class="container" id="links">
-					<h1 class="_heading1">Links</h1>
+					<h1 class="_h1">Links</h1>
 					<div class="container">
 						<ul>
-							<li>Learn linux: <a href="http://linuxcommand.org/" target="_blank">website for linux</a></li>
+							<li>Learn linux: <a href="http://linuxcommand.org/" target="_blank" rel="noreferrer">website for linux</a></li>
 							<li>To access files from windows using wsl, use the command: <code>cd /mnt/c</code></li>
 						</ul>
 					</div>
 				</section>
-
                 <!-- <p>started learning in June 28, 2022</p> -->
 			</main>
 		</section>
-		
 		<script src="../../_resources/js/prism.js"></script>
 	</body>
 </html>
