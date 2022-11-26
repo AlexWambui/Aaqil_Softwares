@@ -5,6 +5,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/bars_effect.css">
+    <link rel="stylesheet" href="assets/css/glowing_border.css">
+
     <link rel="stylesheet" href="../assets/styles/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/styles/icomoon.css">
     <link rel="stylesheet" href="../assets/styles/prism.css">
@@ -33,6 +36,7 @@
                 <li><a href="#colors">Colors x</a></li>
                 <li><a href="#tables">Tables</a></li>
                 <li><a href="#flex_box">Flex Box</a></li>
+                <li><a href="#grid">Grid</a></li>
                 <li><a href="#animations">Animations</a></li>
                 <li><a href="#transitions">Transitions</a></li>
                 <li><a href="#media_queries">Media Queries & Responsive Design</a></li>
@@ -40,6 +44,7 @@
                 <li><a href="#image_masking">Image masking</a></li>
                 <li><a href="#color_combinations">Color Combinations</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#sources">Sources</a></li>
             </ul>
         </div>
     </aside>
@@ -201,6 +206,76 @@
             </div>
         </section>
 
+        <section class="container" id="grid">
+            <h1 class="_heading1">Grid</h1>
+            <div class="container">
+                <h2 class="_heading2">fr</h2>
+                <p>Grid introduces a unit called fractional (fr).</p>
+                <p>Each fr unit allocates one share of the available space.</p>
+                <p>For example, if two elements are set to 1fr and 3fr repsectively, the space is divided into 4 equal shares; the first element occupies 1/4 and the second element 3/4 of any leftover space.</p>                
+                <p>To learn grid, use: <a href="cssgridgarden.com">gridgarden.com</a></p>
+            </div>
+        </section>
+
+        <section class="container" id="animations">
+            <h1 class="_heading1">Animations</h1>
+            <div class="container">
+                <h2 class="_heading2">Examples</h2>
+                <div class="bars_effects">
+                    <h2 class="_heading2">Bars Effect</h2>
+                    <div class="code css_code">
+                        <pre class="line-numbers">
+                            <code class="language-html">
+                                &lt;div class="bars_effects"&gt;
+                                    &lt;div class="bars"&gt;
+                                        &lt;span&gt;&lt;/span&gt;
+                                        &lt;span&gt;&lt;/span&gt;
+                                        &lt;span&gt;&lt;/span&gt;
+                                        &lt;span&gt;&lt;/span&gt;
+                                        &lt;span&gt;&lt;/span&gt;
+                                        &lt;span&gt;&lt;/span&gt;
+                                        &lt;span&gt;&lt;/span&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>                    
+                    </div>
+                    <div class="bars_effect">
+                        <div class="bars">
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <a href="assets/css/bars_effect.scss" target="_blank">View the stylesheet</a>
+                </div>
+                <div class="glowing_borders">
+                    <h2 class="_heading2">Glowing Borders</h2>
+                    <div class="code css_code">
+                        <pre class="line-numbers">
+                            <code class="language-html">
+                                &lt;div class="glowing_border"&gt;
+                                    &lt;div class="card_outer"&gt;
+                                        &lt;div class="spinning_border"&gt;&lt;/div&gt;
+                                        &lt;div class="card_inner"&gt;
+                                            &lt;h1&gt;Card&lt;/h1&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            </code>
+                        </pre>                        
+                    </div>
+                    <div class="glowing_border">
+                        <div class="card_outer">
+                            <div class="spinning_border"></div>
+                            <div class="card_inner">
+                                <h1>Card</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="assets/css/glowing_border.scss" target="_blank">View the stylesheet</a>
+                </div>
+            </div>
+        </section>
+
         <section class="container" id="media_queries">
             <h1 class="_heading1">Media Queries</h1>
             <div class="container">
@@ -214,7 +289,7 @@
                 <p>Code to get rid of default body styling</p>
                 <div class="container css_code">
                     <pre class="line-numbers">
-                        <code class="language-CSS">
+                        <code class="language-css">
                             body{
                                 margin: 0;
                                 padding: 0;
@@ -265,9 +340,18 @@
                 <p>check out the website by Edward <a href="edwardh.io">Edwardh</a></p>
             </div>
         </section>
+
+        <section class="container" id="sources">
+            <h1 class="_heading1">Sources</h1>
+            <p>Tiktok:</p>
+            <ul>
+                <li>diskoy_</li>
+                <li>tomisloading</li>
+            </ul>
+        </section>
     </main>
     <!-- <p>Started: 16-09-2022</p> -->
 </section>
-<script src="../../_resources/js/prism.js"></script>
+<script src="../assets/js/prism.js"></script>
 </body>
 </html>

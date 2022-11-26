@@ -242,6 +242,24 @@ span.note{
 		border-bottom: 1px solid $golden_color;
 	}
 }
+.color_elaborations{
+	width: 90%;
+	margin: auto;
+	padding: 10px 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	span{
+		$span_dimensions: 100px;
+		width: $span_dimensions;
+		height: $span_dimensions;
+		border-radius: 50%;
+		padding: 5px 15px;
+		display: flex;
+		align-items: center;
+		margin: 0 -8px;
+	}
+}
 
 /*knowledge_base*/
 .blog {
