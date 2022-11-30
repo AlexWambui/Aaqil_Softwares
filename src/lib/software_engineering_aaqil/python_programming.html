@@ -26,179 +26,224 @@
         </div>
         <div class="nav_body">
             <ul>
-                <li><a href="#python_intro">hello world</a></li>
-                <li><a href="#if_else_if">if...else...if</a></li>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#pycodestyle">Pycodestyle</a></li>
+                <li><a href="#comments">Comments</a></li>
+                <li><a href="#data_types_and_variables">Data Types and Variables</a></li>
+                <li><a href="#control_statements">Control Statements</a></li>
+                <li><a href="#operators">Operators</a></li>
+                <li><a href="#functions">Functions</a></li>
                 <li><a href="#master_python">Master Python</a></li>
             </ul>
         </div>
     </aside>
     <main class="main_content">
-        <section class="container" id="hell_world">
-            <h1 class="_heading1">Hello World</h1>
-            <div class="container" id="hello_world_objectives">
-                <h2 class="_heading2">Objectives</h2>
+        <section class="container" id="introduction">
+            <h1 class="_heading1">Introduction</h1>
+            <div class="container">
+                <p>Python is an easy to learn, powerful programming language developed by Guido Van Rossum of the Netherlands in the 1990s.</p>
+                <p>Python was inteded to be simple, intuitive language that is as powerful as traditional languages.</p>                
+                <p>Python's simple syntax and dynamic typing, together with its interpretted nature, make it an ideal language for scripting and rapid application development in many areas on most platforms.</p>         
+                <p>Guido named the language Python because he was a big fan of "Monty Python's Flying Circus".</p>
+                <p>Python lets you develop programs in less time and with less code than other programming languages.</p>
+                <p>Python 2 became available in the year 2000 and it's not forward compatible (means it can't run most programs written in python 3).</p>
+                <p>Python 3 was introduced in 2008 and it's not backward compatible (means it can't run most programs written in python 2).</p>
+
+                <h2 class="_heading2">Why python is a great language</h2>
                 <ul>
-                    <li>why python programming is awesome</li>
-                    <li>who created python</li>
-                    <li>who is Guido Van Rossum</li>
-                    <li>where does the name 'Python' come from</li>
-                    <li>what is Zen of Python</li>
-                    <li>How to use Python interpreter</li>
-                    <li>How to use strings</li>
-                    <li>What are indexing and slicing in Python</li>
-                    <li>What is the official Python coding style and how to check your code with pycodestyle</li>
+                    <li>Python has a simple syntax that's easier to read and use than most other languages.</li>
+                    <li>Python has most of the features of traditional programming langugages. As a result, you can use Python to learn the concepts and skills that apply to those languages too.</li>
+                    <li>Python supports the development of a wide range of programs, including games, web applications and system administration.</li>
+                    <li>Python is used by many successful companies including: Google, IBM, Disney and EA GAmes.</li>
+                    <li>Pyton is open source, meaning its source code is available to the entire Python Community.</li>
                 </ul>
-            </div>
-            <div class="container" id="hello_world_concepts">
-                <h2 class="_heading2">Concepts</h2>
-                <div class="concept_explanation" id="python_intro">
-                    <h3 class="_heading3">Introduction to python</h3>
-                    <p>python is a general-purpose programming language created by Guido Van Rossum.</p>
-                    <p>python is an easy to learn, powerful programming language.</p>
-                    <p>Python is an interpreted language. </p>
-                    <p>it has efficient high-level data structures and a simple but effective approach to
-                        object-oriented programming.</p>
-                    <p>Python's elegant syntax and dynamic typing, together with its interpreted nature, make it an
-                        ideal language for scripting and rapid application development in many areas on most
-                        platforms.</p>
-                    <p>with python you can do:</p>
-                    <ul>
-                        <li>GUI development</li>
-                        <li>Web application</li>
-                        <li>scrape data from websites</li>
-                        <li>System administration tasks</li>
-                        <li>Financial Calculation</li>
-                        <li>Data Analysis</li>
-                        <li>Data Science</li>
-                        <li>Game Development</li>
-                        <li>Visualization</li>
-                    </ul>
 
-                    <h3 class="_heading3">Origin of the name Python</h3>
-                    <p>the language is named after the BBC show "Monty Python's Flying Circus" and has nothing to do
-                        with reptiles.</p>
+                <h2 class="_heading2">Types of Python Applications</h2>
+                <ol>
+                    <li>Console Application - is a desktop application that uses the console to interact with the user. In this type, you enter commands at the command prompt in the console available from your operating sytem. A console applicaiton being run on windows system uses the command prompt and on a Mac OS X system a console application runs in the Terminal Window.</li>
+                    <li>GUI Applicaiton - a GUI application performs the same tasks as the console application. It gets the same input from from the user, performs the same calculations, and displays the same results. However, GUI applications are more user-friendly and intuitive.</li>
+                    <li>Web Applicaiton - can be called by a web browser running on a computer or mobile device and can use a server to process or store data. A web application performs the same task as the console and GUI applications. Python frameworks such as Flask and Django can help with development of web applications.</li>
+                </ol>
+                <p>You can also use python as a scripting language to work with other software applications or to develop system administration programs that perform tasks like automatically backing up a server or rotating log files. Programs like this usually don't have a user interface since they run in the background.</p>
 
-                    <h3 class="_heading3">Language properties of Python</h3>
-                    <p class="title">Python is an interpreted language</p>
-                    <p>when you run python program, an interpreter will parse python program line by line basis, as
-                        compared to compiled languages like C or C++, where the compiler first compiles the program and
-                        then start running.</p>
-                    <p>So what's the difference?</p>
-                    <p>The difference is that interpreted languages are a little bit slow as compared to compiled
-                        languages.</p>
-                    <p>writing codes in compiled languages is a daunting task for a beginner.</p>
-                    <p>Also in such languages, you need to write even most basic functions like calculate the length of
-                        the array, split the string etc.</p>
-                    <p>For more advanced tasks sometimes you need to create your own data structures to encapsulate data
-                        in the program. So in C/C++ before you actually start solving your business problem you need to
-                        take care of all minor details. This is where Python comes. In Python, you don't need to define
-                        any data structure, no need to define small utility functions because Python has everything to
-                        get you started.</p>
-                    <p class="title">Python is dynamically typed</p>
-                    <p>python doesn't require you to define variable data types ahead of time.</p>
-                    <p>python automatically infers the data type of the variable based on the type of value it
-                        contains.</p>
+                <h2 class="_heading2">Software needed</h2>
+                <p>To develop python programs, you just need to download and install Python.</p>
+                <p>It includes an IDE (Integrated Development Environment) called IDLE that you can use for coding, testing and debugging your programs.</p>
 
-                    <p class="title">Python is strongly typed</p>
-                    <p>PHP or Javascript, convert data of one type to another automatically.</p>
-                    <p>For example: In JS, 1 + "2" - converts 1 to a string and concatenates to "2", which results to
-                        '12' which is a string.</p>
-                    <p>However, in python, such automatic conversions are not allowed.</p>
-                    <p>so 1 + "2" would produce an error.</p>
+                <h2 class="_heading2">Coding Statement</h2>
+                <p>Unlike many programming lanauges, the indentation of each line matters in a Python program. Incorrect indentation causes an error.</p>
+                <p>In Python, the indentation is typically four spaces.</p>
+                <p>In some cases, you'll want to divide a long statement over two or more lines. Then, you can use implicit continuation. To do that, you divide a statement before or after an operator like a plus or minus sign.</p>
+                <p>Example of implicit continutaion:</p>
+                <div class="container code Python_code">
+                    <pre class="line-numbers">
+                        <code class="language-python">
+                            print("Total Score: " + str(score_total)
+                                + "\nAverage Score: " + str(average_score))
+                        </code>
+                    </pre>
+                </div>
+                <p>The other way to continue a statement is to use explicit continuation. Then, you code a backslash to show that a line is continued. In general, this is discouraged and isn't usually required.</p>
+                <p>Example of explicit continuation:</p>
+                <div class="container code Python_code">
+                    <pre class="line-numbers">
+                        <code class="language-python">
+                            print("Total Score: " + str(score_total) \
+                                + "\nAverage Score: " + str(average_score))
+                        </code>
+                    </pre>
+                </div>
+                <p>The first line in a Python program is usually a shebang line.(#!/usr/bin/env Python3).</p>
+                <p>The line is ignored by Windows, but Unix-like systems, use this line to determine what interpretter to use to run the program.</p>
+                <h3 class="_heading3">First Program</h3>
+                <div class="container code Python_code">
+                    <pre class="line-numbers">
+                        <code class="language-python">
+                            #!/usr/bin/env Python3
 
-                    <h3 class="_heading3">Types of Python</h3>
-                    <p>The official version of python is called Python or CPython. <a href="https://www.python.org/">Download
-                        official python</a></p>
-                    <p>Another popular distribution of python is Anaconda. It's mainly focused on data science. <a
-                            href="https://www.anaconda.com/">Download Anaconda Python</a></p>
+                            counter = 0
+                            score_total = 0
+                            test_score = 0
 
-                    <h3 class="_heading3">Running Python Programs</h3>
-                    <p>Python uses a command-line tool called pip.</p>
-                    <p>to run a program stored in a file:</p>
-                    <ol>
-                        <li>Open the terminal and change current working dir to dir where the file is stored</li>
-                        <li>to run the program, type the command:
-                            <p class="command">python3 hello.py</p>
-                        </li>
-                    </ol>
-                    <p>alternatively you can make python programs runnable scripts by using these line at the beginning
-                        of python scripts</p>
-                    <p class="command">#!/usr/bin/python3</p>
-                    <p>then making the scripts executable using</p>
-                    <p class="command">chmod u+x file_name</p>
+                            while test_score != 999:
+                                test_score = int(input("Enter test score: "))
+                                if test_score >= 0 and test_score <= 100:
+                                    score_total += test_score
+                                    counter += 1
 
-                    <h3 class="_heading3">Comments</h3>
-                    <p>Comments are notes which describe the purpose of the program or how the program works.</p>
-                    <p>Comments are not programming statements that Python interpreter executes while running the
-                        program.</p>
-                    <p>Comments can also be used to write program documentation.</p>
-                    <p>In python, any line that begins with a pound sign (#) is considered a comment.</p>
-                    <figure>
-                        <pre class="line-numbers">
-                            <code class="language-python">
-                                # message to greet user
-                                print("hello, world!")
-                            </code>
-                        </pre>
-                    </figure>
-                    <p>Comments at the end of a statement are called end-line comments.</p>
-                    <figure>
-                        <pre class="line-numbers">
-                            <code class="language-python">
-                                print("hello, world!") # displays hello, world on the console
-                            </code>
-                        </pre>
-                    </figure>
+                            average_score = round(score_total / counter)
+
+                            print("Total Score: " + str(score_total))
+                            print("Average Score: " + str(average_score))
+                        </code>
+                    </pre>
                 </div>
             </div>
         </section>
-        <section class="container" id="if_else_if">
-            <h1 class="_heading1">If, if...else statements</h1>
-            <div class="container" id="objectives">
-                <h2 class="_heading2">Objectives</h2>
+
+        <section class="container" id="pycodestyle">
+            <h1 class="_heading1">Pycodestyle</h1>
+            <div class="container">
+                <p>Pycodestyle is a tool to check your Python code against some of the style conventions in PEP8.</p>
+                <p>The package used to be called pep8 but was renamed to pycodestyle to reduce confussion.</p>
+
+                <h2 class="_heading2">Installation</h2>
+                <p>You can install, upgrade and unistall pycodestyle.py using the commands:</p>
+                <p class="command">pip install pycodestyle</p>
+                <p class="command">pip install --upgrade pycodestyle</p>
+                <p class="command">pip uninstall pycodestyle</p>
+                <p>Example of usage:</p>
+                <p class="command">pycodestyle --first optparse.py</p>
+                <p>To make pycodestyle show the source code for each error, and even the relevant text from PEP8:</p>
+                <p class="command">pycodestyle --show-source --show-pep8 testsuite/E40.py</p>
+                <p>To display how often each error was found:</p>
+                <p class="command">pycodestyle --statistics --qq Python-2.5/Lib</p>
+            </div>
+        </section>
+
+        <section class="container" id="comments">
+            <h1 class="_heading1">Comments</h1>
+            <div class="container">
+                <p>Comments are usually ignored by the Python interpreter and thus have no effect on the operation of the program.</p>
+                <p>Use comments to describe portions of code that are hard to understand, but don't overdo them.</p>
+                <p>To comment, both inline and block comments, start with the # sign.</p>
+                <p>Multi line comments can also be written using ''' Comment here '''</p>
+                <p>Example of comments in python:</p>
+                <div class="container code Python_code">
+                    <pre class="line-numbers">
+                        <code class="language-python">
+                            # This is a block comment that
+                            # extends multiple lines.
+
+                            '''
+                            This is another way to write multi line comments
+                            '''
+
+                            counter = 0 
+                            test_score = 0
+
+                            counter +=1 # this is an inline comment. Add 1 to counter
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="data_types_and_variables">
+            <h1 class="_heading1">Data Types and Variables</h1>
+            <div class="container">
+                
+            </div>
+        </section>
+
+        <section class="container" id="control_statements">
+            <h1 class="_heading1">Control Statements</h1>
+            <div class="container">
+                <p>Control statements help control the execution of a program.</p>
+                <p>These statements include if statemensts as well as looping statements.</p>
+                <p>Before learning control statements, it's important to understand boolean expressions.</p>
+
+                <h2 class="_heading2">Boolean Expressions</h2>
+                <p>Boolean expressions are expressions that evaluate to either True or False based on a comparison between two or more values and that value can be assigned to a variable.</p>
+                <p>When coding boolean expressions, be sure to compare numbers with numbers and strings with strings. Mixed expressions like comparing numbers with strings won't work the way you expect them to.</p>
+                <p>You can also assign True or False to variables.</p>
+                <div class="container code Python_code">
+                    <pre class="line-numbers">
+                        <code class="language-python">
+                            active = True
+                            active = False
+                        </code>
+                    </pre>
+                </div>
+                <p>Boolean expressions can be used in if statements as well as in looping statements.</p>
+                <p>Boolean expressions are usually used in conjunction with relational operators.</p>
+                <p>Examples of Boolean Expressions:</p>
+                <div class="container code Python_code">
+                    <pre class="line-numbers">
+                        <code class="language-python">
+                            age == 5              # variable equal to numeric literal.
+                            first_name == "John"  # variable equal to string literal
+
+                            distance >= limit     # variable greater than or equal to a variable.
+
+                            rate / 100 >= 0.1     # expression greater than or equal to a literal.
+                        </code>
+                    </pre>
+                </div>                
+            </div>
+        </section>
+
+        <section class="container" id="operators">
+            <h1 class="_heading1">Operators</h1>
+            <div class="container">
+                <h2 class="_heading2">Relational Operators</h2>
+                <p>The six relational operators are:</p>
                 <ul>
-                    <li>how to use if, if...else statements</li>
-                    <li>how to affect values to variables</li>
-                    <li>how to use while and for loops</li>
-                    <li>how is python's for different from C's</li>
-                    <li>how to use break and continue statements</li>
-                    <li>how to use else clauses on loops</li>
-                    <li>what does pass statement do and when to use it</li>
-                    <li>how to use range</li>
-                    <li>what is a function and how do you use functions</li>
-                    <li>what does return a function that does not use any return statement</li>
-                    <li>scope of variables</li>
-                    <li>what's a traceback</li>
-                    <li>what are the arithmetic operators and how to use them</li>
+                    <li>== (Equal to) - returns True if both operands are equal.</li>
+                    <li>!= (Not Equal to) - returns True if the left and Right operands are not equal.</li>
+                    <li> (Greater than) - returns True if the left operand is greater than the right operand.</li>
+                    <li>< (Less than) - returns True if the left operand is less than the right operand.</li>
+                    <li>= (Greater than or equal to) - returns True if the left operand is greater than or equal to the right operand.</li>
+                    <li><= (Less than or equal to) - returns True if the left operand is less than or equal to the right operand.</li>
                 </ul>
             </div>
-            <div class="container" id="concepts">
-                <h2 class="_heading2">Concepts</h2>
-                <div class="concept_explanation . elif" id="if">
-                    <p>let's take an example of a calculator application</p>
-                    <figure>
-                        <pre class="line-numbers">
-                            <code class="language-python">
-                                '''
-                                problem: user enters an operation like 5 * 6 then we print result of operation
-                                '''
-                                # collect users input
-                                num1, operator, num2 = input("Enter your operation (e.g. 5 * 4): ").split()
-                                # convert the numbers inputs from strings to int literals.
-                                num1 = int(num1)
-                                num2 = int(num2)
-                                # print output based on operation of choice.
-                                if operator == "*":
-                                    print("{} * {} = {}".format(num1, num2, num1 * num2))
-                                elif operator == "+":
-                                    print("{} + {} = {}".format(num1, num2, num1 + num2))
-                                elif operator == "-":
-                                    print("{} - {} = {}".format(num1, num2, num1 - num2))
-                                elif operator == "/":
-                                    print("{} / {} = {}".format(num1, num2, num1 / num2))
-                            </code>
-                        </pre>
-                    </figure>
+        </section>
+
+        <section class="container" id="functions">
+            <h1 class="_heading1">Functions</h1>
+            <div class="container">
+                <p>A function is a reusable unit of code that perform a specific task.</p>
+                <p>It usually contains a group of statements.</p>
+                <p>Python provides many built-in functions that do common tasks like getting input data from the user and printing output data to the console.</p>
+
+                <h2 class="_heading2">Calling a function</h2>
+                <p>The syntax for calling a function is:</p>
+                <div class="container code python_code">
+                    <pre class="line-numbers">
+                        <code class="language-python">
+                            function_name([arguments])
+                        </code>
+                    </pre>
                 </div>
             </div>
         </section>
