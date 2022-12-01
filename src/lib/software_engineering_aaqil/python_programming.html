@@ -157,6 +157,8 @@
 
                             '''
                             This is another way to write multi line comments
+
+                            It's mostly used to document your code.
                             '''
 
                             counter = 0 
@@ -172,7 +174,46 @@
         <section class="container" id="data_types_and_variables">
             <h1 class="_heading1">Data Types and Variables</h1>
             <div class="container">
-                
+                <h2 class="_heading2">Variables</h2>
+                <p>To assign values to multiple variables at the same time, list their names and values divided by commas.</p>
+                <div class="container code Python_code">
+                    <pre class="line-numbers">
+                        <code class="language-python">
+                            width, height = 400, 500
+                        </code>
+                    </pre>
+                </div>
+                <p>To get input from a user and store it as a variable, we can use the input() built-in function.</p>
+                <div class="container code Python_code">
+                    <pre class="line-numbers">
+                        <code class="language-python">
+                            # Using strings
+                            full_name = input("Enter your full name: ")
+                            print("hi" + full_name)
+
+                            # Using numbers - a Tip Calculator App for hotels.
+                            food_amount = float(input("Enter food amount: "))
+                            tip_percentage = float(input("Enter your tip percentage: ")) / 100
+                            tip_amount = food_amount * tip_percentage
+
+                            total = food_amount + tip_amount
+
+                            print(f'Food amount: ${food_amount}')
+                            print(f'Tip amount: ${tip_amount}')
+                            print(f'Total amount: ${total}')
+                        </code>
+                    </pre>
+                </div>
+
+                <h2 class="_heading2">Data Types</h2>
+                <p>A data type is a classification that specifies which type of value a variable has and what type of mathematical, relational or logical operations can be applied to it without causing an error.</p>
+                <p>Data Types in Python include:</p>
+                <ol>
+                    <li>int - short for integer, a whole number.</li>
+                    <li>float - short for floating point, which is a positive or negative whole number with a decimal point.</li>
+                    <li>strings - can have single or double quotes around them.</li>
+                    <li>lists</li>
+                </ol>
             </div>
         </section>
 
@@ -209,7 +250,72 @@
                             rate / 100 >= 0.1     # expression greater than or equal to a literal.
                         </code>
                     </pre>
-                </div>                
+                </div>  
+
+                <h2 class="_heading2">if...elif...else</h2>  
+                <p>The keyword 'elif' is short for 'else if' and is useful to avoid excessive indentation.</p>            
+                <p>The if...elif...else sequence is a substitute for the switch or case statements in ohter languages.</p>
+                <p>A simple Grade App:</p>
+                <div class="container code Python_code">
+                    <pre class="line-numbers">
+                        <code class="language-python">
+                            score = int(input("Enter your score: "))
+
+                            if 90 <= score <= 100:
+                                print('You scored an A.')
+
+                            elif score >= 80:
+                                print('You scored a B')
+
+                            elif score >= 70:
+                                print('You scored a C')
+
+                            elif score >= 60:
+                                print('You scored a D')
+
+                            else:
+                                print('You scored an F')
+                        </code>
+                    </pre>
+                </div>
+
+                <h2 class="_heading2">for statements</h2>
+                <p>The for statement in python differs a bit from C or Pascal. Rather than always iterating over an arithmetic progression of numbers (like in Pascal) or giving the iteration step and halting condition (as C), python's for statement iterates over the items of any sequence (a list or string), in the order they appear in the sequence.</p>
+                <p>Example:</p>
+                <div class="container code">
+                    <pre class="line-numbers">
+                        <code class="language-python">
+                            # measure some strings:
+                            words = ['cat', 'window', 'defenstrate']
+                            for w in words:
+                                print(w, len(w))
+                        </code>
+                    </pre>
+                </div>
+
+                <h2 class="_heading2">range() function</h2>
+                <p>If you need to iterate over a sequence of numbers, the built-in function range() comes in handy.</p>
+                <p>It generates arithmetic progressions.</p>
+                <div class="container code">
+                    <pre class="line-numbers">
+                        <code class="language-python">
+                            for i in range(5):
+                                print(i)
+                        </code>
+                    </pre>
+                </div>
+                <p>The given end point (5) is never part of the generated sequence.</p>
+                <p>range(10) would generate 10 values, the legal indices for items of a sequence of length 10.</p>
+                <p>It is possible to let the range start at another number, or to specify a different increment (even negative; sometimes this is called the 'step').</p>
+                <div class="container code">
+                    <pre class="line-numbers">
+                        <code class="language-python">
+                            list(range(0, 10, 3))
+
+                            # output: [0, 3, 6, 9]
+                        </code>
+                    </pre>
+                </div>
             </div>
         </section>
 
@@ -236,12 +342,70 @@
                 <p>It usually contains a group of statements.</p>
                 <p>Python provides many built-in functions that do common tasks like getting input data from the user and printing output data to the console.</p>
 
+                <h2 class="_heading2">Creating a function</h2>
+                <p>to create a function, we use the keyword def, followed by the function name, parenthesis and any arguments required inside the parenthesis.</p>
+                <div class="container code Python_code">
+                    <pre class="line-numbers">
+                        <code class="language-python">
+                            #function with one argument.
+                            def say_my_name(name):
+                                print(name)
+
+
+                            #function with multiple arguments.
+                            def greet_user(greeting, name):
+                                print(f'{greeting} {name}!')
+
+
+                            def greet_user(name : str, greeting='aloha' : str) -> None:
+                                '''
+                                To produce a default value for an argument:
+                                Put the argument with a default value as the last.
+                                However, this would make the arguments positional meaning we
+                                can't change the order of the arguments when calling the function.
+
+                                To solve this, we can use named arguments instead to call the function.
+
+                                TYPEHINTING...
+                                The str - shows the data types of the arguments.
+                                The -> None shows this function does not return any value.
+                                '''
+
+                                print(f'{greeting} {name}!')
+
+
+                            # Calling the function using named arguments so we don't have to mind the position of arguments.
+                            greet_user(greet='Hi', name='Aaqil')
+
+
+                            def sum(a: int, b: int) -> int:
+                                return a + b
+                        </code>
+                    </pre>
+                </div>
+
                 <h2 class="_heading2">Calling a function</h2>
-                <p>The syntax for calling a function is:</p>
+                <p>The syntax for calling a function is <code>function_name([arguments])</code>:</p>
+                <p>To call the function say_my_name:</p>
                 <div class="container code python_code">
                     <pre class="line-numbers">
                         <code class="language-python">
-                            function_name([arguments])
+                            # The function
+                            def say_my_name(name):
+                                print(name)
+
+
+                            # To call the function
+                            say_my_name('Aaqil')
+                        </code>
+                    </pre>
+                </div>
+                <p>When creating a function and want to create the body later, we can use pass to tell python to skip that function even though it has no statements to execute.</p>
+                <div class="container code">
+                    <pre class="line-numbers">
+                        <code class="language-python">
+                            def say_my_name():
+                                pass
                         </code>
                     </pre>
                 </div>
