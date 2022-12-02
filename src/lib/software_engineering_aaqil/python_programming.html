@@ -33,6 +33,7 @@
                 <li><a href="#control_statements">Control Statements</a></li>
                 <li><a href="#operators">Operators</a></li>
                 <li><a href="#functions">Functions</a></li>
+                <li><a href="#modules">Modules</a></li>
                 <li><a href="#master_python">Master Python</a></li>
             </ul>
         </div>
@@ -409,6 +410,55 @@
                         </code>
                     </pre>
                 </div>
+            </div>
+        </section>
+
+        <section class="container" id="modules">
+            <h1 class="_heading1">Modules</h1>
+            <div class="container">
+                <p>A module is a file that can contains reusable code like Python definitions, executable statements as well as fuctions.</p>
+                <p>The file name is the module name with the suffix.py appended.</p>
+                <p>As a program gets longer, you may want to split it into several files for easier maintenance.</p>
+                <p>You may also want to use a handy function you've written in several programs without copying its definition into each program.</p>
+                <p>Python has a way to put definitions in a file and use them in a script or in an interactive instace of the interpreter. Such a file is called a module.</p>
+                <p>Definitions from a module can be imported into other modules or into the main module (the collection of variables that you have access to in a script executed at the top level and in calculator mode).</p>
+                <p>Within a module, the module's name (as a string) is available as the value of the global variable __name__.</p>
+                <p>For instance, create a file called fibo.py and have the contents:</p>
+                <div class="container code">
+                    <pre class="line-numbers">
+                        <code class="language-python">
+                            # Fibonacci numbers module
+                            def fib(n):
+                                a, b = 0, 1
+                                while a < n:
+                                    print(a, end='')
+                                    a, b = b, a + b
+                                print()
+
+
+                            def fib2(n):
+                                result = []
+                                a, b = 0, 1
+                                while a < n:
+                                    result.append(a)
+                                    a, b = b, a + b
+                                return result
+                        </code>
+                    </pre>
+                </div>
+                <p>To import this module in the interpreter, we would use:</p>
+                <p class="command">import fibo</p>
+                <p>This does not add the names of the functions defined in fibo directly to the current namespace; it only adds the module name fibo there.</p>
+                <p>Using the module name you can access the functions:</p>
+                <p class="command">fibo.fib(1000)</p>
+                <p>This will display: 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987</p>
+                <p class="command">fibo.fib2(100)</p>
+                <p>This will display: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]</p>
+                <p class="command">fibo.__name__</p>
+                <p>This will display: 'fibo'</p>
+                <p>Statements in a module are intended to initialize the module. They are executed only the first time the module name is encountered in an import statement. (They also run if the file is executed as a script.)</p>
+                <p>Each module has its own private namespace, which is used as the global namespace by all functions defined in the module.</p>
+                <p>Thus, the author of a module can use global variables in the module without worrying about accidental clashes with a user’s global variables. On the other hand, if you know what you are doing you can touch a module’s global variables with the same notation used to refer to its functions, modname.itemname.</p>
             </div>
         </section>
 

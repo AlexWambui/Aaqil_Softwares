@@ -39,7 +39,7 @@
             transform: translateX(0px) scale(1.2);
         }
         100%{
-            box-shadow: 0 0 0 rgba(0, 0, 0.5);
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
             opacity: 0;
             transform: translateX(20px) scale(1);
         }
