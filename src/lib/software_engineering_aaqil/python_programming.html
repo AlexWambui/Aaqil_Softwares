@@ -42,13 +42,23 @@
         <section class="container" id="introduction">
             <h1 class="_heading1">Introduction</h1>
             <div class="container">
+                <p>To get started we need to download and install Python. <a href="https://www.python.org/downloads/">Download Python</a></p>
+                <p>The official version of python is called Python or CPython.</p>
+                <p>Another popular distribution of Python is Anaconda which is mainly focused on data science.</p>
+                
                 <p>Python is an easy to learn, powerful programming language developed by Guido Van Rossum of the Netherlands in the 1990s.</p>
                 <p>Python was inteded to be simple, intuitive language that is as powerful as traditional languages.</p>                
                 <p>Python's simple syntax and dynamic typing, together with its interpretted nature, make it an ideal language for scripting and rapid application development in many areas on most platforms.</p>         
-                <p>Guido named the language Python because he was a big fan of "Monty Python's Flying Circus".</p>
+                <p>Python is named after the BBC show "Monty Python's Flying Circus" because Guido was a big fan of the show.</p>
                 <p>Python lets you develop programs in less time and with less code than other programming languages.</p>
                 <p>Python 2 became available in the year 2000 and it's not forward compatible (means it can't run most programs written in python 3).</p>
                 <p>Python 3 was introduced in 2008 and it's not backward compatible (means it can't run most programs written in python 2).</p>
+
+                <h2 class="_heading2">Properties of Python</h2>
+                <p>It's an interpreted language. This means when you run it, an interpreter will parse python programs line by line basis, as compared to compiled languages like C or C++, where the compiler first compiles the program and then starts running.</p>
+                <p>The difference is that interpreted languages are a little slow as compared to compiled languages.</p>
+                <p>Python is also dynamically typed. It doesn't require you to define variable data types ahead of time. Python automatically infers the data type of the variable based on the type of value it contains.</p>
+                <p>Python is strongly typed. PHP or JavaScript convert data of one type to another automatically. For example: In JavaScript, 1 + "2" - converts to a string and results to '12' which is a string. However, in Python automatic conversions are not allowed so 1 + "2" would produce an error.</p>
 
                 <h2 class="_heading2">Why python is a great language</h2>
                 <ul>
@@ -57,6 +67,19 @@
                     <li>Python supports the development of a wide range of programs, including games, web applications and system administration.</li>
                     <li>Python is used by many successful companies including: Google, IBM, Disney and EA GAmes.</li>
                     <li>Pyton is open source, meaning its source code is available to the entire Python Community.</li>
+                </ul>
+
+                <h2 class="_heading2">What you can do with Python</h2>
+                <ul>
+                    <li>GUI Development</li>
+                    <li>Web Application</li>
+                    <li>Scrape data from websites</li>
+                    <li>System Administration tasks</li>
+                    <li>Financial Calculation</li>
+                    <li>Data Analysis</li>
+                    <li>Data Science</li>
+                    <li>Game Development</li>
+                    <li>Visualization</li>
                 </ul>
 
                 <h2 class="_heading2">Types of Python Applications</h2>
@@ -146,9 +169,9 @@
             <h1 class="_heading1">Comments</h1>
             <div class="container">
                 <p>Comments are usually ignored by the Python interpreter and thus have no effect on the operation of the program.</p>
-                <p>Use comments to describe portions of code that are hard to understand, but don't overdo them.</p>
+                <p>Use comments to describe portions of code that are hard to understand, or the purpose of the program but don't overdo them.</p>
                 <p>To comment, both inline and block comments, start with the # sign.</p>
-                <p>Multi line comments can also be written using ''' Comment here '''</p>
+                <p>Multi line comments can also be written using ''' Comment here '''. This style of commenting code is called documentation.</p>
                 <p>Example of comments in python:</p>
                 <div class="container code Python_code">
                     <pre class="line-numbers">
@@ -176,6 +199,30 @@
             <h1 class="_heading1">Data Types and Variables</h1>
             <div class="container">
                 <h2 class="_heading2">Variables</h2>
+                <p>Variables are named locations used to store references to the object stored in memory.</p>
+                <p>Names we choose for variables and functions are commonly known as identifiers.</p>
+                <p>In python, rules for identifiers are:</p>
+                <ol>
+                    <li>All identifiers must start with a letter or underscore (_), you can't use digits.</li>
+                    <li>Identifiers can contain letter, digits and underscores(_). $, # are not allowed.</li>
+                    <li>Identifiers can be of any length.</li>
+                    <li>Identifiers can't be a keyword. Keywords are reserved words that python uses for special purposes. Keywords in pythons include:(false, none, true, and, as, pass, break, class, continue, def, del, elif, else, except, finally, for, from, global, if, import, in, is, lambda, nonlocal, not, or, assert, raise, return, try, while, with, yield).</li>
+                </ol>
+                <h3 class="_heading3">Assigning values to variables</h3>
+                <p>To assign a value to a variable, equal sign (also known as the assignment operator (=)) is used.</p>
+                <p>Values are basic things that programs work with.</p>
+                <p>in programming, they are also known as literals.</p>
+                <p>literals can be of different types: int (1, 11), float (3.14), string ("hello").</p>
+                <p>in python, everything is object even basic data types like int, float, string.</p>
+                <p>For example:</p>
+                <p>a = b = c = 100 # this assigns 100 to c, b and a.</p>
+                <div class="note">
+                    <p>When a value is assigned to a variable, the variable doesn't store the value itself. Instead,
+                            the variable only stores a reference (address) of the object where it is stored in the
+                            memory.</p>
+                    <p>Therefore, x = 100, stores a reference (or address) to the 100 (an int object).</p>
+                    <p>The variable x doesn't store the object 100 itself.</p>
+                </div>
                 <p>To assign values to multiple variables at the same time, list their names and values divided by commas.</p>
                 <div class="container code Python_code">
                     <pre class="line-numbers">
@@ -215,6 +262,58 @@
                     <li>strings - can have single or double quotes around them.</li>
                     <li>lists</li>
                 </ol>
+                <h3 class="_heading3">Strings</h3>                
+                <h4 class="_heading4">Basic Formatting</h4>
+                <p>simple positional formatting is the most common use-case and should be used if the order of arguments is not likely to change and only have very few elements to concatenate.</p>
+                <p>since elements are represented by something as descriptive as a name, this simple style should only be used to format a relatively small number of elements.</p>
+                <p>Example1:</p>
+                <p>>'{} {}'.format('one', 'two')</p>
+                <p>Example2:</p>
+                <p>>'{} {}'.format(1, 2)</p>
+
+                <h4 class="_heading4">Value Conversion</h4>
+                <p>the new-style formatter calls by default the _format_() method of an object for its representation.</p>
+                <p>if to render the output of str(...) or repr(...), use !s or !r conversion flags.</p>
+                <p>in %-style you usually use %s for the string representation but there is %r for a repr(...) conversion.</p>
+                <p>Setup</p>
+                    <div class="container code">
+                        <pre class=line-numbers>
+                            <code class="language-python">
+                                class Data(object):
+                                    def __str__(self):
+                                        return 'str'
+
+                                    def __repr__(self):
+                                        return 'repr'
+                            </code>                            
+                        </pre>
+                    </div>
+                    <p>>'{0!s} {0!r}'.format(Data())</p>
+
+                    <h4 class="_heading4">Padding and aligning strings</h4>
+                    <p>by default values are formatted to take up only as much characters as needed to represent the content. It is however also possible to define that a value should be padded to a specific length.</p>
+                    <p>to align right:</p>
+                    <p>>'{:>10}'.format('test')</p>
+                    <p>to align left:</p>
+                    <p>>'{:10}'.format('test')</p>
+                    <p>using a padding character:</p>
+                    <p>>'{:_<10}'.format('test')</p>
+                    <p>center align values:</p>
+                    <p>>'{:^10}'.format('test')</p>
+                    <p>When using center alignment where the length of the string leads to an uneven split of the
+                        padding characters, the extra character will be placed on the right side:</p>
+                    <p>>'{:^6}'.format('zip')</p>
+
+                    <h4 class="_heading4">Truncating long strings</h4>
+                    <p>Inverse to padding it is also possible to truncate overly long values to a specific number of
+                        characters.</p>
+                    <p>The number after a (.) in the format specifies the precision of the output. For strings that
+                        means that the output is truncated to the specified length. In our example this would be 5
+                        characters.</p>
+                    <p>>'{:.5}'.format('xylophone')</p>
+
+                    <h4 class="_heading4">Combining truncating and padding</h4>
+                    <p>>'{:10.5}'.format('xylophone')</p>
             </div>
         </section>
 
