@@ -29,7 +29,8 @@
                 <li><a href="#introduction">Introduction</a></li>
                 <li><a href="#pycodestyle">Pycodestyle</a></li>
                 <li><a href="#comments">Comments</a></li>
-                <li><a href="#data_types_and_variables">Data Types and Variables</a></li>
+                <li><a href="#variables">Variables</a></li>
+                <li><a href="#data_types">Data Types</a></li>
                 <li><a href="#control_statements">Control Statements</a></li>
                 <li><a href="#operators">Operators</a></li>
                 <li><a href="#functions">Functions</a></li>
@@ -42,23 +43,21 @@
         <section class="container" id="introduction">
             <h1 class="_heading1">Introduction</h1>
             <div class="container">
-                <p>To get started we need to download and install Python. <a href="https://www.python.org/downloads/">Download Python</a></p>
-                <p>The official version of python is called Python or CPython.</p>
-                <p>Another popular distribution of Python is Anaconda which is mainly focused on data science.</p>
-                
-                <p>Python is an easy to learn, powerful programming language developed by Guido Van Rossum of the Netherlands in the 1990s.</p>
+                <p>To get started we need to download and install Python. It includes an IDE (Integrated Development Environment) called IDLE that you can use for coding, testing and debugging your programs.<a href="https://www.python.org/downloads/">Download Python</a></p>                
+                <p>Python is an easy to learn, powerful programming language developed by Guido Van Rossum of the Netherlands in the 1990s and was named after the BBC show "Monty Python's Flying Circus" because Guido was a big fan of the show.</p>
                 <p>Python was inteded to be simple, intuitive language that is as powerful as traditional languages.</p>                
-                <p>Python's simple syntax and dynamic typing, together with its interpretted nature, make it an ideal language for scripting and rapid application development in many areas on most platforms.</p>         
-                <p>Python is named after the BBC show "Monty Python's Flying Circus" because Guido was a big fan of the show.</p>
-                <p>Python lets you develop programs in less time and with less code than other programming languages.</p>
-                <p>Python 2 became available in the year 2000 and it's not forward compatible (means it can't run most programs written in python 3).</p>
-                <p>Python 3 was introduced in 2008 and it's not backward compatible (means it can't run most programs written in python 2).</p>
+                <p>Python's simple syntax and dynamic typing, together with its interpretted nature, make it an ideal language for scripting and rapid application development in many areas on most platforms hence enabling you develop programs in less time and with less code than other programming languages.</p>
+
+                <h2 class="_heading2">Types of Python</h2>
+                <ol>
+                    <li>The official version of python is called Python or CPython. Python 2 became available in the year 2000 and it's not forward compatible (means it can't run most programs written in python 3). Python 3 was introduced in 2008 and it's not backward compatible (means it can't run most programs written in python 2).</li>
+                    <li>Another popular distribution of Python is Anaconda which is mainly focused on data science.</li>
+                </ol>
 
                 <h2 class="_heading2">Properties of Python</h2>
-                <p>It's an interpreted language. This means when you run it, an interpreter will parse python programs line by line basis, as compared to compiled languages like C or C++, where the compiler first compiles the program and then starts running.</p>
-                <p>The difference is that interpreted languages are a little slow as compared to compiled languages.</p>
-                <p>Python is also dynamically typed. It doesn't require you to define variable data types ahead of time. Python automatically infers the data type of the variable based on the type of value it contains.</p>
-                <p>Python is strongly typed. PHP or JavaScript convert data of one type to another automatically. For example: In JavaScript, 1 + "2" - converts to a string and results to '12' which is a string. However, in Python automatic conversions are not allowed so 1 + "2" would produce an error.</p>
+                <p><b>It's an interpreted language.</b> - This means when you run it, an interpreter will parse python programs line by line basis, as compared to compiled languages like C or C++, where the compiler first compiles the program and then starts running. The difference is that interpreted languages are a little slow as compared to compiled languages.</p>
+                <p><b>Python is also dynamically typed.</b> - It doesn't require you to define variable data types ahead of time. Python automatically infers the data type of the variable based on the type of value it contains.</p>
+                <p><b>Python is strongly typed.</b> - PHP or JavaScript convert data of one type to another automatically. For example: In JavaScript, 1 + "2" - converts to a string and results to '12' which is a string. However, in Python automatic conversions are not allowed so 1 + "2" would produce an error.</p>
 
                 <h2 class="_heading2">Why python is a great language</h2>
                 <ul>
@@ -66,36 +65,25 @@
                     <li>Python has most of the features of traditional programming langugages. As a result, you can use Python to learn the concepts and skills that apply to those languages too.</li>
                     <li>Python supports the development of a wide range of programs, including games, web applications and system administration.</li>
                     <li>Python is used by many successful companies including: Google, IBM, Disney and EA GAmes.</li>
-                    <li>Pyton is open source, meaning its source code is available to the entire Python Community.</li>
+                    <li>Python is open source, meaning its source code is available to the entire Python Community.</li>
                 </ul>
 
                 <h2 class="_heading2">What you can do with Python</h2>
                 <ul>
-                    <li>GUI Development</li>
-                    <li>Web Application</li>
-                    <li>Scrape data from websites</li>
-                    <li>System Administration tasks</li>
-                    <li>Financial Calculation</li>
-                    <li>Data Analysis</li>
-                    <li>Data Science</li>
-                    <li>Game Development</li>
-                    <li>Visualization</li>
+                    <li>Console Applications - is a desktop application that uses the console to interact with the user. In this type, you enter commands at the command prompt in the console available from your operating sytem. A console applicaiton being run on windows system uses the command prompt and on a Mac OS X system a console application runs in the Terminal Window.</li>
+                    <li>GUI Development - a GUI application performs the same tasks as the console application. It gets the same input from from the user, performs the same calculations, and displays the same results. However, GUI applications are more user-friendly and intuitive.</li>
+                    <li>Web Application - can be called by a web browser running on a computer or mobile device and can use a server to process or store data. A web application performs the same task as the console and GUI applications. Python frameworks such as Flask and Django can help with development of web applications.</li>
+                    <li>System Administration tasks or system administration programs that perform tasks like automatically backing up a server or rotating log files. Programs like this usually don't have a user interface since they run in the background.</li>
+                    <li>Scrape data from websites.</li>
+                    <li>Financial Calculation.</li>
+                    <li>Data Analysis.</li>
+                    <li>Data Science.</li>
+                    <li>Game Development.</li>
+                    <li>Visualization.</li>
                 </ul>
 
-                <h2 class="_heading2">Types of Python Applications</h2>
-                <ol>
-                    <li>Console Application - is a desktop application that uses the console to interact with the user. In this type, you enter commands at the command prompt in the console available from your operating sytem. A console applicaiton being run on windows system uses the command prompt and on a Mac OS X system a console application runs in the Terminal Window.</li>
-                    <li>GUI Applicaiton - a GUI application performs the same tasks as the console application. It gets the same input from from the user, performs the same calculations, and displays the same results. However, GUI applications are more user-friendly and intuitive.</li>
-                    <li>Web Applicaiton - can be called by a web browser running on a computer or mobile device and can use a server to process or store data. A web application performs the same task as the console and GUI applications. Python frameworks such as Flask and Django can help with development of web applications.</li>
-                </ol>
-                <p>You can also use python as a scripting language to work with other software applications or to develop system administration programs that perform tasks like automatically backing up a server or rotating log files. Programs like this usually don't have a user interface since they run in the background.</p>
-
-                <h2 class="_heading2">Software needed</h2>
-                <p>To develop python programs, you just need to download and install Python.</p>
-                <p>It includes an IDE (Integrated Development Environment) called IDLE that you can use for coding, testing and debugging your programs.</p>
-
                 <h2 class="_heading2">Coding Statement</h2>
-                <p>Unlike many programming lanauges, the indentation of each line matters in a Python program. Incorrect indentation causes an error.</p>
+                <p>Unlike many programming langauges, the indentation of each line matters in a Python program. Incorrect indentation causes an error.</p>
                 <p>In Python, the indentation is typically four spaces.</p>
                 <p>In some cases, you'll want to divide a long statement over two or more lines. Then, you can use implicit continuation. To do that, you divide a statement before or after an operator like a plus or minus sign.</p>
                 <p>Example of implicit continutaion:</p>
@@ -117,13 +105,13 @@
                         </code>
                     </pre>
                 </div>
-                <p>The first line in a Python program is usually a shebang line.(#!/usr/bin/env Python3).</p>
+                <p>The first line in a Python program is usually a shebang line.(#!/usr/bin/python3).</p>
                 <p>The line is ignored by Windows, but Unix-like systems, use this line to determine what interpretter to use to run the program.</p>
                 <h3 class="_heading3">First Program</h3>
                 <div class="container code Python_code">
                     <pre class="line-numbers">
                         <code class="language-python">
-                            #!/usr/bin/env Python3
+                            #!/usr/bin/python3
 
                             counter = 0
                             score_total = 0
@@ -170,23 +158,22 @@
             <div class="container">
                 <p>Comments are usually ignored by the Python interpreter and thus have no effect on the operation of the program.</p>
                 <p>Use comments to describe portions of code that are hard to understand, or the purpose of the program but don't overdo them.</p>
-                <p>To comment, both inline and block comments, start with the # sign.</p>
-                <p>Multi line comments can also be written using ''' Comment here '''. This style of commenting code is called documentation.</p>
-                <p>Example of comments in python:</p>
+                <p>In python, any line that start with the sign (#), is considered to be a comment.</p>                
+                <p>Types of comments in python:</p>
                 <div class="container code Python_code">
                     <pre class="line-numbers">
                         <code class="language-python">
-                            # This is a block comment that
-                            # extends multiple lines.
+                            # This is a single line comment                            
 
                             '''
-                            This is another way to write multi line comments
+                            This is a multi line comment.
+                            It starts and ends with 3 single quotes.
 
-                            It's mostly used to document your code.
+                            It's mostly used to document code.
+                            Can also use 3 double quotes instead of 3 single quotes.
                             '''
 
-                            counter = 0 
-                            test_score = 0
+                            counter = 0
 
                             counter +=1 # this is an inline comment. Add 1 to counter
                         </code>
@@ -195,10 +182,9 @@
             </div>
         </section>
 
-        <section class="container" id="data_types_and_variables">
-            <h1 class="_heading1">Data Types and Variables</h1>
+        <section class="container" id="variables">
+            <h1 class="_heading1">Variables</h1>
             <div class="container">
-                <h2 class="_heading2">Variables</h2>
                 <p>Variables are named locations used to store references to the object stored in memory.</p>
                 <p>Names we choose for variables and functions are commonly known as identifiers.</p>
                 <p>In python, rules for identifiers are:</p>
@@ -210,24 +196,24 @@
                 </ol>
                 <h3 class="_heading3">Assigning values to variables</h3>
                 <p>To assign a value to a variable, equal sign (also known as the assignment operator (=)) is used.</p>
-                <p>Values are basic things that programs work with.</p>
-                <p>in programming, they are also known as literals.</p>
+                <p>Values are basic things that programs work with. In programming, they are also known as literals.</p>
                 <p>literals can be of different types: int (1, 11), float (3.14), string ("hello").</p>
-                <p>in python, everything is object even basic data types like int, float, string.</p>
-                <p>For example:</p>
-                <p>a = b = c = 100 # this assigns 100 to c, b and a.</p>
+                <p>in python, everything is an object even basic data types like int, float, string.</p>                
                 <div class="note">
                     <p>When a value is assigned to a variable, the variable doesn't store the value itself. Instead,
                             the variable only stores a reference (address) of the object where it is stored in the
                             memory.</p>
-                    <p>Therefore, x = 100, stores a reference (or address) to the 100 (an int object).</p>
-                    <p>The variable x doesn't store the object 100 itself.</p>
+                    <p>Therefore, x = 100, stores a reference (or address) to the 100 (an int object). The variable x doesn't store the object 100 itself.</p>
                 </div>
-                <p>To assign values to multiple variables at the same time, list their names and values divided by commas.</p>
+                <p>To assign values to variables:</p>
                 <div class="container code Python_code">
                     <pre class="line-numbers">
                         <code class="language-python">
-                            width, height = 400, 500
+                            # To assign multiple variables at the same time:
+
+                            width, height = 400, 500 # This assigns 400 to width and 500 to height
+
+                            a = b = c = 100 # this assigns 100 to c, b and a.
                         </code>
                     </pre>
                 </div>
@@ -252,15 +238,24 @@
                         </code>
                     </pre>
                 </div>
+            </div>
+        </section>
 
-                <h2 class="_heading2">Data Types</h2>
+        <section class="container" id="data_types">
+            <h1 class="_heading1">Data Types</h1>
+            <div class="container">
                 <p>A data type is a classification that specifies which type of value a variable has and what type of mathematical, relational or logical operations can be applied to it without causing an error.</p>
                 <p>Data Types in Python include:</p>
                 <ol>
                     <li>int - short for integer, a whole number.</li>
                     <li>float - short for floating point, which is a positive or negative whole number with a decimal point.</li>
                     <li>strings - can have single or double quotes around them.</li>
-                    <li>lists</li>
+                    <li>bool - for true and false.</li>
+                    <li>list - sequence of mutable values.</li>
+                    <li>tuple - sequence of immutable values.</li>
+                    <li>dict - collection of key-value pairs.</li>
+                    <li>set - collection of unique values.</li>
+                    <li>range - sequence of numbers.</li>
                 </ol>
                 <h3 class="_heading3">Strings</h3>                
                 <h4 class="_heading4">Basic Formatting</h4>
