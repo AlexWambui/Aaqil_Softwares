@@ -34,6 +34,7 @@
                 <li><a href="#classes">Classes</a></li>
                 <li><a href="#variables">Variables</a></li>
                 <li><a href="#colors">Colors x</a></li>
+                <li><a href="#borders">Borders</a></li>
                 <li><a href="#tables">Tables</a></li>
                 <li><a href="#flex_box">Flex Box</a></li>
                 <li><a href="#grid">Grid</a></li>
@@ -158,6 +159,33 @@
             <h1 class="_heading1">Colors</h1>
             <div class="container">
 
+            </div>
+        </section>
+
+        <section class="container" id="borders">
+            <h1 class="_heading1">Borders</h1>
+            <div class="container">
+                <p>Instead of using only one one value for border-radius we can use four or even pair of four values:</p>
+                <div class="container code">
+                    <pre class="line-numbers">
+                        <code class="language-css">
+                            /* All corners */
+                            border-radius: 32px;
+
+                            /* top-left and bottom-right 32px; bottom-left and top-right: 64px; */
+                            border-radius: 32px 64px;
+
+                            /* for all corners */
+                            border-radius: 64px 96px 128px 32px; 
+
+                            /* first level radius, radius for eliptic corners */
+                            border-radius: 40% 20% / 10% 30%;
+
+                            /* first level radius / every corner defined */
+                            border-radius: 32px 15% / 16px 32px 48px 64px;
+                        </code>
+                    </pre>
+                </div>
             </div>
         </section>
 
