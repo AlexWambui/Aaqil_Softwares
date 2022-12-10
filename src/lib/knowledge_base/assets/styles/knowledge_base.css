@@ -1,0 +1,35 @@
+body {
+  background: black;
+  color: #efefef; }
+
+.page_nav {
+  background: #efefef;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6vh; }
+  .page_nav h1 {
+    font-size: 1.5em;
+    font-weight: bold; }
+  .page_nav ul li a {
+    color: black; }
+
+section {
+  border: 1px solid #efefef;
+  border-radius: 16px;
+  margin: auto auto 2% auto; }
+  section h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: gold;
+    text-align: center;
+    border-bottom: 1px solid #efefef;
+    padding: 5px 0px; }
+  section h2 {
+    font-size: 1.2em;
+    font-style: italic;
+    color: aqua; }
+  section h3 {
+    font-size: 1.2em;
+    color: aqua; }

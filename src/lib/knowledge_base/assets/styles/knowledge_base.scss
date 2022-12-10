@@ -1,0 +1,51 @@
+$body_bg: black;
+$body_color: #efefef;
+
+body{
+	background: $body_bg;
+	color: $body_color;
+}
+.page_nav{
+	background: #efefef;
+	color: black;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 6vh;				
+	h1{
+		font-size: 1.5em;
+		font-weight: bold;
+	}
+	ul{
+		li{
+			a{
+				color: black;
+			}
+		}
+	}
+}
+section{
+	border: 1px solid #efefef;
+	border-radius: 16px;
+	margin: auto auto 2% auto;
+	h1{
+		font-size: 1.5em;
+		font-weight: bold;
+		color: gold;
+		text-align: center;
+		border-bottom: 1px solid #efefef;
+		padding: 5px 0px;
+	}
+	h2{
+		font-size: 1.2em;
+		font-style: italic;
+		color: aqua;
+	}
+	h3{
+		font-size: 1.2em;		
+		color: aqua;
+	}
+}
+
+.Movies{
+}
