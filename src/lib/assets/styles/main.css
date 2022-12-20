@@ -239,3 +239,17 @@ span.note {
       margin: auto 8px; }
     .code_container .output {
       margin-top: 8px; } }
+
+.Roadmap .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px; }
+  .Roadmap .container .step h1 {
+    font-size: 1.5em;
+    color: aqua; }
+  .Roadmap .container .step ol {
+    list-style: none; }
+    .Roadmap .container .step ol li {
+      border: 1px solid;
+      margin: 10px auto;
+      padding: 10px; }
