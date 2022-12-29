@@ -35,8 +35,16 @@
         <section class="container" id="introduction">
             <h1 class="_heading1">Introduction</h1>
             <div class="container">
-            	<p>Was created in 2011 by Taylor Otwell.</p>
-            	<p>Uses the MVC model.</p>
+            	<p>Laravel is a web application framework with expressive, elegant syntax and was created in 2011 by Taylor Otwell.</p>
+            	<p>It uses the MVC model.</p>
+                <p>A web framework provides a structure and starting point for creating your application, allowing you to focus on creating something amazing while the framework sweats the details.</p>
+                <p>Laravel provides powerful features such as:</p>
+                <ul>
+                    <li>thorough dependency injection.</li>
+                    <li>an expressive database abstraction layer.</li>
+                    <li>Queues and scheduled jobs.</li>
+                    <li>Unit and integration testing.</li>
+                </ul>
 
             	<h2 class="_heading2">Installing Xampp</h2>
             	<p>To install Xampp:</p>
@@ -46,7 +54,30 @@
             		<li>Run the installer using the command: <span class="command">sudo ./xampp-linux-x64-8.1.12-0-installer.run</span> then run through the steps for the installer.</li>
             		<li>Xampp gets installed into /opt/lampp. Uncheck the launch Xampp box from the installer window then run: <span class="command">cd /opt/lampp</span></li>
             		<li>Open Xampp's dashboard using: <span class="command">sudo ./manager-linux-64.run</span> then navigate to the second tab - Manage Servers.</li>
-            	</ol>
+            	</ol>                
+            </div>
+        </section>
+
+        <section class="container" id="first_project">
+            <h1 class="_heading1">First Project</h1>
+            <div class="container">
+                <p>Before creating your first laravel project, ensure you have PHP and composer installed.</p>
+                <p>To create a new project (say first_project) via the composer <code>create-project</code> command:</p>
+                <p class="command">composer create-project laravel/laravel first_project</p>
+                <p>After the project has been created, start Laravel's local development server using the Laravel's Artisan CLI <code>serve</code> command:</p>
+                <p class="command">php artisan serve</p>
+                <p>After starting the application, it usually available on the browser at: <code>http://localhost:8000</code></p>
+            </div>
+        </section>
+
+        <section class="container" id="cheat_sheet">
+            <h1 class="_heading1">Cheat Sheet</h1>
+            <div class="container">
+                <h2 class="_heading2">php artisan commands:</h2>
+                <ol>
+                    <li><span class="command">php artisan about</span> - quick overview of your application's configuration, drivers and environment.</li>
+                    <li><span class="command">php artisan about --only=environment</span> - to filter for a particular section of the application overview.</li>
+                </ol>
             </div>
         </section>
 
