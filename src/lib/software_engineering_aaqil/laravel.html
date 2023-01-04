@@ -26,7 +26,11 @@
         </div>
         <div class="nav_body">
             <ul>
-                <li><a href="#introduction">Introduction</a></li>                
+                <li><a href="#introduction">Introduction</a></li>   
+                <li><a href="#first_project">First Project</a></li> 
+                <li><a href="#migrations">Migrations</a></li>  
+                <li><a href="#cheat_sheet">Cheat Sheet</a></li>          
+                <li><a href="#resources">Resources</a></li>
                 <li><a href="#resources">Resources</a></li>
             </ul>
         </div>
@@ -64,9 +68,25 @@
                 <p>Before creating your first laravel project, ensure you have PHP and composer installed.</p>
                 <p>To create a new project (say first_project) via the composer <code>create-project</code> command:</p>
                 <p class="command">composer create-project laravel/laravel first_project</p>
-                <p>After the project has been created, start Laravel's local development server using the Laravel's Artisan CLI <code>serve</code> command:</p>
+                <p>You can also install the laravel installer globally so as to use the command <code>laravel new project_name</code> command.</p>
+                <p>To install laravel installer globally, use the command:</p>
+                <p class="command">composer global require laravel/installer</p>
+                <p>To create a new laravel project using the laravel installer, use the command:</p>
+                <p class="command">laravel new project_name</p>
+                <p>After the project has been created, cd into the project and start Laravel's local development server using the Laravel's Artisan CLI <code>serve</code> command:</p>
                 <p class="command">php artisan serve</p>
-                <p>After starting the application, it usually available on the browser at: <code>http://localhost:8000</code></p>
+                <p>After starting the application, it usually available on the browser using url: <code>http://localhost:8000</code></code></p>
+            </div>
+        </section>
+
+        <section class="container" id="migrations">
+            <h1 class="_heading1">Migrations</h1>
+            <div class="container">
+                <p>In laravel, migrations are used to define and manage changes to the database schema over time.</p>
+                <p>Migrations are stored in the 'database/migrations' directory and contain PHP code that is used to create and modify database tables and columns.</p>
+                <p>The command used for migrations is:</p>
+                <p class="command">php artisan migrate</p>
+                <p>Once the command is run, Laravel will look at the migration files in the <code>database/migrations</code> directory and apply any unapplied migrations to the database. It creates tables or columns that don't yet exist in the database, and also updates the database schema to match the current migration files.</p>
             </div>
         </section>
 
@@ -77,7 +97,15 @@
                 <ol>
                     <li><span class="command">php artisan about</span> - quick overview of your application's configuration, drivers and environment.</li>
                     <li><span class="command">php artisan about --only=environment</span> - to filter for a particular section of the application overview.</li>
+                    <li><span class="command">php artisan migrate</span> - used to apply database migrations to the application's database.</li>
                 </ol>
+
+                <h2 class="_heading2">Error resolves:</h2>
+                <p>When trying to migrate a database and run into <code>Class "PDO" not found</code>, first run the command <span class="command">php -m</span> to check if the PDO module is present in the installed PHP modules.</p>
+                <p>If not present, run this command to install php-pdo module (use `apt` instead of `dnf` for debian based distros):</p>
+                <p class="command">sudo dnf install php-pdo</p>
+                <p>Now try to run the migrate command again:</p>
+                <p class="command">php artisan migrate</p>
             </div>
         </section>
 
