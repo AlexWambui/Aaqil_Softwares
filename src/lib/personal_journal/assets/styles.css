@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  color: white;
+}
+
+aside {
+  width: 15%;
+  height: 100vh;
+  position: fixed;
+  border-right: 1px solid;
+  padding: 12px;
+}
+aside h1 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+aside ul {
+  list-style: none;
+}
+aside ul li {
+  margin: 8px 5px;
+  padding: 4px;
+  border-left: 5px solid yellow;
+}
+aside ul li a {
+  color: #efefef;
+  display: block;
+}
+aside ul li a:hover {
+  color: yellow;
+  text-decoration: none;
+}
+
+main {
+  width: 85%;
+  margin-left: 15%;
+}
+main section {
+  border: 1px solid #efefef;
+  border-radius: 16px;
+  margin: 12px;
+}
+main section h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: yellow;
+  text-transform: uppercase;
+}
+main section h2 {
+  font-size: 1.4rem;
+  color: greenyellow;
+}
+main section ol {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+main section .wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 12px;
+}
+main section .wrapper .category {
+  background: rgb(32, 32, 32);
+  padding: 8px;
+  border-radius: 16px;
+}/*# sourceMappingURL=styles.css.map */
