@@ -26,7 +26,51 @@
             <h1>Python</h1>
         </div>
         <div class="nav_body">
-            <ul>
+            <ul>                
+                <li class="title">Basics</li>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#basic_syntax">Basic Syntax</a></li>
+                <li><a href="#variables">Variables</a></li>
+                <li><a href="#data_types">Data Types</a></li>
+                <li><a href="#type_casting">Type Casting</a></li>
+                <li><a href="#control_statements">Control Statements</a></li>
+                <li><a href="#exceptions">Exceptions</a></li>
+                <li><a href="#functions">Functions</a></li>
+                <li><a href="#datastructures">Datastructures</a></li>
+
+                <li class="title">Datastructures & Algorithms</li>
+                <li><a href="#arrays_and_linked_lists">Arrays & Linked lists</a></li>
+                <li><a href="#heaps_stacks_queues">Heaps, Stacks and Queues</a></li>
+                <li><a href="#hash_tables">Hash Tables</a></li>
+                <li><a href="#binary_search_trees">Binary Search Trees</a></li>
+                <li><a href="#recursion">Recursion</a></li>
+                <li><a href="#sorting_algorithms">Sorting Algorithms</a></li>
+
+                <li class="title">Advanced Topics</li>
+                <li><a href="#iterators">Iterators</a></li>
+                <li><a href="#regEx">RegEx</a></li>
+                <li><a href="#decorators">Decorators</a></li>
+                <li><a href="#Lambdas">Lambdas</a></li>
+                <li><a href="#modules">Modules</a></li>
+                <li><a href="#oop">OOP</a></li>
+                <li><a href="#package_managers">Package Managers</a></li>
+                <li><a href="#list_comprehensions">List comprehensions</a></li>
+                <li><a href="#generator_expressions">Generator Expressions</a></li>
+                <li><a href="#paradigms">Paradigms</a></li>
+
+                <li class="title">Frameworks</li>
+                <li><a href="#synchronous">Synchronous</a></li>
+                <li><a href="#fastAPI">FastAPI</a></li>
+                <li><a href="#asynchronous">Asynchronous</a></li>
+
+                <li class="title">Tests</li>
+                <li><a href="#doctest">doctest</a></li>
+                <li><a href="#nose">nose</a></li>
+                <li><a href="#pystest">pystest</a></li>
+                <li><a href="#pytest">pytest</a></li>
+                <li><a href="#unittest / pyUnit"></a></li>
+                <hr/>
+
                 <li><a href="#introduction">Introduction</a></li>
                 <li><a href="#pycodestyle">Pycodestyle</a></li>
                 <li><a href="#comments">Comments</a></li>
@@ -46,10 +90,9 @@
         <section class="container" id="introduction">
             <h1 class="_heading1">Introduction</h1>
             <div class="container">
-                <p>To get started we need to download and install Python. It includes an IDE (Integrated Development Environment) called IDLE that you can use for coding, testing and debugging your programs.<a href="https://www.python.org/downloads/">Download Python</a></p>                
-                <p>Python is an easy to learn, powerful programming language developed by Guido Van Rossum of the Netherlands in the 1990s and was named after the BBC show "Monty Python's Flying Circus" because Guido was a big fan of the show.</p>
-                <p>Python was inteded to be simple, intuitive language that is as powerful as traditional languages.</p>                
-                <p>Python's simple syntax and dynamic typing, together with its interpretted nature, make it an ideal language for scripting and rapid application development in many areas on most platforms hence enabling you develop programs in less time and with less code than other programming languages.</p>
+                <p>Python is an interpretted language that was developed by Guido Van Rossum of the Netherlands in the 1990s and was named after the BBC show "Monty Python's Flying Circus" because Guido was a big fan of the show.</p> 
+                <p>To get started we need to download (<a href="https://www.python.org/downloads/">Download Python</a>) and install Python. It includes an IDE (Integrated Development Environment) called IDLE that you can use for coding, testing and debugging your programs.</p>                                           
+                <p>Python's simple syntax and dynamic typing makes it an ideal language for scripting and rapid application development in many areas on most platforms hence enabling you develop programs in less time and with less code than other programming languages.</p>
 
                 <h2 class="_heading2">Types of Python</h2>
                 <ol>
@@ -60,7 +103,7 @@
                 <h2 class="_heading2">Properties of Python</h2>
                 <p><b>It's an interpreted language.</b> - This means when you run it, an interpreter will parse python programs line by line basis, as compared to compiled languages like C or C++, where the compiler first compiles the program and then starts running. The difference is that interpreted languages are a little slow as compared to compiled languages.</p>
                 <p><b>Python is also dynamically typed.</b> - It doesn't require you to define variable data types ahead of time. Python automatically infers the data type of the variable based on the type of value it contains.</p>
-                <p><b>Python is strongly typed.</b> - PHP or JavaScript convert data of one type to another automatically. For example: In JavaScript, 1 + "2" - converts to a string and results to '12' which is a string. However, in Python automatic conversions are not allowed so 1 + "2" would produce an error.</p>
+                <p><b>Python is strongly typed.</b> - PHP or JavaScript convert data of one type to another automatically. For example: In JavaScript, 1 + "2" - converts to a string and results to '12' which is a string. However, in Python automatic conversions are not allowed so 1 + "2" would produce an error.</p>                
 
                 <h2 class="_heading2">Why python is a great language</h2>
                 <ul>
@@ -133,54 +176,55 @@
                         </code>
                     </pre>
                 </div>
+
+                <div class="container" id="pycodestyle">
+                    <h2 class="_heading2">Pycodestyle</h2>
+                    <p>Pycodestyle is a tool to check your Python code against some of the style conventions in PEP8.</p>
+                    <p>The package used to be called pep8 but was renamed to pycodestyle to reduce confussion.</p>
+
+                    <h2 class="_heading2">Installation</h2>
+                    <p>You can install, upgrade and unistall pycodestyle.py using the commands:</p>
+                    <p class="command">pip install pycodestyle</p>
+                    <p class="command">pip install --upgrade pycodestyle</p>
+                    <p class="command">pip uninstall pycodestyle</p>
+                    <p>Example of usage:</p>
+                    <p class="command">pycodestyle --first optparse.py</p>
+                    <p>To make pycodestyle show the source code for each error, and even the relevant text from PEP8:</p>
+                    <p class="command">pycodestyle --show-source --show-pep8 testsuite/E40.py</p>
+                    <p>To display how often each error was found:</p>
+                    <p class="command">pycodestyle --statistics --qq Python-2.5/Lib</p>
+                </div>
             </div>
         </section>
 
-        <section class="container" id="pycodestyle">
-            <h1 class="_heading1">Pycodestyle</h1>
+        <section class="container" id="basic_syntax">
+            <h1 class="_heading1">Basic Syntax</h1>
             <div class="container">
-                <p>Pycodestyle is a tool to check your Python code against some of the style conventions in PEP8.</p>
-                <p>The package used to be called pep8 but was renamed to pycodestyle to reduce confussion.</p>
+                <div class="container" id="comments">
+                    <h2 class="_heading2">Comments</h2>
+                    <p>Comments are usually ignored by the Python interpreter and thus have no effect on the operation of the program.</p>
+                    <p>Use comments to describe portions of code that are hard to understand, or the purpose of the program but don't overdo them.</p>
+                    <p>In python, any line that start with the sign (#), is considered to be a comment.</p>                
+                    <p>Examples of comments in python:</p>
+                    <div class="container code Python_code">
+                        <pre class="line-numbers">
+                            <code class="language-python">
+                                # This is a single line comment
 
-                <h2 class="_heading2">Installation</h2>
-                <p>You can install, upgrade and unistall pycodestyle.py using the commands:</p>
-                <p class="command">pip install pycodestyle</p>
-                <p class="command">pip install --upgrade pycodestyle</p>
-                <p class="command">pip uninstall pycodestyle</p>
-                <p>Example of usage:</p>
-                <p class="command">pycodestyle --first optparse.py</p>
-                <p>To make pycodestyle show the source code for each error, and even the relevant text from PEP8:</p>
-                <p class="command">pycodestyle --show-source --show-pep8 testsuite/E40.py</p>
-                <p>To display how often each error was found:</p>
-                <p class="command">pycodestyle --statistics --qq Python-2.5/Lib</p>
-            </div>
-        </section>
+                                counter = 0
+                                counter +=1 # this is an inline comment. Add 1 to counter                            
 
-        <section class="container" id="comments">
-            <h1 class="_heading1">Comments</h1>
-            <div class="container">
-                <p>Comments are usually ignored by the Python interpreter and thus have no effect on the operation of the program.</p>
-                <p>Use comments to describe portions of code that are hard to understand, or the purpose of the program but don't overdo them.</p>
-                <p>In python, any line that start with the sign (#), is considered to be a comment.</p>                
-                <p>Types of comments in python:</p>
-                <div class="container code Python_code">
-                    <pre class="line-numbers">
-                        <code class="language-python">
-                            # This is a single line comment                            
+                                '''
+                                This is a multi line comment mostly used to document code.
+                                It starts and ends with 3 single quotes.
+                                '''
 
-                            '''
-                            This is a multi line comment.
-                            It starts and ends with 3 single quotes.
-
-                            It's mostly used to document code.
-                            Can also use 3 double quotes instead of 3 single quotes.
-                            '''
-
-                            counter = 0
-
-                            counter +=1 # this is an inline comment. Add 1 to counter
-                        </code>
-                    </pre>
+                                """
+                                    You can also use 3 double quotes
+                                """                              
+                            </code>
+                        </pre>
+                    </div>
                 </div>
             </div>
         </section>
@@ -315,6 +359,11 @@
             </div>
         </section>
 
+        <section class="container" id="type_casting">
+            <h1 class="_heading1">Type Casting</h1>
+            <div class="container"></div>
+        </section>
+
         <section class="container" id="control_statements">
             <h1 class="_heading1">Control Statements</h1>
             <div class="container">
@@ -433,6 +482,11 @@
             </div>
         </section>
 
+        <section class="container" id="exceptions">
+            <h1 class="_heading1">Exceptions</h1>
+            <div class="container"></div>
+        </section>
+
         <section class="container" id="functions">
             <h1 class="_heading1">Functions</h1>
             <div class="container">
@@ -510,6 +564,58 @@
             </div>
         </section>
 
+        <section class="container" id="arrays_and_linked_lists">
+            <h1 class="_heading1">Arrays & Linked Lists</h1>
+            <div class="container"></div>
+        </section>
+
+        <section class="container" id="heaps_stacks_and_queues">
+            <h1 class="_heading1">Heaps, Stacks and Queues</h1>
+            <div class="container">
+                
+            </div>
+        </section>
+
+        <section class="container" id="hash_tables">
+            <h1 class=_heading1>Hash Tables</h1>
+            <div class="container"></div>
+        </section>
+
+        <section class="container" id="binary_search_trees">
+            <h1 class=_heading1>Binary Search Trees</h1>
+            <div class="container"></div>
+        </section>
+
+        <section class="container" id="recursion">
+            <h1 class=_heading1>Recursion</h1>
+            <div class="container"></div>
+        </section>
+
+        <section class="container" id="sorting_algorithms">
+            <h1 class=_heading1>Sorting Algorithms</h1>
+            <div class="container"></div>
+        </section>
+
+        <section class="container" id="iterators">
+            <h1 class=_heading1>Iterators</h1>
+            <div class="container"></div>
+        </section>
+
+        <section class="container" id="regex">
+            <h1 class=_heading1>Regex</h1>
+            <div class="container"></div>
+        </section>
+
+        <section class="container" id="decorators">
+            <h1 class=_heading1>Decorators</h1>
+            <div class="container"></div>
+        </section>
+
+        <section class="container" id="lambdas">
+            <h1 class=_heading1>Lambdas</h1>
+            <div class="container"></div>
+        </section>
+
         <section class="container" id="modules">
             <h1 class="_heading1">Modules</h1>
             <div class="container">
@@ -557,6 +663,41 @@
                 <p>Each module has its own private namespace, which is used as the global namespace by all functions defined in the module.</p>
                 <p>Thus, the author of a module can use global variables in the module without worrying about accidental clashes with a user’s global variables. On the other hand, if you know what you are doing you can touch a module’s global variables with the same notation used to refer to its functions, modname.itemname.</p>
             </div>
+        </section>
+
+        <section class="container" id="oop">
+            <h1 class=_heading1>OOP</h1>
+            <div class="container"></div>
+        </section>
+
+        <section class="container" id="package_managers">
+            <h1 class=_heading1>Package Managers</h1>
+            <div class="container"></div>
+        </section>
+
+        <section class="container" id="list_comprehensions">
+            <h1 class=_heading1>List Comprehensions</h1>
+            <div class="container"></div>
+        </section>
+
+        <section class="container" id="generator_expressions">
+            <h1 class=_heading1>Generator Expressions</h1>
+            <div class="container"></div>
+        </section>
+
+        <section class="container" id="paradigms">
+            <h1 class=_heading1>Paradigms</h1>
+            <div class="container"></div>
+        </section>
+
+        <section class="container" id="frameworks">
+            <h1 class=_heading1>Frameworks</h1>
+            <div class="container"></div>
+        </section>
+
+        <section class="container" id="tests">
+            <h1 class=_heading1>Tests</h1>
+            <div class="container"></div>
         </section>
 
         <section class="container" id="sources">
@@ -615,67 +756,6 @@
                 </ol>
             </div>
         </section>
-
-        <section class="container Roadmap" id="roadmap">
-            <h1 class="_heading1">Roadmap</h1>
-            <div class="container">
-                <div class="step">
-                    <h1>Basics</h1>
-                    <ol>
-                        <li>Basic Syntax.</li>
-                        <li>Variables and data types.</li>
-                        <li>Conditionals.</li>
-                        <li>Type Casting, exceptions.</li>
-                        <li>Functions, Builtin functions.</li>
-                        <li>Lists, Tuples, Sets, Dictionaries.</li>
-                    </ol>
-                </div>
-
-                <div class="step">
-                    <h1>Datastructures and Algorithms</h1>
-                    <ol>
-                        <li>Arrays and Linked Lists.</li>
-                        <li>Heaps, Stacks and Queues.</li>
-                        <li>Hash Tables.</li>
-                        <li>Binary Search Trees.</li>
-                        <li>Recursion.</li>
-                        <li>Sorting Algorithms.</li>
-                    </ol>
-                </div>
-
-                <div class="step">
-                    <h1>Advanced Topics</h1>
-                    <ol>
-                        <li>Iterators.</li>
-                        <li>RegEx.</li>
-                        <li>Decorators.</li>
-                        <li>Lambdas.</li>
-                        <li>OOP [ Classes, Inheritance, Methods, Dunder ].</li>
-                        <li>Modules [Builtin, Custom].</li>
-                        <li>Package Managers [PyPI, Pip].</li>
-                    </ol>
-                </div>
-
-                <div class="step">
-                    <h1>Learn a Framework</h1>
-                    <ol>
-                        <li>Synchronous [Django, Flask, Pyramid, FastAPI].</li>
-                        <li>Asynchronous [Gevent, aiohttp,  Tornado, Sanic].</li>
-                    </ol>
-                </div>
-
-                <div class="step">
-                    <h1>Testing Your Apps</h1>
-                    <ol>
-                        <li>doctest.</li>
-                        <li>nose.</li>
-                        <li>pytest.</li>
-                        <li>unittest / pyUnit.</li>
-                    </ol>
-                </div>
-            </div>
-        </section>
-
         <!-- Started tracking: 13_12_2022 -->
     </main>
 </section>
