@@ -145,6 +145,10 @@ aside {
 				}
 			}
 		}
+		li.title{
+			border-left: unset;
+			color: aqua;
+		}
 	}
 	.nav_icons {
 		font-size: 1.2em;
@@ -183,15 +187,15 @@ aside {
 	font-size: 1.4em;
 }
 ._heading2 {
-	color: yellow;
+	color: orangered;
 	text-align: center;
 }
 ._heading3 {
-	color: tomato;
+	color: aqua;
 }
 ._heading4 {
 	font-style: italic;
-	color: aqua;
+	color: aquamarine;
 }
 ._heading5 {
 	font-style: italic;
