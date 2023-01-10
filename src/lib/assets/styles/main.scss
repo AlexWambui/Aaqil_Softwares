@@ -18,10 +18,8 @@ body {
 }
 
 
-ul {
-	ol {
-		list-style-position: inside;
-	}
+ul, ol, ul > ol{
+	list-style-position: inside;
 }
 p {
 	margin: unset;
@@ -304,7 +302,7 @@ span.note{
 }
 
 .Roadmap{	
-	.container{
+	.roadmap{
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-gap: 15px;
@@ -315,10 +313,14 @@ span.note{
 			}
 			ol{
 				list-style: none;
+				list-style-position: inside;
 				li{
 					border: 1px solid;
-					margin: 10px auto;
-					padding: 10px;
+					margin: 4px auto;
+					padding: 4px;
+					ul{
+						list-style-type: "- ";
+					}
 				}
 			}
 		}

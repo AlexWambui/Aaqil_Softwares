@@ -13,7 +13,7 @@ body {
   color: #fafafa;
 }
 
-ul ol {
+ul, ol, ul > ol {
   list-style-position: inside;
 }
 
@@ -300,20 +300,24 @@ span.note {
     margin-top: 8px;
   }
 }
-.Roadmap .container {
+.Roadmap .roadmap {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 15px;
 }
-.Roadmap .container .step h1 {
+.Roadmap .roadmap .step h1 {
   font-size: 1.5em;
   color: aqua;
 }
-.Roadmap .container .step ol {
+.Roadmap .roadmap .step ol {
   list-style: none;
+  list-style-position: inside;
 }
-.Roadmap .container .step ol li {
+.Roadmap .roadmap .step ol li {
   border: 1px solid;
-  margin: 10px auto;
-  padding: 10px;
+  margin: 4px auto;
+  padding: 4px;
+}
+.Roadmap .roadmap .step ol li ul {
+  list-style-type: "- ";
 }/*# sourceMappingURL=main.css.map */
