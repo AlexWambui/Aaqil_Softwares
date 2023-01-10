@@ -90,20 +90,30 @@
         <section class="container" id="introduction">
             <h1 class="_heading1">Introduction</h1>
             <div class="container">
-                <p>Python is an interpretted language that was developed by Guido Van Rossum of the Netherlands in the 1990s and was named after the BBC show "Monty Python's Flying Circus" because Guido was a big fan of the show.</p> 
-                <p>To get started we need to download (<a href="https://www.python.org/downloads/">Download Python</a>) and install Python. It includes an IDE (Integrated Development Environment) called IDLE that you can use for coding, testing and debugging your programs.</p>                                           
+                <p>Python is an interpretted language developed by Guido Van Rossum of the Netherlands and released in 1991. It was named after the BBC show "Monty Python's Flying Circus" because Guido was a big fan of the show.</p> 
                 <p>Python's simple syntax and dynamic typing makes it an ideal language for scripting and rapid application development in many areas on most platforms hence enabling you develop programs in less time and with less code than other programming languages.</p>
+
+                <h2 class="_heading2">Getting Started</h2>
+                <p>To get started we need to download (<a href="https://www.python.org/downloads/">Download Python</a>) and install Python.</p>                                           
+                <p>To check if python is installed, use the command:</p>
+                <p class="command">python --version</p>
+                <p>Once installed, Python includes an IDE (Integrated Development Environment) called IDLE that you can use for coding, testing and debugging your programs.</p>                
 
                 <h2 class="_heading2">Types of Python</h2>
                 <ol>
-                    <li>The official version of python is called Python or CPython. Python 2 became available in the year 2000 and it's not forward compatible (means it can't run most programs written in python 3). Python 3 was introduced in 2008 and it's not backward compatible (means it can't run most programs written in python 2).</li>
+                    <li>The official version of python is called Python or CPython.
+                        <ul>
+                            <li>Python 2 became available in the year 2000 and it's not forward compatible (means it can't run most programs written in python 3).</li>
+                            <li>Python 3 was introduced in 2008 and it's not backward compatible (means it can't run most programs written in python 2).</li>
+                        </ul>
+                    </li>
                     <li>Another popular distribution of Python is Anaconda which is mainly focused on data science.</li>
                 </ol>
 
                 <h2 class="_heading2">Properties of Python</h2>
-                <p><b>It's an interpreted language.</b> - This means when you run it, an interpreter will parse python programs line by line basis, as compared to compiled languages like C or C++, where the compiler first compiles the program and then starts running. The difference is that interpreted languages are a little slow as compared to compiled languages.</p>
-                <p><b>Python is also dynamically typed.</b> - It doesn't require you to define variable data types ahead of time. Python automatically infers the data type of the variable based on the type of value it contains.</p>
-                <p><b>Python is strongly typed.</b> - PHP or JavaScript convert data of one type to another automatically. For example: In JavaScript, 1 + "2" - converts to a string and results to '12' which is a string. However, in Python automatic conversions are not allowed so 1 + "2" would produce an error.</p>                
+                <p><b>It's an interpreted language</b> - This means when you run it, an interpreter will parse python programs line by line, as compared to compiled languages like C or C++, where the compiler first compiles the program and then starts running. The difference is that interpreted languages are a little slow as compared to compiled languages.</p>
+                <p><b>Python is also dynamically typed</b> - It doesn't require you to define variable data types ahead of time. Python automatically infers the data type of the variable based on the type of value it contains.</p>
+                <p><b>Python is strongly typed</b> - PHP or JavaScript convert data of one type to another automatically. For example: In JavaScript, 1 + "2" - converts to a string and results to '12' which is a string. However, in Python automatic conversions are not allowed so 1 + "2" would produce an error.</p>                
 
                 <h2 class="_heading2">Why python is a great language</h2>
                 <ul>
@@ -126,56 +136,7 @@
                     <li>Data Science.</li>
                     <li>Game Development.</li>
                     <li>Visualization.</li>
-                </ul>
-
-                <h2 class="_heading2">Coding Statement</h2>
-                <p>Unlike many programming langauges, the indentation of each line matters in a Python program. Incorrect indentation causes an error.</p>
-                <p>In Python, the indentation is typically four spaces.</p>
-                <p>In some cases, you'll want to divide a long statement over two or more lines. Then, you can use implicit continuation. To do that, you divide a statement before or after an operator like a plus or minus sign.</p>
-                <p>Example of implicit continutaion:</p>
-                <div class="container code Python_code">
-                    <pre class="line-numbers">
-                        <code class="language-python">
-                            print("Total Score: " + str(score_total)
-                                + "\nAverage Score: " + str(average_score))
-                        </code>
-                    </pre>
-                </div>
-                <p>The other way to continue a statement is to use explicit continuation. Then, you code a backslash to show that a line is continued. In general, this is discouraged and isn't usually required.</p>
-                <p>Example of explicit continuation:</p>
-                <div class="container code Python_code">
-                    <pre class="line-numbers">
-                        <code class="language-python">
-                            print("Total Score: " + str(score_total) \
-                                + "\nAverage Score: " + str(average_score))
-                        </code>
-                    </pre>
-                </div>
-                <p>The first line in a Python program is usually a shebang line.(#!/usr/bin/python3).</p>
-                <p>The line is ignored by Windows, but Unix-like systems, use this line to determine what interpretter to use to run the program.</p>
-                <h3 class="_heading3">First Program</h3>
-                <div class="container code Python_code">
-                    <pre class="line-numbers">
-                        <code class="language-python">
-                            #!/usr/bin/python3
-
-                            counter = 0
-                            score_total = 0
-                            test_score = 0
-
-                            while test_score != 999:
-                                test_score = int(input("Enter test score: "))
-                                if test_score >= 0 and test_score <= 100:
-                                    score_total += test_score
-                                    counter += 1
-
-                            average_score = round(score_total / counter)
-
-                            print("Total Score: " + str(score_total))
-                            print("Average Score: " + str(average_score))
-                        </code>
-                    </pre>
-                </div>
+                </ul>                
 
                 <div class="container" id="pycodestyle">
                     <h2 class="_heading2">Pycodestyle</h2>
@@ -194,6 +155,10 @@
                     <p>To display how often each error was found:</p>
                     <p class="command">pycodestyle --statistics --qq Python-2.5/Lib</p>
                 </div>
+
+                <div class="container quiz" id="quiz_introduction">
+                    <p>Which command is used to check the version of Python installed?</p>                    
+                </div>
             </div>
         </section>
 
@@ -201,9 +166,54 @@
             <h1 class="_heading1">Basic Syntax</h1>
             <div class="container">
                 <div class="container" id="comments">
+                    <h2 class="_heading2">Coding Statement</h2>
+                    <p>Python uses indentation to indicate a block of code.</p>
+                    <p>Unlike many programming langauges, the indentation of each line matters in a Python program. Incorrect indentation causes an error.</p>
+                    <p>In Python, the indentation is typically four spaces.</p>
+                    <p>In some cases, you'll want to divide a long statement over two or more lines. Then, you can use implicit continuation. To do that, you divide a statement before or after an operator like a plus or minus sign.</p>
+                    <p>Example of implicit continutaion:</p>
+                    <div class="container code Python_code">
+                        <pre class="line-numbers">
+                            <code class="language-python">
+                                print("Total Score: " + str(score_total)
+                                    + "\nAverage Score: " + str(average_score))
+                            </code>
+                        </pre>
+                    </div>
+                    <p>The other way to continue a statement is to use explicit continuation. Then, you code a backslash to show that a line is continued. In general, this is discouraged and isn't usually required.</p>
+                    <p>Example of explicit continuation:</p>
+                    <div class="container code Python_code">
+                        <pre class="line-numbers">
+                            <code class="language-python">
+                                print("Total Score: " + str(score_total) \
+                                    + "\nAverage Score: " + str(average_score))
+                            </code>
+                        </pre>
+                    </div>                    
+
+                    <h3 class="_heading3">First Program</h3>
+                    <p>The first line in a Python program is usually a shebang line.(#!/usr/bin/python3).</p>
+                    <p>The line is ignored by Windows, but Unix-like systems, use this line to determine what interpretter to use to run the program.</p
+                    <div class="container code Python_code">
+                        <pre class="line-numbers">
+                            <code class="language-python">
+                                #!/usr/bin/python3
+
+                                print("hello, world!")
+                            </code>
+                        </pre>
+                    </div>
+                    <p>To run the program, you can save the file as hello.py and use the command:</p>
+                    <p class="command">python hello.py</p>
+
                     <h2 class="_heading2">Comments</h2>
                     <p>Comments are usually ignored by the Python interpreter and thus have no effect on the operation of the program.</p>
-                    <p>Use comments to describe portions of code that are hard to understand, or the purpose of the program but don't overdo them.</p>
+                    <p>Comments can be used to:</p>
+                    <ol>
+                        <li>Explain Python Code.</li>
+                        <li>Make the code more readable.</li>
+                        <li>Prevent execution when testing code.</li>
+                    </ol>                    
                     <p>In python, any line that start with the sign (#), is considered to be a comment.</p>                
                     <p>Examples of comments in python:</p>
                     <div class="container code Python_code">
@@ -226,6 +236,11 @@
                         </pre>
                     </div>
                 </div>
+
+                <div class="container quiz" id="quiz_basic_syntax">
+                    <p>What command would be used to run a python file named "addition.py"?</p>
+                    <p>Write a multi line comment that consists of at least three lines explaining how comments can be used.</p>
+                </div>
             </div>
         </section>
 
@@ -234,13 +249,23 @@
             <div class="container">
                 <p>Variables are named locations used to store references to the object stored in memory.</p>
                 <p>Names we choose for variables and functions are commonly known as identifiers.</p>
-                <p>In python, rules for identifiers are:</p>
+                <p>In python, a variable is created the moment you assign a value to it.</p>
+                <p>Rule for identifiers include:</p>
                 <ol>
                     <li>All identifiers must start with a letter or underscore (_), you can't use digits.</li>
                     <li>Identifiers can contain letter, digits and underscores(_). $, # are not allowed.</li>
                     <li>Identifiers can be of any length.</li>
                     <li>Identifiers can't be a keyword. Keywords are reserved words that python uses for special purposes. Keywords in pythons include:(false, none, true, and, as, pass, break, class, continue, def, del, elif, else, except, finally, for, from, global, if, import, in, is, lambda, nonlocal, not, or, assert, raise, return, try, while, with, yield).</li>
                 </ol>
+
+                <h3 class="_heading3">Multi words variable names</h3>
+                <p>techniques to make more than one word vairable names more readable include:</p>
+                <ol>
+                    <li>Camel Case (myVariableName).</li>
+                    <li>Pascal Case (MyVariableName).</li>
+                    <li>Snake Case (my_variable_name).</li>
+                </ol>
+
                 <h3 class="_heading3">Assigning values to variables</h3>
                 <p>To assign a value to a variable, equal sign (also known as the assignment operator (=)) is used.</p>
                 <p>Values are basic things that programs work with. In programming, they are also known as literals.</p>
@@ -257,8 +282,8 @@
                     <pre class="line-numbers">
                         <code class="language-python">
                             # To assign multiple variables at the same time:
-
                             width, height = 400, 500 # This assigns 400 to width and 500 to height
+                            x, y, z = "Orange", "Banana", "Cherry"
 
                             a = b = c = 100 # this assigns 100 to c, b and a.
                         </code>
@@ -285,6 +310,20 @@
                         </code>
                     </pre>
                 </div>
+
+                <div class="container quiz" id="quiz_variables">
+                    <p>Create a variable named language and assign the value Python to it.</p>
+                    <p>Create a variable named x and assign the value 50 to it.</p>
+                    <p>Display the sum of 5 and 10 using two variables, x and y.</p>
+                    <p>What two characters should not be in the following variable name?</p>
+                    <p class="code">
+                        <pre class="line-numbers">
+                            <code class="language-python">
+                                2my-first_language = "Python"
+                            </code>
+                        </pre>
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -292,18 +331,91 @@
             <h1 class="_heading1">Data Types</h1>
             <div class="container">
                 <p>A data type is a classification that specifies which type of value a variable has and what type of mathematical, relational or logical operations can be applied to it without causing an error.</p>
+                <p>Variables can store data of different types, and different types can do different things.</p>
                 <p>Data Types in Python include:</p>
                 <ol>
-                    <li>int - short for integer, a whole number.</li>
-                    <li>float - short for floating point, which is a positive or negative whole number with a decimal point.</li>
-                    <li>strings - can have single or double quotes around them.</li>
-                    <li>bool - for true and false.</li>
-                    <li>list - sequence of mutable values.</li>
-                    <li>tuple - sequence of immutable values.</li>
-                    <li>dict - collection of key-value pairs.</li>
-                    <li>set - collection of unique values.</li>
-                    <li>range - sequence of numbers.</li>
+                    <li>int - Numeric type. It's short for integer, a whole number.</li>
+                    <li>float - Numeric type. It's short for floating point, which is a positive or negative whole number with a decimal point.</li>
+                    <li>complex - Numeric type.</li>
+                    <li>str - Text type. Can have single or double quotes around them.</li>
+                    <li>bool - Boolean type. Usually two types, either - true or false.</li>
+                    <li>list - Sequence type. Sequence of mutable values.</li>
+                    <li>tuple - Sequence type. Sequence of immutable values.</li>
+                    <li>range - Sequence type. Sequence of numbers.</li>
+                    <li>set - Set type. Collection of unique values.</li>
+                    <li>frozenset - Set type.</li>
+                    <li>dict - Mapping type. Collection of key-value pairs.</li>   
+                    <li>NoneType - None type.</li>                 
+                    <li>bytes - Binary type.</li>
+                    <li>bytearray - Binary type.</li>
+                    <li>memoryview - Binary type.</li>
                 </ol>
+                <p>Example:</p>
+                <div class="container code">
+                    <pre class="line-numbers">
+                        <code class="language-python">
+                            #str
+                            x = "hello"
+                            x = str("Hello World")
+                            #int
+                            x = 20
+                            x = int(20)
+                            #float
+                            x = 20.5
+                            x = float(20.5)
+                            #complex
+                            x = 1j
+                            x = complex(1j)
+                            #list
+                            x = ["apple", "banana", "cherry"]
+                            x = list(("apple", "banana", "cherry"))
+                            #tupple
+                            x = ("apple", "banana", "cherry")
+                            x = tuple(("apple", "banana", "cherry"))
+                            #range
+                            x = range(6)
+                            x = range(6)
+                            #dict
+                            x = {"name" : "John", "age" : 36}
+                            x = dict(name="John", age=36)
+                            #set
+                            x = {"apple", "banana", "cherry"}
+                            x = set(("apple", "banana", "cherry"))
+                            #frozenset
+                            x = frozenset({"apple", "banana", "cherry"})
+                            x = frozenset(("apple", "banana", "cherry"))
+                            #bool
+                            x = True
+                            x = bool(5)
+                            #bytes
+                            x = b"Hello"
+                            x = bytes(5)
+                            #bytearray
+                            x = bytearray(5)
+                            x = bytearray(5)
+                            #memoryview
+                            x = memoryview(bytes(5))
+                            x = memoryview(bytes(5))
+                            #NoneType
+                            x = None
+                        </code>
+                    </pre>
+                </div>
+
+                <h2 class="_heading2">Get the data type</h2>
+                <p>You can get the data type of a variable with the type() function.</p>
+                <p>Example:</p>
+                <div class="container code">
+                    <pre class="line-numbers">
+                        <code class="language-python">
+                            x = 5
+                            y = "John"
+                            print(type(x))
+                            print(type(y))
+                        </code>
+                    </pre>
+                </div>                
+
                 <h3 class="_heading3">Strings</h3>                
                 <h4 class="_heading4">Basic Formatting</h4>
                 <p>simple positional formatting is the most common use-case and should be used if the order of arguments is not likely to change and only have very few elements to concatenate.</p>
@@ -361,7 +473,26 @@
 
         <section class="container" id="type_casting">
             <h1 class="_heading1">Type Casting</h1>
-            <div class="container"></div>
+            <div class="container">
+                <p>To specify the data type of a variable, this can be done with casting.</p>
+                <p>Python is an Object-Oriented langauge and uses classes to define data types.</p>
+                <p>Casting is therefore done using constructor functions:</p>
+                <ul>
+                    <li>int() - constructs an integer number from an integer literal, a float literal (by removing all decimals), or a string literal (providing the string represents a whole number).</li>
+                    <li>float() - constructs a float number from an integer literal, a float literal or a string literal (providing the string represents a float or an integer).</li>
+                    <li>str() - constructs a string from a wide variety of data types, including strings, integer literals and float literals.</li>
+                </ul>
+                <p>Example:</p>
+                <div class="container code">
+                    <pre class="line-numbers">
+                        <code class="language-python">
+                            x = str(3) # x will be '3'
+                            y = int(3) # y will be 3
+                            z = float(3) #z will be 3.0
+                        </code>
+                    </pre>
+                </div>
+            </div>
         </section>
 
         <section class="container" id="control_statements">
@@ -558,6 +689,26 @@
                         <code class="language-python">
                             def say_my_name():
                                 pass
+                        </code>
+                    </pre>
+                </div>
+
+                <h2 class="_heading2">Global Variables</h2>
+                <p>Variables created outside a function are known as global variables.</p>
+                <p>Global variables can be used both inside and outside the function.</p>
+                <p>When you create a variable inside a functions, that variable is local, and can only be used inside that function.</p>
+                <p>To create a global variable inside a function, you can use the global keyword to make the variable belong to the global scope.</p>
+                <p>Example:</p>
+                <div class="container code">
+                    <pre class="line-numbers">
+                        <code class="language-python">                          
+                            def myfunc():
+                                global x
+                                x = "fantastic"                                
+
+                            
+                            myfunc()
+                            print("Python is " + x)
                         </code>
                     </pre>
                 </div>
