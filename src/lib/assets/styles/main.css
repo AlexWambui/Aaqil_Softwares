@@ -13,7 +13,10 @@ body {
   color: #fafafa;
 }
 
-ul, ol, ul > ol {
+ul,
+ol,
+ul > ol,
+ol > ul {
   list-style-position: inside;
 }
 
